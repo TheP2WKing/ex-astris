@@ -6,9 +6,9 @@ import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.thep2wking.exastris.api.ExAstrisItemFluxBase;
+import net.thep2wking.exastris.api.ExAstrisItemToolFluxBase;
 
-public class ItemFluxInfusedHammer extends ExAstrisItemFluxBase implements IHammer {
+public class ItemFluxInfusedHammer extends ExAstrisItemToolFluxBase implements IHammer {
     public ItemFluxInfusedHammer(String name, CreativeTabs tab, int totalEnergy,
             int totalTransfer, int rfPerUseBase, int rfPerUseCharged, int attackDamageBase, int attackDamageCharged,
             float baseEfficiency) {

@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.api;
+package net.thep2wking.exastris.content.item.seed;
 
 import javax.annotation.Nonnull;
 
@@ -15,19 +15,20 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import net.thep2wking.exastris.api.ExAstrisItemBase;
 
-public class ExAstrisItemSeed extends ExAstrisItemBase implements IPlantable {
+public class ItemExAstrisSeed extends ExAstrisItemBase implements IPlantable {
     private final IBlockState plant;
     private EnumPlantType plantType;
 
-    public ExAstrisItemSeed(String name, IBlockState plant, EnumPlantType plantType, CreativeTabs tab,
+    public ItemExAstrisSeed(String name, IBlockState plant, EnumPlantType plantType, CreativeTabs tab,
             EnumRarity rarity, boolean hasEffect) {
         super(name, tab, rarity, hasEffect);
         this.plantType = plantType;
         this.plant = plant;
     }
 
-    public ExAstrisItemSeed setPlantType(EnumPlantType plantType) {
+    public ItemExAstrisSeed setPlantType(EnumPlantType plantType) {
         this.plantType = plantType;
         return this;
     }

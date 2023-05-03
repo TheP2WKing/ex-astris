@@ -8,13 +8,12 @@ import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.EnumPlantType;
 import net.thep2wking.exastris.api.ExAstrisItemBase;
 import net.thep2wking.exastris.api.ExAstrisItemBlockBase;
-
-import net.thep2wking.exastris.api.ExAstrisItemSeed;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier0;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
 import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
+import net.thep2wking.exastris.content.item.seed.ItemExAstrisSeed;
 import net.thep2wking.exastris.content.item.seed.ItemChorusSeed;
 import net.thep2wking.exastris.content.item.seed.ItemPodzolSeed;
 import net.thep2wking.exastris.util.handler.RarityHandler;
@@ -58,7 +57,7 @@ public class ExAstrisItems {
 
         public static final Item SEEDS_PODZOL = new ItemPodzolSeed("seeds_podzol",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
-        public static final Item SEEDS_FERN = new ExAstrisItemSeed("seeds_fern",
+        public static final Item SEEDS_FERN = new ItemExAstrisSeed("seeds_fern",
                         Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE,
                                         BlockTallGrass.EnumType.FERN),
                         EnumPlantType.Plains, ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);

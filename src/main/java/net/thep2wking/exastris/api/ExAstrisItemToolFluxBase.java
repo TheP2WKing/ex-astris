@@ -11,11 +11,11 @@ import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisItems;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
-public class ExAstrisItemFluxBase extends ItemToolFlux implements IHasModel {
+public class ExAstrisItemToolFluxBase extends ItemToolFlux implements IHasModel {
     private final String name;
     private final CreativeTabs tab;
 
-    public ExAstrisItemFluxBase(String name, CreativeTabs tab, ToolMaterial toolMaterial, int totalEnergy,
+    public ExAstrisItemToolFluxBase(String name, CreativeTabs tab, ToolMaterial toolMaterial, int totalEnergy,
             int totalTransfer, int rfPerUseBase, int rfPerUseCharged, int attackDamageBase, int attackDamageCharged,
             float baseEfficiency) {
         super(0, toolMaterial);

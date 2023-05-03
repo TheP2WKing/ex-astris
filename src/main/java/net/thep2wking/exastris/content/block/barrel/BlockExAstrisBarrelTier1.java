@@ -63,7 +63,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     //private final AxisAlignedBB newBoundingBox = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
 
     @SuppressWarnings("all")
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumBarrelTier1.class);
+    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier1.class);
 
     @SuppressWarnings("unchecked")
     public BlockExAstrisBarrelTier1(String groupName, CreativeTabs tab, Material material, SoundType sound,
@@ -85,7 +85,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
         setResistance(this.resistance);
         setLightLevel(this.lightLevel);
         setCreativeTab(this.tab);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumBarrelTier1.STONE));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier1.STONE));
         ExAstrisBlocks.BLOCKS.add(this);
     }
 
@@ -97,7 +97,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
 
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (EnumBarrelTier1 type : EnumBarrelTier1.values()) {
+        for (EnumExAstrisBarrelTier1 type : EnumExAstrisBarrelTier1.values()) {
             items.add(new ItemStack(this, 1, type.getMeta()));
         }
     }
@@ -111,14 +111,14 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     @SuppressWarnings("unchecked")
     @Override
     public int getMetaFromState(IBlockState state) {
-        EnumBarrelTier1 type = (EnumBarrelTier1) state.getValue(VARIANT);
+        EnumExAstrisBarrelTier1 type = (EnumExAstrisBarrelTier1) state.getValue(VARIANT);
         return type.getMeta();
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, EnumBarrelTier1.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumExAstrisBarrelTier1.values()[meta]);
     }
 
     @Override
@@ -135,7 +135,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerModels() {
-        for (EnumBarrelTier1 type : EnumBarrelTier1.values()) {
+        for (EnumExAstrisBarrelTier1 type : EnumExAstrisBarrelTier1.values()) {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getMeta(),
                     new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getMaterialType(),
                             "inventory"));
