@@ -16,14 +16,14 @@ public class ItemBlockExAstrisBarrelTier0 extends ExAstrisMetaItemBlockBase {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         int meta = stack.getItemDamage();
-        EnumBarrelTier0 type = EnumBarrelTier0.values()[meta];
+        EnumExAstrisBarrelTier0 type = EnumExAstrisBarrelTier0.values()[meta];
         return "tile." + ExAstris.PREFIX + "barrel" + "_" + type.getMaterialType();
     }
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab)) {
-            for (EnumBarrelTier0 type : EnumBarrelTier0.values()) {
+            for (EnumExAstrisBarrelTier0 type : EnumExAstrisBarrelTier0.values()) {
                 list.add(new ItemStack(this, 1, type.getMeta()));
             }
         }
