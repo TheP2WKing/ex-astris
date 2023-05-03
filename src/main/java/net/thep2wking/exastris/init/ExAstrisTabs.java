@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 
 public class ExAstrisTabs {
-    public static final CreativeTabs EXASTRIS_TAB = new CreativeTabs(ExAstris.MODID + ".tab") {
+    public static final CreativeTabs EXASTRIS_TAB = new CreativeTabs(ExAstris.MODID + ".name") {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
