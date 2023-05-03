@@ -9,8 +9,8 @@ import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.api.ExAstrisMetaItemBlockBase;
 
 public class ItemBlockExAstrisBarrelTier2 extends ExAstrisMetaItemBlockBase {
-    public ItemBlockExAstrisBarrelTier2(Block block, EnumRarity rarity, boolean hasEffect, int tooltipLines) {
-        super(block, rarity, hasEffect, tooltipLines);
+    public ItemBlockExAstrisBarrelTier2(Block block, EnumRarity rarity, boolean hasEffect) {
+        super(block, rarity, hasEffect);
     }
 
     @Override

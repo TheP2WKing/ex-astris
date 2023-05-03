@@ -21,9 +21,8 @@ import net.thep2wking.exastris.api.ExAstrisItemBase;
 public class ItemChorusSeed extends ExAstrisItemBase implements IPlantable {
     private final IBlockState plant;
 
-    public ItemChorusSeed(String name, IBlockState plant, CreativeTabs tab, EnumRarity rarity, boolean hasEffect,
-            int tooltipLines) {
-        super(name, tab, rarity, hasEffect, tooltipLines);
+    public ItemChorusSeed(String name, IBlockState plant, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
+        super(name, tab, rarity, hasEffect);
         this.plant = plant;
     }
 

@@ -26,58 +26,43 @@ public class ExAstrisItems {
         public static final List<Item> ITEMS = new ArrayList<Item>();
 
         public static final ItemBlock BARREL_T0 = new ItemBlockExAstrisBarrelTier0(ExAstrisBlocks.BLOCK_BARREL_T0,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
         public static final ItemBlock BARREL_T1 = new ItemBlockExAstrisBarrelTier1(ExAstrisBlocks.BLOCK_BARREL_T1,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
         public static final ItemBlock BARREL_T2 = new ItemBlockExAstrisBarrelTier2(ExAstrisBlocks.BLOCK_BARREL_T2,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
 
         public static final ItemBlock HARD_STONE = new ExAstrisItemBlockBase(ExAstrisBlocks.BLOCK_HARD_STONE,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
         public static final ItemBlock DOUBLE_HARD_STONE = new ExAstrisItemBlockBase(
                         ExAstrisBlocks.BLOCK_DOUBLE_HARD_STONE,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
         public static final ItemBlock TRIPLE_HARD_STONE = new ExAstrisItemBlockBase(
                         ExAstrisBlocks.BLOCK_TRIPLE_HARD_STONE,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
         public static final ItemBlock QUADRUPLE_HARD_STONE = new ExAstrisItemBlockBase(
                         ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE,
-                        RarityHandler.WHITE,
-                        false, 0);
+                        RarityHandler.WHITE, false);
 
         public static final ItemBlock END_CAKE = new ExAstrisItemBlockBase(
                         ExAstrisBlocks.BLOCK_END_CAKE,
-                        RarityHandler.WHITE,
-                        false, 0);
-
-        //public static final Item PEBBLE_MARBLE = new ExAstrisItemPebble("pebble_marble", ExAstrisTabs.EXASTRIS_TAB,
-        //                RarityHandler.WHITE, false, 0);
-        //public static final Item PEBBLE_LIMESTONE = new ExAstrisItemPebble("pebble_limestone",
-        //                ExAstrisTabs.EXASTRIS_TAB,
-        //                RarityHandler.WHITE, false, 0);
+                        RarityHandler.WHITE, false);
 
         public static final Item PEBBLES = new ItemExAstrisPebble("pebble", ExAstrisTabs.EXASTRIS_TAB,
-        RarityHandler.WHITE, false);
-
+                        RarityHandler.WHITE, false);
         public static final Item DOLLS = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
                         RarityHandler.WHITE, false);
 
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false, 0);
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 
         public static final Item SEEDS_PODZOL = new ItemPodzolSeed("seeds_podzol",
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false, 0);
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
         public static final Item SEEDS_FERN = new ExAstrisItemSeed("seeds_fern",
                         Blocks.TALLGRASS.getDefaultState().withProperty(BlockTallGrass.TYPE,
                                         BlockTallGrass.EnumType.FERN),
-                        EnumPlantType.Plains, ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false, 0);
+                        EnumPlantType.Plains, ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
         public static final Item SEEDS_CHORUS = new ItemChorusSeed("seeds_chorus",
                         Blocks.CHORUS_FLOWER.getDefaultState().withProperty(BlockChorusFlower.AGE, 0),
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false, 0);
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 }

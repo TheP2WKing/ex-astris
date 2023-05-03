@@ -12,7 +12,7 @@ public class ExAstrisFluids {
     private static final ResourceLocation FLOW = new ResourceLocation(ExAstris.MODID, "blocks/fluid_flow");
 
     public static final Fluid PEACEWATER = new ExAstrisFluidBase("peacewater", STILL, FLOW, 65527, 300, RarityHandler.WHITE);
-    public static final Fluid SLIME = new ExAstrisFluidBase("slime", STILL, FLOW, 10154118, 300, RarityHandler.GREEN);
+    public static final Fluid SLIME = new ExAstrisFluidBase("slime", STILL, FLOW, 10154118, 300, RarityHandler.WHITE);
 
     public static void registerFluids() {
         registerFluid(PEACEWATER);

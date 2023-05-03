@@ -38,7 +38,6 @@ public class ExAstrisBlocks {
         public static final Block BLOCK_TRIPLE_HARD_STONE = new ExAstrisBlockBase("triple_hard_stone",
                         ExAstrisTabs.EXASTRIS_TAB,
                         Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 150f, 6000f, 0);
-
         public static final Block BLOCK_QUADRUPLE_HARD_STONE = new BlockQuadrupleHardStone("quadruple_hard_stone",
                         ExAstrisTabs.EXASTRIS_TAB,
                         Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 200f, 6000f, 0);

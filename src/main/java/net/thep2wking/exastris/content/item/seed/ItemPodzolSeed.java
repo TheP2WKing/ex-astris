@@ -19,8 +19,8 @@ import net.thep2wking.exastris.api.ExAstrisItemBase;
 
 public class ItemPodzolSeed extends ExAstrisItemBase {
 
-    public ItemPodzolSeed(String name, CreativeTabs tab, EnumRarity rarity, boolean hasEffect, int tooltipLines) {
-        super(name, tab, rarity, hasEffect, tooltipLines);
+    public ItemPodzolSeed(String name, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
+        super(name, tab, rarity, hasEffect);
     }
 
     @Override

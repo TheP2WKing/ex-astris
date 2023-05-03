@@ -21,9 +21,8 @@ public class ExAstrisItemSeed extends ExAstrisItemBase implements IPlantable {
     private EnumPlantType plantType;
 
     public ExAstrisItemSeed(String name, IBlockState plant, EnumPlantType plantType, CreativeTabs tab,
-            EnumRarity rarity, boolean hasEffect,
-            int tooltipLines) {
-        super(name, tab, rarity, hasEffect, tooltipLines);
+            EnumRarity rarity, boolean hasEffect) {
+        super(name, tab, rarity, hasEffect);
         this.plantType = plantType;
         this.plant = plant;
     }
