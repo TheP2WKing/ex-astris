@@ -337,7 +337,7 @@ public class RecipesExAstris {
 
                 GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "end_cake"), null,
                                 new ItemStack(ExAstrisBlocks.BLOCK_END_CAKE, 1, 0),
-                                "ABA", "ACA", "ABA", 'A', new ItemStack(Items.ENDER_EYE, 1, 0), 'B',
+                                "AAA", "BCB", "AAA", 'A', new ItemStack(Items.ENDER_EYE, 1, 0), 'B',
                                 new ItemStack(Items.END_CRYSTAL, 1, 0), 'C', new ItemStack(Items.CAKE, 1, 0));
 
                 ExNihiloRegistryManager.HAMMER_REGISTRY.register("stoneBricks",
