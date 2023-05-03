@@ -1,0 +1,6 @@
+{
+	"parent": "exastris:item/hammer_flux",
+	"textures": {
+		"layer0": "exastris:items/hammer_flux_active"
+	}
+}

@@ -1,6 +1,0 @@
-{
-	"parent": "exastris:item/hammer_rf",
-	"textures": {
-		"layer0": "exastris:items/hammer_rf_empowered"
-	}
-}

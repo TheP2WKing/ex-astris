@@ -1,0 +1,6 @@
+{
+	"parent": "exastris:item/crook_flux",
+	"textures": {
+		"layer0": "exastris:items/crook_flux_empowered"
+	}
+}

@@ -51,8 +51,8 @@ tile.exastris:barrel_purpur.name=Purpur Barrel
 tile.exastris:barrel_iron.name=Iron Barrel
 tile.exastris:barrel_gold.name=Gold Barrel
 
-item.exastris:hammer_rf.name=Flux-Infused SledgeHammer
-item.exastris:crook_rf.name=Flux-Infused Crook
+item.exastris:hammer_flux.name=Flux-Infused SledgeHammer
+item.exastris:crook_flux.name=Flux-Infused Crook
 
 item.exastris:doll_villager.name=Trading Doll
 item.exastris:doll_villager.tip=Drop in a barrel of peacewater to spawn Villager

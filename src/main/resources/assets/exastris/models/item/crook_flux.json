@@ -1,20 +1,20 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "exastris:items/crook_rf"
+		"layer0": "exastris:items/crook_flux"
 	},
 	"overrides": [
 		{
 			"predicate": {
 				"active": 1.0
 			},
-			"model": "exastris:item/crook_rf_active"
+			"model": "exastris:item/crook_flux_active"
 		},
 		{
 			"predicate": {
 				"empowered": 1.0
 			},
-			"model": "exastris:item/crook_rf_empowered"
+			"model": "exastris:item/crook_flux_empowered"
 		}
 	]
 }
