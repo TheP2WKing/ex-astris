@@ -47,11 +47,11 @@ public class RecipesChisel {
                     "stone", new BlockInfo(ChiselBlocks.basalt2, 7));
         }
 
-        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "marble_block_from_pebble"), null,
+        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "marble_from_pebble"), null,
                 new ItemStack(ChiselBlocks.marble2, 1, 7),
                 "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 2));
 
-        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "limestone_block_from_pebble"), null,
+        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "limestone_from_pebble"), null,
                 new ItemStack(ChiselBlocks.limestone2, 1, 7),
                 "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 3));
 

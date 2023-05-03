@@ -63,13 +63,12 @@ item.exastris:hammer_flux.name=Flux-Infused SledgeHammer
 item.exastris:crook_flux.name=Flux-Infused Crook
 
 item.exastris:pebble_netherrack.name=Netherrack Pebble
-item.exastris:pebble_endstone.name=Endstone Pebble
+item.exastris:pebble_endstone.name=End Stone Pebble
 item.exastris:pebble_marble.name=Marble Pebble
 item.exastris:pebble_limestone.name=Limestone Pebble
 
 item.exastris:doll_villager.name=Trading Doll
 item.exastris:doll_villager.tip=Drop in a barrel of peacewater to spawn Villager
-
 item.exastris:doll_evoker.name=Undying Doll
 item.exastris:doll_evoker.tip=Drop in a barrel of witchwater to spawn Evoker
 

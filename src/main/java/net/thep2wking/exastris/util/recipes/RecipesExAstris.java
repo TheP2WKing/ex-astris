@@ -402,5 +402,40 @@ public class RecipesExAstris {
                 ExNihiloRegistryManager.FLUID_BLOCK_TRANSFORMER_REGISTRY.register(ModFluids.fluidWitchwater,
                                 new ItemInfo(Item.getItemFromBlock(Blocks.RED_FLOWER), 3),
                                 new ItemInfo(Item.getItemFromBlock(Blocks.DOUBLE_PLANT), 5));
+
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "netherrack_from_pebble"), null,
+                                new ItemStack(Blocks.NETHERRACK, 1, 0),
+                                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 0));
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "end_stone_from_pebble"), null,
+                                new ItemStack(Blocks.END_STONE, 1, 0),
+                                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 1));
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.netherrackCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.75f, BlockSieve.MeshType.STRING.getID());
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.netherrackCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.5f, BlockSieve.MeshType.STRING.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.netherrackCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.75f, BlockSieve.MeshType.FLINT.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.netherrackCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.5f, BlockSieve.MeshType.IRON.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.netherrackCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.25f, BlockSieve.MeshType.DIAMOND.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.endstoneCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.75f, BlockSieve.MeshType.STRING.getID());
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.endstoneCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.5f, BlockSieve.MeshType.STRING.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.endstoneCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.75f, BlockSieve.MeshType.FLINT.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.endstoneCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.5f, BlockSieve.MeshType.IRON.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(ModBlocks.endstoneCrushed)),
+                                new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.25f, BlockSieve.MeshType.DIAMOND.getID());
         }
 }
