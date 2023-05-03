@@ -1,0 +1,10 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cSpell.enableFiletypes": [
+        "!java",
+        "!json"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.dependency.packagePresentation": "hierarchical",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}

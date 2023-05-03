@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "normal": {
+            "model": "exastris:block_barrel2"
+        },
+        "variant=iron": {
+            "model": "exastris:barrel_iron"
+        },
+        "variant=gold": {
+            "model": "exastris:barrel_gold"
+        }
+    }
+}

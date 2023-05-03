@@ -1,0 +1,34 @@
+{
+    "variants": {
+        "normal": {
+            "model": "exastris:block_barrel1"
+        },
+        "variant=stone": {
+            "model": "exastris:barrel_stone"
+        },
+        "variant=cobblestone": {
+            "model": "exastris:barrel_cobblestone"
+        },
+        "variant=stone_bricks": {
+            "model": "exastris:barrel_stone_bricks"
+        },
+        "variant=sandstone": {
+            "model": "exastris:barrel_sandstone"
+        },
+        "variant=bricks": {
+            "model": "exastris:barrel_bricks"
+        },
+        "variant=nether_brick": {
+            "model": "exastris:barrel_nether_brick"
+        },
+        "variant=quartz": {
+            "model": "exastris:barrel_quartz"
+        },
+        "variant=purpur": {
+            "model": "exastris:barrel_purpur"
+        },
+        "variant=glass": {
+            "model": "exastris:barrel_glass"
+        }
+    }
+}

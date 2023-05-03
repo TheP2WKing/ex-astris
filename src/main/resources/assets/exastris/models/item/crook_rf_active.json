@@ -1,0 +1,6 @@
+{
+	"parent": "exastris:item/crook_rf",
+	"textures": {
+		"layer0": "exastris:items/crook_rf_active"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "exastris:items/crook_rf"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"active": 1.0
+			},
+			"model": "exastris:item/crook_rf_active"
+		},
+		{
+			"predicate": {
+				"empowered": 1.0
+			},
+			"model": "exastris:item/crook_rf_empowered"
+		}
+	]
+}

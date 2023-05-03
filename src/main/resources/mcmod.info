@@ -1,0 +1,14 @@
+[
+{
+  "modid": "exastris",
+  "name": "Ex Astris",
+  "description": "Ex Nihilo Addon...again?",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "authorList": ["TheP2WKing"],
+  "credits": "insaneau and LoveHoly for creating Ex Astris.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

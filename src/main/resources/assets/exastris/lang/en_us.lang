@@ -1,0 +1,69 @@
+itemGroup.exastris.tab=Ex Astris
+
+tile.witchwater.name=Witchwater
+
+tooltip.exastris.shift=Press §e§oShift§r§7 for Info
+tooltip.exastris.ctrl=Press §e§oCtrl§r§7 for Info
+
+top.exastris.transforming=Transforming to
+top.exastris.refill=Refill with
+top.exastris.bites=Bites left
+
+jei.exastris.transformation.desc1=Block must be placed In-World
+jei.exastris.transformation.desc2=Time:
+jei.exastris.transformation.desc3=Time to transform
+
+jei.exastris.transformation.category=Block Transformation
+jei.exastris.fluid_doll_transform.category=Doll Mob Spawning
+
+item.exastris:pebble_marble.name=Marble Pebble
+item.exastris:pebble_limestone.name=Limestone Pebble
+
+item.exastris:seeds_podzol.name=Podzol Seeds
+item.exastris:seeds_fern.name=Fern Seeds
+item.exastris:seeds_chorus.name=Chorus Flower Seed
+
+tile.exastris:hard_stone.name=Hard Stone
+tile.exastris:double_hard_stone.name=Double Hard Stone
+tile.exastris:triple_hard_stone.name=Triple Hard Stone
+tile.exastris:quadruple_hard_stone.name=Quadruple Hard Stone
+
+tile.exastris:end_cake.name=End Cake
+
+tile.exastris:barrel_oak_wood.name=Oak Wood Barrel
+tile.exastris:barrel_spruce_wood.name=Spruce Wood Barrel
+tile.exastris:barrel_birch_wood.name=Birch Wood Barrel
+tile.exastris:barrel_jungle_wood.name=Jungle Wood Barrel
+tile.exastris:barrel_acacia_wood.name=Acacia Wood Barrel
+tile.exastris:barrel_dark_oak_wood.name=Dark Oak Wood Barrel
+
+tile.exastris:barrel_stone.name=Stone Barrel
+tile.exastris:barrel_cobblestone.name=Cobblestone Barrel
+tile.exastris:barrel_stone_bricks.name=Stone Bricks Barrel
+tile.exastris:barrel_sandstone.name=Sandstone Barrel
+tile.exastris:barrel_bricks.name=Bricks Barrel
+tile.exastris:barrel_nether_brick.name=Nether Brick Barrel
+tile.exastris:barrel_quartz.name=Quartz Barrel
+tile.exastris:barrel_purpur.name=Purpur Barrel
+
+tile.exastris:barrel_iron.name=Iron Barrel
+tile.exastris:barrel_gold.name=Gold Barrel
+
+item.exastris:hammer_rf.name=Flux-Infused SledgeHammer
+item.exastris:crook_rf.name=Flux-Infused Crook
+
+item.exastris:doll_villager.name=Trading Doll
+item.exastris:doll_villager.tip=Drop in a barrel of peacewater to spawn Villager
+
+item.exastris:doll_evoker.name=Undying Doll
+item.exastris:doll_evoker.tip=Drop in a barrel of witchwater to spawn Evoker
+
+item.exastris:shard_ice.name=Ice Shard
+
+exastris:peacewater=Peacewater
+tile.exastris:peacewater.name=Peacewater
+fluid.exastris:peacewater=Peacewater
+
+exastris:slime=Liquid Slime
+tile.exastris:slime.name=Liquid Slime
+fluid.exastris:slime=Liquid Slime

@@ -1,0 +1,25 @@
+{
+    "variants": {
+        "normal": {
+            "model": "exastris:block_barrel0"
+        },
+        "variant=oak_wood": {
+            "model": "exastris:barrel_oak_wood"
+        },
+        "variant=spruce_wood": {
+            "model": "exastris:barrel_spruce_wood"
+        },
+        "variant=birch_wood": {
+            "model": "exastris:barrel_birch_wood"
+        },
+        "variant=jungle_wood": {
+            "model": "exastris:barrel_jungle_wood"
+        },
+        "variant=acacia_wood": {
+            "model": "exastris:barrel_acacia_wood"
+        },
+        "variant=dark_oak_wood": {
+            "model": "exastris:barrel_dark_oak_wood"
+        }
+    }
+}
