@@ -16,6 +16,8 @@ jei.exastris.transformation.desc3=Time to transform
 jei.exastris.transformation.category=Block Transformation
 jei.exastris.fluid_doll_transform.category=Doll Mob Spawning
 
+item.exastris:pebble_netherrack.name=Netherrack Pebble
+item.exastris:pebble_endstone.name=Endstone Pebble
 item.exastris:pebble_marble.name=Marble Pebble
 item.exastris:pebble_limestone.name=Limestone Pebble
 

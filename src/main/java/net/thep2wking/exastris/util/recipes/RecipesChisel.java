@@ -22,24 +22,24 @@ public class RecipesChisel {
     public static void register() {
         if (ExAstrisConfig.MODULES.CHISEL.MARBLE_PEBBLE_SIEVING) {
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_MARBLE, 0), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_MARBLE, 0), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_MARBLE, 0), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_MARBLE, 0), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
         }
 
         if (ExAstrisConfig.MODULES.CHISEL.LIMESTONE_PEBBLE_SIEVING) {
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_LIMESTONE, 0), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_LIMESTONE, 0), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_LIMESTONE, 0), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
             ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLE_LIMESTONE, 0), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
+                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
         }
 
         if (ExAstrisConfig.MODULES.CHISEL.BASALT_FLUID_ITEM_TRANSFORM) {
@@ -49,11 +49,11 @@ public class RecipesChisel {
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "marble_block_from_pebble"), null,
                 new ItemStack(ChiselBlocks.marble2, 1, 7),
-                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLE_MARBLE, 1, 0));
+                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 2));
 
         GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "limestone_block_from_pebble"), null,
                 new ItemStack(ChiselBlocks.limestone2, 1, 7),
-                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLE_LIMESTONE, 1, 0));
+                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 3));
 
         OreDictionary.registerOre("plankWoodOak", new ItemStack(Item.getByNameOrId("chisel:planks-oak"), 1, 0));
         OreDictionary.registerOre("plankWoodOak", new ItemStack(Item.getByNameOrId("chisel:planks-oak"), 1, 1));

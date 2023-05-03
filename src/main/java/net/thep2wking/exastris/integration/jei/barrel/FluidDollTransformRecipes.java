@@ -61,12 +61,12 @@ public class FluidDollTransformRecipes extends FluidDollTransformCompat {
         list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:villager"),
                 Util.getBucketStack(
                         new FluidStack(FluidRegistry.getFluid("peacewater"), Fluid.BUCKET_VOLUME).getFluid()),
-                new ItemStack(ExAstrisItems.DOLL, 1, 0)));
+                new ItemStack(ExAstrisItems.DOLLS, 1, 0)));
 
         list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:evocation_illager"),
                 Util.getBucketStack(
                         new FluidStack(FluidRegistry.getFluid("witchwater"), Fluid.BUCKET_VOLUME).getFluid()),
-                new ItemStack(ExAstrisItems.DOLL, 1, 1)));
+                new ItemStack(ExAstrisItems.DOLLS, 1, 1)));
 
         if (Loader.isModLoaded("thermalfoundation")) {
             list.add(new FluidDollTransformWrapper(addNBTItem("thermalfoundation:blizz"),

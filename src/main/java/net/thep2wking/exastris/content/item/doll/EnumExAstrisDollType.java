@@ -23,7 +23,8 @@ public enum EnumExAstrisDollType {
     public final String fluidName;
     public final double posYCorrection;
 
-    EnumExAstrisDollType(int meta, String name, String modid, String entityName, String fluidName, double posYCorrection) {
+    EnumExAstrisDollType(int meta, String name, String modid, String entityName, String fluidName,
+            double posYCorrection) {
         this.meta = meta;
         this.name = name;
         this.modid = modid;

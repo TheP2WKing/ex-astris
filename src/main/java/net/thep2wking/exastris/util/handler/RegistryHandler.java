@@ -51,11 +51,12 @@ public class RegistryHandler {
         }
 
         if(Loader.isModLoaded("chisel")) {
-            event.getRegistry().register(ExAstrisItems.PEBBLE_MARBLE);
-            event.getRegistry().register(ExAstrisItems.PEBBLE_LIMESTONE);
+            //event.getRegistry().register(ExAstrisItems.PEBBLE_MARBLE);
+            //event.getRegistry().register(ExAstrisItems.PEBBLE_LIMESTONE);
         }
 
-        event.getRegistry().register(ExAstrisItems.DOLL);
+        event.getRegistry().register(ExAstrisItems.PEBBLES);
+        event.getRegistry().register(ExAstrisItems.DOLLS);
 
         event.getRegistry().register(ExAstrisItems.SHARD_ICE);
 

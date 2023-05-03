@@ -279,13 +279,13 @@ public class RecipesExAstris {
                                 new ItemStack(Item.getItemFromBlock(Blocks.SAND), 1, 0), 0, 1f, 1f);
 
                 GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "doll_villager"), null,
-                                new ItemStack(ExAstrisItems.DOLL, 1, 0),
+                                new ItemStack(ExAstrisItems.DOLLS, 1, 0),
                                 "ABA", "CDC", "AEA", 'A', "gemEmerald", 'B', "ingotIron", 'C', "dustGlowstone", 'D',
                                 new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 5), 'E',
                                 new ItemStack(Item.getItemFromBlock(Blocks.RED_FLOWER), 1, 0));
 
                 GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "doll_evoker"), null,
-                                new ItemStack(ExAstrisItems.DOLL, 1, 1),
+                                new ItemStack(ExAstrisItems.DOLLS, 1, 1),
                                 "ABA", "CDC", "AEA", 'A', "dyeGray", 'B', "gemEmerald", 'C', "dustGlowstone", 'D',
                                 new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 5), 'E',
                                 new ItemStack(Item.getItemFromBlock(Blocks.SAPLING), 1, 5));

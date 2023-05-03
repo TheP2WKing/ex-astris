@@ -81,11 +81,11 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
             Entity spawnee = new EntityVillager(world, calcRandomVillagerProfession());
             if (spawnee != null) {
                 spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
-                return world.spawnEntity(spawnee);  
+                return world.spawnEntity(spawnee);
             }
         }
         Entity spawnee = EntityList.createEntityByIDFromName(new ResourceLocation(type.entityName), world);
-        if(spawnee != null) {
+        if (spawnee != null) {
             spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
             return world.spawnEntity(spawnee);
         } else {

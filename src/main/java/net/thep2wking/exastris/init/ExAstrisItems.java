@@ -8,12 +8,13 @@ import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.EnumPlantType;
 import net.thep2wking.exastris.api.ExAstrisItemBase;
 import net.thep2wking.exastris.api.ExAstrisItemBlockBase;
-import net.thep2wking.exastris.api.ExAstrisItemPebble;
+
 import net.thep2wking.exastris.api.ExAstrisItemSeed;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier0;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
+import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
 import net.thep2wking.exastris.content.item.seed.ItemChorusSeed;
 import net.thep2wking.exastris.content.item.seed.ItemPodzolSeed;
 import net.thep2wking.exastris.util.handler.RarityHandler;
@@ -55,13 +56,16 @@ public class ExAstrisItems {
                         RarityHandler.WHITE,
                         false, 0);
 
-        public static final Item PEBBLE_MARBLE = new ExAstrisItemPebble("pebble_marble", ExAstrisTabs.EXASTRIS_TAB,
-                        RarityHandler.WHITE, false, 0);
-        public static final Item PEBBLE_LIMESTONE = new ExAstrisItemPebble("pebble_limestone",
-                        ExAstrisTabs.EXASTRIS_TAB,
-                        RarityHandler.WHITE, false, 0);
+        //public static final Item PEBBLE_MARBLE = new ExAstrisItemPebble("pebble_marble", ExAstrisTabs.EXASTRIS_TAB,
+        //                RarityHandler.WHITE, false, 0);
+        //public static final Item PEBBLE_LIMESTONE = new ExAstrisItemPebble("pebble_limestone",
+        //                ExAstrisTabs.EXASTRIS_TAB,
+        //                RarityHandler.WHITE, false, 0);
 
-        public static final Item DOLL = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
+        public static final Item PEBBLES = new ItemExAstrisPebble("pebble", ExAstrisTabs.EXASTRIS_TAB,
+        RarityHandler.WHITE, false);
+
+        public static final Item DOLLS = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
                         RarityHandler.WHITE, false);
 
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",
