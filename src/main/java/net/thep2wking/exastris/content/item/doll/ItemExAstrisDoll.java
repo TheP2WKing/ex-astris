@@ -1,7 +1,6 @@
 package net.thep2wking.exastris.content.item.doll;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 
 import javax.annotation.Nonnull;
@@ -16,11 +15,12 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntityEvoker;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -38,7 +38,7 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
     private final EnumRarity rarity;
     private final boolean hasEffect;
 
-    private static final Int2ObjectMap<DollTypeExAstris> exAstrisTypes = new Int2ObjectArrayMap<>();
+    private static final Int2ObjectMap<EnumExAstrisDollType> EXASTRIS_DOLL_TYPES = new Int2ObjectArrayMap<>();
 
     public ItemExAstrisDoll(String groupName, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
         this.groupName = groupName;
@@ -46,41 +46,46 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
         this.rarity = rarity;
         this.hasEffect = hasEffect;
         setUnlocalizedName(ExAstris.PREFIX + this.groupName);
-        // setRegistryName(ExAstris.PREFIX + this.name);
         setCreativeTab(this.tab);
         setHasSubtypes(true);
-
-        exAstrisTypes.put(DollTypeExAstris.VILLAGER.meta, DollTypeExAstris.VILLAGER);
-        exAstrisTypes.put(DollTypeExAstris.EVOKER.meta, DollTypeExAstris.EVOKER);
-
         ExAstrisItems.ITEMS.add(this);
+
+        EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.VILLAGER.meta, EnumExAstrisDollType.VILLAGER);
+        EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.EVOKER.meta, EnumExAstrisDollType.EVOKER);
     }
 
     @Override
     public Fluid getSpawnFluid(ItemStack stack) {
-        Fluid fluid = FluidRegistry.getFluid(exAstrisTypes.get(stack.getMetadata()).fluidname);
+        Fluid fluid = FluidRegistry.getFluid(EXASTRIS_DOLL_TYPES.get(stack.getMetadata()).fluidName);
         if (fluid != null)
             return fluid;
         else
             return ModFluids.fluidWitchwater;
     }
 
+    public static int calcRandomVillagerProfession() {
+        Random rand = new Random();
+        int min = 0;
+        int max = 5;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
+    }
+
     @Override
+    @SuppressWarnings("all")
     public boolean spawnMob(ItemStack stack, World world, BlockPos pos) {
-        DollTypeExAstris type = exAstrisTypes.get(stack.getMetadata());
+        EnumExAstrisDollType type = EXASTRIS_DOLL_TYPES.get(stack.getMetadata());
         if (type == null)
             return false;
-
-        if (type.name == "villager") {
-            Random rand = new Random();
-            int min = 0;
-            int max = 5;
-            int randomNum = rand.nextInt((max - min) + 1) + min;
-            Entity spawnee = new EntityVillager(world, randomNum);
-            spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
-            return world.spawnEntity(spawnee);
-        } else if (type.name == "evoker"){
-            Entity spawnee = new EntityEvoker(world);
+        if (type.name == type.VILLAGER.name) {
+            Entity spawnee = new EntityVillager(world, calcRandomVillagerProfession());
+            if (spawnee != null) {
+                spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
+                return world.spawnEntity(spawnee);  
+            }
+        }
+        Entity spawnee = EntityList.createEntityByIDFromName(new ResourceLocation(type.entityName), world);
+        if(spawnee != null) {
             spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
             return world.spawnEntity(spawnee);
         } else {
@@ -91,25 +96,25 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
     @Override
     @SuppressWarnings("all")
     public String getUnlocalizedName(ItemStack stack) {
-        return "item." + ExAstris.PREFIX + groupName + "_" + DollTypeExAstris.getByMeta(stack.getMetadata()).name;
+        return "item." + ExAstris.PREFIX + groupName + "_" + EnumExAstrisDollType.getByMeta(stack.getMetadata()).name;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(@Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab))
-            for (DollTypeExAstris type : exAstrisTypes.values()) {
+            for (EnumExAstrisDollType type : EXASTRIS_DOLL_TYPES.values()) {
                 list.add(new ItemStack(this, 1, type.meta));
             }
     }
 
-
     @Override
     @SideOnly(Side.CLIENT)
     public void registerModels() {
-        for (DollTypeExAstris type : DollTypeExAstris.values()) {
+        for (EnumExAstrisDollType type : EnumExAstrisDollType.values()) {
             ModelLoader.setCustomModelResourceLocation(this, type.meta,
-                    new ModelResourceLocation(ExAstris.PREFIX + groupName + "_" + type.name.toLowerCase(Locale.ROOT), "inventory"));
+                    new ModelResourceLocation(ExAstris.PREFIX + groupName + "_" + type.name,
+                            "inventory"));
         }
     }
 
@@ -142,43 +147,11 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
     @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        if (exAstrisTypes.containsKey(stack.getMetadata())) {
+        if (EXASTRIS_DOLL_TYPES.containsKey(stack.getMetadata())) {
             tooltip.add(I18n.format("item." + ExAstris.PREFIX + groupName + "_"
-                    + DollTypeExAstris.getByMeta(stack.getMetadata()).name + ".tip"));
+                    + EnumExAstrisDollType.getByMeta(stack.getMetadata()).name + ".tip"));
         } else {
             tooltip.add(I18n.format("debug.mod_not_installed.desc", DollType.getByMeta(stack.getMetadata()).modid));
-        }
-    }
-
-    public enum DollTypeExAstris {
-        VILLAGER(0, "villager", "minecraft", "peacewater", 2),
-        EVOKER(1, "evoker", "minecraft", "witchwater", 2),
-        ;
-
-        private static final Int2ObjectMap<DollTypeExAstris> ALL_TYPES = new Int2ObjectArrayMap<>();
-
-        static {
-            for (DollTypeExAstris dollType : values()) {
-                ALL_TYPES.put(dollType.meta, dollType);
-            }
-        }
-
-        public final int meta;
-        public final String name;
-        public final String modid;
-        public final String fluidname;
-        public final double posYCorrection;
-
-        DollTypeExAstris(int meta, String name, String modid, String fluidname, double posYCorrection) {
-            this.meta = meta;
-            this.name = name;
-            this.modid = modid;
-            this.fluidname = fluidname;
-            this.posYCorrection = posYCorrection;
-        }
-
-        public static DollTypeExAstris getByMeta(int meta) {
-            return ALL_TYPES.get(meta);
         }
     }
 }
