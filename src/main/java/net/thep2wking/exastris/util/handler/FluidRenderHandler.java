@@ -11,6 +11,7 @@ public class FluidRenderHandler {
     @SubscribeEvent
     public static void registerModel(ModelRegistryEvent event) {
         ExAstrisUtils.addRenderForFluid("peacewater", ExAstrisBlocks.BLOCK_PEACEWATER);
+        ExAstrisUtils.addRenderForFluid("frostwater", ExAstrisBlocks.BLOCK_FROSTWATER);
         ExAstrisUtils.addRenderForFluid("slime", ExAstrisBlocks.BLOCK_SLIME);
     }
 }

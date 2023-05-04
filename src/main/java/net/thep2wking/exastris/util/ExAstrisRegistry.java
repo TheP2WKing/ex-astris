@@ -28,9 +28,12 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_TRIPLE_HARD_STONE);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE);
 
+        ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_FROSTY_DIRT);
+
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_END_CAKE);
 
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_PEACEWATER);
+        ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_FROSTWATER);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_SLIME);
     }
 
@@ -44,6 +47,8 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.DOUBLE_HARD_STONE);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.TRIPLE_HARD_STONE);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.QUADRUPLE_HARD_STONE);
+
+        ExAstrisUtils.registerItemBlock(event, ExAstrisItems.FROSTY_DIRT);
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.END_CAKE);
 
@@ -64,6 +69,7 @@ public class ExAstrisRegistry {
 
     public static void preInitRegistries(FMLPreInitializationEvent event) {
         ExAstrisUtils.registerFluid(ExAstrisFluids.PEACEWATER);
+        ExAstrisUtils.registerFluid(ExAstrisFluids.FROSTWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.SLIME);
     }
 

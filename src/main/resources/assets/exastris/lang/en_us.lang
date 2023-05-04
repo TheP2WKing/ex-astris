@@ -27,6 +27,10 @@ exastris:peacewater=Peacewater
 tile.exastris:peacewater.name=Peacewater
 fluid.exastris:peacewater=Peacewater
 
+exastris:frostwater=Frostwater
+tile.exastris:frostwater.name=Frostwater
+fluid.exastris:frostwater=Frostwater
+
 exastris:slime=Liquid Slime
 tile.exastris:slime.name=Liquid Slime
 fluid.exastris:slime=Liquid Slime
@@ -55,6 +59,8 @@ tile.exastris:hard_stone.name=Hard Stone
 tile.exastris:double_hard_stone.name=Double Hard Stone
 tile.exastris:triple_hard_stone.name=Triple Hard Stone
 tile.exastris:quadruple_hard_stone.name=Quadruple Hard Stone
+
+tile.exastris:frosty_dirt.name=Frosty Dirt
 
 tile.exastris:end_cake.name=End Cake
 

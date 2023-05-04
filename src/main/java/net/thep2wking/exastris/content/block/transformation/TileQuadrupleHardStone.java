@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.transform;
+package net.thep2wking.exastris.content.block.transformation;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;

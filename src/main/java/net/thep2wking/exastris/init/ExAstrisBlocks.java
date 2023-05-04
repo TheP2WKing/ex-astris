@@ -14,7 +14,8 @@ import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier2;
 import net.thep2wking.exastris.content.block.cake.BlockEndCake;
 import net.thep2wking.exastris.content.block.fluid.BlockPeacewater;
-import net.thep2wking.exastris.content.block.transform.BlockQuadrupleHardStone;
+import net.thep2wking.exastris.content.block.transformation.BlockFrostyDirt;
+import net.thep2wking.exastris.content.block.transformation.BlockQuadrupleHardStone;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 
 public class ExAstrisBlocks {
@@ -39,16 +40,21 @@ public class ExAstrisBlocks {
                         ExAstrisTabs.EXASTRIS_TAB,
                         Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 150f, 6000f, 0);
         public static final Block BLOCK_QUADRUPLE_HARD_STONE = new BlockQuadrupleHardStone("quadruple_hard_stone",
-                        ExAstrisTabs.EXASTRIS_TAB,
-                        Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 200f, 6000f, 0);
+                        ExAstrisTabs.EXASTRIS_TAB, Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 200f, 6000f,
+                        0);
+
+        public static final Block BLOCK_FROSTY_DIRT = new BlockFrostyDirt("frosty_dirt",
+                        ExAstrisTabs.EXASTRIS_TAB, Material.GROUND, SoundType.GROUND, 0, EnumToolType.SHOVEL, 1.5f, 1f,
+                        0);
 
         public static final Block BLOCK_END_CAKE = new BlockEndCake("end_cake",
                         ExAstrisTabs.EXASTRIS_TAB,
                         Material.CAKE, SoundType.CLOTH, 0.5f, 0.5f, 0);
 
         public static final BlockFluidClassic BLOCK_PEACEWATER = new BlockPeacewater("peacewater",
-                        ExAstrisFluids.PEACEWATER,
-                        Material.WATER);
+                        ExAstrisFluids.PEACEWATER, Material.WATER);
+        public static final BlockFluidClassic BLOCK_FROSTWATER = new ExAstrisFluidBlockBase("frostwater",
+                        ExAstrisFluids.FROSTWATER, Material.WATER);
         public static final BlockFluidClassic BLOCK_SLIME = new ExAstrisFluidBlockBase("slime", ExAstrisFluids.SLIME,
                         Material.WATER);
 }

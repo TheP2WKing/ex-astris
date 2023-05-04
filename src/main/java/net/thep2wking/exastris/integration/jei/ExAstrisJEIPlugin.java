@@ -53,6 +53,8 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 
         registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0),
                 BlockTransformationCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_FROSTY_DIRT), 1, 0),
+                BlockTransformationCategory.UID);
 
         registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
                 FluidDollTransformCategory.UID);

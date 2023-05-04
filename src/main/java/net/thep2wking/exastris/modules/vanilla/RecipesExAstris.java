@@ -420,7 +420,7 @@ public class RecipesExAstris {
                 ExNihiloRegistryManager.SIEVE_REGISTRY.register("dirt",
                                 new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.25f, BlockSieve.MeshType.DIAMOND.getID());
 
-                        ExNihiloRegistryManager.SIEVE_REGISTRY.register("dirt",
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register("dirt",
                                 new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.5f, BlockSieve.MeshType.IRON.getID());
                 ExNihiloRegistryManager.SIEVE_REGISTRY.register("dirt",
                                 new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.1f, BlockSieve.MeshType.IRON.getID());
@@ -429,5 +429,19 @@ public class RecipesExAstris {
                                 new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.75f, BlockSieve.MeshType.DIAMOND.getID());
                 ExNihiloRegistryManager.SIEVE_REGISTRY.register("dirt",
                                 new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.25f, BlockSieve.MeshType.DIAMOND.getID());
+
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(Blocks.SNOW)),
+                                new ItemInfo(ExAstrisItems.SHARD_ICE, 0), 1f, BlockSieve.MeshType.STRING.getID());
+                ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(Blocks.SNOW)),
+                                new ItemInfo(ExAstrisItems.SHARD_ICE, 0), 0.5f, BlockSieve.MeshType.STRING.getID());
+
+                ExNihiloRegistryManager.FLUID_BLOCK_TRANSFORMER_REGISTRY.register(ExAstrisFluids.FROSTWATER, "dirt",
+                                new BlockInfo(ExAstrisBlocks.BLOCK_FROSTY_DIRT));
+
+                final BlockInfo[] transformingBlocks2 = { new BlockInfo(Blocks.STONE, 0) };
+                final BlockInfo[] blocksToSpawn2 = { };
+
+                ExNihiloRegistryManager.FLUID_TRANSFORM_REGISTRY.register("water", "frostwater", 12000,
+                                transformingBlocks2, blocksToSpawn2);
         }
 }
