@@ -11,8 +11,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.thep2wking.exastris.modules.chisel.RecipesChisel;
 import net.thep2wking.exastris.modules.redstonearsenal.RecipesRedstoneArsenal;
 import net.thep2wking.exastris.modules.vanilla.RecipesExAstris;
+import net.thep2wking.exastris.util.ExAstrisRegistry;
 import net.thep2wking.exastris.util.proxy.CommonProxy;
-import net.thep2wking.exastris.util.registry.ExAstrisRegistry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

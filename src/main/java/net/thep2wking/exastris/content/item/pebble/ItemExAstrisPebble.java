@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
 public class ItemExAstrisPebble extends ItemPebble implements IHasModel {
@@ -25,7 +26,7 @@ public class ItemExAstrisPebble extends ItemPebble implements IHasModel {
     private final EnumRarity rarity;
     private final boolean hasEffect;
 
-    private static final Int2ObjectMap<EnumExAstrisPebbleType> EXASTRIS_PEBLLE_TYPES = new Int2ObjectArrayMap<>();
+    private static final Int2ObjectMap<EnumExAstrisPebbleType> EXASTRIS_PEBBLE_TYPES = new Int2ObjectArrayMap<>();
 
     public ItemExAstrisPebble(String groupName, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
         this.groupName = groupName;
@@ -37,12 +38,12 @@ public class ItemExAstrisPebble extends ItemPebble implements IHasModel {
         setHasSubtypes(true);
         ExAstrisItems.ITEMS.add(this);
 
-        EXASTRIS_PEBLLE_TYPES.put(EnumExAstrisPebbleType.NETHERRACK.meta, EnumExAstrisPebbleType.NETHERRACK);
-        EXASTRIS_PEBLLE_TYPES.put(EnumExAstrisPebbleType.ENDSTONE.meta, EnumExAstrisPebbleType.ENDSTONE);
+        EXASTRIS_PEBBLE_TYPES.put(EnumExAstrisPebbleType.NETHERRACK.meta, EnumExAstrisPebbleType.NETHERRACK);
+        EXASTRIS_PEBBLE_TYPES.put(EnumExAstrisPebbleType.ENDSTONE.meta, EnumExAstrisPebbleType.ENDSTONE);
 
-        if (Loader.isModLoaded("chisel")) {
-            EXASTRIS_PEBLLE_TYPES.put(EnumExAstrisPebbleType.MARBLE.meta, EnumExAstrisPebbleType.MARBLE);
-            EXASTRIS_PEBLLE_TYPES.put(EnumExAstrisPebbleType.LIMESTONE.meta, EnumExAstrisPebbleType.LIMESTONE);
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_CHISEL)) {
+            EXASTRIS_PEBBLE_TYPES.put(EnumExAstrisPebbleType.MARBLE.meta, EnumExAstrisPebbleType.MARBLE);
+            EXASTRIS_PEBBLE_TYPES.put(EnumExAstrisPebbleType.LIMESTONE.meta, EnumExAstrisPebbleType.LIMESTONE);
         }
     }
 
@@ -56,7 +57,7 @@ public class ItemExAstrisPebble extends ItemPebble implements IHasModel {
     @SideOnly(Side.CLIENT)
     public void getSubItems(@Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
         if (this.isInCreativeTab(tab))
-            for (EnumExAstrisPebbleType type : EXASTRIS_PEBLLE_TYPES.values()) {
+            for (EnumExAstrisPebbleType type : EXASTRIS_PEBBLE_TYPES.values()) {
                 list.add(new ItemStack(this, 1, type.meta));
             }
     }
@@ -96,5 +97,4 @@ public class ItemExAstrisPebble extends ItemPebble implements IHasModel {
     public boolean hasEffect(ItemStack stack) {
         return this.hasEffect || stack.isItemEnchanted();
     }
-
 }

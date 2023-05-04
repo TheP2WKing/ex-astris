@@ -14,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public class TOPCompatibility {
     private static boolean registered;
@@ -22,7 +23,7 @@ public class TOPCompatibility {
         if (registered)
             return;
         registered = true;
-        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe",
+        FMLInterModComms.sendFunctionMessage(ExAstrisConstants.MODID_TOP, "getTheOneProbe",
                 "net.thep2wking.exastris.integration.top.TOPCompatibility$GetTheOneProbe");
     }
 

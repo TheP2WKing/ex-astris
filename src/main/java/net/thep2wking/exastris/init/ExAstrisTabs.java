@@ -11,6 +11,7 @@ import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public class ExAstrisTabs {
     public static final CreativeTabs EXASTRIS_TAB = new CreativeTabs(ExAstris.MODID + ".name") {
@@ -20,14 +21,15 @@ public class ExAstrisTabs {
             return new ItemStack(ExAstrisItems.END_CAKE, 1, 0);
         }
 
+        @Override
         public boolean hasSearchBar() {
             return true;
-        };
+        }
 
         @Override
         @SideOnly(Side.CLIENT)
         public ResourceLocation getBackgroundImage() {
-            return new ResourceLocation("minecraft", "textures/gui/container/creative_inventory/tab_item_search.png");
+            return ExAstrisConstants.CREATIVE_TAB_SEARCH;
         }
 
         @Override

@@ -1,7 +1,6 @@
 package net.thep2wking.exastris.content.item.doll;
 
 import java.util.List;
-import java.util.Random;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,6 +29,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
 public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
@@ -63,14 +63,6 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
             return ModFluids.fluidWitchwater;
     }
 
-    public static int calcRandomVillagerProfession() {
-        Random rand = new Random();
-        int min = 0;
-        int max = 5;
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-        return randomNum;
-    }
-
     @Override
     @SuppressWarnings("all")
     public boolean spawnMob(ItemStack stack, World world, BlockPos pos) {
@@ -78,7 +70,7 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
         if (type == null)
             return false;
         if (type.name == type.VILLAGER.name) {
-            Entity spawnee = new EntityVillager(world, calcRandomVillagerProfession());
+            Entity spawnee = new EntityVillager(world, ExAstrisUtils.randomNumberRange(0, 5));
             if (spawnee != null) {
                 spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
                 return world.spawnEntity(spawnee);

@@ -2,12 +2,13 @@ package net.thep2wking.exastris.content.item.pebble;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public enum EnumExAstrisPebbleType {
-    NETHERRACK(0, "netherrack", "minecraft"),
-    ENDSTONE(1, "endstone", "minecraft"),
-    MARBLE(2, "marble", "chisel"),
-    LIMESTONE(3, "limestone", "chisel"),
+    NETHERRACK(0, "netherrack", ExAstrisConstants.MODID_MINECRAFT),
+    ENDSTONE(1, "endstone", ExAstrisConstants.MODID_MINECRAFT),
+    MARBLE(2, "marble", ExAstrisConstants.MODID_CHISEL),
+    LIMESTONE(3, "limestone", ExAstrisConstants.MODID_CHISEL),
     ;
 
     private static final Int2ObjectMap<EnumExAstrisPebbleType> ALL_TYPES = new Int2ObjectArrayMap<>();
