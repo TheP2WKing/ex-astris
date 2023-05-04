@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.recipes;
+package net.thep2wking.exastris.modules.chisel;
 
 import exnihilocreatio.blocks.BlockSieve;
 import exnihilocreatio.registries.manager.ExNihiloRegistryManager;

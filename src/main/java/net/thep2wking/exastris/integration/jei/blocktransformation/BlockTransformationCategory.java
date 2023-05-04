@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.integration.jei.categories;
+package net.thep2wking.exastris.integration.jei.blocktransformation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.thep2wking.exastris.ExAstris;
 
 @SuppressWarnings("unused")
-public class TransformationCategory implements IRecipeCategory<TransformationWrapper> {
+public class BlockTransformationCategory implements IRecipeCategory<BlockTransformationWrapper> {
 	public static final String UID = ExAstris.MODID + ".transformation";
 	public static final String MOD = ExAstris.NAME;
 
@@ -42,7 +42,7 @@ public class TransformationCategory implements IRecipeCategory<TransformationWra
 	private IDrawableAnimated progress;
 	public int transformTime = 100;
 
-	public TransformationCategory(IGuiHelper guiHelper) {
+	public BlockTransformationCategory(IGuiHelper guiHelper) {
 		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 150, 30).addPadding(0, 14, 0, 0).build();
 		this.guiHelper = guiHelper;
 		icon = guiHelper.createDrawableIngredient(new ItemStack(Items.CLOCK));
@@ -90,7 +90,7 @@ public class TransformationCategory implements IRecipeCategory<TransformationWra
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, TransformationWrapper recipeWrapper, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout, BlockTransformationWrapper recipeWrapper, IIngredients ingredients) {
 		List<List<ItemStack>> inputs = ingredients.getInputs(VanillaTypes.ITEM);
 		List<List<FluidStack>> outputFluid = ingredients.getOutputs(VanillaTypes.FLUID);
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();

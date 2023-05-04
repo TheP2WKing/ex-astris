@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.handler;
+package net.thep2wking.exastris.util.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -12,9 +12,10 @@ import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
 import net.thep2wking.exastris.init.ExAstrisRAItems;
+import net.thep2wking.exastris.util.handler.IHasModel;
 
 @Mod.EventBusSubscriber
-public class RegistryHandler {
+public class ExAstrisRegistry {
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(ExAstrisBlocks.BLOCK_BARREL_T0);

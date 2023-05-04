@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.integration.jei.categories;
+package net.thep2wking.exastris.integration.jei.blocktransformation;
 
 import java.util.List;
 
@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 
-public class TransformationRecipes extends TransformationCompat {
-	public TransformationRecipes() {
+public class BlockTransformationRecipes extends BlockTransformationCompat {
+	public BlockTransformationRecipes() {
 		super(ExAstris.MODID);
 	}
 
 	@Override
-	public void addRecipes(List<TransformationWrapper> list) {
-		list.add(new TransformationWrapper(new ItemStack(Item.getItemFromBlock(Blocks.BEDROCK), 1, 0),
+	public void addRecipes(List<BlockTransformationWrapper> list) {
+		list.add(new BlockTransformationWrapper(new ItemStack(Item.getItemFromBlock(Blocks.BEDROCK), 1, 0),
 				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0)));
 	}
 }

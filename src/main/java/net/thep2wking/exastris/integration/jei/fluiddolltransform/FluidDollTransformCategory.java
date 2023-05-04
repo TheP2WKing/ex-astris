@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.integration.jei.barrel;
+package net.thep2wking.exastris.integration.jei.fluiddolltransform;
 
 import java.util.ArrayList;
 import java.util.List;

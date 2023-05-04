@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.integration.jei.categories;
+package net.thep2wking.exastris.integration.jei.fluiddolltransform;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-public abstract class TransformationCompat implements Comparable<TransformationCompat> {
+public abstract class FluidDollTransformCompat implements Comparable<FluidDollTransformCompat> {
 	public String modid;
 
-	public TransformationCompat(String modid) {
+	public FluidDollTransformCompat(String modid) {
 		this.modid = modid;
 	}
 
@@ -19,14 +19,14 @@ public abstract class TransformationCompat implements Comparable<TransformationC
 		return modid;
 	}
 
-	public abstract void addRecipes(List<TransformationWrapper> list);
+	public abstract void addRecipes(List<FluidDollTransformWrapper> list);
 
 	public final boolean shouldLoad() {
 		return Loader.isModLoaded(modid);
 	}
 
 	@Override
-	public int compareTo(TransformationCompat compat) {
+	public int compareTo(FluidDollTransformCompat compat) {
 		return modid.compareTo(compat.modid);
 	}
 

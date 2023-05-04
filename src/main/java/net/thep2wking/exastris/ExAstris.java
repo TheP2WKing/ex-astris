@@ -8,11 +8,11 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.thep2wking.exastris.util.handler.RegistryHandler;
+import net.thep2wking.exastris.modules.chisel.RecipesChisel;
+import net.thep2wking.exastris.modules.redstonearsenal.RecipesRedstoneArsenal;
+import net.thep2wking.exastris.modules.vanilla.RecipesExAstris;
 import net.thep2wking.exastris.util.proxy.CommonProxy;
-import net.thep2wking.exastris.util.recipes.RecipesChisel;
-import net.thep2wking.exastris.util.recipes.RecipesExAstris;
-import net.thep2wking.exastris.util.recipes.RecipesRedstoneArsenal;
+import net.thep2wking.exastris.util.registry.ExAstrisRegistry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,7 +40,7 @@ public class ExAstris {
     public void preInit(FMLPreInitializationEvent event) {
         LOGGER.info("Starting FML Pre-Initialization");
         PROXY.preInit(event);
-        RegistryHandler.preInitRegistries(event);
+        ExAstrisRegistry.preInitRegistries(event);
     }
 
     @Mod.EventHandler

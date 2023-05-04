@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.recipes;
+package net.thep2wking.exastris.modules.vanilla;
 
 import exnihilocreatio.ModBlocks;
 import exnihilocreatio.ModFluids;

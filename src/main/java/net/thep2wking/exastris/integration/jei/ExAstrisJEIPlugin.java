@@ -19,31 +19,31 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisRAItems;
-import net.thep2wking.exastris.integration.jei.barrel.FluidDollTransformCategory;
-import net.thep2wking.exastris.integration.jei.barrel.FluidDollTransformCompat;
-import net.thep2wking.exastris.integration.jei.barrel.FluidDollTransformRecipes;
-import net.thep2wking.exastris.integration.jei.barrel.FluidDollTransformWrapper;
-import net.thep2wking.exastris.integration.jei.categories.TransformationCategory;
-import net.thep2wking.exastris.integration.jei.categories.TransformationCompat;
-import net.thep2wking.exastris.integration.jei.categories.TransformationRecipes;
-import net.thep2wking.exastris.integration.jei.categories.TransformationWrapper;
+import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCategory;
+import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCompat;
+import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationRecipes;
+import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationWrapper;
+import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCategory;
+import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCompat;
+import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
+import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
 
 @JEIPlugin
 public class ExAstrisJEIPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
-        registry.addRecipeCategories(new TransformationCategory(registry.getJeiHelpers().getGuiHelper()));
+        registry.addRecipeCategories(new BlockTransformationCategory(registry.getJeiHelpers().getGuiHelper()));
         registry.addRecipeCategories(new FluidDollTransformCategory(registry.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void register(IModRegistry registry) {
         
-        List<TransformationWrapper> list = new ArrayList<>();
-        List<TransformationCompat> charger = new ArrayList<>();
-        charger.add(new TransformationRecipes());
-        for (TransformationCompat cha : charger) if (cha.shouldLoad()) cha.addRecipes(list);
-        registry.addRecipes(list, TransformationCategory.UID);
+        List<BlockTransformationWrapper> list = new ArrayList<>();
+        List<BlockTransformationCompat> charger = new ArrayList<>();
+        charger.add(new BlockTransformationRecipes());
+        for (BlockTransformationCompat cha : charger) if (cha.shouldLoad()) cha.addRecipes(list);
+        registry.addRecipes(list, BlockTransformationCategory.UID);
 
         List<FluidDollTransformWrapper> list2 = new ArrayList<>();
         List<FluidDollTransformCompat> charger2 = new ArrayList<>();
@@ -52,7 +52,7 @@ public class ExAstrisJEIPlugin implements IModPlugin {
         registry.addRecipes(list2, FluidDollTransformCategory.UID);
 
         registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0),
-                TransformationCategory.UID);
+                BlockTransformationCategory.UID);
 
         registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
                 FluidDollTransformCategory.UID);

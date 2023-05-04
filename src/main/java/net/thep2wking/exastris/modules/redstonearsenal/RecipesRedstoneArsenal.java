@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.recipes;
+package net.thep2wking.exastris.modules.redstonearsenal;
 
 import cofh.redstonearsenal.init.RAItems;
 import net.minecraft.item.ItemStack;

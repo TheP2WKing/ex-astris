@@ -1,6 +1,7 @@
-package net.thep2wking.exastris.integration.jei.barrel;
+package net.thep2wking.exastris.integration.jei.blocktransformation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -8,24 +9,26 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import net.thep2wking.exastris.ExAstris;
 
-public class FluidDollTransformWrapper implements IRecipeWrapper {
-	public List<List<ItemStack>> in;
-	public ItemStack outItem;
-	public String info;
+public class BlockTransformationWrapper implements IRecipeWrapper {
+	protected List<List<ItemStack>> in;
+	protected ItemStack outItem;
 	public int transformTime = 100;
 
-	private FluidDollTransformWrapper(ItemStack... input) {
+	private BlockTransformationWrapper(ItemStack... input) {
 		in = new ArrayList<>();
 		for (ItemStack stack : input)
 			in.add(Collections.singletonList(stack));
 	}
 
-	public FluidDollTransformWrapper(ItemStack out, ItemStack... input) {
+	public BlockTransformationWrapper(ItemStack out, ItemStack... input) {
 		this(input);
 		this.outItem = out;
 	}
+
 	@Override
 	public void getIngredients(IIngredients ingredients) {
 		ingredients.setOutput(VanillaTypes.ITEM, outItem);
@@ -39,11 +42,11 @@ public class FluidDollTransformWrapper implements IRecipeWrapper {
 
 	@Override
 	public List<String> getTooltipStrings(int mouseX, int mouseY) {
-		//if (mouseX >= 47 && mouseX <= 95 && mouseY >= 7 && mouseY <= 24) {
-		//	return Arrays.asList(I18n.format("jei." + ExAstris.MODID + ".transformation.desc1"));
-		//} else if (mouseX >= 23 && mouseX <= 80 && mouseY >= 28 && mouseY <= 40) {
-		//	return Arrays.asList(I18n.format("jei." + ExAstris.MODID + ".transformation.desc3"));
-		//}
+		if (mouseX >= 47 && mouseX <= 95 && mouseY >= 7 && mouseY <= 24) {
+			return Arrays.asList(I18n.format("jei." + ExAstris.MODID + ".transformation.desc1"));
+		} else if (mouseX >= 23 && mouseX <= 80 && mouseY >= 28 && mouseY <= 40) {
+			return Arrays.asList(I18n.format("jei." + ExAstris.MODID + ".transformation.desc3"));
+		}
 		return null;
 	}
 
