@@ -2,11 +2,12 @@
 {
   "modid": "exastris",
   "name": "Ex Astris",
-  "description": "Ex Nihilo Addon...again?",
+  "description": "Adding more Mod Support to Ex Nihilo...again! The unofficial attemp of porting Ex Astris to Minecraft 1.12.2",
   "version": "${version}",
   "mcversion": "${mcversion}",
+  "url": "https://github.com/TheP2WKing/ex-astris",
   "authorList": ["TheP2WKing"],
-  "credits": "insaneau and LoveHoly for creating Ex Astris.",
+  "credits": "insaneau and LoveHoly for creating/ maintaining Ex Astris 1.7.10.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
