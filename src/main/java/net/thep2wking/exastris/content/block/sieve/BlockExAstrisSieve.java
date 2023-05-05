@@ -65,7 +65,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
 
     private static final Int2ObjectMap<EnumExAstrisSieve> EXASTRIS_SIEVE_TYPES = new Int2ObjectArrayMap<>();
 
-    public static final PropertyEnum<EnumExAstrisSieve> VARIANT = PropertyEnum.create("variant", EnumExAstrisSieve.class);
+    public static final PropertyEnum<EnumExAstrisSieve> VARIANT = PropertyEnum.create("variant",
+            EnumExAstrisSieve.class);
 
     public BlockExAstrisSieve(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel, EnumToolType toolType, float hardness, float resistance, float lightLevel) {
@@ -253,7 +254,10 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
             return;
         }
 
-        probeInfo.progress(Math.round(sieve.getProgress() * 100), 100, probeInfo.defaultProgressStyle().suffix("%"));
+        if (Math.round(sieve.getProgress() * 100) >= 1) {
+            probeInfo.progress(Math.round(sieve.getProgress() * 100), 100,
+                    probeInfo.defaultProgressStyle().suffix("%"));
+        }
 
         if (!sieve.getMeshStack().isEmpty()) {
             probeInfo.horizontal(probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER))

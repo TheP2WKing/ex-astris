@@ -439,7 +439,7 @@ public class RecipesExAstris {
                                 new BlockInfo(ExAstrisBlocks.BLOCK_FROSTY_DIRT));
 
                 final BlockInfo[] transformingBlocks2 = { new BlockInfo(Blocks.STONE, 0) };
-                final BlockInfo[] blocksToSpawn2 = { };
+                final BlockInfo[] blocksToSpawn2 = {};
 
                 ExNihiloRegistryManager.FLUID_TRANSFORM_REGISTRY.register("water", "frostwater", 12000,
                                 transformingBlocks2, blocksToSpawn2);
@@ -447,5 +447,24 @@ public class RecipesExAstris {
                 GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:sieve"),
                                 new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
                                 new Object[] { "A", 'A', "null" });
+
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "oak_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 0),
+                                "A A", "ABA", "C C", 'A', "plankWoodOak", 'B', "slabWoodOak", 'C', "stickWood");
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "spruce_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 1),
+                                "A A", "ABA", "C C", 'A', "plankWoodSpruce", 'B', "slabWoodSpruce", 'C', "stickWood");
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "birch_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 2),
+                                "A A", "ABA", "C C", 'A', "plankWoodBirch", 'B', "slabWoodBirch", 'C', "stickWood");
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "jungle_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 3),
+                                "A A", "ABA", "C C", 'A', "plankWoodJungle", 'B', "slabWoodJungle", 'C', "stickWood");
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "acacia_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 4),
+                                "A A", "ABA", "C C", 'A', "plankWoodAcacia", 'B', "slabWoodAcacia", 'C', "stickWood");
+                GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "dark_oak_wood_sieve"), null,
+                                new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 5),
+                                "A A", "ABA", "C C", 'A', "plankWoodDarkOak", 'B', "slabWoodDarkOak", 'C', "stickWood");
         }
 }
