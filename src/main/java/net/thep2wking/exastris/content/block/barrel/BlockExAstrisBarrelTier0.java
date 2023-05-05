@@ -63,10 +63,8 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
     //private final AxisAlignedBB newBoundingBox = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
 
-    @SuppressWarnings("all")
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier0.class);
+    public static final PropertyEnum<EnumExAstrisBarrelTier0> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier0.class);
 
-    @SuppressWarnings("unchecked")
     public BlockExAstrisBarrelTier0(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel,
             EnumToolType toolType, float hardness, float resistance, float lightLevel) {
@@ -109,14 +107,12 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         return new BlockStateContainer(this, new IProperty[] { VARIANT });
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public int getMetaFromState(IBlockState state) {
         EnumExAstrisBarrelTier0 type = (EnumExAstrisBarrelTier0) state.getValue(VARIANT);
         return type.getMeta();
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(VARIANT, EnumExAstrisBarrelTier0.values()[meta]);
