@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nonnull;
-
 import org.apache.commons.lang3.StringUtils;
 
 import exnihilocreatio.barrel.IBarrelMode;
 import exnihilocreatio.blocks.BlockBarrel;
 import exnihilocreatio.tiles.TileBarrel;
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -48,6 +49,8 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     private final float resistance;
     private final float lightLevel;
 
+    private static final Int2ObjectMap<EnumExAstrisBarrelTier0> EXASTRIS_BARREL_T0_TYPES = new Int2ObjectArrayMap<>();
+
     public static final PropertyEnum<EnumExAstrisBarrelTier0> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier0.class);
 
     public BlockExAstrisBarrelTier0(String groupName, CreativeTabs tab, Material material, SoundType sound,
@@ -71,12 +74,19 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         setCreativeTab(this.tab);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier0.OAK));
         ExAstrisBlocks.BLOCKS.add(this);
+
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.OAK.meta, EnumExAstrisBarrelTier0.OAK);
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.SPRUCE.meta, EnumExAstrisBarrelTier0.SPRUCE);
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.BIRCH.meta, EnumExAstrisBarrelTier0.BIRCH);
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.JUNGLE.meta, EnumExAstrisBarrelTier0.JUNGLE);
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.ACACIA.meta, EnumExAstrisBarrelTier0.ACACIA);
+        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.DARK_OAK.meta, EnumExAstrisBarrelTier0.DARK_OAK);
     }
     
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (EnumExAstrisBarrelTier0 type : EnumExAstrisBarrelTier0.values()) {
-            items.add(new ItemStack(this, 1, type.getMeta()));
+        for (EnumExAstrisBarrelTier0 type : EXASTRIS_BARREL_T0_TYPES.values()) {
+            items.add(new ItemStack(this, 1, type.meta));
         }
     }
 
@@ -89,7 +99,7 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     @Override
     public int getMetaFromState(IBlockState state) {
         EnumExAstrisBarrelTier0 type = (EnumExAstrisBarrelTier0) state.getValue(VARIANT);
-        return type.getMeta();
+        return type.meta;
     }
 
     @Override
@@ -112,8 +122,8 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     @SideOnly(Side.CLIENT)
     public void registerModels() {
         for (EnumExAstrisBarrelTier0 type : EnumExAstrisBarrelTier0.values()) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getMeta(),
-                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getMaterialType(),
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.meta,
+                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getName(),
                             "inventory"));
             ModelLoader.setCustomStateMapper(this, new DefaultStateMapper());
         }

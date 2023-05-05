@@ -6,11 +6,11 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import org.apache.commons.lang3.StringUtils;
 
-import com.google.common.collect.Lists;
-
 import exnihilocreatio.barrel.IBarrelMode;
 import exnihilocreatio.blocks.BlockBarrel;
 import exnihilocreatio.tiles.TileBarrel;
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -27,11 +27,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -51,16 +49,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     private final float resistance;
     private final float lightLevel;
 
-    private static final AxisAlignedBB CUBE1 = new AxisAlignedBB(0.062, 0, 0.062, 0.938, 0.062, 0.938);
-    private static final AxisAlignedBB CUBE2 = new AxisAlignedBB(0.062, 0.062, 0.062, 0.938, 1, 0.125);
-    private static final AxisAlignedBB CUBE3 = new AxisAlignedBB(0.062, 0.062, 0.875, 0.938, 1, 0.938);
-    private static final AxisAlignedBB CUBE4 = new AxisAlignedBB(0.062, 0.062, 0.125, 0.125, 1, 0.875);
-    private static final AxisAlignedBB CUBE5 = new AxisAlignedBB(0.875, 0.062, 0.125, 0.938, 1, 0.875);
-
-    @SuppressWarnings("unused")
-    private static final List<AxisAlignedBB> COLLISION_BOXES = Lists.newArrayList(CUBE1, CUBE2, CUBE3, CUBE4, CUBE5);
-    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
-    //private final AxisAlignedBB newBoundingBox = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
+    private static final Int2ObjectMap<EnumExAstrisBarrelTier1> EXASTRIS_BARREL_T1_TYPES = new Int2ObjectArrayMap<>();
 
     public static final PropertyEnum<EnumExAstrisBarrelTier1> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier1.class);
 
@@ -85,18 +74,21 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
         setCreativeTab(this.tab);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier1.STONE));
         ExAstrisBlocks.BLOCKS.add(this);
-    }
 
-    @SuppressWarnings("null")
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return BOUNDING_BOX;
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE.meta, EnumExAstrisBarrelTier1.STONE);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.COBBLESTONE.meta, EnumExAstrisBarrelTier1.COBBLESTONE);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE_BRICKS.meta, EnumExAstrisBarrelTier1.STONE_BRICKS);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.SANDSTONE.meta, EnumExAstrisBarrelTier1.SANDSTONE);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.BRICKS.meta, EnumExAstrisBarrelTier1.BRICKS);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.NETHER_BRICK.meta, EnumExAstrisBarrelTier1.NETHER_BRICK);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.QUARTZ.meta, EnumExAstrisBarrelTier1.QUARTZ);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.PURPUR.meta, EnumExAstrisBarrelTier1.PURPUR);
     }
 
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (EnumExAstrisBarrelTier1 type : EnumExAstrisBarrelTier1.values()) {
-            items.add(new ItemStack(this, 1, type.getMeta()));
+        for (EnumExAstrisBarrelTier1 type : EXASTRIS_BARREL_T1_TYPES.values()) {
+            items.add(new ItemStack(this, 1, type.meta));
         }
     }
 
@@ -109,7 +101,7 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     @Override
     public int getMetaFromState(IBlockState state) {
         EnumExAstrisBarrelTier1 type = (EnumExAstrisBarrelTier1) state.getValue(VARIANT);
-        return type.getMeta();
+        return type.meta;
     }
 
     @Override
@@ -132,8 +124,8 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     @SideOnly(Side.CLIENT)
     public void registerModels() {
         for (EnumExAstrisBarrelTier1 type : EnumExAstrisBarrelTier1.values()) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getMeta(),
-                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getMaterialType(),
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.meta,
+                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getName(),
                             "inventory"));
             ModelLoader.setCustomStateMapper(this, new DefaultStateMapper());
         }

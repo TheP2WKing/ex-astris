@@ -12,6 +12,8 @@ import exnihilocreatio.items.ItemMesh;
 import exnihilocreatio.tiles.TileSieve;
 import exnihilocreatio.util.ItemStackItemHandler;
 import exnihilocreatio.util.Util;
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import mcjty.theoneprobe.api.ElementAlignment;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
@@ -61,8 +63,9 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     private final float resistance;
     private final float lightLevel;
 
-    public static final PropertyEnum<EnumExAstrisSieve> VARIANT = PropertyEnum.create("variant",
-            EnumExAstrisSieve.class);
+    private static final Int2ObjectMap<EnumExAstrisSieve> EXASTRIS_SIEVE_TYPES = new Int2ObjectArrayMap<>();
+
+    public static final PropertyEnum<EnumExAstrisSieve> VARIANT = PropertyEnum.create("variant", EnumExAstrisSieve.class);
 
     public BlockExAstrisSieve(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel, EnumToolType toolType, float hardness, float resistance, float lightLevel) {
@@ -84,12 +87,19 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         this.setDefaultState(this.blockState.getBaseState().withProperty(BlockSieve.MESH, MeshType.NO_RENDER)
                 .withProperty(VARIANT, EnumExAstrisSieve.OAK));
         ExAstrisBlocks.BLOCKS.add(this);
+
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.OAK.meta, EnumExAstrisSieve.OAK);
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.SPRUCE.meta, EnumExAstrisSieve.SPRUCE);
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.BIRCH.meta, EnumExAstrisSieve.BIRCH);
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.JUNGLE.meta, EnumExAstrisSieve.JUNGLE);
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.ACACIA.meta, EnumExAstrisSieve.ACACIA);
+        EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.DARK_OAK.meta, EnumExAstrisSieve.DARK_OAK);
     }
 
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (EnumExAstrisSieve type : EnumExAstrisSieve.values()) {
-            items.add(new ItemStack(this, 1, type.getMeta()));
+        for (EnumExAstrisSieve type : EXASTRIS_SIEVE_TYPES.values()) {
+            items.add(new ItemStack(this, 1, type.meta));
         }
     }
 
@@ -102,7 +112,7 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     @Override
     public int getMetaFromState(IBlockState state) {
         EnumExAstrisSieve type = (EnumExAstrisSieve) state.getValue(VARIANT);
-        return type.getMeta();
+        return type.meta;
     }
 
     @Override
@@ -126,8 +136,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     @SideOnly(Side.CLIENT)
     public void registerModels() {
         for (EnumExAstrisSieve type : EnumExAstrisSieve.values()) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getMeta(),
-                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getMaterialType(),
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.meta,
+                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getName(),
                             "inventory"));
             ModelLoader.setCustomStateMapper(this, new DefaultStateMapper());
         }
