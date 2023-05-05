@@ -31,6 +31,9 @@ public class ExAstrisItems {
         public static final ItemBlock BARREL_T2 = new ItemBlockExAstrisBarrelTier2(ExAstrisBlocks.BLOCK_BARREL_T2,
                         RarityHandler.WHITE, false);
 
+        public static final ItemBlock SIEVE = new ExAstrisItemBlockBase(ExAstrisBlocks.BLOCK_SIEVE,
+                        RarityHandler.WHITE, false);
+
         public static final ItemBlock HARD_STONE = new ExAstrisItemBlockBase(ExAstrisBlocks.BLOCK_HARD_STONE,
                         RarityHandler.WHITE, false);
         public static final ItemBlock DOUBLE_HARD_STONE = new ExAstrisItemBlockBase(

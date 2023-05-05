@@ -1,0 +1,42 @@
+{
+    "forge_marker": 1,
+    "variants": {
+      "mesh": {
+        "none": {},
+        "no_render": {
+            "model": "exastris:sieve2"
+        },
+        "string": {
+          "submodel": {
+            "mesh": {
+              "model": "exnihilocreatio:mesh_string"
+            }
+          }
+        },
+        "flint": {
+          "submodel": {
+            "mesh": {
+              "model": "exnihilocreatio:mesh_flint"
+            }
+          }
+        },
+        "iron": {
+          "submodel": {
+            "mesh": {
+              "model": "exnihilocreatio:mesh_iron"
+            }
+          }
+        },
+        "diamond": {
+            "model": "exnihilocreatio:mesh_diamond"
+          }
+        
+      },
+      "normal": [
+        {"model": "exastris:sieve2"}
+      ],
+      "inventory": [
+        {"model": "exastris:sieve2"}
+      ]
+    }
+  }

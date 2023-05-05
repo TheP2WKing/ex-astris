@@ -14,6 +14,7 @@ import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier2;
 import net.thep2wking.exastris.content.block.cake.BlockEndCake;
 import net.thep2wking.exastris.content.block.fluid.BlockPeacewater;
+import net.thep2wking.exastris.content.block.sieve.BlockExAstrisSieve;
 import net.thep2wking.exastris.content.block.transformation.BlockFrostyDirt;
 import net.thep2wking.exastris.content.block.transformation.BlockQuadrupleHardStone;
 import net.thep2wking.exastris.util.handler.EnumToolType;
@@ -30,6 +31,10 @@ public class ExAstrisBlocks {
         public static final Block BLOCK_BARREL_T2 = new BlockExAstrisBarrelTier2("barrel",
                         ExAstrisTabs.EXASTRIS_TAB,
                         Material.IRON, SoundType.METAL, 1, EnumToolType.PICKAXE, 5f, 6f, 0);
+
+        public static final Block BLOCK_SIEVE = new BlockExAstrisSieve("sieve",
+                        ExAstrisTabs.EXASTRIS_TAB,
+                        Material.WOOD, SoundType.WOOD, 1, EnumToolType.AXE, 2f, 3f, 0);
 
         public static final Block BLOCK_HARD_STONE = new ExAstrisBlockBase("hard_stone", ExAstrisTabs.EXASTRIS_TAB,
                         Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 50f, 6000f, 0);

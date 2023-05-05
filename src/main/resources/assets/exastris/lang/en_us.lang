@@ -9,6 +9,7 @@ tooltip.exastris.ctrl=Press §e§oCtrl§r§7 for Info
 top.exastris.transforming=Transforming to
 top.exastris.refill=Refill with
 top.exastris.bites=Bites left
+top.exastris.nomesh=No Mesh
 
 // just enought items 
 jei.exastris.transformation.category=Block Transformation
