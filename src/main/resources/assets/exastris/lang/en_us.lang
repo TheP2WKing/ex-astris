@@ -37,12 +37,12 @@ tile.exastris:slime.name=Liquid Slime
 fluid.exastris:slime=Liquid Slime
 
 // blocks
-tile.exastris:barrel_oak_wood.name=Oak Wood Barrel
-tile.exastris:barrel_spruce_wood.name=Spruce Wood Barrel
-tile.exastris:barrel_birch_wood.name=Birch Wood Barrel
-tile.exastris:barrel_jungle_wood.name=Jungle Wood Barrel
-tile.exastris:barrel_acacia_wood.name=Acacia Wood Barrel
-tile.exastris:barrel_dark_oak_wood.name=Dark Oak Wood Barrel
+tile.exastris:barrel_oak_wood.name=Oak Barrel
+tile.exastris:barrel_spruce_wood.name=Spruce Barrel
+tile.exastris:barrel_birch_wood.name=Birch Barrel
+tile.exastris:barrel_jungle_wood.name=Jungle Barrel
+tile.exastris:barrel_acacia_wood.name=Acacia Barrel
+tile.exastris:barrel_dark_oak_wood.name=Dark Oak Barrel
 
 tile.exastris:barrel_stone.name=Stone Barrel
 tile.exastris:barrel_cobblestone.name=Cobblestone Barrel
@@ -55,6 +55,13 @@ tile.exastris:barrel_purpur.name=Purpur Barrel
 
 tile.exastris:barrel_iron.name=Iron Barrel
 tile.exastris:barrel_gold.name=Gold Barrel
+
+tile.exastris:sieve_oak_wood.name=Oak Sieve
+tile.exastris:sieve_spruce_wood.name=Spruce Sieve
+tile.exastris:sieve_birch_wood.name=Birch Sieve
+tile.exastris:sieve_jungle_wood.name=Jungle Sieve
+tile.exastris:sieve_acacia_wood.name=Acacia Sieve
+tile.exastris:sieve_dark_oak_wood.name=Dark Oak Sieve
 
 tile.exastris:hard_stone.name=Hard Stone
 tile.exastris:double_hard_stone.name=Double Hard Stone

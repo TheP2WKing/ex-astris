@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nonnull;
+
 import exnihilocreatio.blocks.BlockSieve;
 import exnihilocreatio.config.ModConfig;
 import exnihilocreatio.items.ItemMesh;
@@ -16,7 +18,12 @@ import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.DefaultStateMapper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -27,11 +34,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.thep2wking.exastris.ExAstris;
@@ -49,9 +61,11 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     private final float resistance;
     private final float lightLevel;
 
+    public static final PropertyEnum<EnumExAstrisSieve> VARIANT = PropertyEnum.create("variant",
+            EnumExAstrisSieve.class);
+
     public BlockExAstrisSieve(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel, EnumToolType toolType, float hardness, float resistance, float lightLevel) {
-        super();
         this.groupName = groupName;
         this.tab = tab;
         this.sound = sound;
@@ -67,13 +81,60 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         setResistance(this.resistance);
         setLightLevel(this.lightLevel);
         setCreativeTab(this.tab);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(BlockSieve.MESH, MeshType.NO_RENDER));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(BlockSieve.MESH, MeshType.NO_RENDER)
+                .withProperty(VARIANT, EnumExAstrisSieve.OAK));
         ExAstrisBlocks.BLOCKS.add(this);
     }
 
     @Override
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
+        for (EnumExAstrisSieve type : EnumExAstrisSieve.values()) {
+            items.add(new ItemStack(this, 1, type.getMeta()));
+        }
+    }
+
+    @Override
+    @Nonnull
+    public BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[] { VARIANT, BlockSieve.MESH });
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        EnumExAstrisSieve type = (EnumExAstrisSieve) state.getValue(VARIANT);
+        return type.getMeta();
+    }
+
+    @Override
+    @SuppressWarnings("null")
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(VARIANT, EnumExAstrisSieve.values()[meta]);
+    }
+
+    @Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
+            EntityPlayer player) {
+        return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(world.getBlockState(pos)));
+    }
+
+    @Override
+    public int damageDropped(IBlockState state) {
+        return getMetaFromState(state);
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
     public void registerModels() {
-        ExAstris.PROXY.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+        for (EnumExAstrisSieve type : EnumExAstrisSieve.values()) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getMeta(),
+                    new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getMaterialType(),
+                            "inventory"));
+            ModelLoader.setCustomStateMapper(this, new DefaultStateMapper());
+        }
+    }
+
+    public String getGroupName() {
+        return this.groupName;
     }
 
     @Override

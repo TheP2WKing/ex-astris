@@ -443,5 +443,9 @@ public class RecipesExAstris {
 
                 ExNihiloRegistryManager.FLUID_TRANSFORM_REGISTRY.register("water", "frostwater", 12000,
                                 transformingBlocks2, blocksToSpawn2);
+
+                GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:sieve"),
+                                new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+                                new Object[] { "A", 'A', "null" });
         }
 }

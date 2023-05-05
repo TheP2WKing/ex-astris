@@ -10,6 +10,7 @@ import exnihilocreatio.compatibility.jei.barrel.fluidontop.FluidOnTopRecipeCateg
 import exnihilocreatio.compatibility.jei.barrel.fluidtransform.FluidTransformRecipeCategory;
 import exnihilocreatio.compatibility.jei.crook.CrookRecipeCategory;
 import exnihilocreatio.compatibility.jei.hammer.HammerRecipeCategory;
+import exnihilocreatio.compatibility.jei.sieve.SieveRecipeCategory;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
@@ -236,6 +237,19 @@ public class ExAstrisJEIPlugin implements IModPlugin {
         registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
                 CompostRecipeCategory.UID);
 
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0),
+                SieveRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 1),
+                SieveRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 2),
+                SieveRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 3),
+                SieveRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4),
+                SieveRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5),
+                SieveRecipeCategory.UID);
+
         registry.getJeiHelpers().getIngredientBlacklist()
                 .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
         registry.getJeiHelpers().getIngredientBlacklist()
@@ -247,6 +261,9 @@ public class ExAstrisJEIPlugin implements IModPlugin {
         registry.getJeiHelpers().getIngredientBlacklist()
                 .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
 
+        registry.getJeiHelpers().getIngredientBlacklist()
+                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
+                
         if (Loader.isModLoaded("redstonearsenal")) {
             registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
             registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);

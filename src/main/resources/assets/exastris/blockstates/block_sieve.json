@@ -1,42 +1,100 @@
 {
-    "forge_marker": 1,
     "variants": {
-      "mesh": {
-        "none": {},
-        "no_render": {
-            "model": "exastris:sieve2"
+        "normal": {
+            "model": "exastris:block_sieve"
         },
-        "string": {
-          "submodel": {
-            "mesh": {
-              "model": "exnihilocreatio:mesh_string"
-            }
-          }
+        "mesh=none,variant=oak_wood": {
+            "model": "exastris:no_mesh"
         },
-        "flint": {
-          "submodel": {
-            "mesh": {
-              "model": "exnihilocreatio:mesh_flint"
-            }
-          }
+        "mesh=no_render,variant=oak_wood": {
+            "model": "exastris:sieve_oak_wood"
         },
-        "iron": {
-          "submodel": {
-            "mesh": {
-              "model": "exnihilocreatio:mesh_iron"
-            }
-          }
+        "mesh=no_render,variant=spruce_wood": {
+            "model": "exastris:sieve_spruce_wood"
         },
-        "diamond": {
+        "mesh=no_render,variant=birch_wood": {
+            "model": "exastris:sieve_birch_wood"
+        },
+        "mesh=no_render,variant=jungle_wood": {
+            "model": "exastris:sieve_jungle_wood"
+        },
+        "mesh=no_render,variant=acacia_wood": {
+            "model": "exastris:sieve_acacia_wood"
+        },
+        "mesh=no_render,variant=dark_oak_wood": {
+            "model": "exastris:sieve_dark_oak_wood"
+        },
+        "mesh=string,variant=oak_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=string,variant=spruce_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=string,variant=birch_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=string,variant=jungle_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=string,variant=acacia_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=string,variant=dark_oak_wood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=flint,variant=oak_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=flint,variant=spruce_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=flint,variant=birch_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=flint,variant=jungle_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=flint,variant=acacia_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=flint,variant=dark_oak_wood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=iron,variant=oak_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=iron,variant=spruce_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=iron,variant=birch_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=iron,variant=jungle_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=iron,variant=acacia_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=iron,variant=dark_oak_wood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=diamond,variant=oak_wood": {
             "model": "exnihilocreatio:mesh_diamond"
-          }
-        
-      },
-      "normal": [
-        {"model": "exastris:sieve2"}
-      ],
-      "inventory": [
-        {"model": "exastris:sieve2"}
-      ]
+        },
+        "mesh=diamond,variant=spruce_wood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=diamond,variant=birch_wood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=diamond,variant=jungle_wood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=diamond,variant=acacia_wood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=diamond,variant=dark_oak_wood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        }
     }
-  }
+}

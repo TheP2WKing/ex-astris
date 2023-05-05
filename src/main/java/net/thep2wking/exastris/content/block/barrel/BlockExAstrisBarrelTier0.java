@@ -7,8 +7,6 @@ import javax.annotation.Nonnull;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.google.common.collect.Lists;
-
 import exnihilocreatio.barrel.IBarrelMode;
 import exnihilocreatio.blocks.BlockBarrel;
 import exnihilocreatio.tiles.TileBarrel;
@@ -28,11 +26,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -51,17 +47,6 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     private final float hardness;
     private final float resistance;
     private final float lightLevel;
-
-    private static final AxisAlignedBB CUBE1 = new AxisAlignedBB(0.062, 0, 0.062, 0.938, 0.062, 0.938);
-    private static final AxisAlignedBB CUBE2 = new AxisAlignedBB(0.062, 0.062, 0.062, 0.938, 1, 0.125);
-    private static final AxisAlignedBB CUBE3 = new AxisAlignedBB(0.062, 0.062, 0.875, 0.938, 1, 0.938);
-    private static final AxisAlignedBB CUBE4 = new AxisAlignedBB(0.062, 0.062, 0.125, 0.125, 1, 0.875);
-    private static final AxisAlignedBB CUBE5 = new AxisAlignedBB(0.875, 0.062, 0.125, 0.938, 1, 0.875);
-
-    @SuppressWarnings("unused")
-    private static final List<AxisAlignedBB> COLLISION_BOXES = Lists.newArrayList(CUBE1, CUBE2, CUBE3, CUBE4, CUBE5);
-    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
-    //private final AxisAlignedBB newBoundingBox = new AxisAlignedBB(0.0625f, 0, 0.0625f, 0.9375f, 1f, 0.9375f);
 
     public static final PropertyEnum<EnumExAstrisBarrelTier0> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier0.class);
 
@@ -87,13 +72,7 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier0.OAK));
         ExAstrisBlocks.BLOCKS.add(this);
     }
-
-    @SuppressWarnings("null")
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return BOUNDING_BOX;
-    }
-
+    
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
         for (EnumExAstrisBarrelTier0 type : EnumExAstrisBarrelTier0.values()) {
