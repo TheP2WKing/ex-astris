@@ -50,8 +50,7 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     private final float lightLevel;
 
     public BlockExAstrisSieve(String groupName, CreativeTabs tab, Material material, SoundType sound,
-            int harvestLevel,
-            EnumToolType toolType, float hardness, float resistance, float lightLevel) {
+            int harvestLevel, EnumToolType toolType, float hardness, float resistance, float lightLevel) {
         super();
         this.groupName = groupName;
         this.tab = tab;
@@ -123,8 +122,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
                 }
             }
             if (te.addBlock(cap.extractItem(slot, 1, true))) {
-                world.playSound(null, pos, SoundEvents.BLOCK_GRAVEL_STEP, SoundCategory.BLOCKS, 0.5f, 1f);
                 // Adding a block
+                world.playSound(null, pos, SoundEvents.BLOCK_GRAVEL_STEP, SoundCategory.BLOCKS, 0.5f, 1f);
                 cap.extractItem(slot, 1, player.isCreative());
                 for (int dx = -ModConfig.sieve.sieveSimilarRadius; dx <= ModConfig.sieve.sieveSimilarRadius; dx++) {
                     for (int dz = -ModConfig.sieve.sieveSimilarRadius; dz <= ModConfig.sieve.sieveSimilarRadius; dz++) {
@@ -164,7 +163,7 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
                 TileSieve sieve = (TileSieve) world.getTileEntity(posIter);
                 if (sieve != null)
                     sieve.doSieving(player, false);
-                world.playSound(null, pos, SoundEvents.BLOCK_SAND_STEP, SoundCategory.BLOCKS, 0.3f, 0.6f); // TODO
+                world.playSound(null, pos, SoundEvents.BLOCK_SAND_STEP, SoundCategory.BLOCKS, 0.3f, 0.6f);
             }
         }
         return true;
@@ -188,7 +187,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         if (!sieve.getMeshStack().isEmpty()) {
             probeInfo.horizontal(probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER))
                     .item(sieve.getMeshStack())
-                    .text(TextFormatting.GREEN +" " + IProbeInfo.STARTLOC + sieve.getMeshStack().getUnlocalizedName() + ".name"
+                    .text(TextFormatting.GREEN + " " + IProbeInfo.STARTLOC + sieve.getMeshStack().getUnlocalizedName()
+                            + ".name"
                             + IProbeInfo.ENDLOC);
         }
 

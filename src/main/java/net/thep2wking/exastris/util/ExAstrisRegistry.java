@@ -44,7 +44,7 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T0);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T1);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T2);
-
+        
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.SIEVE);
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.HARD_STONE);

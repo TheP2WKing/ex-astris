@@ -34,7 +34,7 @@ public class ExAstrisBlocks {
 
         public static final Block BLOCK_SIEVE = new BlockExAstrisSieve("sieve",
                         ExAstrisTabs.EXASTRIS_TAB,
-                        Material.WOOD, SoundType.WOOD, 1, EnumToolType.AXE, 2f, 3f, 0);
+                        Material.WOOD, SoundType.WOOD, 0, EnumToolType.AXE, 2f, 3f, 0);
 
         public static final Block BLOCK_HARD_STONE = new ExAstrisBlockBase("hard_stone", ExAstrisTabs.EXASTRIS_TAB,
                         Material.ROCK, SoundType.STONE, 3, EnumToolType.PICKAXE, 50f, 6000f, 0);
