@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisDollsConfig {
+public class MobDollsConfig {
     @Config.Name("Villager Doll")
     @Config.Comment("Whether to enable the villager doll and spawning of villagers")
     public boolean VILLAGER_DOLL = true;

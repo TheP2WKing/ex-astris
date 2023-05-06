@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.chisel;
 
 import net.minecraftforge.common.config.Config;
 
-public class ChiselCarvingRecipesConfig {
+public class CarvingRecipesConfig {
     @Config.Name("Convert between Wood Barrels")
     @Config.Comment("Whether to let the chisel carve between all available barrel wood variants")
     public boolean CONVERT_BETWEEN_BARRELS = true;

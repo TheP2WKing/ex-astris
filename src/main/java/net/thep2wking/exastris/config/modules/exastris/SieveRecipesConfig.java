@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisSieveRecipesConfig {
+public class SieveRecipesConfig {
     @Config.Name("Fern Seeds from Dirt")
     @Config.Comment("Whether to get fern seeds from siveting dirt")
     public boolean FERN_SEEDS = true;

@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisHeatSourcesConfig {
+public class HeatSourcesConfig {
     @Config.Name("Lit Redstone Lamp")
     @Config.Comment("Whether lit redstone lamps can be used as crucible heat source")
     public boolean LIT_REDSTONE = true;

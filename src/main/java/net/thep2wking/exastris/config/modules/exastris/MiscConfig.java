@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisMiscConfig {
+public class MiscConfig {
     @Config.Name("Seeds to Soil Recipe")
     @Config.Comment("Whether to add recipes to craft soils like grass and podzol with dirt and seed directly")
     public boolean SEEDS_TO_SOIl = true;

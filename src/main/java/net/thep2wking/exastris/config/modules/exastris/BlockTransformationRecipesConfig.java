@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisBlockTransformationRecipesConfig {
+public class BlockTransformationRecipesConfig {
     @Config.Name("Quadruple Hard Stone to Bedrock")
     @Config.Comment("Whether quadruple hard stone should convert to bedrock")
     public boolean BEDROCK = true;

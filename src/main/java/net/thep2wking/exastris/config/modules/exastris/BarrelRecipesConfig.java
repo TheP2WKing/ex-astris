@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisBarrelRecipesConfig {
+public class BarrelRecipesConfig {
     @Config.Name("Sponge from Liquid Slime")
     @Config.Comment("Whether to get spongees from liquid slime")
     public boolean SPONGE = true;

@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.chisel;
 
 import net.minecraftforge.common.config.Config;
 
-public class ChiselSieveRecipesConfig {
+public class SieveRecipesConfig {
     @Config.Name("Marble Pebbles from Dirt")
     @Config.Comment("Whether to get marble pebbles from siveting stone")
     public boolean MARBLE_PEBBLES = true;

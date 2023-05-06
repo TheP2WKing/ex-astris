@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisCrucibleRecipes {
+public class CrucibleRecipes {
     @Config.Name("Liquid Slime from Slime Block")
     @Config.Comment("Whether to get slime from melting slime blocks")
     public boolean SLIME_FROM_SLIME_BLOCK = true;

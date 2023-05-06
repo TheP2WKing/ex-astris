@@ -2,7 +2,7 @@ package net.thep2wking.exastris.config.modules.exastris;
 
 import net.minecraftforge.common.config.Config;
 
-public class ExAstrisHammerRecipesConfig {
+public class HammerRecipesConfig {
     @Config.Name("Stone Pebbles from Stone")
     @Config.Comment("Whether to get stone pebbles from hammering stone")
     public boolean STONE_PEBBLES = true;
