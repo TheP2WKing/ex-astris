@@ -12,11 +12,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 
 public class BlockTransformationWrapper implements IRecipeWrapper {
 	protected List<List<ItemStack>> in;
 	protected ItemStack outItem;
-	public int transformTime = 100;
+	public int transformTime = ExAstrisConfig.GENEREL.BLOCK_TRANSFORMATION_TIME;
 
 	private BlockTransformationWrapper(ItemStack... input) {
 		in = new ArrayList<>();

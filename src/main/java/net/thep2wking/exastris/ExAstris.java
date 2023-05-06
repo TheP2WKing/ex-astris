@@ -1,14 +1,13 @@
 package net.thep2wking.exastris;
 
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.thep2wking.exastris.modules.redstonearsenal.RecipesRedstoneArsenal;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.util.ExAstrisRecipeRegistry;
 import net.thep2wking.exastris.util.ExAstrisRegistry;
 import net.thep2wking.exastris.util.proxy.CommonProxy;
@@ -37,35 +36,37 @@ public class ExAstris {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LOGGER.info("Starting FML Pre-Initialization");
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            LOGGER.info("Starting FML Pre-Initialization");
+        }
+
         PROXY.preInit(event);
         ExAstrisRegistry.preInitRegistries(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        LOGGER.info("Starting FML Initialization");
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            LOGGER.info("Starting FML Initialization");
+        }
         PROXY.Init(event);
-
         ExAstrisRecipeRegistry.registerExAstrisRecipes();
         ExAstrisRecipeRegistry.registerChiselRecipes();
-
-        if (Loader.isModLoaded("redstonearsenal")) {
-            RecipesRedstoneArsenal.register();
-            LOGGER.info("Redstone Arsenal recipes loaded");
-        } else {
-            LOGGER.info("Redstone Arsenal not installed, recipes skipped");
-        }
+        ExAstrisRecipeRegistry.registerRedstoneArsenalRecipes();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        LOGGER.info("Starting FML Post-Initialization");
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            LOGGER.info("Starting FML Post-Initialization");
+        }
         PROXY.postInit(event);
     }
 
     @Mod.EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
-        LOGGER.info(NAME + " " + VERSION + " " + "loaded!");
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            LOGGER.info(NAME + " " + VERSION + " " + "loaded!");
+        }
     }
 }

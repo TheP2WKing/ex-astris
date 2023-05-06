@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.api.ExAstrisBlockBase;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.integration.top.ITOPInfoProvider;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 
@@ -52,12 +53,14 @@ public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityPro
     @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
-        TileFrostyDirt tile = (TileFrostyDirt) world.getTileEntity(data.getPos());
+        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+            TileFrostyDirt tile = (TileFrostyDirt) world.getTileEntity(data.getPos());
 
-        probeInfo.progress(tile.getVolume(), 100, probeInfo.defaultProgressStyle().suffix("%"));
+            probeInfo.progress(tile.getVolume(), 100, probeInfo.defaultProgressStyle().suffix("%"));
 
-        probeInfo.horizontal(probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER))
-                .text(TextFormatting.WHITE + "{*top.exastris.transforming*}" + " ")
-                .item(new ItemStack(Item.getItemFromBlock(Blocks.SNOW), 1, 0));
+            probeInfo.horizontal(probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER))
+                    .text(TextFormatting.WHITE + "{*top.exastris.transforming*}" + " ")
+                    .item(new ItemStack(Item.getItemFromBlock(Blocks.SNOW), 1, 0));
+        }
     }
 }

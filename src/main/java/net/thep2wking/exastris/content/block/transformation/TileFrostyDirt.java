@@ -6,11 +6,12 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 
 public class TileFrostyDirt extends TileEntity implements ITickable {
     private int timer;
     private int volume;
-    private static final int UPDATE_INTERVAL = 20;
+    private static final int UPDATE_INTERVAL = ExAstrisConfig.GENEREL.BLOCK_TRANSFORMATION_TIME / 5;
 
     public TileFrostyDirt() {
         super();
@@ -19,15 +20,17 @@ public class TileFrostyDirt extends TileEntity implements ITickable {
 
     @Override
     public void update() {
-        timer++;
-        if (timer > UPDATE_INTERVAL) {
-            timer = 0;
-            volume += 1;
-            world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), UPDATE_INTERVAL);
-        }
+        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+            timer++;
+            if (timer > UPDATE_INTERVAL) {
+                timer = 0;
+                volume += 1;
+                world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), UPDATE_INTERVAL);
+            }
 
-        if (volume > 100) {
-            world.setBlockState(pos, Blocks.SNOW.getDefaultState());
+            if (volume > 100) {
+                world.setBlockState(pos, Blocks.SNOW.getDefaultState());
+            }
         }
     }
 

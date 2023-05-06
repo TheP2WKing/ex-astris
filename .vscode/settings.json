@@ -6,5 +6,11 @@
     ],
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.dependency.packagePresentation": "hierarchical",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java",
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": true
+    }
 }

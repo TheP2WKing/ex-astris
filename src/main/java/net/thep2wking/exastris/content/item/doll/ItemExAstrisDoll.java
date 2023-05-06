@@ -28,6 +28,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisItems;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 import net.thep2wking.exastris.util.handler.IHasModel;
@@ -69,14 +70,14 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
         EnumExAstrisDollType type = EXASTRIS_DOLL_TYPES.get(stack.getMetadata());
         if (type == null)
             return false;
-        if (type.name == type.VILLAGER.name) {
+        if (type.name == type.VILLAGER.name && ExAstrisConfig.MODULE_EX_ASTRIS.MOB_DOLLS.VILLAGER_DOLL) { //TODO
             Entity spawnee = new EntityVillager(world, ExAstrisUtils.randomNumberRange(0, 5));
             if (spawnee != null) {
                 spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
                 return world.spawnEntity(spawnee);
             }
         }
-        Entity spawnee = EntityList.createEntityByIDFromName(new ResourceLocation(type.entityName), world);
+        Entity spawnee = EntityList.createEntityByIDFromName(new ResourceLocation(type.entityName), world); //TODO CONFIG
         if (spawnee != null) {
             spawnee.setPosition(pos.getX(), pos.getY() + type.posYCorrection, pos.getZ());
             return world.spawnEntity(spawnee);

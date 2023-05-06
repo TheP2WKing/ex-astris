@@ -14,13 +14,11 @@ import net.thep2wking.exastris.config.modules.RedstoneArsenalModuleConfig;
 public class ExAstrisConfig {
     @Config.Name("generel")
     @Config.Comment("Configure Generel")
-    public static final Generel GENEREL = new Generel();
+    public static final GenerelConfig GENEREL = new GenerelConfig();
 
-    public static class Generel {
-        @Config.Name("Logging")
-        @Config.Comment("Enable or Disable Logging of this mod")
-        public boolean LOGGING = true;
-    }
+    @Config.Name("modules")
+    @Config.Comment("Configure Modules")
+    public static final ModulesConfig MODULES = new ModulesConfig();
 
     @Config.Name("exastris")
     @Config.Comment("Configure Ex Astris Module")

@@ -23,6 +23,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fluids.FluidStack;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 
 @SuppressWarnings("unused")
 public class BlockTransformationCategory implements IRecipeCategory<BlockTransformationWrapper> {
@@ -40,7 +41,7 @@ public class BlockTransformationCategory implements IRecipeCategory<BlockTransfo
 	private IDrawable icon;
 	private IDrawable text;
 	private IDrawableAnimated progress;
-	public int transformTime = 100;
+	public int transformTime = ExAstrisConfig.GENEREL.BLOCK_TRANSFORMATION_TIME;
 
 	public BlockTransformationCategory(IGuiHelper guiHelper) {
 		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 150, 30).addPadding(0, 14, 0, 0).build();

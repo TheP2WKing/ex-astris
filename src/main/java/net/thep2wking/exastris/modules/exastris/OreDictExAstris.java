@@ -85,7 +85,6 @@ public class OreDictExAstris {
         OreDictionary.registerOre("listAllseed", new ItemStack(Items.PUMPKIN_SEEDS, 1, 0));
         OreDictionary.registerOre("listAllseed", new ItemStack(Items.MELON_SEEDS, 1, 0));
         OreDictionary.registerOre("listAllseed", new ItemStack(Items.BEETROOT_SEEDS, 1, 0));
-
         OreDictionary.registerOre("listAllseed", new ItemStack(ExAstrisItems.SEEDS_FERN, 1, 0));
         OreDictionary.registerOre("listAllseed", new ItemStack(ExAstrisItems.SEEDS_CHORUS, 1, 0));
         OreDictionary.registerOre("listAllseed", new ItemStack(ExAstrisItems.SEEDS_PODZOL, 1, 0));

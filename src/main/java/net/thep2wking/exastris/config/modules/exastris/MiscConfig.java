@@ -19,9 +19,9 @@ public class MiscConfig {
     @Config.Comment("Whether to get dead bushes from smelting saplings and flowers")
     public boolean DEAD_BUSH_FROM_SMELTING = true;
 
-    @Config.Name("String Crook Recipe in JEI")
-    @Config.Comment("Whether to add an crooking recipe for string just to show recupe in JEI (however this adds additional chance of getting strings to function)")
-    public boolean STRING_CROOK_RECIPE_IN_JEI = true;
+    @Config.Name("Fake String Crook Recipe in JEI")
+    @Config.Comment("Whether to add a crooking recipe for string just to show in JEI (however this adds additional chance of getting strings to function properly)")
+    public boolean FAKE_STRING_CROOK_RECIPE_IN_JEI = true;
 
     @Config.Name("Hard Stone Recipes")
     @Config.Comment("Whether to add recipes to craft all variants of hard stone")
