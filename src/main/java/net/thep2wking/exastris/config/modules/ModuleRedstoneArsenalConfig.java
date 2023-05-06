@@ -6,5 +6,5 @@ import net.thep2wking.exastris.config.modules.redstonearsenal.RedstoneArsenalToo
 public class ModuleRedstoneArsenalConfig {
     @Config.Name("tools")
     @Config.Comment("Configure Tools")
-    public RedstoneArsenalTools REDSTONE_ARSENAL_TOOLS = new RedstoneArsenalTools();
+    public RedstoneArsenalTools TOOLS = new RedstoneArsenalTools();
 }

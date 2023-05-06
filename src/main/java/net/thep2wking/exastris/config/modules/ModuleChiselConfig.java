@@ -8,13 +8,13 @@ import net.thep2wking.exastris.config.modules.chisel.ChiselSieveRecipesConfig;
 public class ModuleChiselConfig {
     @Config.Name("barrel_recipes")
     @Config.Comment("Configure Barrel Recipes")
-    public ChiselBarrelRecipesConfig CHISEL_BARREL_RECIPES = new ChiselBarrelRecipesConfig();
+    public ChiselBarrelRecipesConfig BARREL_RECIPES = new ChiselBarrelRecipesConfig();
 
     @Config.Name("carving_recipes")
     @Config.Comment("Configure Carving Recipes")
-    public ChiselCarvingRecipesConfig CHISEL_CARVING_RECIPES = new ChiselCarvingRecipesConfig();
+    public ChiselCarvingRecipesConfig CARVING_RECIPES = new ChiselCarvingRecipesConfig();
 
     @Config.Name("sieve_recipes")
     @Config.Comment("Configure Sieve Recipes")
-    public ChiselSieveRecipesConfig CHISEL_SIEVE_RECIPES = new ChiselSieveRecipesConfig();
+    public ChiselSieveRecipesConfig SIEVE_RECIPES = new ChiselSieveRecipesConfig();
 }

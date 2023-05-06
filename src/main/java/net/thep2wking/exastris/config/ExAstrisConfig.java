@@ -23,15 +23,15 @@ public class ExAstrisConfig {
     }
 
     @Config.Name("exastris")
-    @Config.Comment("Configure Ex Astris Modules")
+    @Config.Comment("Configure Ex Astris Module")
     public static final ModuleExAstrisConfig MODULE_EX_ASTRIS = new ModuleExAstrisConfig();
 
     @Config.Name("chisel")
-    @Config.Comment("Configure Ex Astris Modules")
+    @Config.Comment("Configure Ex Astris Module")
     public static final ModuleChiselConfig MODULE_CHISEL = new ModuleChiselConfig();
 
     @Config.Name("redstonearsenal")
-    @Config.Comment("Configure Redstone Arsenal Modules")
+    @Config.Comment("Configure Redstone Arsenal Module")
     public static final ModuleRedstoneArsenalConfig MODULE_REDSTONE_ARSENAL = new ModuleRedstoneArsenalConfig();
 
     @Mod.EventBusSubscriber
