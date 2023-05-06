@@ -6,60 +6,33 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.modules.ModuleChiselConfig;
+import net.thep2wking.exastris.config.modules.ModuleExAstrisConfig;
+import net.thep2wking.exastris.config.modules.ModuleRedstoneArsenalConfig;
 
 @Config(modid = ExAstris.MODID, name = ExAstris.MODID, category = ExAstris.MODID)
 public class ExAstrisConfig {
-    @Config.Name("Generel")
-    @Config.Comment("Configure Ex Astris")
+    @Config.Name("generel")
+    @Config.Comment("Configure Generel")
     public static final Generel GENEREL = new Generel();
 
     public static class Generel {
-        @Config.Name("Tooltips")
-        @Config.Comment("Enable or Disable detailed tooltips if available")
-        public boolean TOOLTIPS = true;
-
         @Config.Name("Logging")
         @Config.Comment("Enable or Disable Logging of this mod")
         public boolean LOGGING = true;
     }
 
-    @Config.Name("Modules")
-    @Config.Comment("Configure Modules")
-    public static final Modules MODULES = new Modules();
+    @Config.Name("exastris")
+    @Config.Comment("Configure Ex Astris Modules")
+    public static final ModuleExAstrisConfig MODULE_EX_ASTRIS = new ModuleExAstrisConfig();
 
-    public static class Modules {
-        @Config.Name("Chisel")
-        @Config.Comment("Configure Chisel")
-        public Chisel CHISEL = new Chisel();
+    @Config.Name("chisel")
+    @Config.Comment("Configure Ex Astris Modules")
+    public static final ModuleChiselConfig MODULE_CHISEL = new ModuleChiselConfig();
 
-        @Config.Name("ExAstris")
-        @Config.Comment("Configure ExAstris")
-        public BuildIn EXASTRIS = new BuildIn();
-
-        @Config.Name("Disable all modules")
-        @Config.Comment("Weather to disable all modules of this mod")
-        public boolean MODULES_DISABLED = false;
-    }
-
-    public static class Chisel {
-        @Config.Name("Marble Pebbles Sieving")
-        @Config.Comment("Weather Marble Pebbles can be sieved")
-        public boolean MARBLE_PEBBLE_SIEVING = true;
-
-        @Config.Name("Limestone Pebbles Sieving")
-        @Config.Comment("Weather Limestone Pebbles can be sieved")
-        public boolean LIMESTONE_PEBBLE_SIEVING = true;
-
-        @Config.Name("Basalt Fluid Item Transform")
-        @Config.Comment("Weather Basalt can fluid item transformed")
-        public boolean BASALT_FLUID_ITEM_TRANSFORM = true;
-    }
-
-    public static class BuildIn {
-        @Config.Name("Stone Barrels")
-        @Config.Comment("Weather are stone barrels enabled")
-        public boolean STONE_BARRELS = true;
-    }
+    @Config.Name("redstonearsenal")
+    @Config.Comment("Configure Redstone Arsenal Modules")
+    public static final ModuleRedstoneArsenalConfig MODULE_REDSTONE_ARSENAL = new ModuleRedstoneArsenalConfig();
 
     @Mod.EventBusSubscriber
     public static class ConfigHolder {

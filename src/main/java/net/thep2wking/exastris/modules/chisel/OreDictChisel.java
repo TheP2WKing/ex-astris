@@ -1,60 +1,11 @@
 package net.thep2wking.exastris.modules.chisel;
 
-import exnihilocreatio.blocks.BlockSieve;
-import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
-import exnihilocreatio.util.BlockInfo;
-import exnihilocreatio.util.ItemInfo;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import net.thep2wking.exastris.ExAstris;
-import net.thep2wking.exastris.config.ExAstrisConfig;
-import net.thep2wking.exastris.init.ExAstrisBlocks;
-import net.thep2wking.exastris.init.ExAstrisItems;
-import team.chisel.api.carving.CarvingUtils;
-import team.chisel.common.init.ChiselBlocks;
 
-@SuppressWarnings("null")
-public class RecipesChisel {
+public class OreDictChisel {
     public static void register() {
-        if (ExAstrisConfig.MODULES.CHISEL.MARBLE_PEBBLE_SIEVING) {
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
-        }
-
-        if (ExAstrisConfig.MODULES.CHISEL.LIMESTONE_PEBBLE_SIEVING) {
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.01f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.02f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.04f, BlockSieve.MeshType.DIAMOND.getID());
-            ExNihiloRegistryManager.SIEVE_REGISTRY.register("stone",
-                    new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.16f, BlockSieve.MeshType.DIAMOND.getID());
-        }
-
-        if (ExAstrisConfig.MODULES.CHISEL.BASALT_FLUID_ITEM_TRANSFORM) {
-            ExNihiloRegistryManager.FLUID_BLOCK_TRANSFORMER_REGISTRY.register(FluidRegistry.LAVA,
-                    "stone", new BlockInfo(ChiselBlocks.basalt2, 7));
-        }
-
-        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "marble_from_pebble"), null,
-                new ItemStack(ChiselBlocks.marble2, 1, 7),
-                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 2));
-
-        GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "limestone_from_pebble"), null,
-                new ItemStack(ChiselBlocks.limestone2, 1, 7),
-                "AA", "AA", 'A', new ItemStack(ExAstrisItems.PEBBLES, 1, 3));
-
         OreDictionary.registerOre("plankWoodOak", new ItemStack(Item.getByNameOrId("chisel:planks-oak"), 1, 0));
         OreDictionary.registerOre("plankWoodOak", new ItemStack(Item.getByNameOrId("chisel:planks-oak"), 1, 1));
         OreDictionary.registerOre("plankWoodOak", new ItemStack(Item.getByNameOrId("chisel:planks-oak"), 1, 2));
@@ -135,21 +86,36 @@ public class RecipesChisel {
         OreDictionary.registerOre("plankWoodAcacia", new ItemStack(Item.getByNameOrId("chisel:planks-acacia"), 1, 13));
         OreDictionary.registerOre("plankWoodAcacia", new ItemStack(Item.getByNameOrId("chisel:planks-acacia"), 1, 14));
 
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 0));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 1));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 2));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 3));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 4));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 5));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 6));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 7));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 8));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 9));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 10));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 11));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 12));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 13));
-        OreDictionary.registerOre("plankWoodDarkOak", new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 14));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 0));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 1));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 2));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 3));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 4));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 5));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 6));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 7));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 8));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 9));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 10));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 11));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 12));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 13));
+        OreDictionary.registerOre("plankWoodDarkOak",
+                new ItemStack(Item.getByNameOrId("chisel:planks-dark-oak"), 1, 14));
 
         OreDictionary.registerOre("bricks", new ItemStack(Item.getByNameOrId("chisel:bricks"), 1, 0));
         OreDictionary.registerOre("bricks", new ItemStack(Item.getByNameOrId("chisel:bricks"), 1, 1));
@@ -236,12 +202,5 @@ public class RecipesChisel {
         OreDictionary.registerOre("blockPurpur", new ItemStack(Item.getByNameOrId("chisel:purpur2"), 1, 2));
         OreDictionary.registerOre("blockPurpur", new ItemStack(Item.getByNameOrId("chisel:purpur2"), 1, 3));
         OreDictionary.registerOre("blockPurpur", new ItemStack(Item.getByNameOrId("chisel:purpur2"), 1, 4));
-
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 0), 0));
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 1), 1));
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 2), 2));
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 3), 3));
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 4), 4));
-        CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel", CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 5), 5));
     }
 }

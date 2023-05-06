@@ -8,9 +8,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.thep2wking.exastris.modules.chisel.RecipesChisel;
 import net.thep2wking.exastris.modules.redstonearsenal.RecipesRedstoneArsenal;
-import net.thep2wking.exastris.modules.vanilla.RecipesExAstris;
+import net.thep2wking.exastris.util.ExAstrisRecipeRegistry;
 import net.thep2wking.exastris.util.ExAstrisRegistry;
 import net.thep2wking.exastris.util.proxy.CommonProxy;
 
@@ -48,14 +47,8 @@ public class ExAstris {
         LOGGER.info("Starting FML Initialization");
         PROXY.Init(event);
 
-        RecipesExAstris.register();
-
-        if (Loader.isModLoaded("chisel")) {
-            RecipesChisel.register();
-            LOGGER.info("Chisel recipes loaded");
-        } else {
-            LOGGER.info("Chisel not installed, recipes skipped");
-        }
+        ExAstrisRecipeRegistry.registerExAstrisRecipes();
+        ExAstrisRecipeRegistry.registerChiselRecipes();
 
         if (Loader.isModLoaded("redstonearsenal")) {
             RecipesRedstoneArsenal.register();
