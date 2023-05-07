@@ -34,4 +34,8 @@ public class MiscConfig {
     @Config.Name("Replace Ex Nihilo Sieves")
     @Config.Comment("Whether to compleatly remove and replace Ex Nihilos sieves")
     public boolean REPLACE_EX_NIHILO_SIEVES = true;
+
+    @Config.Name("Remove Ex Nihilo Auto Sifter and Subcomponents")
+    @Config.Comment("Whether to compleatly remove Ex Nihilos auto sifter and subcomponents")
+    public boolean REMOVE_EX_NIHILO_AUTO_SIFTER = true;
 }

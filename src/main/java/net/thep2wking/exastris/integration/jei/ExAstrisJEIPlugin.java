@@ -158,6 +158,13 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.grinder), 1, 0));
 		}
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REMOVE_EX_NIHILO_AUTO_SIFTER) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.watermill), 1, 0));
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.axle_stone), 1, 0));
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.autoSifter), 1, 0));
+			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 6));
+			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 7));
+		}
 
 		if (Loader.isModLoaded("redstonearsenal")) {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);

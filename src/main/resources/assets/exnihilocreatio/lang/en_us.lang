@@ -1,0 +1,14 @@
+// overrides
+exnihilocreatio:witchwater=Witchwater
+tile.witchwater.name=Witchwater
+fluid.witchwater.name=Witchwater
+
+debug.mod_not_installed.desc=The mod "%s" is not installed, Item has no use!
+
+item.item_material.rod_stone.name=Stone Stick
+tile.block_grinder.name=Auto Grinder
+tile.block_waterwheel.name=Wooden Waterwheel
+item.item_mesh.1.name=String Mesh
+item.item_mesh.2.name=Flint Mesh
+item.item_mesh.3.name=Iron Mesh
+item.item_mesh.4.name=Diamond Mesh

@@ -20,10 +20,6 @@ jei.exastris.transformation.desc2=Time:
 jei.exastris.transformation.desc3=Time to transform
 
 // fluids
-exnihilocreatio:witchwater=Witchwater
-tile.witchwater.name=Witchwater
-fluid.witchwater.name=Witchwater
-
 exastris:peacewater=Peacewater
 tile.exastris:peacewater.name=Peacewater
 fluid.exastris:peacewater=Peacewater

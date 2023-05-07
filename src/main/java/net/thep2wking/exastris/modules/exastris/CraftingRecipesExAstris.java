@@ -142,6 +142,30 @@ public class CraftingRecipesExAstris {
 					new ItemStack(Items.END_CRYSTAL, 1, 0), 'C', new ItemStack(Items.CAKE, 1, 0));
 		}
 
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REMOVE_EX_NIHILO_AUTO_SIFTER) {
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:stick_stone"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:gear_stone"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:whaterwheel"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:axle_stone"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:auto_sifter"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("enderio:gear_stone"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+			GameRegistry.addShapedRecipe(new ResourceLocation("enderio:gear_stone_upgrade"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					"A", 'A', "null");
+		}
+
 		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.ICE_BLOCKS_FROM_ICE_SHARDS) {
 			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "ice_from_shard"), null,
 					new ItemStack(Item.getItemFromBlock(Blocks.ICE), 1, 0),
