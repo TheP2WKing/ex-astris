@@ -5,13 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.google.common.collect.Lists;
 
 import exnihilocreatio.blocks.BlockSieve;
 import exnihilocreatio.config.ModConfig;
 import exnihilocreatio.items.ItemMesh;
 import exnihilocreatio.tiles.TileSieve;
 import exnihilocreatio.util.ItemStackItemHandler;
-import exnihilocreatio.util.Util;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import mcjty.theoneprobe.api.ElementAlignment;
@@ -29,6 +31,7 @@ import net.minecraft.client.renderer.block.statemap.DefaultStateMapper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -38,9 +41,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.FakePlayer;
@@ -62,6 +68,15 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     private final float hardness;
     private final float resistance;
     private final float lightLevel;
+
+    private static final AxisAlignedBB POLE1 = new AxisAlignedBB(0.062, 0, 0.062, 0.125, 0.688, 0.125);
+    private static final AxisAlignedBB POLE2 = new AxisAlignedBB(0.875, 0, 0.062, 0.938, 0.688, 0.125);
+    private static final AxisAlignedBB POLE3 = new AxisAlignedBB(0.875, 0, 0.875, 0.938, 0.688, 0.938);
+    private static final AxisAlignedBB POLE4 = new AxisAlignedBB(0.062, 0, 0.875, 0.125, 0.688, 0.938);
+    private static final AxisAlignedBB SIEVE = new AxisAlignedBB(0, 0.688, 0, 1, 1, 1);
+
+    private static final List<AxisAlignedBB> COLLISION_BOXES = Lists.newArrayList(POLE1, POLE2, POLE3, POLE4, SIEVE);
+    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 1, 1);
 
     private static final Int2ObjectMap<EnumExAstrisSieve> EXASTRIS_SIEVE_TYPES = new Int2ObjectArrayMap<>();
 
@@ -95,6 +110,46 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.JUNGLE.meta, EnumExAstrisSieve.JUNGLE);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.ACACIA.meta, EnumExAstrisSieve.ACACIA);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.DARK_OAK.meta, EnumExAstrisSieve.DARK_OAK);
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return BOUNDING_BOX;
+    }
+
+    @Override
+    public void addCollisionBoxToList(IBlockState state, World world, BlockPos pos, AxisAlignedBB entityBox,
+            List<AxisAlignedBB> collidingBoxes, @Nullable Entity entity, boolean isActualState) {
+        entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
+        for (AxisAlignedBB box : COLLISION_BOXES) {
+            if (entityBox.intersects(box))
+                collidingBoxes.add(box.offset(pos));
+        }
+    }
+
+    @Override
+    @Nullable
+    public RayTraceResult collisionRayTrace(IBlockState state, World world, BlockPos pos, Vec3d start, Vec3d end) {
+        double distanceSq;
+        double distanceSqShortest = Double.POSITIVE_INFINITY;
+        RayTraceResult resultClosest = null;
+        RayTraceResult result;
+        start = start.subtract(pos.getX(), pos.getY(), pos.getZ());
+        end = end.subtract(pos.getX(), pos.getY(), pos.getZ());
+        for (AxisAlignedBB box : COLLISION_BOXES) {
+            result = box.calculateIntercept(start, end);
+            if (result == null)
+                continue;
+
+            distanceSq = result.hitVec.squareDistanceTo(start);
+            if (distanceSq < distanceSqShortest) {
+                distanceSqShortest = distanceSq;
+                resultClosest = result;
+            }
+        }
+        return resultClosest == null ? null
+                : new RayTraceResult(RayTraceResult.Type.BLOCK,
+                        resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit, pos);
     }
 
     @Override
@@ -169,7 +224,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         if (heldItem.isEmpty() && !te.getMeshStack().isEmpty() && player.isSneaking()
                 && te.setMesh(ItemStack.EMPTY, true)) {
             // Removing a mesh.
-            Util.dropItemInWorld(te, player, te.getMeshStack(), 0.02f);
+            player.inventory.addItemStackToInventory(te.getMeshStack());
+            //Util.dropItemInWorld(te, player, te.getMeshStack(), 0.02f);
             te.setMesh(ItemStack.EMPTY, false);
             return true;
         }
