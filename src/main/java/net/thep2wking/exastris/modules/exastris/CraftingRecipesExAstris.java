@@ -158,12 +158,6 @@ public class CraftingRecipesExAstris {
 			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:auto_sifter"),
 					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
 					"A", 'A', "null");
-			GameRegistry.addShapedRecipe(new ResourceLocation("enderio:gear_stone"),
-					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
-					"A", 'A', "null");
-			GameRegistry.addShapedRecipe(new ResourceLocation("enderio:gear_stone_upgrade"),
-					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
-					"A", 'A', "null");
 		}
 
 		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.ICE_BLOCKS_FROM_ICE_SHARDS) {

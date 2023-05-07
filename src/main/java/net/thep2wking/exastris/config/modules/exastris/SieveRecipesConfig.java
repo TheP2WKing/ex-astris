@@ -46,4 +46,8 @@ public class SieveRecipesConfig {
     @Config.Name("Ice Shards from Snow")
     @Config.Comment("Whether to get ice shards from siveting snow")
     public boolean ICE_SHARDS_FROM_SNOW = true;
+
+    @Config.Name("Enchanted Golden Apples from Leaves")
+    @Config.Comment("Whether to get enchanted golden apples from siveting leaves")
+    public boolean ENCHANTED_GOLDEN_APPLES_FROM_LEAVES = true;
 }

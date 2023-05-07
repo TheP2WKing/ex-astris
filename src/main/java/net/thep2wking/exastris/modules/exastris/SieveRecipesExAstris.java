@@ -110,5 +110,10 @@ public class SieveRecipesExAstris {
 			ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemInfo(Item.getItemFromBlock(Blocks.SNOW)),
 					new ItemInfo(ExAstrisItems.SHARD_ICE, 0), 0.5f, BlockSieve.MeshType.STRING.getID());
 		}
+
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.SIEVE_RECIPES.ENCHANTED_GOLDEN_APPLES_FROM_LEAVES) {
+			ExNihiloRegistryManager.SIEVE_REGISTRY.register("treeLeaves",
+					new ItemInfo(Items.GOLDEN_APPLE, 1), 0.001f, BlockSieve.MeshType.DIAMOND.getID());
+		}
 	}
 }
