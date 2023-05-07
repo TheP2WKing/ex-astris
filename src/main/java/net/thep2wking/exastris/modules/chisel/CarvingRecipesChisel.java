@@ -9,7 +9,7 @@ import team.chisel.api.carving.CarvingUtils;
 @SuppressWarnings("null")
 public class CarvingRecipesChisel {
 	public static void register() {
-		if (ExAstrisConfig.MODULE_CHISEL.CARVING_RECIPES.CONVERT_BETWEEN_BARRELS) {
+		if (ExAstrisConfig.MODULE_CHISEL.CARVING_RECIPES.CONVERT_BETWEEN_BARRELS && ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_BARRELS) {
 			CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel",
 					CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 0), 0));
 			CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "barrel",
@@ -24,7 +24,7 @@ public class CarvingRecipesChisel {
 					CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T0, 1, 5), 5));
 		}
 
-		if (ExAstrisConfig.MODULE_CHISEL.CARVING_RECIPES.CONVERT_BETWEEN_SIEVES) {
+		if (ExAstrisConfig.MODULE_CHISEL.CARVING_RECIPES.CONVERT_BETWEEN_SIEVES && ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_SIEVES) {
 			CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "sieve",
 					CarvingUtils.variationFor(new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 0), 0));
 			CarvingUtils.getChiselRegistry().addVariation(ExAstris.PREFIX + "sieve",

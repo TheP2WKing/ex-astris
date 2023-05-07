@@ -2,6 +2,7 @@ package net.thep2wking.exastris.util.handler;
 
 import java.util.Random;
 
+import exnihilocreatio.util.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -13,6 +14,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.thep2wking.exastris.ExAstris;
 
 public class ExAstrisUtils {
@@ -57,5 +59,11 @@ public class ExAstrisUtils {
         int max = maxNumber;
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
+    }
+
+    public static ItemStack addFluidItem(String fluid) {
+        FluidStack inputFluid = new FluidStack(FluidRegistry.getFluid(fluid), Fluid.BUCKET_VOLUME);
+        ItemStack inputBucket = Util.getBucketStack(inputFluid.getFluid());
+        return inputBucket;
     }
 }

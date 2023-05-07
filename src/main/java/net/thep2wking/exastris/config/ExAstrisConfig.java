@@ -6,6 +6,9 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.categories.GenerelConfig;
+import net.thep2wking.exastris.config.categories.JEIConfig;
+import net.thep2wking.exastris.config.categories.ModulesConfig;
 import net.thep2wking.exastris.config.modules.ChiselModuleConfig;
 import net.thep2wking.exastris.config.modules.ExAstrisModuleConfig;
 import net.thep2wking.exastris.config.modules.RedstoneArsenalModuleConfig;
@@ -19,6 +22,10 @@ public class ExAstrisConfig {
     @Config.Name("modules")
     @Config.Comment("Configure Modules")
     public static final ModulesConfig MODULES = new ModulesConfig();
+
+    @Config.Name("jei")
+    @Config.Comment("Configure JEI integration")
+    public static final JEIConfig INTEGRATION_JEI = new JEIConfig();
 
     @Config.Name("exastris")
     @Config.Comment("Configure Ex Astris Module")

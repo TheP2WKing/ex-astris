@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.config;
+package net.thep2wking.exastris.config.categories;
 
 import net.minecraftforge.common.config.Config;
 

@@ -18,6 +18,7 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisRAItems;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCategory;
@@ -31,242 +32,136 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 
 @JEIPlugin
 public class ExAstrisJEIPlugin implements IModPlugin {
-    @Override
-    public void registerCategories(IRecipeCategoryRegistration registry) {
-        registry.addRecipeCategories(new BlockTransformationCategory(registry.getJeiHelpers().getGuiHelper()));
-        registry.addRecipeCategories(new FluidDollTransformCategory(registry.getJeiHelpers().getGuiHelper()));
-    }
+	@Override
+	public void registerCategories(IRecipeCategoryRegistration registry) {
+		if (ExAstrisConfig.INTEGRATION_JEI.TRANSFORMATION_RECIPE_CATEGORY) {
+			registry.addRecipeCategories(new BlockTransformationCategory(registry.getJeiHelpers().getGuiHelper()));
+		}
+		if (ExAstrisConfig.INTEGRATION_JEI.DOLL_RECIPE_CATEGORY) {
+			registry.addRecipeCategories(new FluidDollTransformCategory(registry.getJeiHelpers().getGuiHelper()));
+		}
+	}
 
-    @Override
-    public void register(IModRegistry registry) {
-        
-        List<BlockTransformationWrapper> list = new ArrayList<>();
-        List<BlockTransformationCompat> charger = new ArrayList<>();
-        charger.add(new BlockTransformationRecipes());
-        for (BlockTransformationCompat cha : charger) if (cha.shouldLoad()) cha.addRecipes(list);
-        registry.addRecipes(list, BlockTransformationCategory.UID);
+	public static void addBarrelToRelevantCategories(IModRegistry registry, ItemStack stack) {
+		registry.addRecipeCatalyst(stack, FluidDollTransformCategory.UID, FluidOnTopRecipeCategory.UID,
+				FluidTransformRecipeCategory.UID, FluidItemTransformRecipeCategory.UID, CompostRecipeCategory.UID);
+	}
 
-        List<FluidDollTransformWrapper> list2 = new ArrayList<>();
-        List<FluidDollTransformCompat> charger2 = new ArrayList<>();
-        charger2.add(new FluidDollTransformRecipes());
-        for (FluidDollTransformCompat cha2 : charger2) if (cha2.shouldLoad()) cha2.addRecipes(list2);
-        registry.addRecipes(list2, FluidDollTransformCategory.UID);
+	public static void addSieveToRelevantCategories(IModRegistry registry, ItemStack stack) {
+		registry.addRecipeCatalyst(stack, SieveRecipeCategory.UID);
+	}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0),
-                BlockTransformationCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_FROSTY_DIRT), 1, 0),
-                BlockTransformationCategory.UID);
+	public static void hideFromJEI(IModRegistry registry, ItemStack stack) {
+		registry.getJeiHelpers().getIngredientBlacklist().addIngredientToBlacklist(stack);
+	}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0),
-                FluidDollTransformCategory.UID);
+	@Override
+	public void register(IModRegistry registry) {
+		if (ExAstrisConfig.INTEGRATION_JEI.TRANSFORMATION_RECIPE_CATEGORY) {
+			List<BlockTransformationWrapper> listBlockTransform = new ArrayList<>();
+			List<BlockTransformationCompat> blockTransform = new ArrayList<>();
+			blockTransform.add(new BlockTransformationRecipes());
+			for (BlockTransformationCompat bt : blockTransform)
+				if (bt.shouldLoad())
+					bt.addRecipes(listBlockTransform);
+			registry.addRecipes(listBlockTransform, BlockTransformationCategory.UID);
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5),
-                FluidDollTransformCategory.UID);
+		if (ExAstrisConfig.INTEGRATION_JEI.DOLL_RECIPE_CATEGORY) {
+			List<FluidDollTransformWrapper> listMobDoll = new ArrayList<>();
+			List<FluidDollTransformCompat> mobDoll = new ArrayList<>();
+			mobDoll.add(new FluidDollTransformRecipes());
+			for (FluidDollTransformCompat mb : mobDoll)
+				if (mb.shouldLoad())
+					mb.addRecipes(listMobDoll);
+			registry.addRecipes(listMobDoll, FluidDollTransformCategory.UID);
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7),
-                FluidDollTransformCategory.UID);
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
+			registry.addRecipeCatalyst(
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0),
+					BlockTransformationCategory.UID);
+		}
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+			registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_FROSTY_DIRT), 1, 0),
+					BlockTransformationCategory.UID);
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0),
-                FluidDollTransformCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
-                FluidDollTransformCategory.UID);
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_BARRELS) {
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5));
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5),
-                FluidOnTopRecipeCategory.UID);
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7));
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7),
-                FluidOnTopRecipeCategory.UID);
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1));
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0),
-                FluidOnTopRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
-                FluidOnTopRecipeCategory.UID);
+		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
+				FluidDollTransformCategory.UID);
+		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0),
+				FluidDollTransformCategory.UID);
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5),
-                FluidTransformRecipeCategory.UID);
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_SIEVES) {
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 1));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 2));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 3));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5));
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7),
-                FluidTransformRecipeCategory.UID);
-        
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0),
-                FluidTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
-                FluidTransformRecipeCategory.UID);
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_BARRELS) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
+		}
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_SIEVES) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
+		}
+		if (ExAstrisConfig.MODULE_EX_ASTRIS.MISC.REPLACE_EX_NIHILO_END_CAKE) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
+		}
+		if (ExAstrisConfig.INTEGRATION_JEI.HIDE_UNUSED) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.grinder), 1, 0));
+		}
 
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5),
-                FluidItemTransformRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7),
-                FluidItemTransformRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0),
-                FluidItemTransformRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
-                FluidItemTransformRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5),
-                CompostRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 2),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 3),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 4),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 5),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 6),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 7),
-                CompostRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0),
-                CompostRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1),
-                CompostRecipeCategory.UID);
-
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0),
-                SieveRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 1),
-                SieveRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 2),
-                SieveRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 3),
-                SieveRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4),
-                SieveRecipeCategory.UID);
-        registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5),
-                SieveRecipeCategory.UID);
-
-        registry.getJeiHelpers().getIngredientBlacklist()
-                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
-        registry.getJeiHelpers().getIngredientBlacklist()
-                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
-        
-        registry.getJeiHelpers().getIngredientBlacklist()
-                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
-
-        registry.getJeiHelpers().getIngredientBlacklist()
-                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
-
-        registry.getJeiHelpers().getIngredientBlacklist()
-                .addIngredientToBlacklist(new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
-                
-        if (Loader.isModLoaded("redstonearsenal")) {
-            registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
-            registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);
-        }
-    }
+		if (Loader.isModLoaded("redstonearsenal")) {
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);
+		}
+	}
 }
