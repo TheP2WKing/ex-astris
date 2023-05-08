@@ -28,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisItems;
 import net.thep2wking.exastris.integration.top.ITOPInfoProvider;
@@ -59,6 +60,10 @@ public class BlockEndCake extends BlockCake implements IHasModel, ITOPInfoProvid
         setCreativeTab(this.tab);
         setDefaultState(this.blockState.getBaseState().withProperty(BITES, 0));
         ExAstrisBlocks.BLOCKS.add(this);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo End Cake");
+        }
     }
 
     @Override

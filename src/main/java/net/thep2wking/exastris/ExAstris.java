@@ -25,7 +25,7 @@ public class ExAstris {
     public static final String DEPENDENCIES = "required-after:forge@[14.23.5.2847,);required-after:exnihilocreatio@[1.12.2-0.4.7,);after:chisel@[MC1.12.2-1.0.1,);after:redstonearsenal@[M2.6.6,);";
     public static final String CLIENT_PROXY_CLASS = "net.thep2wking.exastris.util.proxy.ClientProxy";
     public static final String SERVER_PROXY_CLASS = "net.thep2wking.exastris.util.proxy.ServerProxy";
-    public static final Logger LOGGER = LogManager.getLogger(MODID);
+    public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @SidedProxy(clientSide = CLIENT_PROXY_CLASS, serverSide = SERVER_PROXY_CLASS)
     public static CommonProxy PROXY;
@@ -66,7 +66,7 @@ public class ExAstris {
     @Mod.EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            LOGGER.info(NAME + " " + VERSION + " " + "loaded!");
+            LOGGER.info(MODID + " " + VERSION + " " + "loaded!");
         }
     }
 }

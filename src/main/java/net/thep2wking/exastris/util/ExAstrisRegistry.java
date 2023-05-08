@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
@@ -37,6 +39,10 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_PEACEWATER);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_FROSTWATER);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_SLIME);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered blocks");
+        }
     }
 
     @SubscribeEvent
@@ -69,12 +75,20 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_PODZOL);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_FERN);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_CHORUS);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered items");
+        }
     }
 
     public static void preInitRegistries(FMLPreInitializationEvent event) {
         ExAstrisUtils.registerFluid(ExAstrisFluids.PEACEWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.FROSTWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.SLIME);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered fluids");
+        }
     }
 
     @SubscribeEvent

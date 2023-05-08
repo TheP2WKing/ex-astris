@@ -55,6 +55,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
@@ -103,6 +104,10 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         this.setDefaultState(this.blockState.getBaseState().withProperty(BlockSieve.MESH, MeshType.NO_RENDER)
                 .withProperty(VARIANT, EnumExAstrisSieve.OAK));
         ExAstrisBlocks.BLOCKS.add(this);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Sieves");
+        }
 
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.OAK.meta, EnumExAstrisSieve.OAK);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.SPRUCE.meta, EnumExAstrisSieve.SPRUCE);

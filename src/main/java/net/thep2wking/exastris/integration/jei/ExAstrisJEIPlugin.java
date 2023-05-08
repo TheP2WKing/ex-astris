@@ -18,6 +18,7 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
+import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisRAItems;
@@ -57,6 +58,10 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 
 	@Override
 	public void register(IModRegistry registry) {
+		if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("JEI Integration loaded");
+        }
+		
 		if (ExAstrisConfig.INTEGRATION_JEI.TRANSFORMATION_RECIPE_CATEGORY) {
 			List<BlockTransformationWrapper> listBlockTransform = new ArrayList<>();
 			List<BlockTransformationCompat> blockTransform = new ArrayList<>();

@@ -6,6 +6,21 @@
         "mesh=none,variant=oak_wood": {
             "model": "exastris:no_mesh"
         },
+        "mesh=none,variant=spruce_wood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=none,variant=birch_wood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=none,variant=jungle_wood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=none,variant=acacia_wood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=none,variant=dark_oak_wood": {
+            "model": "exastris:no_mesh"
+        },
         "mesh=no_render,variant=oak_wood": {
             "model": "exastris:sieve_oak_wood"
         },

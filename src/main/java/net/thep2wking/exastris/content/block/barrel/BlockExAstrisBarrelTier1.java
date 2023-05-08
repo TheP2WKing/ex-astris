@@ -35,6 +35,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
@@ -74,6 +75,10 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
         setCreativeTab(this.tab);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier1.STONE));
         ExAstrisBlocks.BLOCKS.add(this);
+
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Barrels");
+        }
 
         EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE.meta, EnumExAstrisBarrelTier1.STONE);
         EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.COBBLESTONE.meta, EnumExAstrisBarrelTier1.COBBLESTONE);
