@@ -25,6 +25,10 @@ minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
     mappings = "snapshot_20171003"
+    clientJvmArgs.add("-Xmx4G")
+    clientRunArgs.add("--username=Dev")
+    serverJvmArgs.add("-Xmx4G")
+    makeObfSourceJar = false
 }
 
 repositories {
