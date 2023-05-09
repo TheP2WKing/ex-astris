@@ -20,7 +20,7 @@ public class TileFrostyDirt extends TileEntity implements ITickable {
 
     @Override
     public void update() {
-        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
             timer++;
             if (timer > UPDATE_INTERVAL) {
                 timer = 0;

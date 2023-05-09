@@ -20,7 +20,7 @@ public class TileQuadrupleHardStone extends TileEntity implements ITickable {
 
     @Override
     public void update() {
-        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
             timer++;
             if (timer > UPDATE_INTERVAL) {
                 timer = 0;

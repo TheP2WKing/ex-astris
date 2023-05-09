@@ -50,7 +50,8 @@ public class ExAstris {
             LOGGER.info("Starting FML Initialization");
         }
         PROXY.Init(event);
-        ExAstrisRecipeRegistry.registerExAstrisRecipes();
+        ExAstrisRecipeRegistry.registerVanillaRecipes();
+        ExAstrisRecipeRegistry.registerExNihiloRecipes();
         ExAstrisRecipeRegistry.registerChiselRecipes();
         ExAstrisRecipeRegistry.registerRedstoneArsenalRecipes();
     }

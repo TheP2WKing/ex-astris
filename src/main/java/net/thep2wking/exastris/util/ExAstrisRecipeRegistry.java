@@ -3,71 +3,75 @@ package net.thep2wking.exastris.util;
 import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
-import net.thep2wking.exastris.modules.chisel.BarrelRecipesChisel;
-import net.thep2wking.exastris.modules.chisel.CarvingRecipesChisel;
-import net.thep2wking.exastris.modules.chisel.CraftingRecipesChisel;
-import net.thep2wking.exastris.modules.chisel.OreDictChisel;
-import net.thep2wking.exastris.modules.chisel.SieveRecipesChisel;
-import net.thep2wking.exastris.modules.exastris.BarrelRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.CraftingRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.CrookRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.CrucibleRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.FluidTransformRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.HammerRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.HeatSourcesExAstris;
-import net.thep2wking.exastris.modules.exastris.OreDictExAstris;
-import net.thep2wking.exastris.modules.exastris.SieveRecipesExAstris;
-import net.thep2wking.exastris.modules.exastris.SmeltingRecipesExAstris;
-import net.thep2wking.exastris.modules.redstonearsenal.RecipesRedstoneArsenal;
+import net.thep2wking.exastris.modules.chisel.ChiselBarrelRecipes;
+import net.thep2wking.exastris.modules.chisel.ChiselCarvingRecipes;
+import net.thep2wking.exastris.modules.chisel.ChiselCraftingRecipes;
+import net.thep2wking.exastris.modules.chisel.ChiselOreDict;
+import net.thep2wking.exastris.modules.chisel.ChiselSieveRecipes;
+import net.thep2wking.exastris.modules.exnihilo.ExNihiloCraftingRecipes;
+import net.thep2wking.exastris.modules.exnihilo.ExNihiloSmeltingRecipes;
+import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalCraftingRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaBarrelRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaCraftingRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaCrookRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaCrucibleRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaFluidTransformRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaHammerRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaHeatSources;
+import net.thep2wking.exastris.modules.vanilla.VanillaOreDict;
+import net.thep2wking.exastris.modules.vanilla.VanillaSieveRecipes;
+import net.thep2wking.exastris.modules.vanilla.VanillaSmeltingRecipes;
 
 public class ExAstrisRecipeRegistry {
-    public static void registerExAstrisRecipes() {
-        if (ExAstrisConfig.MODULES.DEFAULT_INTEGRATION) {
-            BarrelRecipesExAstris.register();
-            CraftingRecipesExAstris.register();
-            CrookRecipesExAstris.register();
-            CrucibleRecipesExAstris.register();
-            FluidTransformRecipesExAstris.register();
-            HammerRecipesExAstris.register();
-            HeatSourcesExAstris.register();
-            OreDictExAstris.register();
-            SieveRecipesExAstris.register();
-            SmeltingRecipesExAstris.register();
-            if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-                ExAstris.LOGGER.info("Registered Recipes for " + ExAstris.MODID);
-            }
-        } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("Skipped registering of Recipes because " + ExAstrisConstants.MODID_CHISEL
-                    + " Integration was disabled");
+    public static void registerVanillaRecipes() {
+        VanillaBarrelRecipes.register();
+        VanillaCraftingRecipes.register();
+        VanillaCrookRecipes.register();
+        VanillaCrucibleRecipes.register();
+        VanillaFluidTransformRecipes.register();
+        VanillaHammerRecipes.register();
+        VanillaHeatSources.register();
+        VanillaOreDict.register();
+        VanillaSieveRecipes.register();
+        VanillaSmeltingRecipes.register();
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_MINECRAFT);
+        }
+    }
+
+    public static void registerExNihiloRecipes() {
+        ExNihiloCraftingRecipes.register();
+        ExNihiloSmeltingRecipes.register();
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_EX_NIHILO);
         }
     }
 
     public static void registerChiselRecipes() {
-        if (Loader.isModLoaded(ExAstrisConstants.MODID_CHISEL) && ExAstrisConfig.MODULES.CHISEL_INTEGRATION) {
-            BarrelRecipesChisel.register();
-            CarvingRecipesChisel.register();
-            CraftingRecipesChisel.register();
-            OreDictChisel.register();
-            SieveRecipesChisel.register();
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_CHISEL)) {
+            ChiselBarrelRecipes.register();
+            ChiselCarvingRecipes.register();
+            ChiselCraftingRecipes.register();
+            ChiselOreDict.register();
+            ChiselSieveRecipes.register();
             if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
                 ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_CHISEL);
             }
         } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("Skipped registering of Recipes because " + ExAstrisConstants.MODID_CHISEL
-                    + " is not installed or Integration was disabled");
+            ExAstris.LOGGER.info(
+                    "Skipped registering Recipes for " + ExAstrisConstants.MODID_CHISEL + " because mod was not found");
         }
     }
 
     public static void registerRedstoneArsenalRecipes() {
-        if (Loader.isModLoaded(ExAstrisConstants.MODID_REDSTONE_ARSENAL)
-                && ExAstrisConfig.MODULES.REDSTONE_ARSENAL_INTEGRATION) {
-            RecipesRedstoneArsenal.register();
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_REDSTONE_ARSENAL)) {
+            RedstoneArsenalCraftingRecipes.register();
             if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
                 ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_REDSTONE_ARSENAL);
             }
         } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("Skipped registering of Recipes because " + ExAstrisConstants.MODID_REDSTONE_ARSENAL
-                    + " is not installed or Integration was disabled");
+            ExAstris.LOGGER.info(
+                    "Skipped registering Recipes for " + ExAstrisConstants.MODID_CHISEL + " because mod was not found");
         }
     }
 }

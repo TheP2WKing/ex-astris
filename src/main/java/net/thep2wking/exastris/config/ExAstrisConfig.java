@@ -6,12 +6,12 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.categories.ChiselConfig;
+import net.thep2wking.exastris.config.categories.ExNihiloConfig;
 import net.thep2wking.exastris.config.categories.GenerelConfig;
 import net.thep2wking.exastris.config.categories.JEIConfig;
-import net.thep2wking.exastris.config.categories.ModulesConfig;
-import net.thep2wking.exastris.config.modules.ChiselModuleConfig;
-import net.thep2wking.exastris.config.modules.ExAstrisModuleConfig;
-import net.thep2wking.exastris.config.modules.RedstoneArsenalModuleConfig;
+import net.thep2wking.exastris.config.categories.RedstoneArsenalConfig;
+import net.thep2wking.exastris.config.categories.VanillaConfig;
 
 @Config(modid = ExAstris.MODID, name = ExAstris.MODID, category = ExAstris.MODID)
 public class ExAstrisConfig {
@@ -19,25 +19,25 @@ public class ExAstrisConfig {
     @Config.Comment("Configure Generel")
     public static final GenerelConfig GENEREL = new GenerelConfig();
 
-    @Config.Name("modules")
-    @Config.Comment("Configure Modules")
-    public static final ModulesConfig MODULES = new ModulesConfig();
-
     @Config.Name("jei")
     @Config.Comment("Configure JEI integration")
     public static final JEIConfig INTEGRATION_JEI = new JEIConfig();
 
-    @Config.Name("exastris")
-    @Config.Comment("Configure Ex Astris Module")
-    public static final ExAstrisModuleConfig MODULE_EX_ASTRIS = new ExAstrisModuleConfig();
+    @Config.Name("vanilla")
+    @Config.Comment("Configure Vanilla Module")
+    public static final VanillaConfig MODULE_VANILLA= new VanillaConfig();
+
+    @Config.Name("exnihilo")
+    @Config.Comment("Configure Ex Nihilo Module")
+    public static final ExNihiloConfig MODULE_EX_NIHILO = new ExNihiloConfig();
 
     @Config.Name("chisel")
     @Config.Comment("Configure Ex Astris Module")
-    public static final ChiselModuleConfig MODULE_CHISEL = new ChiselModuleConfig();
+    public static final ChiselConfig MODULE_CHISEL = new ChiselConfig();
 
     @Config.Name("redstonearsenal")
     @Config.Comment("Configure Redstone Arsenal Module")
-    public static final RedstoneArsenalModuleConfig MODULE_REDSTONE_ARSENAL = new RedstoneArsenalModuleConfig();
+    public static final RedstoneArsenalConfig MODULE_REDSTONE_ARSENAL = new RedstoneArsenalConfig();
 
     @Mod.EventBusSubscriber
     public static class ConfigHolder {

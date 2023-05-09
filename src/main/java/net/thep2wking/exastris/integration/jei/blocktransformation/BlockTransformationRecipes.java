@@ -16,12 +16,12 @@ public class BlockTransformationRecipes extends BlockTransformationCompat {
 
 	@Override
 	public void addRecipes(List<BlockTransformationWrapper> list) {
-		if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
+		if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
 			list.add(new BlockTransformationWrapper(new ItemStack(Item.getItemFromBlock(Blocks.BEDROCK), 1, 0),
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0)));
 		}
 
-		if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+		if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
 			list.add(new BlockTransformationWrapper(new ItemStack(Item.getItemFromBlock(Blocks.SNOW), 1, 0),
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_FROSTY_DIRT), 1, 0)));
 		}

@@ -53,7 +53,7 @@ public class BlockQuadrupleHardStone extends ExAstrisBlockBase implements ITileE
     @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
-        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
             TileQuadrupleHardStone tile = (TileQuadrupleHardStone) world.getTileEntity(data.getPos());
 
             probeInfo.progress(tile.getVolume(), 100, probeInfo.defaultProgressStyle().suffix("%"));

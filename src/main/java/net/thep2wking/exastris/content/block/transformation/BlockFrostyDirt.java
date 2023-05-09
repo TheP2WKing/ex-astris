@@ -53,7 +53,7 @@ public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityPro
     @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
-        if (ExAstrisConfig.MODULE_EX_ASTRIS.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
             TileFrostyDirt tile = (TileFrostyDirt) world.getTileEntity(data.getPos());
 
             probeInfo.progress(tile.getVolume(), 100, probeInfo.defaultProgressStyle().suffix("%"));
