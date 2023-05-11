@@ -77,7 +77,7 @@ public class BlockExAstrisBarrelTier2 extends BlockBarrel implements IHasModel {
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Barrels");
+            ExAstris.LOGGER.info(BlockExAstrisBarrelTier2.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
         }
 
         EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.IRON.meta, EnumExAstrisBarrelTier2.IRON);

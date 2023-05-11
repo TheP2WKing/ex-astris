@@ -106,7 +106,7 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Sieves");
+            ExAstris.LOGGER.info(BlockExAstrisSieve.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Sieve");
         }
 
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.OAK.meta, EnumExAstrisSieve.OAK);

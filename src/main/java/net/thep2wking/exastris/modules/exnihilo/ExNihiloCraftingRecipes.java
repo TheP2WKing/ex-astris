@@ -38,24 +38,6 @@ public class ExNihiloCraftingRecipes {
 			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "cobblestone_barrel"), null,
 					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 1),
 					"A A", "A A", "ABA", 'A', "cobblestone", 'B', "slabCobblestone");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "stone_bricks_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 2),
-					"A A", "A A", "ABA", 'A', "stoneBricks", 'B', "slabStoneBricks");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "sandstone_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 3),
-					"A A", "A A", "ABA", 'A', "sandstone", 'B', "slabSandstone");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "bricks_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 4),
-					"A A", "A A", "ABA", 'A', "bricks", 'B', "slabBricks");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "nether_brick_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 5),
-					"A A", "A A", "ABA", 'A', "netherBrick", 'B', "slabNetherBrick");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "quartz_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 6),
-					"A A", "A A", "ABA", 'A', "blockQuartz", 'B', "slabQuartz");
-			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "purpur_barrel"), null,
-					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 7),
-					"A A", "A A", "ABA", 'A', "blockPurpur", 'B', "slabPurpur");
 
 			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "iron_barrel"), null,
 					new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T2, 1, 0),

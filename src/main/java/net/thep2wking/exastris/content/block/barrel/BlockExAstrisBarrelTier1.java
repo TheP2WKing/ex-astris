@@ -77,17 +77,11 @@ public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Barrels");
+            ExAstris.LOGGER.info(BlockExAstrisBarrelTier1.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
         }
 
         EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE.meta, EnumExAstrisBarrelTier1.STONE);
         EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.COBBLESTONE.meta, EnumExAstrisBarrelTier1.COBBLESTONE);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE_BRICKS.meta, EnumExAstrisBarrelTier1.STONE_BRICKS);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.SANDSTONE.meta, EnumExAstrisBarrelTier1.SANDSTONE);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.BRICKS.meta, EnumExAstrisBarrelTier1.BRICKS);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.NETHER_BRICK.meta, EnumExAstrisBarrelTier1.NETHER_BRICK);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.QUARTZ.meta, EnumExAstrisBarrelTier1.QUARTZ);
-        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.PURPUR.meta, EnumExAstrisBarrelTier1.PURPUR);
     }
 
     @Override

@@ -8,12 +8,6 @@ import net.thep2wking.exastris.util.ExAstrisConstants;
 public enum EnumExAstrisBarrelTier1 implements IStringSerializable {
     STONE(0, "stone", ExAstrisConstants.MODID_MINECRAFT),
     COBBLESTONE(1, "cobblestone", ExAstrisConstants.MODID_MINECRAFT),
-    STONE_BRICKS(2, "stone_bricks", ExAstrisConstants.MODID_MINECRAFT),
-    SANDSTONE(3, "sandstone", ExAstrisConstants.MODID_MINECRAFT),
-    BRICKS(4, "bricks", ExAstrisConstants.MODID_MINECRAFT),
-    NETHER_BRICK(5, "nether_brick", ExAstrisConstants.MODID_MINECRAFT),
-    QUARTZ(6, "quartz", ExAstrisConstants.MODID_MINECRAFT),
-    PURPUR(7, "purpur", ExAstrisConstants.MODID_MINECRAFT),
     ;
 
     private static final Int2ObjectMap<EnumExAstrisBarrelTier1> ALL_TYPES = new Int2ObjectArrayMap<>();

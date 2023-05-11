@@ -62,7 +62,7 @@ public class BlockEndCake extends BlockCake implements IHasModel, ITOPInfoProvid
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo End Cake");
+            ExAstris.LOGGER.info(BlockEndCake.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo End Cake");
         }
     }
 

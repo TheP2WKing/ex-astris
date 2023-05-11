@@ -42,12 +42,6 @@ tile.exastris:barrel_dark_oak_wood.name=Dark Oak Barrel
 
 tile.exastris:barrel_stone.name=Stone Barrel
 tile.exastris:barrel_cobblestone.name=Cobblestone Barrel
-tile.exastris:barrel_stone_bricks.name=Stone Bricks Barrel
-tile.exastris:barrel_sandstone.name=Sandstone Barrel
-tile.exastris:barrel_bricks.name=Bricks Barrel
-tile.exastris:barrel_nether_brick.name=Nether Brick Barrel
-tile.exastris:barrel_quartz.name=Quartz Barrel
-tile.exastris:barrel_purpur.name=Purpur Barrel
 
 tile.exastris:barrel_iron.name=Iron Barrel
 tile.exastris:barrel_gold.name=Gold Barrel

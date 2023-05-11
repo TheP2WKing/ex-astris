@@ -91,7 +91,7 @@ public class BlockExAstrisWoodCrucible extends BlockCrucibleWood implements IHas
 		ExAstrisBlocks.BLOCKS.add(this);
 
 		if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-			ExAstris.LOGGER.info("This is an intended overwrite, overwriting the default Ex Nihilo Wooden Crucible");
+			ExAstris.LOGGER.info(BlockExAstrisWoodCrucible.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Wooden Crucible");
 		}
 
 		EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.OAK.meta, EnumExAstrisWoodCricible.OAK);
