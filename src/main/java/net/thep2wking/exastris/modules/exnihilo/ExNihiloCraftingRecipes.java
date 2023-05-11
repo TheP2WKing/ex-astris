@@ -1,5 +1,6 @@
 package net.thep2wking.exastris.modules.exnihilo;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -121,6 +122,30 @@ public class ExNihiloCraftingRecipes {
 			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "dark_oak_wood_sieve"), null,
 					new ItemStack(ExAstrisBlocks.BLOCK_SIEVE, 1, 5),
 					"A A", "ABA", "C C", 'A', "plankWoodDarkOak", 'B', "slabWoodDarkOak", 'C', "stickWood");
+		}
+
+		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
+			GameRegistry.addShapedRecipe(new ResourceLocation("exnihilocreatio:crucible_wood"),
+					new ResourceLocation("removed"), new ItemStack(Item.getByNameOrId("null")),
+					new Object[] { "A", 'A', "null" });
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "oak_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 0),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 0), 'B', "slabWoodOak", 'C', "stickWood");
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "spruce_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 1),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 1), 'B', "slabWoodSpruce", 'C', "stickWood");
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "birch_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 2),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 2), 'B', "slabWoodBirch", 'C', "stickWood");
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "jungle_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 3),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG), 1, 3), 'B', "slabWoodJungle", 'C', "stickWood");
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "acacia_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 4),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG2), 1, 0), 'B', "slabWoodAcacia", 'C', "stickWood");
+			GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, "dark_oak_wood_crucible"), null,
+					new ItemStack(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE, 1, 5),
+					"A A", "ABA", "C C", 'A', new ItemStack(Item.getItemFromBlock(Blocks.LOG2), 1, 1), 'B', "slabWoodDarkOak", 'C', "stickWood");
 		}
 	}
 }

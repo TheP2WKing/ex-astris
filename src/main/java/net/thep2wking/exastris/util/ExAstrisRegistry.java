@@ -27,6 +27,8 @@ public class ExAstrisRegistry {
 
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_SIEVE);
 
+        ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE);
+
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_HARD_STONE);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_DOUBLE_HARD_STONE);
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_TRIPLE_HARD_STONE);
@@ -52,6 +54,8 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T2);
         
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.SIEVE);
+
+        ExAstrisUtils.registerItemBlock(event, ExAstrisItems.WOOD_CRUCIBLE);
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.HARD_STONE);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.DOUBLE_HARD_STONE);

@@ -12,6 +12,7 @@ import net.thep2wking.exastris.api.ExAstrisItemSeedBase;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier0;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2;
+import net.thep2wking.exastris.content.block.crucible.ItemBlockExAstrisWoodCrucuble;
 import net.thep2wking.exastris.content.block.sieve.ItemBlockExAstrisSieve;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
 import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
@@ -33,6 +34,9 @@ public class ExAstrisItems {
                         RarityHandler.WHITE, false);
 
         public static final ItemBlock SIEVE = new ItemBlockExAstrisSieve(ExAstrisBlocks.BLOCK_SIEVE,
+                        RarityHandler.WHITE, false);
+
+        public static final ItemBlock WOOD_CRUCIBLE = new ItemBlockExAstrisWoodCrucuble(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE,
                         RarityHandler.WHITE, false);
 
         public static final ItemBlock HARD_STONE = new ExAstrisItemBlockBase(ExAstrisBlocks.BLOCK_HARD_STONE,

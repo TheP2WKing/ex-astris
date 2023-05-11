@@ -1,0 +1,25 @@
+{
+    "variants": {
+        "normal": {
+            "model": "exastris:block_crucible_wood"
+        },
+        "thin=false,variant=oak_wood": {
+            "model": "exastris:crucible_oak_wood"
+        },
+        "thin=false,variant=spruce_wood": {
+            "model": "exastris:crucible_spruce_wood"
+        },
+        "thin=false,variant=birch_wood": {
+            "model": "exastris:crucible_birch_wood"
+        },
+        "thin=false,variant=jungle_wood": {
+            "model": "exastris:crucible_jungle_wood"
+        },
+        "thin=false,variant=acacia_wood": {
+            "model": "exastris:crucible_acacia_wood"
+        },
+        "thin=false,variant=dark_oak_wood": {
+            "model": "exastris:crucible_dark_oak_wood"
+        }
+    }
+}

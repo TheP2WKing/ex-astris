@@ -52,6 +52,10 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(stack, SieveRecipeCategory.UID);
 	}
 
+	public static void addBarrelsToRelevantCategories(IModRegistry registry, ItemStack stack) {
+		registry.addRecipeCatalyst(stack, "exnihilocreatio:crucible_wood");
+	}
+
 	public static void hideFromJEI(IModRegistry registry, ItemStack stack) {
 		registry.getJeiHelpers().getIngredientBlacklist().addIngredientToBlacklist(stack);
 	}
@@ -59,9 +63,9 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 	@Override
 	public void register(IModRegistry registry) {
 		if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info("JEI Integration loaded");
-        }
-		
+			ExAstris.LOGGER.info("JEI Integration loaded");
+		}
+
 		if (ExAstrisConfig.INTEGRATION_JEI.TRANSFORMATION_RECIPE_CATEGORY) {
 			List<BlockTransformationWrapper> listBlockTransform = new ArrayList<>();
 			List<BlockTransformationCompat> blockTransform = new ArrayList<>();
@@ -149,12 +153,30 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5));
 		}
 
+		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 0));
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 1));
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 2));
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 3));
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 4));
+			addBarrelsToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 5));
+		}
+
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_BARRELS) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
 		}
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_SIEVES) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
+		}
+		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
+			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.crucibleWood), 1, 0));
 		}
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_END_CAKE) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
