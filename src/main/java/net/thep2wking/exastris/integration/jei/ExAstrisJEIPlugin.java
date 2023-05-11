@@ -86,16 +86,6 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			registry.addRecipes(listMobDoll, FluidDollTransformCategory.UID);
 		}
 
-		if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
-			registry.addRecipeCatalyst(
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE), 1, 0),
-					BlockTransformationCategory.UID);
-		}
-		if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
-			registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_FROSTY_DIRT), 1, 0),
-					BlockTransformationCategory.UID);
-		}
-
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_BARRELS) {
 			addBarrelToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0));

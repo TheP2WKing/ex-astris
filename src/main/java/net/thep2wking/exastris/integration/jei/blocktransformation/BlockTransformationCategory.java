@@ -45,7 +45,6 @@ public class BlockTransformationCategory implements IRecipeCategory<BlockTransfo
 
 	public BlockTransformationCategory(IGuiHelper guiHelper) {
 		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 150, 30).addPadding(0, 14, 0, 0).build();
-		this.guiHelper = guiHelper;
 		icon = guiHelper.createDrawableIngredient(new ItemStack(Items.CLOCK));
 		IDrawableStatic progressDrawable = guiHelper.createDrawable(BACKGROUND, 151, 7, 49, 17);
 		this.progress = guiHelper.createAnimatedDrawable(progressDrawable, (transformTime * 20) / 2, IDrawableAnimated.StartDirection.LEFT,

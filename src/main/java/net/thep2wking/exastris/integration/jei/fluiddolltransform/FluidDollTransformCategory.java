@@ -27,15 +27,10 @@ public class FluidDollTransformCategory implements IRecipeCategory<FluidDollTran
 	private IDrawable background;
 	private IGuiHelper guiHelper;
 	private IDrawable icon;
-	public int transformTime = 100;
 
 	public FluidDollTransformCategory(IGuiHelper guiHelper) {
 		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 166, 63).build();
-		this.guiHelper = guiHelper;
 		icon = guiHelper.createDrawableIngredient(new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 5));
-		//IDrawableStatic progressDrawable = guiHelper.createDrawable(BACKGROUND, 151, 7, 49, 17);
-		//this.progress = guiHelper.createAnimatedDrawable(progressDrawable, (transformTime * 20) / 2, IDrawableAnimated.StartDirection.LEFT,
-		//		false);
 	}
 
 	@Override
@@ -62,15 +57,7 @@ public class FluidDollTransformCategory implements IRecipeCategory<FluidDollTran
 	public IDrawable getIcon() {
 		return icon;
 	}
-
-	@Override
-	public void drawExtras(Minecraft minecraft) {
-		//this.progress.draw(minecraft, 47, 7);
-		//minecraft.fontRenderer.drawString(
-		//		I18n.format("jei." + ExAstris.MODID + ".transformation.desc2") + " " + transformTime + "s", 23, 31,
-		//		0xFF808080, false);
-	}
-
+	
 	@Override
 	public List<String> getTooltipStrings(int mouseX, int mouseY) {
 		return new ArrayList<>();
