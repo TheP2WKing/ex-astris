@@ -2,6 +2,7 @@ package net.thep2wking.exastris.modules.vanilla;
 
 import exnihilocreatio.ModFluids;
 import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
+import exnihilocreatio.texturing.Color;
 import exnihilocreatio.util.BlockInfo;
 import exnihilocreatio.util.ItemInfo;
 import net.minecraft.init.Blocks;
@@ -56,6 +57,27 @@ public class VanillaBarrelRecipes {
 		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.FROSTY_DIRT_FROM_FROSTWATER) {
 			ExNihiloRegistryManager.FLUID_BLOCK_TRANSFORMER_REGISTRY.register(ExAstrisFluids.FROSTWATER, "dirt",
 					new BlockInfo(ExAstrisBlocks.BLOCK_FROSTY_DIRT));
+		}
+
+		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.CHORUS_FRUIT_COMPOSTING) {
+			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Items.CHORUS_FRUIT, 0), 0.125f,
+					new BlockInfo(Blocks.DIRT), new Color("963E7D"));
+		}
+		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.COCOA_BEANS_COMPOSTING) {
+			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Items.DYE, 3), 0.1f,
+					new BlockInfo(Blocks.DIRT), new Color("D1AF60"));
+		}
+		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.DEAD_BUSH_COMPOSTING) {
+			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Blocks.DEADBUSH, 0), 0.1f,
+					new BlockInfo(Blocks.DIRT), new Color("523A2C"));
+		}
+		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.FERN_COMPOSTING) {
+			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Blocks.TALLGRASS, 2), 0.08f,
+					new BlockInfo(Blocks.DIRT), new Color("23630E"));
+		}
+		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.HAY_BALES_COMPOSTING) {
+			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new BlockInfo(Blocks.HAY_BLOCK, 0),
+					0.5f, new BlockInfo(Blocks.DIRT), new Color("E3E162"));
 		}
 	}
 }

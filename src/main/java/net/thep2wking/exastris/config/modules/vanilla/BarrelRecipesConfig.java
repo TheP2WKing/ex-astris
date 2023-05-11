@@ -22,4 +22,24 @@ public class BarrelRecipesConfig {
     @Config.Name("Frosty Dirt from Frostwater")
     @Config.Comment("Whether to get frosty dirt from frostwater")
     public boolean FROSTY_DIRT_FROM_FROSTWATER = true;
+
+    @Config.Name("Chorus Fruit Composting")
+    @Config.Comment("Whether chorus fruits can be composted")
+    public boolean CHORUS_FRUIT_COMPOSTING = true;
+
+    @Config.Name("Cocoa Beans Composting")
+    @Config.Comment("Whether cocoa beans can be composted")
+    public boolean COCOA_BEANS_COMPOSTING = true;
+
+    @Config.Name("Dead Bush Composting")
+    @Config.Comment("Whether dead bushes can be composted")
+    public boolean DEAD_BUSH_COMPOSTING = true;
+
+    @Config.Name("Fern Composting")
+    @Config.Comment("Whether fern can be composted")
+    public boolean FERN_COMPOSTING = true;
+
+    @Config.Name("Hay Bale Composting")
+    @Config.Comment("Whether hay bales can be composted")
+    public boolean HAY_BALES_COMPOSTING = true;
 }
