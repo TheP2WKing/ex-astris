@@ -73,6 +73,8 @@ tile.exastris:end_cake.name=End Cake
 item.exastris:hammer_flux.name=Flux-Infused SledgeHammer
 item.exastris:crook_flux.name=Flux-Infused Crook
 
+item.exastris:hammer_thaumium.name=Thaumium Hammer
+
 item.exastris:pebble_netherrack.name=Netherrack Pebble
 item.exastris:pebble_endstone.name=End Stone Pebble
 item.exastris:pebble_marble.name=Marble Pebble
@@ -88,6 +90,11 @@ item.exastris:shard_ice.name=Ice Shard
 item.exastris:seeds_podzol.name=Podzol Seeds
 item.exastris:seeds_fern.name=Fern Seeds
 item.exastris:seeds_chorus.name=Chorus Flower Seed
+
+// thaumcraft
+tc.research_category.EXASTRIS=Ex Astris
+research.exastris_thaumcraft.title=Thaumcraft in the Sky
+research.hammer_thaumium.title=Thaumium Hammer
 
 // overrides
 exnihilocreatio:witchwater=Witchwater

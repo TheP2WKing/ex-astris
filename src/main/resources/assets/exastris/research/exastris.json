@@ -1,0 +1,71 @@
+{
+    "entries": [
+        {
+            "key": "EXASTRIS_THAUMCRAFT",
+            "name": "research.exastris_thaumcraft.title",
+            "icons": [
+                "exastris:block_sieve;1;0"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                0,
+                0
+            ],
+            "reward_item": [
+                ""
+            ],
+            "reward_knowledge": [
+                "OBSERVATION;EXASTRIS;1",
+                "OBSERVATION;BASICS;1"
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_thaumcraft.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;EXASTRIS;1"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "HAMMER_THAUMIUM",
+            "name": "research.hammer_thaumium.title",
+            "icons": [
+                "exastris:hammer_thaumium"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                0,
+                2
+            ],
+            "reward_item": [
+                ""
+            ],
+            "reward_knowledge": [
+                "OBSERVATION;EXASTRIS;1"
+            ],
+            "stages": [
+                {
+                    "text": "research.hammer_thaumium.stage.1",
+                    "required_knowledge": [
+                        "THEORY;EXASTRIS;1"
+                    ],
+                    "warp": 0
+                },
+                {
+                    "text": "research.hammer_thaumium.stage.2",
+                    "recipes": [
+                        "exastris:hammer_thaumium"
+                    ]
+                }
+            ]
+        }
+    ]
+}

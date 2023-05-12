@@ -8,7 +8,7 @@ import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.content.item.crook.ItemFluxInfusedCrook;
 import net.thep2wking.exastris.content.item.hammer.ItemFluxInfusedHammer;
 
-public class ExAstrisRAItems {
+public class ExAstrisRedstoneArsenalItems {
     public static final List<Item> ITEMS_RA = new ArrayList<Item>();
 
     public static final Item HAMMER_FLUX = new ItemFluxInfusedHammer("hammer_flux", ExAstrisTabs.EXASTRIS_TAB,

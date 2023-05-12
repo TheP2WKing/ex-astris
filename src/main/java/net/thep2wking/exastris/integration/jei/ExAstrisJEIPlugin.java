@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
-import net.thep2wking.exastris.init.ExAstrisRAItems;
+import net.thep2wking.exastris.init.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCategory;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCompat;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationRecipes;
@@ -172,8 +172,8 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		}
 
 		if (Loader.isModLoaded("redstonearsenal")) {
-			registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
-			registry.addRecipeCatalyst(new ItemStack(ExAstrisRAItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);
 		}
 	}
 }

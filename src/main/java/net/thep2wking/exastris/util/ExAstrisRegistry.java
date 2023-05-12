@@ -13,7 +13,8 @@ import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
-import net.thep2wking.exastris.init.ExAstrisRAItems;
+import net.thep2wking.exastris.init.ExAstrisRedstoneArsenalItems;
+import net.thep2wking.exastris.init.ExAstrisThaumcraftItems;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -67,8 +68,12 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.END_CAKE);
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_REDSTONE_ARSENAL)) {
-            ExAstrisUtils.registerItem(event, ExAstrisRAItems.HAMMER_FLUX);
-            ExAstrisUtils.registerItem(event, ExAstrisRAItems.CROOK_FLUX);
+            ExAstrisUtils.registerItem(event, ExAstrisRedstoneArsenalItems.HAMMER_FLUX);
+            ExAstrisUtils.registerItem(event, ExAstrisRedstoneArsenalItems.CROOK_FLUX);
+        }
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_THAUMIUM);
         }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.PEBBLES);
@@ -106,14 +111,6 @@ public class ExAstrisRegistry {
         for (Item item : ExAstrisItems.ITEMS) {
             if (item instanceof IHasModel) {
                 ((IHasModel) item).registerModels();
-            }
-        }
-
-        if (Loader.isModLoaded("redstonearsenal")) {
-            for (Item item : ExAstrisRAItems.ITEMS_RA) {
-                if (item instanceof IHasModel) {
-                    ((IHasModel) item).registerModels();
-                }
             }
         }
     }

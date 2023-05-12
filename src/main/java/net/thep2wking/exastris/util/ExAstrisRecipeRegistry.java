@@ -11,6 +11,8 @@ import net.thep2wking.exastris.modules.chisel.ChiselSieveRecipes;
 import net.thep2wking.exastris.modules.exnihilo.ExNihiloCraftingRecipes;
 import net.thep2wking.exastris.modules.exnihilo.ExNihiloSmeltingRecipes;
 import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalCraftingRecipes;
+import net.thep2wking.exastris.modules.thaumcraft.ExAstrisResearchCategory;
+import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftArcaneWorkbenchRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaBarrelRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaCraftingRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaCrookRecipes;
@@ -72,6 +74,19 @@ public class ExAstrisRecipeRegistry {
         } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             ExAstris.LOGGER.info(
                     "Skipped registering Recipes for " + ExAstrisConstants.MODID_CHISEL + " because mod was not found");
+        }
+    }
+
+    public static void registerThaumcraftRecipes() {
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            ThaumcraftArcaneWorkbenchRecipes.register();
+            ExAstrisResearchCategory.init();
+            if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+                ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_THAUMCRAFT);
+            }
+        } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info(
+                    "Skipped registering Recipes for " + ExAstrisConstants.MODID_THAUMCRAFT + " because mod was not found");
         }
     }
 }
