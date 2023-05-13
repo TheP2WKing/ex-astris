@@ -8,34 +8,184 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "ROUND"
+                "ROUND",
+                "AUTOUNLOCK"
             ],
             "location": [
                 0,
                 0
             ],
-            "reward_item": [
-                ""
+            "stages": [
+                {
+                    "text": "research.exastris_thaumcraft.stage.1"
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_CRYSTALS",
+            "name": "research.exastris_crystals.title",
+            "icons": [
+                "thaumcraft:crystal_essence"
             ],
-            "reward_knowledge": [
-                "OBSERVATION;EXASTRIS;1",
-                "OBSERVATION;BASICS;1"
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                -3,
+                0
             ],
             "stages": [
                 {
-                    "text": "research.exastris_thaumcraft.stage.1",
+                    "text": "research.exastris_crystals.stage.1"
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_QUARTZ",
+            "name": "research.exastris_quartz.title",
+            "icons": [
+                "minecraft:quartz"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                -3,
+                1
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_quartz.stage.1",
                     "required_knowledge": [
-                        "OBSERVATION;EXASTRIS;1"
+                        "OBSERVATION;ALCHEMY;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_quartz.stage.1",
+                    "recipes": [
+                        "exastris:quartz"
                     ],
                     "warp": 0
                 }
             ]
         },
         {
-            "key": "HAMMER_THAUMIUM",
-            "name": "research.hammer_thaumium.title",
+            "key": "EXASTRIS_AMBER",
+            "name": "research.exastris_amber.title",
             "icons": [
-                "exastris:hammer_thaumium"
+                "thaumcraft:amber"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                -2,
+                0
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_amber.stage.1"
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_QUICKSILVER",
+            "name": "research.exastris_quicksilver.title",
+            "icons": [
+                "thaumcraft:nugget;1;5"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND"
+            ],
+            "location": [
+                -2,
+                1
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_quicksilver.stage.1"
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_SKY_TOOLS",
+            "name": "research.exastris_sky_tools.title",
+            "icons": [
+                "exastris:hammer_thaumium",
+                "exastris:crook_thaumium"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                -2,
+                3
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_sky_tools.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;EXASTRIS;2"
+                    ]
+                },
+                {
+                    "text": "research.exastris_sky_tools.stage.1",
+                    "recipes": [
+                        "exastris:hammer_thaumium",
+                        "exastris:crook_thaumium"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_ELEMENTAL_TOOLS",
+            "name": "research.exastris_elemental_tools.title",
+            "icons": [
+                "exastris:hammer_elemental",
+                "exastris:crook_elemental"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "SPIKY", "HIDDEN"
+            ],
+            "parents": [
+                "EXASTRIS_SKY_TOOLS"
+            ],
+            "location": [
+                -2,
+                5
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_elemental_tools.stage.1",
+                    "required_knowledge": [
+                        "THEORY;EXASTRIS;1", "THEORY;INFUSION;2"
+                    ]
+                },
+                {
+                    "text": "research.exastris_elemental_tools.stage.1",
+                    "recipes": [
+                        "exastris:hammer_elemental",
+                        "exastris:crook_elemental"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_GREATWOOD_SAPLING",
+            "name": "research.exastris_greatwood_sapling.title",
+            "icons": [
+                "thaumcraft:sapling_greatwood"
             ],
             "category": "EXASTRIS",
             "parents": [
@@ -43,27 +193,161 @@
             ],
             "location": [
                 0,
-                2
-            ],
-            "reward_item": [
-                ""
-            ],
-            "reward_knowledge": [
-                "OBSERVATION;EXASTRIS;1"
+                4
             ],
             "stages": [
                 {
-                    "text": "research.hammer_thaumium.stage.1",
+                    "text": "research.exastris_greatwood_sapling.stage.1",
                     "required_knowledge": [
-                        "THEORY;EXASTRIS;1"
-                    ],
-                    "warp": 0
+                        "OBSERVATION;EXASTRIS;1", "THEORY;INFUSION;1"
+                    ]
                 },
                 {
-                    "text": "research.hammer_thaumium.stage.2",
+                    "text": "research.exastris_greatwood_sapling.stage.1",
                     "recipes": [
-                        "exastris:hammer_thaumium"
+                        "exastris:sapling_greatwood"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_SILVERWOOD_SAPLING",
+            "name": "research.exastris_silverwood_sapling.title",
+            "icons": [
+                "thaumcraft:sapling_silverwood"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "SPIKY", "HIDDEN"
+            ],
+            "parents": [
+                "EXASTRIS_GREATWOOD_SAPLING"
+            ],
+            "location": [
+                2,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_silverwood_sapling.stage.1",
+                    "required_knowledge": [
+                        "THEORY;EXASTRIS;1", "THEORY;INFUSION;1"
                     ]
+                },
+                {
+                    "text": "research.exastris_silverwood_sapling.stage.1",
+                    "recipes": [
+                        "exastris:sapling_silverwood"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_GREATWOOD_BLOCKS",
+            "name": "research.exastris_greatwood_blocks.title",
+            "icons": [
+                "exastris:block_sieve;1;6",
+                "exastris:block_barrel0;1;6",
+                "exastris:block_crucible_wood;1;6"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_GREATWOOD_SAPLING"
+            ],
+            "location": [
+                1,
+                6
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_greatwood_blocks.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_greatwood_blocks.stage.1",
+                    "recipes": [
+                        "exastris:sieve_greatwood",
+                        "exastris:barrel_greatwood",
+                        "exastris:crucible_greatwood"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_SILVERWOOD_BLOCKS",
+            "name": "research.exastris_silverwood_blocks.title",
+            "icons": [
+                "exastris:block_sieve;1;7",
+                "exastris:block_barrel0;1;7",
+                "exastris:block_crucible_wood;1;7"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_SILVERWOOD_SAPLING"
+            ],
+            "location": [
+                3,
+                6
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_silverwood_blocks.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_silverwood_blocks.stage.1",
+                    "recipes": [
+                        "exastris:sieve_silverwood",
+                        "exastris:barrel_silverwood",
+                        "exastris:crucible_silverwood"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_ESSENTIA_FILTER",
+            "name": "research.exastris_essentia_filter.title",
+            "icons": [
+                "thaumcraft:filter"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                -3,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_essentia_filter.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;BASICS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_essentia_filter.stage.1",
+                    "recipes": [
+                        "exastris:essentia_filter"
+                    ],
+                    "warp": 0
                 }
             ]
         }

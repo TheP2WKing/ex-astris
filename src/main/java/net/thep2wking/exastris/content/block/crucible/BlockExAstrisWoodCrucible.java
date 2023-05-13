@@ -32,11 +32,13 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -100,6 +102,11 @@ public class BlockExAstrisWoodCrucible extends BlockCrucibleWood implements IHas
 		EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.JUNGLE.meta, EnumExAstrisWoodCricible.JUNGLE);
 		EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.ACACIA.meta, EnumExAstrisWoodCricible.ACACIA);
 		EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.DARK_OAK.meta, EnumExAstrisWoodCricible.DARK_OAK);
+
+		if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.GREATWOOD.meta, EnumExAstrisWoodCricible.GREATWOOD);
+            EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.SILVERWOOD.meta, EnumExAstrisWoodCricible.SILVERWOOD);
+        }
 	}
 
 	@Override

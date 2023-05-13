@@ -12,9 +12,9 @@ import net.thep2wking.exastris.init.ExAstrisItems;
 public class VanillaHammerRecipes {
 	public static void register() {
 		if (ExAstrisConfig.MODULE_VANILLA.HAMMER_RECIPES.STONE_PEBBLES_FROM_STONE) {
-			ExNihiloRegistryManager.HAMMER_REGISTRY.register(Blocks.STONE, 0, new ItemStack(ModItems.pebbles, 1, 0),
-					0, 1f, 1.1f);
 			ExNihiloRegistryManager.HAMMER_REGISTRY.register(Blocks.STONE, 0, new ItemStack(ModItems.pebbles, 2, 0),
+					0, 1f, 1.1f);
+			ExNihiloRegistryManager.HAMMER_REGISTRY.register(Blocks.STONE, 0, new ItemStack(ModItems.pebbles, 1, 0),
 					0, 0.75f, 0.8f);
 			ExNihiloRegistryManager.HAMMER_REGISTRY.register(Blocks.STONE, 0, new ItemStack(ModItems.pebbles, 1, 0),
 					0, 0.5f, 0.6f);

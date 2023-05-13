@@ -110,6 +110,42 @@
         },
         "mesh=diamond,variant=dark_oak_wood": {
             "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=none,variant=greatwood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=no_render,variant=greatwood": {
+            "model": "exastris:sieve_greatwood"
+        },
+        "mesh=string,variant=greatwood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=flint,variant=greatwood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=iron,variant=greatwood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=diamond,variant=greatwood": {
+            "model": "exnihilocreatio:mesh_diamond"
+        },
+        "mesh=none,variant=silverwood": {
+            "model": "exastris:no_mesh"
+        },
+        "mesh=no_render,variant=silverwood": {
+            "model": "exastris:sieve_silverwood"
+        },
+        "mesh=string,variant=silverwood": {
+            "model": "exnihilocreatio:mesh_string"
+        },
+        "mesh=flint,variant=silverwood": {
+            "model": "exnihilocreatio:mesh_flint"
+        },
+        "mesh=iron,variant=silverwood": {
+            "model": "exnihilocreatio:mesh_iron"
+        },
+        "mesh=diamond,variant=silverwood": {
+            "model": "exnihilocreatio:mesh_diamond"
         }
     }
 }

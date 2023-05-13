@@ -50,6 +50,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -57,6 +58,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -115,6 +117,11 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.JUNGLE.meta, EnumExAstrisSieve.JUNGLE);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.ACACIA.meta, EnumExAstrisSieve.ACACIA);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.DARK_OAK.meta, EnumExAstrisSieve.DARK_OAK);
+
+        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.GREATWOOD.meta, EnumExAstrisSieve.GREATWOOD);
+            EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.SILVERWOOD.meta, EnumExAstrisSieve.SILVERWOOD);
+        }
     }
 
     @Override

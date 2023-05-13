@@ -32,11 +32,13 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -86,6 +88,11 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.JUNGLE.meta, EnumExAstrisBarrelTier0.JUNGLE);
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.ACACIA.meta, EnumExAstrisBarrelTier0.ACACIA);
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.DARK_OAK.meta, EnumExAstrisBarrelTier0.DARK_OAK);
+
+        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.GREATWOOD.meta, EnumExAstrisBarrelTier0.GREATWOOD);
+            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.SILVERWOOD.meta, EnumExAstrisBarrelTier0.SILVERWOOD);
+        }
     }
     
     @Override

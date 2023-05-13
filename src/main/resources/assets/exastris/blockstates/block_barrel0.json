@@ -20,6 +20,12 @@
         },
         "variant=dark_oak_wood": {
             "model": "exastris:barrel_dark_oak_wood"
+        },
+        "variant=greatwood": {
+            "model": "exastris:barrel_greatwood"
+        },
+        "variant=silverwood": {
+            "model": "exastris:barrel_silverwood"
         }
     }
 }

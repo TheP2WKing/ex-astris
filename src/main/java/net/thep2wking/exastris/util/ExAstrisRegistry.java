@@ -74,6 +74,8 @@ public class ExAstrisRegistry {
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_THAUMIUM);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.CROOK_THAUMIUM);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_ELEMENTAL);
         }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.PEBBLES);

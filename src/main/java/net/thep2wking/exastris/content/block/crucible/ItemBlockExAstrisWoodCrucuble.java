@@ -7,8 +7,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.api.ExAstrisMetaItemBlockBase;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public class ItemBlockExAstrisWoodCrucuble extends ExAstrisMetaItemBlockBase {
     private static final Int2ObjectMap<EnumExAstrisWoodCricible> EXASTRIS_WOOD_CRUCIBLE_TYPES = new Int2ObjectArrayMap<>();
@@ -22,6 +24,11 @@ public class ItemBlockExAstrisWoodCrucuble extends ExAstrisMetaItemBlockBase {
         EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.JUNGLE.meta, EnumExAstrisWoodCricible.JUNGLE);
         EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.ACACIA.meta, EnumExAstrisWoodCricible.ACACIA);
         EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.DARK_OAK.meta, EnumExAstrisWoodCricible.DARK_OAK);
+
+        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.GREATWOOD.meta, EnumExAstrisWoodCricible.GREATWOOD);
+            EXASTRIS_WOOD_CRUCIBLE_TYPES.put(EnumExAstrisWoodCricible.SILVERWOOD.meta, EnumExAstrisWoodCricible.SILVERWOOD);
+        }
     }
 
     @Override

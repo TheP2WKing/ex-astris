@@ -12,6 +12,8 @@ public enum EnumExAstrisSieve implements IStringSerializable {
     JUNGLE(3, "jungle_wood", ExAstrisConstants.MODID_MINECRAFT),
     ACACIA(4, "acacia_wood", ExAstrisConstants.MODID_MINECRAFT),
     DARK_OAK(5, "dark_oak_wood", ExAstrisConstants.MODID_MINECRAFT),
+    GREATWOOD(6, "greatwood", ExAstrisConstants.MODID_THAUMCRAFT),
+    SILVERWOOD(7, "silverwood", ExAstrisConstants.MODID_THAUMCRAFT),
     ;
 
     private static final Int2ObjectMap<EnumExAstrisSieve> ALL_TYPES = new Int2ObjectArrayMap<>();

@@ -7,8 +7,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.api.ExAstrisMetaItemBlockBase;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public class ItemBlockExAstrisSieve extends ExAstrisMetaItemBlockBase {
     private static final Int2ObjectMap<EnumExAstrisSieve> EXASTRIS_SIEVE_TYPES = new Int2ObjectArrayMap<>();
@@ -22,6 +24,11 @@ public class ItemBlockExAstrisSieve extends ExAstrisMetaItemBlockBase {
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.JUNGLE.meta, EnumExAstrisSieve.JUNGLE);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.ACACIA.meta, EnumExAstrisSieve.ACACIA);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.DARK_OAK.meta, EnumExAstrisSieve.DARK_OAK);
+
+        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.GREATWOOD.meta, EnumExAstrisSieve.GREATWOOD);
+            EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.SILVERWOOD.meta, EnumExAstrisSieve.SILVERWOOD);
+        }
     }
 
     @Override

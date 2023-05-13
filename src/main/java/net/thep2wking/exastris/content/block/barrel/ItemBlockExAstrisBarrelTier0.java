@@ -7,8 +7,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.api.ExAstrisMetaItemBlockBase;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 public class ItemBlockExAstrisBarrelTier0 extends ExAstrisMetaItemBlockBase {
     private static final Int2ObjectMap<EnumExAstrisBarrelTier0> EXASTRIS_BARREL_T0_TYPES = new Int2ObjectArrayMap<>();
@@ -22,6 +24,11 @@ public class ItemBlockExAstrisBarrelTier0 extends ExAstrisMetaItemBlockBase {
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.JUNGLE.meta, EnumExAstrisBarrelTier0.JUNGLE);
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.ACACIA.meta, EnumExAstrisBarrelTier0.ACACIA);
         EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.DARK_OAK.meta, EnumExAstrisBarrelTier0.DARK_OAK);
+
+        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.GREATWOOD.meta, EnumExAstrisBarrelTier0.GREATWOOD);
+            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.SILVERWOOD.meta, EnumExAstrisBarrelTier0.SILVERWOOD);
+        }
     }
 
     @Override

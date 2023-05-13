@@ -20,6 +20,12 @@
         },
         "thin=false,variant=dark_oak_wood": {
             "model": "exastris:crucible_dark_oak_wood"
+        },
+        "thin=false,variant=greatwood": {
+            "model": "exastris:crucible_greatwood"
+        },
+        "thin=false,variant=silverwood": {
+            "model": "exastris:crucible_silverwood"
         }
     }
 }

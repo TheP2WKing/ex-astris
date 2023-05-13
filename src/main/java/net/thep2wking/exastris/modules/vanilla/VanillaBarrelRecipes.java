@@ -65,7 +65,7 @@ public class VanillaBarrelRecipes {
 		}
 		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.COCOA_BEANS_COMPOSTING) {
 			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Items.DYE, 3), 0.1f,
-					new BlockInfo(Blocks.DIRT), new Color("D1AF60"));
+					new BlockInfo(Blocks.DIRT), new Color("523A2C"));
 		}
 		if (ExAstrisConfig.MODULE_VANILLA.BARREL_RECIPES.DEAD_BUSH_COMPOSTING) {
 			ExNihiloRegistryManager.COMPOST_REGISTRY.register(new ItemInfo(Blocks.DEADBUSH, 0), 0.1f,

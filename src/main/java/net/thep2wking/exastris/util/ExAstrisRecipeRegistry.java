@@ -13,6 +13,8 @@ import net.thep2wking.exastris.modules.exnihilo.ExNihiloSmeltingRecipes;
 import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalCraftingRecipes;
 import net.thep2wking.exastris.modules.thaumcraft.ExAstrisResearchCategory;
 import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftArcaneWorkbenchRecipes;
+import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftCraftingRecipes;
+import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftHammerRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaBarrelRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaCraftingRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaCrookRecipes;
@@ -80,7 +82,9 @@ public class ExAstrisRecipeRegistry {
     public static void registerThaumcraftRecipes() {
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
             ThaumcraftArcaneWorkbenchRecipes.register();
-            ExAstrisResearchCategory.init();
+            ExAstrisResearchCategory.register();
+            ThaumcraftCraftingRecipes.register();
+            ThaumcraftHammerRecipes.register();
             if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
                 ExAstris.LOGGER.info("Registered Recipes for " + ExAstrisConstants.MODID_THAUMCRAFT);
             }
