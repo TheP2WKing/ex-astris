@@ -12,9 +12,9 @@ public class ExAstrisResearchCategory {
 	public static ResearchCategory RES_CAT;
 
 	public static void register() {
-		RES_CAT = ResearchCategories.registerCategory("EXASTRIS", null,
-				new AspectList().add(Aspect.ALCHEMY, 10).add(Aspect.LIGHT, 2).add(Aspect.MAGIC, 10).add(Aspect.LIFE, 5)
-						.add(Aspect.AVERSION, 5).add(Aspect.DESIRE, 5).add(Aspect.WATER, 5),
+		RES_CAT = ResearchCategories.registerCategory("EXASTRIS", "FIRSTSTEPS",
+				new AspectList().add(Aspect.PLANT, 10).add(Aspect.AIR, 10).add(Aspect.ORDER, 10).add(Aspect.WATER, 5)
+						.add(Aspect.ENTROPY, 5),
 				new ResourceLocation(ExAstris.MODID, "textures/items/hammer_thaumium.png"),
 				new ResourceLocation(ExAstris.MODID, "textures/gui/thaumonomicon_background.jpg"),
 				new ResourceLocation(ExAstris.MODID, "textures/gui/thaumonomicon_background_overlay.png"));

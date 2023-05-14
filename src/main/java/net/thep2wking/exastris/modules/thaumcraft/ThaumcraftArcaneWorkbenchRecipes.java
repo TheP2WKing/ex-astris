@@ -9,10 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
+import net.thep2wking.exastris.init.ExAstrisItems;
 import net.thep2wking.exastris.init.ExAstrisThaumcraftItems;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
@@ -114,5 +117,90 @@ public class ThaumcraftArcaneWorkbenchRecipes {
 						"AAA",
 						'A', "string", 'B', "ingotGold", 'C', new ItemStack(ModItems.mesh, 1, 1)));
 
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance1"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
+						new AspectList().merge(Aspect.EARTH, 1).merge(Aspect.FIRE, 1).merge(Aspect.WATER, 1)
+								.merge(Aspect.ORDER, 1).merge(Aspect.ENTROPY, 1)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance2"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+						new AspectList().merge(Aspect.AIR, 1).merge(Aspect.FIRE, 1).merge(Aspect.WATER, 1)
+								.merge(Aspect.ORDER, 1).merge(Aspect.ENTROPY, 1)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance3"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.FIRE),
+						new AspectList().merge(Aspect.AIR, 1).merge(Aspect.EARTH, 1).merge(Aspect.WATER, 1)
+								.merge(Aspect.ORDER, 1).merge(Aspect.ENTROPY, 1)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance4"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
+						new AspectList().merge(Aspect.AIR, 1).merge(Aspect.EARTH, 1).merge(Aspect.FIRE, 1)
+								.merge(Aspect.ORDER, 1).merge(Aspect.ENTROPY, 1)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance5"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.ORDER),
+						new AspectList().merge(Aspect.AIR, 1).merge(Aspect.EARTH, 1).merge(Aspect.FIRE, 1)
+								.merge(Aspect.WATER, 1).merge(Aspect.ENTROPY, 1)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vis_crystal_balance6"),
+				new CrucibleRecipe("EXASTRIS_VIS_CRYSTAL_BALANCE",
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
+						ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY),
+						new AspectList().merge(Aspect.AIR, 1).merge(Aspect.EARTH, 1).merge(Aspect.FIRE, 1)
+								.merge(Aspect.WATER, 1).merge(Aspect.ORDER, 1)));
+
+		ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "runic_matrix"),
+				new ShapedArcaneRecipe(null, "EXASTRIS_RUNIC_MATRIX", 50,
+						new AspectList(),
+						new ItemStack(BlocksTC.infusionMatrix, 1, 0), "ABA", "BCB", "ABA",
+						'A', new ItemStack(Item.getItemFromBlock(BlocksTC.stoneArcaneBrick)), 'B',
+						new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE), 'C', "nitor"));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vishroom1"),
+				new CrucibleRecipe("EXASTRIS_VISHROOM",
+						new ItemStack(BlocksTC.vishroom),
+						new ItemStack(Blocks.RED_MUSHROOM),
+						new AspectList().merge(Aspect.PLANT, 4).merge(Aspect.MAGIC, 4).merge(Aspect.UNDEAD, 4)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "vishroom2"),
+				new CrucibleRecipe("EXASTRIS_VISHROOM",
+						new ItemStack(BlocksTC.vishroom),
+						new ItemStack(Blocks.BROWN_MUSHROOM),
+						new AspectList().merge(Aspect.PLANT, 4).merge(Aspect.MAGIC, 4).merge(Aspect.UNDEAD, 4)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "shimmerleaf"),
+				new CrucibleRecipe("EXASTRIS_SHIMMERLEAF",
+						new ItemStack(BlocksTC.shimmerleaf),
+						new ItemStack(Item.getItemFromBlock(Blocks.RED_FLOWER)),
+						new AspectList().merge(Aspect.PLANT, 4).merge(Aspect.EXCHANGE, 4).merge(Aspect.MAGIC, 4)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "cinderpearl"),
+				new CrucibleRecipe("EXASTRIS_CINDERPEARL",
+						new ItemStack(BlocksTC.cinderpearl),
+						new ItemStack(Item.getItemFromBlock(Blocks.YELLOW_FLOWER)),
+						new AspectList().merge(Aspect.PLANT, 4).merge(Aspect.FIRE, 4).merge(Aspect.MAGIC, 4)));
+
+		GameRegistry.addSmelting(new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE), new ItemStack(ItemsTC.salisMundus), 0.1f);
+
+		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "eldritch_portal_spawner"),
+		new InfusionRecipe("EXASTRIS_ELDRITCH_PORTAL", new ItemStack(ExAstrisItems.ELDRITCH_PORTAL_SPAWNER, 1, 0), 0,
+				new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.AVERSION, 64).add(Aspect.MAGIC, 64).add(Aspect.VOID, 64),
+				new ItemStack(ItemsTC.mirroredGlass),
+				"blockGlass",
+				"blockGlass",
+				"ingotVoid",
+				"blockGlass",
+				"blockGlass",
+				"ingotVoid"));
 	}
 }

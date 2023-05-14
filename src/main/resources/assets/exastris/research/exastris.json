@@ -9,7 +9,10 @@
             "category": "EXASTRIS",
             "meta": [
                 "ROUND",
-                "AUTOUNLOCK"
+                "HIDDEN"
+            ],
+            "parents": [
+                "FIRSTSTEPS"
             ],
             "location": [
                 0,
@@ -29,11 +32,15 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "ROUND"
+                "ROUND",
+                "HIDDEN"
+            ],
+            "parents": [
+                "FIRSTSTEPS"
             ],
             "location": [
-                -3,
-                0
+                3,
+                -4
             ],
             "stages": [
                 {
@@ -49,17 +56,21 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "ROUND"
+                "ROUND",
+                "HIDDEN"
+            ],
+            "parents": [
+                "FIRSTSTEPS"
             ],
             "location": [
-                -3,
-                1
+                3,
+                -3
             ],
             "stages": [
                 {
                     "text": "research.exastris_quartz.stage.1",
                     "required_knowledge": [
-                        "OBSERVATION;ALCHEMY;1"
+                        "OBSERVATION;EXASTRIS;1"
                     ]
                 },
                 {
@@ -79,11 +90,15 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "ROUND"
+                "ROUND",
+                "HIDDEN"
+            ],
+            "parents": [
+                "FIRSTSTEPS"
             ],
             "location": [
-                -2,
-                0
+                4,
+                -4
             ],
             "stages": [
                 {
@@ -99,11 +114,15 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "ROUND"
+                "ROUND",
+                "HIDDEN"
+            ],
+            "parents": [
+                "FIRSTSTEPS"
             ],
             "location": [
-                -2,
-                1
+                4,
+                -3
             ],
             "stages": [
                 {
@@ -168,7 +187,7 @@
                 {
                     "text": "research.exastris_elemental_tools.stage.1",
                     "required_knowledge": [
-                        "THEORY;EXASTRIS;1", "THEORY;INFUSION;2"
+                        "OBSERVATION;EXASTRIS;1", "THEORY;INFUSION;2"
                     ]
                 },
                 {
@@ -253,9 +272,6 @@
                 "exastris:block_crucible_wood;1;6"
             ],
             "category": "EXASTRIS",
-            "meta": [
-                "REVERSE"
-            ],
             "parents": [
                 "EXASTRIS_GREATWOOD_SAPLING"
             ],
@@ -290,9 +306,6 @@
                 "exastris:block_crucible_wood;1;7"
             ],
             "category": "EXASTRIS",
-            "meta": [
-                "REVERSE"
-            ],
             "parents": [
                 "EXASTRIS_SILVERWOOD_SAPLING"
             ],
@@ -325,21 +338,18 @@
                 "thaumcraft:filter"
             ],
             "category": "EXASTRIS",
-            "meta": [
-                "REVERSE"
-            ],
             "parents": [
                 "EXASTRIS_THAUMCRAFT"
             ],
             "location": [
-                -3,
-                -2
+                -2,
+                1
             ],
             "stages": [
                 {
                     "text": "research.exastris_essentia_filter.stage.1",
                     "required_knowledge": [
-                        "OBSERVATION;BASICS;1"
+                        "OBSERVATION;BASICS;1", "OBSERVATION;EXASTRIS;1"
                     ]
                 },
                 {
@@ -348,6 +358,192 @@
                         "exastris:essentia_filter"
                     ],
                     "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_VIS_CRYSTAL_BALANCE",
+            "name": "research.exastris_vis_crystal_balance.title",
+            "icons": [
+                "exastris:vis_crystal_balance"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                -3,
+                0
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_vis_crystal_balance.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_vis_crystal_balance.stage.1",
+                    "recipes": [
+                        "exastris:vis_crystal_balance1", "exastris:vis_crystal_balance2", "exastris:vis_crystal_balance3", "exastris:vis_crystal_balance4", "exastris:vis_crystal_balance5", "exastris:vis_crystal_balance6"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_RUNIC_MATRIX",
+            "name": "research.exastris_runic_matrix.title",
+            "icons": [
+                "thaumcraft:infusion_matrix"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN"
+            ],
+            "parents": [
+                "EXASTRIS_VIS_CRYSTAL_BALANCE"
+            ],
+            "location": [
+                -3,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_runic_matrix.stage.1",
+                    "required_knowledge": [
+                        "THEORY;INFUSION;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_runic_matrix.stage.1",
+                    "recipes": [
+                        "exastris:runic_matrix"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_CINDERPEARL",
+            "name": "research.exastris_cinderpearl.title",
+            "icons": [
+                "thaumcraft:cinderpearl"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                2,
+                -1
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_cinderpearl.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_cinderpearl.stage.1",
+                    "recipes": [
+                        "exastris:cinderpearl"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_SHIMMERLEAF",
+            "name": "research.exastris_shimmerleaf.title",
+            "icons": [
+                "thaumcraft:shimmerleaf"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                4,
+                -1
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_shimmerleaf.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_shimmerleaf.stage.1",
+                    "recipes": [
+                        "exastris:shimmerleaf"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_VISHROOM",
+            "name": "research.exastris_vishroom.title",
+            "icons": [
+                "thaumcraft:vishroom"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                6,
+                -1
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_vishroom.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_vishroom.stage.1",
+                    "recipes": [
+                        "exastris:vishroom1", "exastris:vishroom2"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_ELDRITCH_PORTAL",
+            "name": "research.exastris_eldritch_portal_spawner.title",
+            "icons": [
+                "exastris:eldritch_portal_spawner"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN", "SPIKY", "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_THAUMCRAFT", "UNLOCKELDRITCH"
+            ],
+            "location": [
+                3,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_eldritch_portal_spawner.stage.1",
+                    "required_knowledge": [
+                        "THEORY;ELDRITCH;1", "THEORY;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_eldritch_portal_spawner.stage.1",
+                    "recipes": [
+                        "exastris:eldritch_portal_spawner"
+                    ],
+                    "warp": 3
                 }
             ]
         }

@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.thep2wking.exastris.api.ExAstrisItemCrookBase;
 import net.thep2wking.exastris.api.ExAstrisItemHammerBase;
+import net.thep2wking.exastris.content.item.crook.ItemElementalCrook;
 import net.thep2wking.exastris.content.item.hammer.ItemElementalHammer;
 import net.thep2wking.exastris.util.handler.RarityHandler;
 import thaumcraft.api.ThaumcraftMaterials;
@@ -25,5 +26,9 @@ public class ExAstrisThaumcraftItems {
 
 	public static final Item HAMMER_ELEMENTAL = new ItemElementalHammer("hammer_elemental",
 			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 9000, 0, 0,
+			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.AQUA, false);
+
+	public static final Item CROOK_ELEMENTAL = new ItemElementalCrook("crook_elemental",
+			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 9000, -3, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.AQUA, false);
 }

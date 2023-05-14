@@ -11,7 +11,7 @@ top.exastris.refill=Refill with
 top.exastris.bites=Bites left
 top.exastris.nomesh=No Mesh
 
-// just enought items 
+// just enough items 
 jei.exastris.transformation.category=Block Transformation
 jei.exastris.fluid_doll_transform.category=Doll Mob Spawning
 
@@ -98,7 +98,10 @@ item.exastris:doll_villager.tip=Drop in a barrel of peacewater to spawn Villager
 item.exastris:doll_evoker.name=Undying Doll
 item.exastris:doll_evoker.tip=Drop in a barrel of witchwater to spawn Evoker
 
+item.exastris:eldritch_portal_spawner.name=Portal-in-a-Box
+
 item.exastris:shard_ice.name=Ice Shard
+item.exastris:vis_crystal_balance.name=Balanced Vis Crystal
 
 item.exastris:seeds_podzol.name=Podzol Seeds
 item.exastris:seeds_fern.name=Fern Seeds
@@ -107,12 +110,12 @@ item.exastris:seeds_chorus.name=Chorus Flower Seed
 // thaumcraft
 tc.research_category.EXASTRIS=Ex Astris
 research.exastris_thaumcraft.title=Ex Astris Thaumcraft
-research.exastris_thaumcraft.stage.1=Not even a skyblock can stop an alchemist. However, many things aren't available in the middle of nowhere, but Ex Astris gives you the tools to make the world a much (un)safer place. Flux rifts not included!
+research.exastris_thaumcraft.stage.1=Unofficial port of insaneau and LoveHolys Ex Astris for 1.7.10. <BR>Not even a skyblock can stop an alchemist. However, many things aren't available in the middle of nowhere, but Ex Astris gives you the tools to make the world a much (un)safer place. Flux rifts not included!
 
 research.exastris_sky_tools.title=Thaumium Sky Tools
 research.exastris_sky_tools.stage.1=These Mystical Hammers and Crooks are the fruition of the endless search made by past alchemists who weren't satisfied by these Tools made of mundane materials. The hardness theoretically surpasses Diamond.
 
-research.exastris_crystals.title=Vis Crystal from the Sky
+research.exastris_crystals.title=Obtain a Crystal from the Sky
 research.exastris_crystals.stage.1=As an Alchemist, you must be prepared to perform magical powers in any situation. Ex Astris will provide you such environment. Even Vis Crystals you could have not obtained can be obtained through destroying specific block using a hammer. But, in order to prevent the abuse of its power, an Alchemist in the past hid the truth, leaving only these clues to find them.<PAGE>Aer: You shall find me in the place where dryness rains. <BR>Terra: Find me in the place on a surface reflecting emerald coloured light. <BR>Ignis: You will find me as a part of prison sealing the burning darkness. <BR>Aqua: We are Winter's heart that is dispelled by courier's light. <BR>Ordo: I standstill and stand strong on front of entropy. <BR>Perditio: I am a block that can destroy you, yet can never destroy you on my whim.
 
 research.exastris_quartz.title=Quartz from the Sky
@@ -136,11 +139,29 @@ research.exastris_greatwood_blocks.stage.1=Sieves, barrels and crucibles are eve
 research.exastris_silverwood_blocks.title=Skyblock meets Silverwood
 research.exastris_silverwood_blocks.stage.1=Sieves, barrels and crucibles are everyone's best friends for accessing almost unlimited resources. As an alchemist, your job is to become strong and still be a fashion icon. Now you can build your Ex Nihilo blocks from the best wood alchemy ever made.
 
-research.exastris_elemental_tools.title=Elemental Hammer and Crooks
-research.exastris_elemental_tools.stage.1=#
+research.exastris_elemental_tools.title=Elemental Sky Tools
+research.exastris_elemental_tools.stage.1=Elemental tools are a stable of Thaumcraft and now it even supports Ex Nihilo. You need to infuse your Thaumium tools to get some unique and interesting abilities that will help you fulfill your goal of becoming the richest alchemist on your skyblock.
 
 research.exastris_essentia_filter.title=Essentia Filter from the Sky
 research.exastris_essentia_filter.stage.1=Use it before you can obtain Silverwood.
+
+research.exastris_vis_crystal_balance.title=Thaumcraft 4?
+research.exastris_vis_crystal_balance.stage.1=This seems strange. Where does this magic item come from? It's so powerful that it can lower Vis costs, but at what cost?
+
+research.exastris_runic_matrix.title=Runic Matrix from the Sky
+research.exastris_runic_matrix.stage.1=Not enough Vis. But there are more ways.
+
+research.exastris_cinderpearl.title=Cinderpearl from the Sky
+research.exastris_cinderpearl.stage.1=Cinderpearls can be used in various ways.
+
+research.exastris_shimmerleaf.title=Shimmerleaf from the Sky
+research.exastris_shimmerleaf.stage.1=Shimmerleafs can be used in various ways.
+
+research.exastris_vishroom.title=Vishroom from the Sky
+research.exastris_vishroom.stage.1=Vishrooms can be used in various ways.
+
+research.exastris_eldritch_portal_spawner.title=A Portal to another World
+research.exastris_eldritch_portal_spawner.stage.1=You've seen scriptures that mention these mystical structures that were gateways to another land. A quick look around hasn't yielded any... but maybe with a bit of imagination, you could recreate those structures. <BR>Note:  <BR>This only works if the mod Thaumic Augmentation by TheCodex6824 is installed because the Eldritch Dimension and other features are currently not implemented in Thaumcraft 6.
 
 // overrides
 exnihilocreatio:witchwater=Witchwater
@@ -156,6 +177,3 @@ item.item_mesh.1.name=String Mesh
 item.item_mesh.2.name=Flint Mesh
 item.item_mesh.3.name=Iron Mesh
 item.item_mesh.4.name=Diamond Mesh
-
-ExAstrisRebirth.page.1=As an Alchemist, you must be prepared to perform magical powers in any situation. Ex Astris will provide you such environment. Even Shards you could have not obtained can be obtained through destroying specific block using a hammer. But, in order to prevent the abuse of its power, an Alchemist in the past hid the truth, leaving only these clues to find them.
-ExAstrisRebirth.page.2=Air Shard: You shall find me in the place where dryness rains. <BR>Fire Shard: You will find me as a part of prison sealing the burning darkness.<BR>Earth Shard: Find me in the place on a surface reflecting emerald coloured light.<BR>Water Shard: We are Winter's heart that is dispelled by courier's light. <BR>Entropy Shard: I am a block that can destroy you, yet can never destroy you on my whim.<BR>Order Shard: I standstill and stand strong on front of entropy.

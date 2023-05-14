@@ -227,5 +227,4 @@ public class ItemElementalHammer extends ExAstrisItemHammerBase implements IArch
 	public boolean useBlockHighlight(ItemStack stack) {
 		return true;
 	}
-
 }

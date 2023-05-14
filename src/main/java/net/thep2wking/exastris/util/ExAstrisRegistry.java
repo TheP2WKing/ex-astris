@@ -53,7 +53,7 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T0);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T1);
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.BARREL_T2);
-        
+
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.SIEVE);
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.WOOD_CRUCIBLE);
@@ -76,12 +76,21 @@ public class ExAstrisRegistry {
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_THAUMIUM);
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.CROOK_THAUMIUM);
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_ELEMENTAL);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.CROOK_ELEMENTAL);
         }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.PEBBLES);
         ExAstrisUtils.registerItem(event, ExAstrisItems.DOLLS);
 
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            ExAstrisUtils.registerItemBlock(event, ExAstrisItems.ELDRITCH_PORTAL_SPAWNER);
+        }
+
         ExAstrisUtils.registerItem(event, ExAstrisItems.SHARD_ICE);
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            ExAstrisUtils.registerItem(event, ExAstrisItems.VIS_CRYSTAL_BALANCE);
+        }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_PODZOL);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_FERN);

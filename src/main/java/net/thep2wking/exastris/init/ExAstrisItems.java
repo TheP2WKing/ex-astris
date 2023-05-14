@@ -15,6 +15,7 @@ import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2
 import net.thep2wking.exastris.content.block.crucible.ItemBlockExAstrisWoodCrucuble;
 import net.thep2wking.exastris.content.block.sieve.ItemBlockExAstrisSieve;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
+import net.thep2wking.exastris.content.item.misc.ItemEldritchPortalSpawner;
 import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
 import net.thep2wking.exastris.content.item.seed.ItemChorusSeed;
 import net.thep2wking.exastris.content.item.seed.ItemPodzolSeed;
@@ -36,7 +37,8 @@ public class ExAstrisItems {
         public static final ItemBlock SIEVE = new ItemBlockExAstrisSieve(ExAstrisBlocks.BLOCK_SIEVE,
                         RarityHandler.WHITE, false);
 
-        public static final ItemBlock WOOD_CRUCIBLE = new ItemBlockExAstrisWoodCrucuble(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE,
+        public static final ItemBlock WOOD_CRUCIBLE = new ItemBlockExAstrisWoodCrucuble(
+                        ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE,
                         RarityHandler.WHITE, false);
 
         public static final ItemBlock HARD_STONE = new ExAstrisItemBlockBase(ExAstrisBlocks.BLOCK_HARD_STONE,
@@ -64,8 +66,14 @@ public class ExAstrisItems {
         public static final Item DOLLS = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
                         RarityHandler.WHITE, false);
 
+        public static final Item ELDRITCH_PORTAL_SPAWNER = new ItemEldritchPortalSpawner("eldritch_portal_spawner",
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
+
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
+
+        public static final Item VIS_CRYSTAL_BALANCE = new ExAstrisItemBase("vis_crystal_balance",
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
 
         public static final Item SEEDS_PODZOL = new ItemPodzolSeed("seeds_podzol",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);

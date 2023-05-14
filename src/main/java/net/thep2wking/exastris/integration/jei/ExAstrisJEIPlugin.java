@@ -30,6 +30,7 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCompat;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 
 @JEIPlugin
 public class ExAstrisJEIPlugin implements IModPlugin {
@@ -52,7 +53,7 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		registry.addRecipeCatalyst(stack, SieveRecipeCategory.UID);
 	}
 
-	public static void addBarrelsToRelevantCategories(IModRegistry registry, ItemStack stack) {
+	public static void addCrucibleToRelevantCategories(IModRegistry registry, ItemStack stack) {
 		registry.addRecipeCatalyst(stack, "exnihilocreatio:crucible_wood");
 	}
 
@@ -100,6 +101,13 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			addBarrelToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5));
 
+			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+				addBarrelToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 6));
+				addBarrelToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 7));
+			}
+
 			addBarrelToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0));
 			addBarrelToRelevantCategories(registry,
@@ -129,21 +137,35 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4));
 			addSieveToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5));
+
+			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+				addSieveToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 6));
+				addSieveToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 7));
+			}
 		}
 
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 0));
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 1));
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 2));
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 3));
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 4));
-			addBarrelsToRelevantCategories(registry,
+			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 5));
+
+			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+				addCrucibleToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 6));
+				addCrucibleToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 7));
+			}
 		}
 
 		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_BARRELS) {
@@ -172,8 +194,10 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		}
 
 		if (Loader.isModLoaded("redstonearsenal")) {
-			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.HAMMER_FLUX, 1, 0), HammerRecipeCategory.UID);
-			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.CROOK_FLUX, 1, 0), CrookRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.HAMMER_FLUX, 1, 0),
+					HammerRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.CROOK_FLUX, 1, 0),
+					CrookRecipeCategory.UID);
 		}
 	}
 }
