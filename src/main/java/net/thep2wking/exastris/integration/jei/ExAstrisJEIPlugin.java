@@ -117,6 +117,15 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0));
 			addBarrelToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1));
+
+			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+				addBarrelToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 2));
+				addBarrelToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 3));
+				addBarrelToRelevantCategories(registry,
+						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 4));
+			}
 		}
 
 		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),

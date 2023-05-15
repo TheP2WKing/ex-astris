@@ -25,10 +25,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -52,6 +54,11 @@ public class ItemExAstrisDoll extends ItemDoll implements IHasModel {
 
         EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.VILLAGER.meta, EnumExAstrisDollType.VILLAGER);
         EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.EVOKER.meta, EnumExAstrisDollType.EVOKER);
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.PECH_FORAGER.meta, EnumExAstrisDollType.PECH_FORAGER);
+            EXASTRIS_DOLL_TYPES.put(EnumExAstrisDollType.CRIMSON_CLERIC.meta, EnumExAstrisDollType.CRIMSON_CLERIC);
+        }
     }
 
     @Override

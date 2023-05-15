@@ -515,14 +515,14 @@
             ]
         },
         {
-            "key": "EXASTRIS_ELDRITCH_PORTAL",
-            "name": "research.exastris_eldritch_portal_spawner.title",
+            "key": "EXASTRIS_ELDRITCH_STONE",
+            "name": "research.exastris_eldritch_stone.title",
             "icons": [
-                "exastris:eldritch_portal_spawner"
+                "thaumcraft:stone_eldritch_tile"
             ],
             "category": "EXASTRIS",
             "meta": [
-                "HIDDEN", "SPIKY", "REVERSE"
+                "HIDDEN", "REVERSE"
             ],
             "parents": [
                 "EXASTRIS_THAUMCRAFT", "UNLOCKELDRITCH"
@@ -533,17 +533,106 @@
             ],
             "stages": [
                 {
-                    "text": "research.exastris_eldritch_portal_spawner.stage.1",
+                    "text": "research.exastris_eldritch_stone.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1", "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_eldritch_stone.stage.1",
+                    "recipes": [
+                        "exastris:eldritch_stone"
+                    ],
+                    "warp": 1
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_ANCIENT_STONE",
+            "name": "research.exastris_ancient_stone.title",
+            "icons": [
+                "thaumcraft:stone_ancient_tile"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN"
+            ],
+            "parents": [
+                "EXASTRIS_ELDRITCH_STONE"
+            ],
+            "location": [
+                4,
+                3
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_ancient_stone.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ELDRITCH;1", "OBSERVATION;ALCHEMY;1", "THEORY;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_ancient_stone.stage.1",
+                    "recipes": [
+                        "exastris:ancient_stone"
+                    ],
+                    "warp": 1
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_ELDRITCH_ALTAR",
+            "name": "research.exastris_eldritch_altar_spawner.title",
+            "icons": [
+                "exastris:eldritch_altar_spawner"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN", "SPIKY", "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_ELDRITCH_STONE"
+            ],
+            "location": [
+                6,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_eldritch_altar_spawner.stage.1",
                     "required_knowledge": [
                         "THEORY;ELDRITCH;1", "THEORY;EXASTRIS;1"
                     ]
                 },
                 {
-                    "text": "research.exastris_eldritch_portal_spawner.stage.1",
+                    "text": "research.exastris_eldritch_altar_spawner.stage.1",
                     "recipes": [
-                        "exastris:eldritch_portal_spawner"
+                        "exastris:eldritch_altar_spawner"
                     ],
                     "warp": 3
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_PRIMORDIAL_PEARL",
+            "name": "research.exastris_primordial_pearl.title",
+            "icons": [
+                "thaumcraft:primordial_pearl"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN", "ROUND", "REVERSE"
+            ],
+            "parents": [
+                "EXASTRIS_ANCIENT_STONE"
+            ],
+            "location": [
+                6,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_primordial_pearl.stage.1"
                 }
             ]
         }

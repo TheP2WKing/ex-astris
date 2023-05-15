@@ -8,6 +8,15 @@
         },
         "variant=gold": {
             "model": "exastris:barrel_gold"
+        },
+        "variant=alchemical_brass": {
+            "model": "exastris:barrel_alchemical_brass"
+        },
+        "variant=thaumium": {
+            "model": "exastris:barrel_thaumium"
+        },
+        "variant=void_metal": {
+            "model": "exastris:barrel_void_metal"
         }
     }
 }

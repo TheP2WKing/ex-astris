@@ -32,11 +32,13 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
@@ -52,7 +54,8 @@ public class BlockExAstrisBarrelTier2 extends BlockBarrel implements IHasModel {
 
     private static final Int2ObjectMap<EnumExAstrisBarrelTier2> EXASTRIS_BARREL_T2_TYPES = new Int2ObjectArrayMap<>();
 
-    public static final PropertyEnum<EnumExAstrisBarrelTier2> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier2.class);
+    public static final PropertyEnum<EnumExAstrisBarrelTier2> VARIANT = PropertyEnum.create("variant",
+            EnumExAstrisBarrelTier2.class);
 
     public BlockExAstrisBarrelTier2(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel,
@@ -77,11 +80,18 @@ public class BlockExAstrisBarrelTier2 extends BlockBarrel implements IHasModel {
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info(BlockExAstrisBarrelTier2.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
+            ExAstris.LOGGER.info(BlockExAstrisBarrelTier2.class.getName()
+                    + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
         }
 
         EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.IRON.meta, EnumExAstrisBarrelTier2.IRON);
         EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.GOLD.meta, EnumExAstrisBarrelTier2.GOLD);
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.ALCHEMICAL_BRASS.meta, EnumExAstrisBarrelTier2.ALCHEMICAL_BRASS);
+            EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.THAUMIUM.meta, EnumExAstrisBarrelTier2.THAUMIUM);
+            EXASTRIS_BARREL_T2_TYPES.put(EnumExAstrisBarrelTier2.VOID_METAL.meta, EnumExAstrisBarrelTier2.VOID_METAL);
+        }
     }
 
     @Override
@@ -141,7 +151,7 @@ public class BlockExAstrisBarrelTier2 extends BlockBarrel implements IHasModel {
         if (barrel == null)
             return;
 
-        probeInfo.text(TextFormatting.GREEN + "Tier: 1");
+        probeInfo.text(TextFormatting.GREEN + "Tier: Stone");
 
         IBarrelMode barrelMode = barrel.getMode();
         if (barrelMode != null) {

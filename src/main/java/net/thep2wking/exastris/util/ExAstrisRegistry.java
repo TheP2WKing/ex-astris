@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
@@ -17,6 +18,7 @@ import net.thep2wking.exastris.init.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.init.ExAstrisThaumcraftItems;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 import net.thep2wking.exastris.util.handler.IHasModel;
+import net.thep2wking.exastris.util.world.WorldGenExAstris;
 
 @Mod.EventBusSubscriber
 public class ExAstrisRegistry {
@@ -83,7 +85,7 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItem(event, ExAstrisItems.DOLLS);
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-            ExAstrisUtils.registerItemBlock(event, ExAstrisItems.ELDRITCH_PORTAL_SPAWNER);
+            ExAstrisUtils.registerItemBlock(event, ExAstrisItems.ELDRITCH_ALTAR_SPAWNER);
         }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.SHARD_ICE);
@@ -105,6 +107,11 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerFluid(ExAstrisFluids.PEACEWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.FROSTWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.SLIME);
+
+        GameRegistry.registerWorldGenerator(new WorldGenExAstris(), 0);
+        if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info("Registered world generator");
+        }
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             ExAstris.LOGGER.info("Registered fluids");

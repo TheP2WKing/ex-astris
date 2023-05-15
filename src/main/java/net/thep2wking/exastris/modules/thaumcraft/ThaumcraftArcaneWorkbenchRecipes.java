@@ -2,6 +2,9 @@ package net.thep2wking.exastris.modules.thaumcraft;
 
 import exnihilocreatio.ModFluids;
 import exnihilocreatio.ModItems;
+import exnihilocreatio.blocks.BlockSieve;
+import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
+import exnihilocreatio.util.ItemInfo;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -24,6 +27,7 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
 
+@SuppressWarnings("null")
 public class ThaumcraftArcaneWorkbenchRecipes {
 	public static void register() {
 		ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "hammer_thaumium"),
@@ -190,17 +194,37 @@ public class ThaumcraftArcaneWorkbenchRecipes {
 						new ItemStack(Item.getItemFromBlock(Blocks.YELLOW_FLOWER)),
 						new AspectList().merge(Aspect.PLANT, 4).merge(Aspect.FIRE, 4).merge(Aspect.MAGIC, 4)));
 
-		GameRegistry.addSmelting(new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE), new ItemStack(ItemsTC.salisMundus), 0.1f);
+		GameRegistry.addSmelting(new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE), new ItemStack(ItemsTC.salisMundus),
+				0.1f);
 
-		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "eldritch_portal_spawner"),
-		new InfusionRecipe("EXASTRIS_ELDRITCH_PORTAL", new ItemStack(ExAstrisItems.ELDRITCH_PORTAL_SPAWNER, 1, 0), 0,
-				new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.AVERSION, 64).add(Aspect.MAGIC, 64).add(Aspect.VOID, 64),
-				new ItemStack(ItemsTC.mirroredGlass),
-				"blockGlass",
-				"blockGlass",
-				"ingotVoid",
-				"blockGlass",
-				"blockGlass",
-				"ingotVoid"));
+		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "eldritch_altar_spawner"),
+				new InfusionRecipe("EXASTRIS_ELDRITCH_ALTAR", new ItemStack(ExAstrisItems.ELDRITCH_ALTAR_SPAWNER, 1, 0),
+						0,
+						new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.AVERSION, 64).add(Aspect.MAGIC, 64)
+								.add(Aspect.VOID, 64),
+						new ItemStack(ItemsTC.mirroredGlass),
+						new ItemStack(BlocksTC.stoneEldritchTile),
+						new ItemStack(Items.ENDER_EYE),
+						new ItemStack(BlocksTC.stoneEldritchTile),
+						"ingotVoid",
+						new ItemStack(BlocksTC.stoneEldritchTile),
+						new ItemStack(Items.ENDER_EYE),
+						new ItemStack(BlocksTC.stoneEldritchTile),
+						"ingotVoid"));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "eldritch_stone"),
+				new CrucibleRecipe("EXASTRIS_ELDRITCH_STONE",
+						new ItemStack(BlocksTC.stoneEldritchTile),
+						new ItemStack(Item.getItemFromBlock(Blocks.OBSIDIAN)),
+						new AspectList().merge(Aspect.ELDRITCH, 5).merge(Aspect.EARTH, 5)));
+
+		ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ExAstris.PREFIX + "ancient_stone"),
+				new CrucibleRecipe("EXASTRIS_ANCIENT_STONE",
+						new ItemStack(BlocksTC.stoneAncientTile),
+						new ItemStack(Item.getItemFromBlock(BlocksTC.stoneArcane)),
+						new AspectList().merge(Aspect.ELDRITCH, 5).merge(Aspect.EARTH, 5)));
+
+		ExNihiloRegistryManager.SIEVE_REGISTRY.register(new ItemStack(Item.getItemFromBlock(BlocksTC.stoneAncientTile)),
+				new ItemInfo(ItemsTC.primordialPearl, 0), 0.001f, BlockSieve.MeshType.DIAMOND.getID());
 	}
 }

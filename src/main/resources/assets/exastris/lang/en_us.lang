@@ -48,6 +48,9 @@ tile.exastris:barrel_cobblestone.name=Cobblestone Barrel
 
 tile.exastris:barrel_iron.name=Iron Barrel
 tile.exastris:barrel_gold.name=Gold Barrel
+tile.exastris:barrel_alchemical_brass.name=Alchemical Brass Barrel
+tile.exastris:barrel_thaumium.name=Thaumium Barrel
+tile.exastris:barrel_void_metal.name=Void Metal Barrel
 
 tile.exastris:sieve_oak_wood.name=Oak Sieve
 tile.exastris:sieve_spruce_wood.name=Spruce Sieve
@@ -97,8 +100,12 @@ item.exastris:doll_villager.name=Trading Doll
 item.exastris:doll_villager.tip=Drop in a barrel of peacewater to spawn Villager
 item.exastris:doll_evoker.name=Undying Doll
 item.exastris:doll_evoker.tip=Drop in a barrel of witchwater to spawn Evoker
+item.exastris:doll_pech_forager.name=Thaumic Doll
+item.exastris:doll_pech_forager.tip=Drop in a barrel of peacewater to spawn Pech Forager
+item.exastris:doll_crimson_cleric.name=Crimson Doll
+item.exastris:doll_crimson_cleric.tip=Drop in a barrel of witchwater to spawn Crimson Cleric
 
-item.exastris:eldritch_portal_spawner.name=Portal-in-a-Box
+item.exastris:eldritch_altar_spawner.name=Altar-in-a-Box
 
 item.exastris:shard_ice.name=Ice Shard
 item.exastris:vis_crystal_balance.name=Balanced Vis Crystal
@@ -160,8 +167,17 @@ research.exastris_shimmerleaf.stage.1=Shimmerleafs can be used in various ways.
 research.exastris_vishroom.title=Vishroom from the Sky
 research.exastris_vishroom.stage.1=Vishrooms can be used in various ways.
 
-research.exastris_eldritch_portal_spawner.title=A Portal to another World
-research.exastris_eldritch_portal_spawner.stage.1=You've seen scriptures that mention these mystical structures that were gateways to another land. A quick look around hasn't yielded any... but maybe with a bit of imagination, you could recreate those structures. <BR>Note:  <BR>This only works if the mod Thaumic Augmentation by TheCodex6824 is installed because the Eldritch Dimension and other features are currently not implemented in Thaumcraft 6.
+research.exastris_eldritch_stone.title=Eldritch Stone from the Sky
+research.exastris_eldritch_stone.stage.1=What is that? Eldritch Stone? You probably didn't even know it existed. But what does it do?
+
+research.exastris_ancient_stone.title=Ancient Stone from the Sky
+research.exastris_ancient_stone.stage.1=Another ancient material of unknown origin? Alchemists searched for centuries, but the could not find it. But what is the purpose of this? Don't tell me it's supposed to be...
+
+research.exastris_primordial_pearl.title=Siveting is always an Option
+research.exastris_primordial_pearl.stage.1=Skyblock is about siveting and then doing it again. Now you can get some primordial pearls by simply siveting? Alchemists hate this trick! If you don't want to spend millions of blocks to just get one of these, just get an Altar-in-a-Box.
+
+research.exastris_eldritch_altar_spawner.title=A Portal (not) to another World
+research.exastris_eldritch_altar_spawner.stage.1=You've seen scriptures that mention these mystical structures that were gateways to another land. A quick look around hasn't yielded any... but maybe with a bit of imagination, you could recreate those structures. <BR>Note:  <BR>This only works if the mod Thaumic Augmentation by TheCodex6824 is installed because the Eldritch Dimension and other features are currently not implemented in Thaumcraft 6.<BR> Warning: <BR>This will void blocks in a radius of 3 blocks and 6 blocks high so be careful.
 
 // overrides
 exnihilocreatio:witchwater=Witchwater

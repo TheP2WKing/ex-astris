@@ -15,7 +15,7 @@ import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2
 import net.thep2wking.exastris.content.block.crucible.ItemBlockExAstrisWoodCrucuble;
 import net.thep2wking.exastris.content.block.sieve.ItemBlockExAstrisSieve;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
-import net.thep2wking.exastris.content.item.misc.ItemEldritchPortalSpawner;
+import net.thep2wking.exastris.content.item.misc.ItemEldritchAltarSpawner;
 import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
 import net.thep2wking.exastris.content.item.seed.ItemChorusSeed;
 import net.thep2wking.exastris.content.item.seed.ItemPodzolSeed;
@@ -66,7 +66,7 @@ public class ExAstrisItems {
         public static final Item DOLLS = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
                         RarityHandler.WHITE, false);
 
-        public static final Item ELDRITCH_PORTAL_SPAWNER = new ItemEldritchPortalSpawner("eldritch_portal_spawner",
+        public static final Item ELDRITCH_ALTAR_SPAWNER = new ItemEldritchAltarSpawner("eldritch_altar_spawner",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
 
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",

@@ -152,7 +152,7 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         if (barrel == null)
             return;
 
-        probeInfo.text(TextFormatting.GREEN + "Tier: 0");
+        probeInfo.text(TextFormatting.GREEN + "Tier: Wood");
 
         IBarrelMode barrelMode = barrel.getMode();
         if (barrelMode != null) {
