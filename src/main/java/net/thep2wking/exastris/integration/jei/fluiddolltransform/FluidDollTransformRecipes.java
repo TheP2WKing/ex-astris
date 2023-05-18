@@ -72,5 +72,17 @@ public class FluidDollTransformRecipes extends FluidDollTransformCompat {
 					ExAstrisUtils.addFluidItem("milk"),
 					new ItemStack(ModItems.dolls, 1, 7)));
 		}
+
+		if (Loader.isModLoaded("thaumcraft")) {
+			list.add(new FluidDollTransformWrapper(addNBTItem("thaumcraft:pech"),
+					ExAstrisUtils.addFluidItem("peacewater"),
+					new ItemStack(ExAstrisItems.DOLLS, 1, 2)));
+		}
+
+		if (Loader.isModLoaded("thaumcraft")) {
+			list.add(new FluidDollTransformWrapper(addNBTItem("thaumcraft:cultistcleric"),
+					ExAstrisUtils.addFluidItem("witchwater"),
+					new ItemStack(ExAstrisItems.DOLLS, 1, 3)));
+		}
 	}
 }

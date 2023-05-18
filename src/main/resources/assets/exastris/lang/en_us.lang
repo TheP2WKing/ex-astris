@@ -88,6 +88,9 @@ item.exastris:crook_flux.name=Flux-Infused Crook
 item.exastris:hammer_thaumium.name=Thaumium Hammer
 item.exastris:crook_thaumium.name=Thaumium Crook
 
+item.exastris:hammer_void.name=Void Hammer
+item.exastris:crook_void.name=Void Crook
+
 item.exastris:hammer_elemental.name=Hammer of the Smasher
 item.exastris:crook_elemental.name=Crook of Silking
 
@@ -116,7 +119,7 @@ item.exastris:seeds_chorus.name=Chorus Flower Seed
 
 // thaumcraft
 tc.research_category.EXASTRIS=Ex Astris
-research.exastris_thaumcraft.title=Ex Astris Thaumcraft
+research.exastris_thaumcraft.title=Ex Astris
 research.exastris_thaumcraft.stage.1=Unofficial port of insaneau and LoveHolys Ex Astris for 1.7.10. <BR>Not even a skyblock can stop an alchemist. However, many things aren't available in the middle of nowhere, but Ex Astris gives you the tools to make the world a much (un)safer place. Flux rifts not included!
 
 research.exastris_sky_tools.title=Thaumium Sky Tools
@@ -178,6 +181,18 @@ research.exastris_primordial_pearl.stage.1=Skyblock is about siveting and then d
 
 research.exastris_eldritch_altar_spawner.title=A Portal (not) to another World
 research.exastris_eldritch_altar_spawner.stage.1=You've seen scriptures that mention these mystical structures that were gateways to another land. A quick look around hasn't yielded any... but maybe with a bit of imagination, you could recreate those structures. <BR>Note:  <BR>This only works if the mod Thaumic Augmentation by TheCodex6824 is installed because the Eldritch Dimension and other features are currently not implemented in Thaumcraft 6.<BR> Warning: <BR>This will void blocks in a radius of 3 blocks and 6 blocks high so be careful.
+
+research.exastris_metal_blocks.title=Barrel Metallurgy
+research.exastris_metal_blocks.stage.1=The finest barrels of alchemy. Unlike Ex Astris for 1.7.10, Thaumcraft Dolls do not require Thaumium Barrels to spawn mobs.
+
+research.exastris_doll_pech_forager.title=Thaumic Doll
+research.exastris_doll_pech_forager.stage.1=Placing this mystic doll in a barrel holding Peacewater will summon a Pech Forager.
+
+research.exastris_doll_crimson_cleric.title=Crimson Doll
+research.exastris_doll_crimson_cleric.stage.1=Placing this mystic doll in a barrel holding Witchwater will summon a Crimson Cleric.
+
+research.exastris_void_tools.title=Void Sky Tools
+research.exastris_void_tools.stage.1=These Mystical Hammers and Crooks are the fruition of more endless search made by past alchemists who weren't satisfied by these Tools made of Thaumium. The hardness theoretically surpasses Diamond, but at what cost? Warping!
 
 // overrides
 exnihilocreatio:witchwater=Witchwater

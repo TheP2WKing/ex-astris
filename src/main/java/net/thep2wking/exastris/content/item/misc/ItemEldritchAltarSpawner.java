@@ -14,9 +14,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.api.ExAstrisItemBase;
 import net.thep2wking.exastris.util.world.WorldGeneratorExAstris;
-import thaumcraft.api.items.IWarpingGear;
 
-public class ItemEldritchAltarSpawner extends ExAstrisItemBase implements IWarpingGear {
+public class ItemEldritchAltarSpawner extends ExAstrisItemBase {
 	public ItemEldritchAltarSpawner(String name, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
 		super(name, tab, rarity, hasEffect);
 		setMaxStackSize(1);
@@ -39,14 +38,9 @@ public class ItemEldritchAltarSpawner extends ExAstrisItemBase implements IWarpi
 				return EnumActionResult.FAIL;
 			} else {
 				player.sendMessage(new TextComponentString(TextFormatting.RED
-						+ "The Eldritch Content is not properly implemented in Thaumcraft 6. Install Thaumic Augmentation by TheCodex6824 to function properly."));
+						+ "Eldritch Content is not properly implemented in Thaumcraft 6. Install Thaumic Augmentation by TheCodex6824 to function properly."));
 			}
 		}
 		return EnumActionResult.SUCCESS;
-	}
-
-	@Override
-	public int getWarp(ItemStack arg0, EntityPlayer arg1) {
-		return 1;
 	}
 }

@@ -551,7 +551,7 @@
             "key": "EXASTRIS_ANCIENT_STONE",
             "name": "research.exastris_ancient_stone.title",
             "icons": [
-                "thaumcraft:stone_ancient_tile"
+                "thaumcraft:stone_ancient"
             ],
             "category": "EXASTRIS",
             "meta": [
@@ -633,6 +633,134 @@
             "stages": [
                 {
                     "text": "research.exastris_primordial_pearl.stage.1"
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_METAL_BLOCKS",
+            "name": "research.exastris_metal_blocks.title",
+            "icons": [
+                "exastris:block_barrel2;1;2", "exastris:block_barrel2;1;3", "exastris:block_barrel2;1;4"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_THAUMCRAFT"
+            ],
+            "location": [
+                0,
+                -2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_metal_blocks.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;BASICS;1", "OBSERVATION;EXASTRIS;3"
+                    ]
+                },
+                {
+                    "text": "research.exastris_metal_blocks.stage.1",
+                    "recipes": [
+                        "exastris:barrel_alchemical_brass", "exastris:barrel_thaumium", "exastris:barrel_void_metal"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_DOLL_PECH_FORAGER",
+            "name": "research.exastris_doll_pech_forager.title",
+            "icons": [
+                "exastris:item_doll;1;2"
+            ],
+            "category": "EXASTRIS",
+            "parents": [
+                "EXASTRIS_METAL_BLOCKS"
+            ],
+            "location": [
+                -1,
+                -4
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_doll_pech_forager.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_doll_pech_forager.stage.1",
+                    "recipes": [
+                        "exastris:doll_pech_forager"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_DOLL_CRIMSON_CLERIC",
+            "name": "research.exastris_doll_crimson_cleric.title",
+            "icons": [
+                "exastris:item_doll;1;3"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN", "SPIKY"
+            ],
+            "parents": [
+                "EXASTRIS_METAL_BLOCKS", "UNLOCKELDRITCH"
+            ],
+            "location": [
+                1,
+                -4
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_doll_crimson_cleric.stage.1",
+                    "required_knowledge": [
+                        "THEORY;ELDRITCH;1", "THEORY;EXASTRIS;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_doll_crimson_cleric.stage.1",
+                    "recipes": [
+                        "exastris:doll_crimson_cleric"
+                    ],
+                    "warp": 1
+                }
+            ]
+        },
+        {
+            "key": "EXASTRIS_VOID_TOOLS",
+            "name": "research.exastris_void_tools.title",
+            "icons": [
+                "exastris:hammer_void",
+                "exastris:crook_void"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "HIDDEN"
+            ],
+            "parents": [
+                "EXASTRIS_SKY_TOOLS", "UNLOCKELDRITCH"
+            ],
+            "location": [
+                -4,
+                4
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_void_tools.stage.1",
+                    "required_knowledge": [
+                        "OBSERVATION;EXASTRIS;1", "THEORY;ELDRITCH;1"
+                    ]
+                },
+                {
+                    "text": "research.exastris_void_tools.stage.1",
+                    "recipes": [
+                        "exastris:hammer_void",
+                        "exastris:crook_void"
+                    ],
+                    "warp": 1
                 }
             ]
         }
