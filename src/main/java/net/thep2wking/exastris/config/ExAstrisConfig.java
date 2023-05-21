@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.categories.ChiselConfig;
-import net.thep2wking.exastris.config.categories.ExNihiloConfig;
 import net.thep2wking.exastris.config.categories.GenerelConfig;
 import net.thep2wking.exastris.config.categories.JEIConfig;
 import net.thep2wking.exastris.config.categories.RedstoneArsenalConfig;
@@ -26,10 +25,6 @@ public class ExAstrisConfig {
     @Config.Name("vanilla")
     @Config.Comment("Configure Vanilla Module")
     public static final VanillaConfig MODULE_VANILLA= new VanillaConfig();
-
-    @Config.Name("exnihilo")
-    @Config.Comment("Configure Ex Nihilo Module")
-    public static final ExNihiloConfig MODULE_EX_NIHILO = new ExNihiloConfig();
 
     @Config.Name("chisel")
     @Config.Comment("Configure Ex Astris Module")

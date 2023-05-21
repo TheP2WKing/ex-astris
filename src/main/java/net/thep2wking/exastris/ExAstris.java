@@ -51,7 +51,6 @@ public class ExAstris {
         }
         PROXY.Init(event);
         ExAstrisRecipeRegistry.registerVanillaRecipes();
-        ExAstrisRecipeRegistry.registerExNihiloRecipes();
         ExAstrisRecipeRegistry.registerChiselRecipes();
         ExAstrisRecipeRegistry.registerRedstoneArsenalRecipes();
         ExAstrisRecipeRegistry.registerThaumcraftRecipes();

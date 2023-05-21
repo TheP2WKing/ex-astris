@@ -15,7 +15,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 
 public class ExAstrisUtils {
     public static void registerBlock(RegistryEvent.Register<Block> event, Block block) {
@@ -65,5 +67,16 @@ public class ExAstrisUtils {
         FluidStack inputFluid = new FluidStack(FluidRegistry.getFluid(fluid), Fluid.BUCKET_VOLUME);
         ItemStack inputBucket = Util.getBucketStack(inputFluid.getFluid());
         return inputBucket;
+    }
+
+    public static void recipesLoadedMessage(String modid) {
+        if (Loader.isModLoaded(modid)) {
+            if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+                ExAstris.LOGGER.info("Registered Recipes for " + modid);
+            }
+        } else if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
+            ExAstris.LOGGER.info(
+                    "Skipped registering Recipes for " + modid + " because mod was not found");
+        }
     }
 }

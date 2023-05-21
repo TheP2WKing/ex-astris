@@ -87,7 +87,6 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			registry.addRecipes(listMobDoll, FluidDollTransformCategory.UID);
 		}
 
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_BARRELS) {
 			addBarrelToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0));
 			addBarrelToRelevantCategories(registry,
@@ -126,14 +125,13 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 				addBarrelToRelevantCategories(registry,
 						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 4));
 			}
-		}
+		
 
 		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
 				FluidDollTransformCategory.UID);
 		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0),
 				FluidDollTransformCategory.UID);
 
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_SIEVES) {
 			addSieveToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0));
 			addSieveToRelevantCategories(registry,
@@ -153,9 +151,8 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 				addSieveToRelevantCategories(registry,
 						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 7));
 			}
-		}
+	
 
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
 			addCrucibleToRelevantCategories(registry,
 					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 0));
 			addCrucibleToRelevantCategories(registry,
@@ -175,32 +172,21 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 				addCrucibleToRelevantCategories(registry,
 						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 7));
 			}
-		}
+		
 
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_BARRELS) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
-		}
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_SIEVES) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
-		}
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_WOODEN_CRUCIBLES) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.crucibleWood), 1, 0));
-		}
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REPLACE_EX_NIHILO_END_CAKE) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
-		}
-		if (ExAstrisConfig.INTEGRATION_JEI.HIDE_UNUSED) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.grinder), 1, 0));
-		}
-		if (ExAstrisConfig.MODULE_EX_NIHILO.OVERRIDES.REMOVE_EX_NIHILO_AUTO_SIFTER) {
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.watermill), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.axle_stone), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.autoSifter), 1, 0));
 			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 6));
 			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 7));
-		}
+		
 
 		if (Loader.isModLoaded("redstonearsenal")) {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.HAMMER_FLUX, 1, 0),

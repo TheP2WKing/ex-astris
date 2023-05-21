@@ -3,10 +3,6 @@ package net.thep2wking.exastris.config.modules.vanilla;
 import net.minecraftforge.common.config.Config;
 
 public class HammerRecipesConfig {
-    @Config.Name("Stone Pebbles from Stone")
-    @Config.Comment("Whether to get stone pebbles from hammering stone")
-    public boolean STONE_PEBBLES_FROM_STONE = true;
-
     @Config.Name("Prismarine Crystals from Prismarine")
     @Config.Comment("Whether to get prismarine crystals from hammering prismarine")
     public boolean PRISMARINE_CRYSTALS_FROM_PRISMARINE = true;

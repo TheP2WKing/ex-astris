@@ -8,7 +8,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
-public class ExAstrisResearchCategory {
+public class ResearchCategoryExAstris {
 	public static ResearchCategory RES_CAT;
 
 	public static void register() {
