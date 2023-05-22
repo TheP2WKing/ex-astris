@@ -10,6 +10,7 @@ import net.thep2wking.exastris.config.categories.ChiselConfig;
 import net.thep2wking.exastris.config.categories.GenerelConfig;
 import net.thep2wking.exastris.config.categories.JEIConfig;
 import net.thep2wking.exastris.config.categories.RedstoneArsenalConfig;
+import net.thep2wking.exastris.config.categories.ThaumcraftConfig;
 import net.thep2wking.exastris.config.categories.VanillaConfig;
 
 @Config(modid = ExAstris.MODID, name = ExAstris.MODID, category = ExAstris.MODID)
@@ -33,6 +34,10 @@ public class ExAstrisConfig {
     @Config.Name("redstonearsenal")
     @Config.Comment("Configure Redstone Arsenal Module")
     public static final RedstoneArsenalConfig MODULE_REDSTONE_ARSENAL = new RedstoneArsenalConfig();
+
+    @Config.Name("thaumcraft")
+    @Config.Comment("Configure Thaumcraft Module")
+    public static final ThaumcraftConfig MODULE_THAUMCRAFT = new ThaumcraftConfig();
 
     @Mod.EventBusSubscriber
     public static class ConfigHolder {

@@ -8,7 +8,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
 
 public class FluidDollTransformRecipes extends FluidDollTransformCompat {
@@ -41,13 +43,17 @@ public class FluidDollTransformRecipes extends FluidDollTransformCompat {
 		list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:guardian"), ExAstrisUtils.addFluidItem("water"),
 				new ItemStack(ModItems.dolls, 1, 3)));
 
-		list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:villager"),
-				ExAstrisUtils.addFluidItem("peacewater"),
-				new ItemStack(ExAstrisItems.DOLLS, 1, 0)));
+		if (ExAstrisConfig.MODULE_VANILLA.MOB_DOLLS.VILLAGER_DOLL) {
+			list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:villager"),
+					ExAstrisUtils.addFluidItem("peacewater"),
+					new ItemStack(ExAstrisItems.DOLLS, 1, 0)));
+		}
 
-		list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:evocation_illager"),
-				ExAstrisUtils.addFluidItem("witchwater"),
-				new ItemStack(ExAstrisItems.DOLLS, 1, 1)));
+		if (ExAstrisConfig.MODULE_VANILLA.MOB_DOLLS.EVOKER_DOLL) {
+			list.add(new FluidDollTransformWrapper(addNBTItem("minecraft:evocation_illager"),
+					ExAstrisUtils.addFluidItem("witchwater"),
+					new ItemStack(ExAstrisItems.DOLLS, 1, 1)));
+		}
 
 		if (Loader.isModLoaded("thermalfoundation")) {
 			list.add(new FluidDollTransformWrapper(addNBTItem("thermalfoundation:blizz"),
@@ -73,13 +79,13 @@ public class FluidDollTransformRecipes extends FluidDollTransformCompat {
 					new ItemStack(ModItems.dolls, 1, 7)));
 		}
 
-		if (Loader.isModLoaded("thaumcraft")) {
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT) && ExAstrisConfig.MODULE_THAUMCRAFT.MOB_DOLLS.PECH_FORAGER_DOLL) {
 			list.add(new FluidDollTransformWrapper(addNBTItem("thaumcraft:pech"),
 					ExAstrisUtils.addFluidItem("peacewater"),
 					new ItemStack(ExAstrisItems.DOLLS, 1, 2)));
 		}
 
-		if (Loader.isModLoaded("thaumcraft")) {
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT) && ExAstrisConfig.MODULE_THAUMCRAFT.MOB_DOLLS.CRIMSON_CLERIC_DOLL) {
 			list.add(new FluidDollTransformWrapper(addNBTItem("thaumcraft:cultistcleric"),
 					ExAstrisUtils.addFluidItem("witchwater"),
 					new ItemStack(ExAstrisItems.DOLLS, 1, 3)));

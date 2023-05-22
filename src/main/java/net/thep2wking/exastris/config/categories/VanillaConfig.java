@@ -12,13 +12,18 @@ import net.thep2wking.exastris.modules.vanilla.config.MobDollsConfig;
 import net.thep2wking.exastris.modules.vanilla.config.SieveRecipesConfig;
 
 public class VanillaConfig {
-    @Config.Name("barrel_recipes")
-    @Config.Comment("Configure Barrel Recipes")
-    public BarrelRecipesConfig BARREL_RECIPES = new BarrelRecipesConfig();
+    @Config.Name("mob_dolls")
+    @Config.Comment("Configure Mob Dolls")
+    public MobDollsConfig MOB_DOLLS = new MobDollsConfig();
+
 
     @Config.Name("block_transformation")
     @Config.Comment("Configure Block Transformation")
     public BlockTransformationRecipesConfig BLOCK_TRANSFORMATION = new BlockTransformationRecipesConfig();
+
+    @Config.Name("barrel_recipes")
+    @Config.Comment("Configure Barrel Recipes")
+    public BarrelRecipesConfig BARREL_RECIPES = new BarrelRecipesConfig();
 
     @Config.Name("crucible_recipes")
     @Config.Comment("Configure Crucible Recipes")
@@ -32,19 +37,15 @@ public class VanillaConfig {
     @Config.Comment("Configure Hammer Recipes")
     public HammerRecipesConfig HAMMER_RECIPES = new HammerRecipesConfig();
 
-    @Config.Name("heat_sources")
-    @Config.Comment("Configure Heat Sources")
-    public HeatSourcesConfig HEAT_SOURCES = new HeatSourcesConfig();
-
     @Config.Name("crafting_recipes")
     @Config.Comment("Configure Crafting Recipes")
     public CraftingRecipesConfig CRAFTING_RECIPES = new CraftingRecipesConfig();
 
-    @Config.Name("mob_dolls")
-    @Config.Comment("Configure Mob Dolls")
-    public MobDollsConfig MOB_DOLLS = new MobDollsConfig();
-
     @Config.Name("sieve_recipes")
     @Config.Comment("Configure Sieve Recipes")
     public SieveRecipesConfig SIEVE_RECIPES = new SieveRecipesConfig();
+
+    @Config.Name("heat_sources")
+    @Config.Comment("Configure Heat Sources")
+    public HeatSourcesConfig HEAT_SOURCES = new HeatSourcesConfig();
 }
