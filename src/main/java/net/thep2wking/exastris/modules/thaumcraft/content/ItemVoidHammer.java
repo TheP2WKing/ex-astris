@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.crook;
+package net.thep2wking.exastris.modules.thaumcraft.content;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -10,11 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.thep2wking.exastris.api.ExAstrisItemCrookBase;
+import net.thep2wking.exastris.api.ExAstrisItemHammerBase;
 import thaumcraft.api.items.IWarpingGear;
 
-public class ItemVoidCrook extends ExAstrisItemCrookBase implements IWarpingGear {
-	public ItemVoidCrook(String name, ToolMaterial material, ItemStack repairMaterial, int durability,
+public class ItemVoidHammer extends ExAstrisItemHammerBase implements IWarpingGear {
+	public ItemVoidHammer(String name, ToolMaterial material, ItemStack repairMaterial, int durability,
 			float attackDamage, float attackSpeed, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
 		super(name, material, repairMaterial, durability, attackDamage, attackSpeed, tab, rarity, hasEffect);
 	}

@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.transformation;
+package net.thep2wking.exastris.modules.vanilla.content;
 
 import javax.annotation.Nullable;
 
@@ -27,11 +27,11 @@ import net.thep2wking.exastris.integration.top.ITOPInfoProvider;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 
 @SuppressWarnings("deprecation")
-public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityProvider, ITOPInfoProvider {
-    public BlockFrostyDirt(String name, CreativeTabs tab, Material material, SoundType sound, int harvestLevel,
+public class BlockQuadrupleHardStone extends ExAstrisBlockBase implements ITileEntityProvider, ITOPInfoProvider {
+    public BlockQuadrupleHardStone(String name, CreativeTabs tab, Material material, SoundType sound, int harvestLevel,
             EnumToolType toolType, float hardness, float resistance, float lightLevel) {
         super(name, tab, material, sound, harvestLevel, toolType, hardness, resistance, lightLevel);
-        GameRegistry.registerTileEntity(TileFrostyDirt.class, ExAstris.PREFIX + name);
+        GameRegistry.registerTileEntity(TileQuadrupleHardStone.class, ExAstris.PREFIX + name);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityPro
     @Override
     @Nullable
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileFrostyDirt();
+        return new TileQuadrupleHardStone();
     }
 
     public EnumBlockRenderType getRenderType(IBlockState state) {
@@ -53,14 +53,14 @@ public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityPro
     @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
-        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
-            TileFrostyDirt tile = (TileFrostyDirt) world.getTileEntity(data.getPos());
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
+            TileQuadrupleHardStone tile = (TileQuadrupleHardStone) world.getTileEntity(data.getPos());
 
             probeInfo.progress(tile.getVolume(), 100, probeInfo.defaultProgressStyle().suffix("%"));
 
             probeInfo.horizontal(probeInfo.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER))
                     .text(TextFormatting.WHITE + "{*top.exastris.transforming*}" + " ")
-                    .item(new ItemStack(Item.getItemFromBlock(Blocks.SNOW), 1, 0));
+                    .item(new ItemStack(Item.getItemFromBlock(Blocks.BEDROCK), 1, 0));
         }
     }
 }

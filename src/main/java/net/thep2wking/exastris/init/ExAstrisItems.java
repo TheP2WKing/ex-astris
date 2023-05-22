@@ -15,10 +15,10 @@ import net.thep2wking.exastris.content.block.barrel.ItemBlockExAstrisBarrelTier2
 import net.thep2wking.exastris.content.block.crucible.ItemBlockExAstrisWoodCrucuble;
 import net.thep2wking.exastris.content.block.sieve.ItemBlockExAstrisSieve;
 import net.thep2wking.exastris.content.item.doll.ItemExAstrisDoll;
-import net.thep2wking.exastris.content.item.misc.ItemEldritchAltarSpawner;
 import net.thep2wking.exastris.content.item.pebble.ItemExAstrisPebble;
-import net.thep2wking.exastris.content.item.seed.ItemChorusSeed;
-import net.thep2wking.exastris.content.item.seed.ItemPodzolSeed;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemEldritchAltarSpawner;
+import net.thep2wking.exastris.modules.vanilla.content.ItemChorusSeed;
+import net.thep2wking.exastris.modules.vanilla.content.ItemPodzolSeed;
 import net.thep2wking.exastris.util.handler.RarityHandler;
 
 import java.util.ArrayList;

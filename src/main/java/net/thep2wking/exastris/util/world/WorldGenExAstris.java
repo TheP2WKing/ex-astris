@@ -26,7 +26,7 @@ public class WorldGenExAstris implements IWorldGenerator {
 			case 1:
 				break;
 			case 0:
-				generateStructure(TEST, world, random, chunkX, chunkZ, 99, Blocks.GRASS, BiomePlains.class,
+				generateStructure(TEST, world, random, chunkX, chunkZ, 0, Blocks.GRASS, BiomePlains.class,
 						BiomeForest.class);
 				break;
 			case -1:

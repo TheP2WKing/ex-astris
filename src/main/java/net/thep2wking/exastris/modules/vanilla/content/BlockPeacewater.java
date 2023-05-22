@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.fluid;
+package net.thep2wking.exastris.modules.vanilla.content;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

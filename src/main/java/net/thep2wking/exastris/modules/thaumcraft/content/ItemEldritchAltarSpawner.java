@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.misc;
+package net.thep2wking.exastris.modules.thaumcraft.content;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.cake;
+package net.thep2wking.exastris.modules.vanilla.content;
 
 import javax.annotation.Nonnull;
 

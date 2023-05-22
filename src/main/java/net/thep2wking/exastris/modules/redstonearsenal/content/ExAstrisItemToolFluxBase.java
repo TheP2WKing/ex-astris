@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.api;
+package net.thep2wking.exastris.modules.redstonearsenal.content;
 
 import cofh.redstonearsenal.item.tool.ItemToolFlux;
 import net.minecraft.creativetab.CreativeTabs;

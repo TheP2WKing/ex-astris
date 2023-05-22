@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.hammer;
+package net.thep2wking.exastris.modules.redstonearsenal.content;
 
 import cofh.redstonearsenal.init.RAEquipment;
 import exnihilocreatio.items.tools.IHammer;
@@ -6,7 +6,6 @@ import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.thep2wking.exastris.api.ExAstrisItemToolFluxBase;
 
 public class ItemFluxInfusedHammer extends ExAstrisItemToolFluxBase implements IHammer {
     public ItemFluxInfusedHammer(String name, CreativeTabs tab, int totalEnergy,

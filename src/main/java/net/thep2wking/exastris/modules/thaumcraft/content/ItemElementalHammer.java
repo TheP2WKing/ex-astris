@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.hammer;
+package net.thep2wking.exastris.modules.thaumcraft.content;
 
 import java.util.ArrayList;
 

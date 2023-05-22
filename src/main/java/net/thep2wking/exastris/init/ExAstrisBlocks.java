@@ -12,12 +12,12 @@ import net.thep2wking.exastris.api.ExAstrisFluidBlockBase;
 import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier0;
 import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier1;
 import net.thep2wking.exastris.content.block.barrel.BlockExAstrisBarrelTier2;
-import net.thep2wking.exastris.content.block.cake.BlockEndCake;
 import net.thep2wking.exastris.content.block.crucible.BlockExAstrisWoodCrucible;
-import net.thep2wking.exastris.content.block.fluid.BlockPeacewater;
 import net.thep2wking.exastris.content.block.sieve.BlockExAstrisSieve;
-import net.thep2wking.exastris.content.block.transformation.BlockFrostyDirt;
-import net.thep2wking.exastris.content.block.transformation.BlockQuadrupleHardStone;
+import net.thep2wking.exastris.modules.vanilla.content.BlockEndCake;
+import net.thep2wking.exastris.modules.vanilla.content.BlockFrostyDirt;
+import net.thep2wking.exastris.modules.vanilla.content.BlockPeacewater;
+import net.thep2wking.exastris.modules.vanilla.content.BlockQuadrupleHardStone;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 
 public class ExAstrisBlocks {

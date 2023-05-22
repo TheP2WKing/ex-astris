@@ -9,11 +9,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.thep2wking.exastris.api.recipe.ExAstrisApiHelper;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
-import net.thep2wking.exastris.util.handler.ExAstrisApiHelper;
 
 @SuppressWarnings("null")
 public class VanillaRecipes {

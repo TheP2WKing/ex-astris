@@ -1,12 +1,13 @@
-package net.thep2wking.exastris.init;
+package net.thep2wking.exastris.modules.redstonearsenal;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.item.Item;
 import net.thep2wking.exastris.config.ExAstrisConfig;
-import net.thep2wking.exastris.content.item.crook.ItemFluxInfusedCrook;
-import net.thep2wking.exastris.content.item.hammer.ItemFluxInfusedHammer;
+import net.thep2wking.exastris.init.ExAstrisTabs;
+import net.thep2wking.exastris.modules.redstonearsenal.content.ItemFluxInfusedCrook;
+import net.thep2wking.exastris.modules.redstonearsenal.content.ItemFluxInfusedHammer;
 
 public class ExAstrisRedstoneArsenalItems {
     public static final List<Item> ITEMS_RA = new ArrayList<Item>();

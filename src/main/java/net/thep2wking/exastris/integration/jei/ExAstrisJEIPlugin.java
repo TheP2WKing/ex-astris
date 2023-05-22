@@ -21,7 +21,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
-import net.thep2wking.exastris.init.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCategory;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationCompat;
 import net.thep2wking.exastris.integration.jei.blocktransformation.BlockTransformationRecipes;
@@ -30,6 +29,7 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCompat;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
+import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.util.ExAstrisConstants;
 
 @JEIPlugin

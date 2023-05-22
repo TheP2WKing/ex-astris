@@ -2,9 +2,8 @@ package net.thep2wking.exastris.modules.redstonearsenal;
 
 import cofh.redstonearsenal.init.RAItems;
 import net.minecraft.item.ItemStack;
+import net.thep2wking.exastris.api.recipe.ExAstrisApiHelper;
 import net.thep2wking.exastris.config.ExAstrisConfig;
-import net.thep2wking.exastris.init.ExAstrisRedstoneArsenalItems;
-import net.thep2wking.exastris.util.handler.ExAstrisApiHelper;
 
 public class RedstoneArsenalRecipes {
 	public static void registerCraftingRecipes() {

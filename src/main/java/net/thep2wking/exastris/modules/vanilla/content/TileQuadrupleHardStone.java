@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.transformation;
+package net.thep2wking.exastris.modules.vanilla.content;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
@@ -8,19 +8,19 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 
-public class TileFrostyDirt extends TileEntity implements ITickable {
+public class TileQuadrupleHardStone extends TileEntity implements ITickable {
     private int timer;
     private int volume;
     private static final int UPDATE_INTERVAL = ExAstrisConfig.GENEREL.BLOCK_TRANSFORMATION_TIME / 5;
 
-    public TileFrostyDirt() {
+    public TileQuadrupleHardStone() {
         super();
         timer = 0;
     }
 
     @Override
     public void update() {
-        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {
+        if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {
             timer++;
             if (timer > UPDATE_INTERVAL) {
                 timer = 0;
@@ -29,7 +29,7 @@ public class TileFrostyDirt extends TileEntity implements ITickable {
             }
 
             if (volume > 100) {
-                world.setBlockState(pos, Blocks.SNOW.getDefaultState());
+                world.setBlockState(pos, Blocks.BEDROCK.getDefaultState());
             }
         }
     }

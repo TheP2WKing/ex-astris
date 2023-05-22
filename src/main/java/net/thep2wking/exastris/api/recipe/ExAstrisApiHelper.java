@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.handler;
+package net.thep2wking.exastris.api.recipe;
 
 import javax.annotation.Nonnull;
 

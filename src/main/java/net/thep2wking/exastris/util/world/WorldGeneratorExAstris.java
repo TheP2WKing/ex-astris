@@ -11,6 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.util.handler.IStructure;
 
 public class WorldGeneratorExAstris extends WorldGenerator implements IStructure {
 	public static String structureName;

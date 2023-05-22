@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.init;
+package net.thep2wking.exastris.modules.thaumcraft;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.thep2wking.exastris.api.ExAstrisItemCrookBase;
 import net.thep2wking.exastris.api.ExAstrisItemHammerBase;
-import net.thep2wking.exastris.content.item.crook.ItemElementalCrook;
-import net.thep2wking.exastris.content.item.crook.ItemVoidCrook;
-import net.thep2wking.exastris.content.item.hammer.ItemElementalHammer;
-import net.thep2wking.exastris.content.item.hammer.ItemVoidHammer;
+import net.thep2wking.exastris.init.ExAstrisTabs;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemElementalCrook;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemElementalHammer;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemVoidCrook;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemVoidHammer;
 import net.thep2wking.exastris.util.handler.RarityHandler;
 import thaumcraft.api.ThaumcraftMaterials;
 import thaumcraft.api.items.ItemsTC;

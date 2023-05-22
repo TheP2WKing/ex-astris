@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.util.world;
+package net.thep2wking.exastris.util.handler;
 
 import net.minecraft.util.Mirror;
 import net.minecraft.world.WorldServer;
