@@ -1,15 +1,15 @@
 package net.thep2wking.exastris.config.categories;
 
 import net.minecraftforge.common.config.Config;
-import net.thep2wking.exastris.config.modules.vanilla.BarrelRecipesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.BlockTransformationRecipesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.CrucibleRecipes;
-import net.thep2wking.exastris.config.modules.vanilla.FluidTransformRecipesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.HammerRecipesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.HeatSourcesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.CraftingRecipesConfig;
-import net.thep2wking.exastris.config.modules.vanilla.MobDollsConfig;
-import net.thep2wking.exastris.config.modules.vanilla.SieveRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.BarrelRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.BlockTransformationRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.CraftingRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.CrucibleRecipes;
+import net.thep2wking.exastris.modules.vanilla.config.FluidTransformRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.HammerRecipesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.HeatSourcesConfig;
+import net.thep2wking.exastris.modules.vanilla.config.MobDollsConfig;
+import net.thep2wking.exastris.modules.vanilla.config.SieveRecipesConfig;
 
 public class VanillaConfig {
     @Config.Name("barrel_recipes")

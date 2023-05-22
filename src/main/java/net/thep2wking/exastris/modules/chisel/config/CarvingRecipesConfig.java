@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.config.modules.chisel;
+package net.thep2wking.exastris.modules.chisel.config;
 
 import net.minecraftforge.common.config.Config;
 

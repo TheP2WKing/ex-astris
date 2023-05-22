@@ -93,6 +93,7 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItem(event, ExAstrisItems.SHARD_ICE);
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+            ExAstrisUtils.registerItem(event, ExAstrisItems.VIS_CRYSTAL_BASE);
             ExAstrisUtils.registerItem(event, ExAstrisItems.VIS_CRYSTAL_BALANCE);
         }
 

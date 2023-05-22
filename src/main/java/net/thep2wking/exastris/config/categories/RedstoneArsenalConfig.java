@@ -1,8 +1,8 @@
 package net.thep2wking.exastris.config.categories;
 
 import net.minecraftforge.common.config.Config;
-import net.thep2wking.exastris.config.modules.redstonearsenal.CrooksConfig;
-import net.thep2wking.exastris.config.modules.redstonearsenal.HammerConfig;
+import net.thep2wking.exastris.modules.redstonearsenal.config.CrooksConfig;
+import net.thep2wking.exastris.modules.redstonearsenal.config.HammerConfig;
 
 public class RedstoneArsenalConfig {
     @Config.Name("crooks")

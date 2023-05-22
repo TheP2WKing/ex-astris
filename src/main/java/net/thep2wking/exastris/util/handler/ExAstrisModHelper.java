@@ -52,7 +52,7 @@ public class ExAstrisModHelper {
 				new CrucibleRecipe(researchRequired, output, input, aspects));
 	}
 
-	public static void addInfusionRecipe(String recipeName, String researchRequired, AspectList aspects, ItemStack output, ItemStack... inputs) {
+	public static void addInfusionRecipe(String recipeName, String researchRequired, ItemStack output, AspectList aspects, Object... inputs) {
 		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + recipeName),
 				new InfusionRecipe(researchRequired, output, 0, aspects, inputs));
 	}

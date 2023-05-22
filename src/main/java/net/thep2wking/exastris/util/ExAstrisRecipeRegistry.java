@@ -4,7 +4,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.modules.chisel.ChiselRecipes;
 import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalRecipes;
 import net.thep2wking.exastris.modules.thaumcraft.ResearchCategoryExAstris;
-import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftArcaneWorkbenchRecipes;
 import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftRecipes;
 import net.thep2wking.exastris.modules.vanilla.VanillaRecipes;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
@@ -43,11 +42,12 @@ public class ExAstrisRecipeRegistry {
 
     public static void registerThaumcraftRecipes() {
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-            ThaumcraftArcaneWorkbenchRecipes.register();
             ThaumcraftRecipes.registerArcaneCraftingRecipes();
+            ThaumcraftRecipes.registerBarrelRecipes();
             ThaumcraftRecipes.registerCraftingRecipes();
             ThaumcraftRecipes.registerCrucibleRecipes();
             ThaumcraftRecipes.registerHammeringRecipes();
+            ThaumcraftRecipes.registerHeatSources();
             ThaumcraftRecipes.registerInfusionRecipes();
             ThaumcraftRecipes.registerSivetingRecipes();
             ResearchCategoryExAstris.register();

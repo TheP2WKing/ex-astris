@@ -263,22 +263,22 @@ public class VanillaRecipes {
 
 	public static void registerHeatSources() {
 		if (ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.LIT_REDSTONE_LAMP) {
-			ExAstrisApiHelper.addHeatSource(new ItemStack(Blocks.LIT_REDSTONE_LAMP, 1, 0),
+			ExAstrisApiHelper.addHeatSource(new BlockInfo(Blocks.LIT_REDSTONE_LAMP, 0),
 					ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.LIT_REDSTONE_LAMP_HEAT_VALUE);
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.SEA_LANTERN) {
-			ExAstrisApiHelper.addHeatSource(new ItemStack(Blocks.SEA_LANTERN, 1, 0),
+			ExAstrisApiHelper.addHeatSource(new BlockInfo(Blocks.SEA_LANTERN, 0),
 					ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.SEA_LANTERN_HEAT_VALUE);
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.BEACON) {
-			ExAstrisApiHelper.addHeatSource(new ItemStack(Blocks.BEACON, 1, 0),
+			ExAstrisApiHelper.addHeatSource(new BlockInfo(Blocks.BEACON, 0),
 					ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.BEACON_HEAT_VALUE);
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.REDSTONE_TORCH) {
-			ExAstrisApiHelper.addHeatSource(new ItemStack(Blocks.REDSTONE_TORCH, 1, 0),
+			ExAstrisApiHelper.addHeatSource(new BlockInfo(Blocks.REDSTONE_TORCH, 0),
 					ExAstrisConfig.MODULE_VANILLA.HEAT_SOURCES.REDSTONE_TORCH_HEAT_VALUE);
 		}
 	}

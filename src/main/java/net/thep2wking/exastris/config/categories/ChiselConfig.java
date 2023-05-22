@@ -1,9 +1,9 @@
 package net.thep2wking.exastris.config.categories;
 
 import net.minecraftforge.common.config.Config;
-import net.thep2wking.exastris.config.modules.chisel.BarrelRecipesConfig;
-import net.thep2wking.exastris.config.modules.chisel.CarvingRecipesConfig;
-import net.thep2wking.exastris.config.modules.chisel.SieveRecipesConfig;
+import net.thep2wking.exastris.modules.chisel.config.BarrelRecipesConfig;
+import net.thep2wking.exastris.modules.chisel.config.CarvingRecipesConfig;
+import net.thep2wking.exastris.modules.chisel.config.SieveRecipesConfig;
 
 public class ChiselConfig {
     @Config.Name("barrel_recipes")

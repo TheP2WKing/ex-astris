@@ -171,6 +171,14 @@ public class ExAstrisApiHelper {
 		ExNihiloRegistryManager.COMPOST_REGISTRY.register(input, value, output, new Color(hexColor));
 	}
 
+	public static void addCompostingRecipe(BlockInfo output, String input, float value, String hexColor) {
+		ExNihiloRegistryManager.COMPOST_REGISTRY.register(input, value, output, new Color(hexColor));
+	}
+
+	public static void addCompostingRecipe(BlockInfo output, String input, float value) {
+		ExNihiloRegistryManager.COMPOST_REGISTRY.register(input, value, output);
+	}
+
 	public static void addCrookingRecipe(ItemStack output, float chance, Block input, int meta) {
 		ExNihiloRegistryManager.CROOK_REGISTRY.register(input, meta, output, chance, 0f);
 	}
@@ -205,7 +213,7 @@ public class ExAstrisApiHelper {
 		ExNihiloRegistryManager.HAMMER_REGISTRY.register(input, output, harvestLevel, chance, 0f);
 	}
 
-	public static void addHeatSource(ItemStack input, int value) {
+	public static void addHeatSource(BlockInfo input, int value) {
 		ExNihiloRegistryManager.HEAT_REGISTRY.register(input, value);
 	}
 

@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.config.modules.vanilla;
+package net.thep2wking.exastris.modules.vanilla.config;
 
 import net.minecraftforge.common.config.Config;
 

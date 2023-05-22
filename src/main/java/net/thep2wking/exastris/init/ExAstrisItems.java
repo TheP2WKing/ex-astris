@@ -72,6 +72,8 @@ public class ExAstrisItems {
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 
+        public static final Item VIS_CRYSTAL_BASE = new ExAstrisItemBase("vis_crystal_base",
+                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
         public static final Item VIS_CRYSTAL_BALANCE = new ExAstrisItemBase("vis_crystal_balance",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
 

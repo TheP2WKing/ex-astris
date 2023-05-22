@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.config.modules.redstonearsenal;
+package net.thep2wking.exastris.modules.redstonearsenal.config;
 
 import net.minecraftforge.common.config.Config;
 

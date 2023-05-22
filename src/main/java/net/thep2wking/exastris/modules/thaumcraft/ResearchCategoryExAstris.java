@@ -9,10 +9,10 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
 public class ResearchCategoryExAstris {
-	public static ResearchCategory RES_CAT;
+	public static ResearchCategory EXASTRIS_RESEARCH_CATEGORY;
 
 	public static void register() {
-		RES_CAT = ResearchCategories.registerCategory("EXASTRIS", "FIRSTSTEPS",
+		EXASTRIS_RESEARCH_CATEGORY = ResearchCategories.registerCategory("EXASTRIS", "FIRSTSTEPS",
 				new AspectList().add(Aspect.PLANT, 10).add(Aspect.AIR, 10).add(Aspect.ORDER, 10).add(Aspect.WATER, 5)
 						.add(Aspect.ENTROPY, 5),
 				new ResourceLocation(ExAstris.MODID, "textures/items/hammer_thaumium.png"),

@@ -111,6 +111,7 @@ item.exastris:doll_crimson_cleric.tip=Drop in a barrel of witchwater to spawn Cr
 item.exastris:eldritch_altar_spawner.name=Altar-in-a-Box
 
 item.exastris:shard_ice.name=Ice Shard
+item.exastris:vis_crystal_base.name=Base Vis Crystal
 item.exastris:vis_crystal_balance.name=Balanced Vis Crystal
 
 item.exastris:seeds_podzol.name=Podzol Seeds

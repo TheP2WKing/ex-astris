@@ -385,7 +385,7 @@
                 {
                     "text": "research.exastris_vis_crystal_balance.stage.1",
                     "recipes": [
-                        "exastris:vis_crystal_balance1", "exastris:vis_crystal_balance2", "exastris:vis_crystal_balance3", "exastris:vis_crystal_balance4", "exastris:vis_crystal_balance5", "exastris:vis_crystal_balance6"
+                        "exastris:vis_crystal_balance"
                     ],
                     "warp": 0
                 }
@@ -508,7 +508,7 @@
                 {
                     "text": "research.exastris_vishroom.stage.1",
                     "recipes": [
-                        "exastris:vishroom1", "exastris:vishroom2"
+                        "exastris:vishroom"
                     ],
                     "warp": 0
                 }
