@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.pebble;
+package net.thep2wking.exastris.common.pebble;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

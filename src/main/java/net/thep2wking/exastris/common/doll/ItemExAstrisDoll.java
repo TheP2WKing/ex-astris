@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.doll;
+package net.thep2wking.exastris.common.doll;
 
 import java.util.List;
 

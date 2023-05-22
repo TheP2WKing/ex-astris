@@ -1,11 +1,11 @@
-package net.thep2wking.exastris.content.block.crucible;
+package net.thep2wking.exastris.common.sieve;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.util.IStringSerializable;
 import net.thep2wking.exastris.util.ExAstrisConstants;
 
-public enum EnumExAstrisWoodCricible implements IStringSerializable {
+public enum EnumExAstrisSieve implements IStringSerializable {
     OAK(0, "oak_wood", ExAstrisConstants.MODID_MINECRAFT),
     SPRUCE(1, "spruce_wood", ExAstrisConstants.MODID_MINECRAFT),
     BIRCH(2, "birch_wood", ExAstrisConstants.MODID_MINECRAFT),
@@ -16,10 +16,10 @@ public enum EnumExAstrisWoodCricible implements IStringSerializable {
     SILVERWOOD(7, "silverwood", ExAstrisConstants.MODID_THAUMCRAFT),
     ;
 
-    private static final Int2ObjectMap<EnumExAstrisWoodCricible> ALL_TYPES = new Int2ObjectArrayMap<>();
+    private static final Int2ObjectMap<EnumExAstrisSieve> ALL_TYPES = new Int2ObjectArrayMap<>();
 
     static {
-        for (EnumExAstrisWoodCricible variant : values()) {
+        for (EnumExAstrisSieve variant : values()) {
             ALL_TYPES.put(variant.meta, variant);
         }
     }
@@ -28,13 +28,13 @@ public enum EnumExAstrisWoodCricible implements IStringSerializable {
     public final String variant;
     public final String modid;
 
-    EnumExAstrisWoodCricible(int meta, String variant, String modid) {
+    EnumExAstrisSieve(int meta, String variant, String modid) {
         this.meta = meta;
         this.variant = variant;
         this.modid = modid;
     }
 
-    public static EnumExAstrisWoodCricible getByMeta(int meta) {
+    public static EnumExAstrisSieve getByMeta(int meta) {
         return ALL_TYPES.get(meta);
     }
 

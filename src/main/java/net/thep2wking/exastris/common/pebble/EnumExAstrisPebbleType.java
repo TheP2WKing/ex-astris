@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.item.pebble;
+package net.thep2wking.exastris.common.pebble;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

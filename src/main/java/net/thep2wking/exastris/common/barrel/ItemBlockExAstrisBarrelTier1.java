@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.barrel;
+package net.thep2wking.exastris.common.barrel;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

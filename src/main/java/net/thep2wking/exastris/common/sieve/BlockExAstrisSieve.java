@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.sieve;
+package net.thep2wking.exastris.common.sieve;
 
 import java.util.ArrayList;
 import java.util.List;

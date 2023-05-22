@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.barrel;
+package net.thep2wking.exastris.common.barrel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +32,15 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
-import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.IHasModel;
 
-public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
+public class BlockExAstrisBarrelTier1 extends BlockBarrel implements IHasModel {
     private final String groupName;
     private final CreativeTabs tab;
     private final SoundType sound;
@@ -52,14 +50,14 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     private final float resistance;
     private final float lightLevel;
 
-    private static final Int2ObjectMap<EnumExAstrisBarrelTier0> EXASTRIS_BARREL_T0_TYPES = new Int2ObjectArrayMap<>();
+    private static final Int2ObjectMap<EnumExAstrisBarrelTier1> EXASTRIS_BARREL_T1_TYPES = new Int2ObjectArrayMap<>();
 
-    public static final PropertyEnum<EnumExAstrisBarrelTier0> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier0.class);
+    public static final PropertyEnum<EnumExAstrisBarrelTier1> VARIANT = PropertyEnum.create("variant", EnumExAstrisBarrelTier1.class);
 
-    public BlockExAstrisBarrelTier0(String groupName, CreativeTabs tab, Material material, SoundType sound,
+    public BlockExAstrisBarrelTier1(String groupName, CreativeTabs tab, Material material, SoundType sound,
             int harvestLevel,
             EnumToolType toolType, float hardness, float resistance, float lightLevel) {
-        super(0, material);
+        super(1, material);
         this.groupName = groupName;
         this.tab = tab;
         this.sound = sound;
@@ -75,29 +73,20 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         setResistance(this.resistance);
         setLightLevel(this.lightLevel);
         setCreativeTab(this.tab);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier0.OAK));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumExAstrisBarrelTier1.STONE));
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info(BlockExAstrisBarrelTier0.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
+            ExAstris.LOGGER.info(BlockExAstrisBarrelTier1.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Barrel");
         }
 
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.OAK.meta, EnumExAstrisBarrelTier0.OAK);
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.SPRUCE.meta, EnumExAstrisBarrelTier0.SPRUCE);
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.BIRCH.meta, EnumExAstrisBarrelTier0.BIRCH);
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.JUNGLE.meta, EnumExAstrisBarrelTier0.JUNGLE);
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.ACACIA.meta, EnumExAstrisBarrelTier0.ACACIA);
-        EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.DARK_OAK.meta, EnumExAstrisBarrelTier0.DARK_OAK);
-
-        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.GREATWOOD.meta, EnumExAstrisBarrelTier0.GREATWOOD);
-            EXASTRIS_BARREL_T0_TYPES.put(EnumExAstrisBarrelTier0.SILVERWOOD.meta, EnumExAstrisBarrelTier0.SILVERWOOD);
-        }
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.STONE.meta, EnumExAstrisBarrelTier1.STONE);
+        EXASTRIS_BARREL_T1_TYPES.put(EnumExAstrisBarrelTier1.COBBLESTONE.meta, EnumExAstrisBarrelTier1.COBBLESTONE);
     }
-    
+
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (EnumExAstrisBarrelTier0 type : EXASTRIS_BARREL_T0_TYPES.values()) {
+        for (EnumExAstrisBarrelTier1 type : EXASTRIS_BARREL_T1_TYPES.values()) {
             items.add(new ItemStack(this, 1, type.meta));
         }
     }
@@ -110,13 +99,13 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        EnumExAstrisBarrelTier0 type = (EnumExAstrisBarrelTier0) state.getValue(VARIANT);
+        EnumExAstrisBarrelTier1 type = (EnumExAstrisBarrelTier1) state.getValue(VARIANT);
         return type.meta;
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT, EnumExAstrisBarrelTier0.values()[meta]);
+        return this.getDefaultState().withProperty(VARIANT, EnumExAstrisBarrelTier1.values()[meta]);
     }
 
     @Override
@@ -133,7 +122,7 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerModels() {
-        for (EnumExAstrisBarrelTier0 type : EnumExAstrisBarrelTier0.values()) {
+        for (EnumExAstrisBarrelTier1 type : EnumExAstrisBarrelTier1.values()) {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.meta,
                     new ModelResourceLocation(ExAstris.PREFIX + this.groupName + "_" + type.getName(),
                             "inventory"));
@@ -152,7 +141,7 @@ public class BlockExAstrisBarrelTier0 extends BlockBarrel implements IHasModel {
         if (barrel == null)
             return;
 
-        probeInfo.text(TextFormatting.GREEN + "Tier: Wood");
+        probeInfo.text(TextFormatting.GREEN + "Tier: Stone");
 
         IBarrelMode barrelMode = barrel.getMode();
         if (barrelMode != null) {

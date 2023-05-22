@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.crucible;
+package net.thep2wking.exastris.common.crucible;
 
 import java.util.List;
 

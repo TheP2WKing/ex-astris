@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.content.block.sieve;
+package net.thep2wking.exastris.common.sieve;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
