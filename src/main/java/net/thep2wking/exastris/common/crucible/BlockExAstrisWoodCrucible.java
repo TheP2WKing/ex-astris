@@ -169,13 +169,11 @@ public class BlockExAstrisWoodCrucible extends BlockCrucibleWood implements IHas
 	}
 
 	@Override
-	@SuppressWarnings("null")
 	public IBlockState getStateFromMeta(int meta) {
 		return this.getDefaultState().withProperty(VARIANT, EnumExAstrisWoodCricible.values()[meta]);
 	}
 
 	@Override
-	@SuppressWarnings("null")
 	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos,
 			EntityPlayer player) {
 		return new ItemStack(Item.getItemFromBlock(this), 1, getMetaFromState(world.getBlockState(pos)));

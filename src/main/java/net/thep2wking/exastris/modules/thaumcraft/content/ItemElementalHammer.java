@@ -202,7 +202,6 @@ public class ItemElementalHammer extends ExAstrisItemHammerBase implements IArch
 		return false;
 	}
 
-	@SuppressWarnings("null")
 	public static byte getOrientation(ItemStack stack) {
 		if (stack.hasTagCompound() && stack.getTagCompound().hasKey("or")) {
 			return stack.getTagCompound().getByte("or");
@@ -210,7 +209,6 @@ public class ItemElementalHammer extends ExAstrisItemHammerBase implements IArch
 		return 0;
 	}
 
-	@SuppressWarnings("null")
 	public static void setOrientation(ItemStack stack, byte o) {
 		if (!stack.hasTagCompound()) {
 			stack.setTagCompound(new NBTTagCompound());

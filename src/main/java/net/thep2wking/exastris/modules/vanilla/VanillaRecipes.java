@@ -15,7 +15,6 @@ import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
 
-@SuppressWarnings("null")
 public class VanillaRecipes {
 	public static void registerCraftingRecipes() {
 		ExAstrisApiHelper.addSmeltingRecipe(new ItemStack(ExAstrisBlocks.BLOCK_BARREL_T1, 1, 1),

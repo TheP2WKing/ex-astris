@@ -7,7 +7,7 @@ public class HammerRecipesConfig {
     @Config.Comment("Whether to get aer crystals from hammering sandstone")
     public boolean AER_CRYSTALS_FROM_SANDSTONE = true;
 
-	@Config.Name("Terra Crystal from Gras")
+	@Config.Name("Terra Crystal from Grass")
     @Config.Comment("Whether to get terra crystals from hammering grass")
     public boolean TERRA_CRYSTALS_FROM_GRASS = true;
 

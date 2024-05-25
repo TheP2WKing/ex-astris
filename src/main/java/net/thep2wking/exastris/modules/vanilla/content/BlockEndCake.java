@@ -72,7 +72,6 @@ public class BlockEndCake extends BlockCake implements IHasModel, ITOPInfoProvid
     }
 
     @Override
-    @SuppressWarnings("null")
     public boolean onBlockActivated(World worldIn, @Nonnull BlockPos pos, @Nonnull IBlockState state,
             EntityPlayer playerIn, @Nonnull EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack itemstack = playerIn.getHeldItem(hand);

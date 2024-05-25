@@ -26,10 +26,11 @@ public class WorldGenExAstris implements IWorldGenerator {
 			case 1:
 				break;
 			case 0:
-				generateStructure(TEST, world, random, chunkX, chunkZ, 0, Blocks.GRASS, BiomePlains.class,
+				generateStructure(TEST, world, random, chunkX, chunkZ, 1, Blocks.GRASS, BiomePlains.class,
 						BiomeForest.class);
 				break;
 			case -1:
+				break;
 		}
 	}
 
@@ -46,7 +47,7 @@ public class WorldGenExAstris implements IWorldGenerator {
 		Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
 		if (world.getWorldType() != WorldType.FLAT) {
 			if (classesList.contains(biome)) {
-				if (random.nextInt(chance) == 0) {
+				if (random.nextInt(100) == chance) {
 					generator.generate(world, random, pos);
 				}
 			}

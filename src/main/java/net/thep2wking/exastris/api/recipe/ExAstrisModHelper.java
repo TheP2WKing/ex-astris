@@ -14,7 +14,6 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 
-@SuppressWarnings("null")
 public class ExAstrisModHelper {
 	public static void addCarvingRecipe(String category, @Nonnull ItemStack variation, int index) {
 		CarvingUtils.getChiselRegistry().addVariation(category, CarvingUtils.variationFor(variation, index));

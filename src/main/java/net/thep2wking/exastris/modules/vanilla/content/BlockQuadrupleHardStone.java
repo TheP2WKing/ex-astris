@@ -50,7 +50,6 @@ public class BlockQuadrupleHardStone extends ExAstrisBlockBase implements ITileE
     }
 
     @Override
-    @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
         if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.BEDROCK_FROM_QUADRUPLE_HARD_STONE) {

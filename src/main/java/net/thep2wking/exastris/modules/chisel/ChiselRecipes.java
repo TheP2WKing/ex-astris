@@ -10,7 +10,6 @@ import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisItems;
 import team.chisel.common.init.ChiselBlocks;
 
-@SuppressWarnings("null")
 public class ChiselRecipes {
 	public static void registerCraftingRecipes() {
 		if (ExAstrisConfig.MODULE_CHISEL.SIEVE_RECIPES.MARBLE_PEBBLES_FROM_STONE) {

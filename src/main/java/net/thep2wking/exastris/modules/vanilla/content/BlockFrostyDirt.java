@@ -50,7 +50,6 @@ public class BlockFrostyDirt extends ExAstrisBlockBase implements ITileEntityPro
     }
 
     @Override
-    @SuppressWarnings("null")
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world,
             IBlockState blockState, IProbeHitData data) {
         if (ExAstrisConfig.MODULE_VANILLA.BLOCK_TRANSFORMATION.SNOW_FROM_FROSTY_DIRT) {

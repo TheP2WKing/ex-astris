@@ -29,7 +29,6 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
-@SuppressWarnings("null")
 public class ThaumcraftRecipes {
 	public static void registerCraftingRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.BALANCE_VIS_CRYSTAL_FROM_BASE_VIS_CRYSTAL) {

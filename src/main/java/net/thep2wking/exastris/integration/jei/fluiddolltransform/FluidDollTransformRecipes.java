@@ -18,7 +18,6 @@ public class FluidDollTransformRecipes extends FluidDollTransformCompat {
 		super(ExAstris.MODID);
 	}
 
-	@SuppressWarnings("null")
 	public ItemStack addNBTItem(String entityId) {
 		ItemStack spawnEgg = new ItemStack(Items.SPAWN_EGG);
 		NBTTagCompound nbttagcompound = spawnEgg.hasTagCompound() ? spawnEgg.getTagCompound() : new NBTTagCompound();

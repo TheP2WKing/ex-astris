@@ -184,7 +184,6 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
     }
 
     @Override
-    @SuppressWarnings("null")
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(VARIANT, EnumExAstrisSieve.values()[meta]);
     }
