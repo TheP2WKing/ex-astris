@@ -14,6 +14,8 @@ import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
+import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumItems;
 import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.modules.thaumcraft.ExAstrisThaumcraftItems;
 import net.thep2wking.exastris.util.handler.ExAstrisUtils;
@@ -38,6 +40,10 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_QUADRUPLE_HARD_STONE);
 
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_FROSTY_DIRT);
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExAstrisUtils.registerBlock(event, ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE);
+        }
 
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_END_CAKE);
 
@@ -66,6 +72,10 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.QUADRUPLE_HARD_STONE);
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.FROSTY_DIRT);
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExAstrisUtils.registerItemBlock(event, ExAstrisExCompressumItems.AUTOMATIC_SIEVE);
+        }
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.END_CAKE);
 
@@ -101,6 +111,8 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_FERN);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_CHORUS);
 
+        ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_SPEED);
+        ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_FORTUNE);
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             ExAstris.LOGGER.info("Registered items");
         }

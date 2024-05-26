@@ -60,6 +60,7 @@ dependencies {
     // exnihilo
     deobfCompile("curse.maven:shadowfacts-forgelin-248453:2727070")
     deobfCompile("curse.maven:ex-nihilo-creatio-274456:2817545")
+    deobfCompile("curse.maven:ex-compressum-241967:2966941")
 
     // chisel
     deobfCompile("curse.maven:ctm-267602:2915363")
@@ -75,6 +76,19 @@ dependencies {
     deobfCompile("curse.maven:thaumcraft-223628:2629023")
     deobfCompile("curse.maven:thaumic-augmentation-319441:5129455")
     deobfCompile("curse.maven:thaumic-jei-285492:2705304")
+
+    // thermal
+    deobfCompile("curse.maven:thermal-expansion-69163:2926431")
+    deobfCompile("curse.maven:thermal-foundation-222880:2926428")
+    // deobfCompile("curse.maven:thermal-dynamics-227443:2920505")
+    // deobfCompile("curse.maven:cofh-core-69162:2920433")
+    deobfCompile("curse.maven:cofh-world-271384:2920434")
+    // deobfCompile("curse.maven:redstone-flux-270789:2920436")
+    deobfCompile("curse.maven:codechicken-lib-1-8-242818:2779848")
+
+    // enderio
+    // deobfCompile("curse.maven:endercore-231868:4671384")
+    // deobfCompile("curse.maven:ender-io-64578:4674244")
 }
 
 processResources {

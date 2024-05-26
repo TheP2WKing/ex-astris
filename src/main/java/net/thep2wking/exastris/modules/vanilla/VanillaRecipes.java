@@ -305,6 +305,12 @@ public class VanillaRecipes {
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.DYE, 15), 0.4f, "dust", 2);
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.GUNPOWDER, 0), 0.14f, "dust", 2);
 
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.DYE, 15), 0.5f, "dust", 3);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.GUNPOWDER, 0), 0.21f, "dust", 3);
+
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.DYE, 15), 0.65f, "dust", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.GUNPOWDER, 0), 0.26f, "dust", 4);
+
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.GLOWSTONE_DUST, 0), 0.125f, "dust", 4);
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(Items.BLAZE_POWDER, 0), 0.1f, "dust", 4);
 
@@ -333,17 +339,14 @@ public class VanillaRecipes {
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.SIEVE_RECIPES.NETHERRACK_PEBBLES_FROM_DIRT) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.5f, "dirt", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.25f, "dirt", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.75f, "dirt", 4);
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.5f, "dirt", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.25f, "dirt", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 0), 0.1f, "dirt", 4);
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.SIEVE_RECIPES.ENDSTONE_PEBBLES_FROM_DIRT) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.5f, "dirt", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.25f, "dirt", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.75f, "dirt", 4);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.5f, "dirt", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.35f, "dirt", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 1), 0.15f, "dirt", 4);
 		}
 
 		if (ExAstrisConfig.MODULE_VANILLA.SIEVE_RECIPES.ICE_SHARDS_FROM_SNOW) {

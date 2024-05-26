@@ -1,8 +1,5 @@
 package net.thep2wking.exastris.modules.redstonearsenal;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.item.Item;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisTabs;
@@ -10,8 +7,6 @@ import net.thep2wking.exastris.modules.redstonearsenal.content.ItemFluxInfusedCr
 import net.thep2wking.exastris.modules.redstonearsenal.content.ItemFluxInfusedHammer;
 
 public class ExAstrisRedstoneArsenalItems {
-    public static final List<Item> ITEMS_RA = new ArrayList<Item>();
-
     public static final Item HAMMER_FLUX = new ItemFluxInfusedHammer("hammer_flux", ExAstrisTabs.EXASTRIS_TAB,
             ExAstrisConfig.MODULE_REDSTONE_ARSENAL.HAMMER.FLUX_HAMMER_MAX_ENERGY,
             ExAstrisConfig.MODULE_REDSTONE_ARSENAL.HAMMER.FLUX_HAMMER_MAX_TRANSFER,

@@ -15,6 +15,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
@@ -29,6 +30,8 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCompat;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
+import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
+import net.thep2wking.exastris.modules.excompressum.sieve.GuiAutomaticSieve;
 import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.util.ExAstrisConstants;
 
@@ -61,6 +64,11 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		registry.getJeiHelpers().getIngredientBlacklist().addIngredientToBlacklist(stack);
 	}
 
+	public static void addRecipeClickArea(IModRegistry registry, Class<? extends GuiContainer> gui, int x, int y,
+			int width, int height, String recipeCategory) {
+		registry.addRecipeClickArea(gui, x, y, width, height, recipeCategory);
+	}
+
 	@Override
 	public void register(IModRegistry registry) {
 		if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
@@ -87,106 +95,108 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			registry.addRecipes(listMobDoll, FluidDollTransformCategory.UID);
 		}
 
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 0));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 1));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 2));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 3));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 4));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 5));
 
-			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-				addBarrelToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 6));
-				addBarrelToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 7));
-			}
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 6));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T0), 1, 7));
+		}
 
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 0));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T1), 1, 1));
 
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0));
-			addBarrelToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 0));
+		addBarrelToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 1));
 
-			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-				addBarrelToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 2));
-				addBarrelToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 3));
-				addBarrelToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 4));
-			}
-		
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 2));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 3));
+			addBarrelToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_BARREL_T2), 1, 4));
+		}
 
 		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0),
 				FluidDollTransformCategory.UID);
 		registry.addRecipeCatalyst(new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0),
 				FluidDollTransformCategory.UID);
 
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0));
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 1));
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 2));
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 3));
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4));
-			addSieveToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 0));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 1));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 2));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 3));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 4));
+		addSieveToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 5));
 
-			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-				addSieveToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 6));
-				addSieveToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 7));
-			}
-	
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 6));
+			addSieveToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_SIEVE), 1, 7));
+		}
 
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 0));
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 1));
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 2));
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 3));
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 4));
-			addCrucibleToRelevantCategories(registry,
-					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 5));
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
+				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.AUTOMATIC_SIEVE) {
+			addSieveToRelevantCategories(registry, new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, 1, 0));
+			addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, SieveRecipeCategory.UID);
+		}
 
-			if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-				addCrucibleToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 6));
-				addCrucibleToRelevantCategories(registry,
-						new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 7));
-			}
-		
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 0));
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 1));
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 2));
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 3));
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 4));
+		addCrucibleToRelevantCategories(registry,
+				new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 5));
 
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.crucibleWood), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.grinder), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.watermill), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.axle_stone), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.autoSifter), 1, 0));
-			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 6));
-			hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 7));
-		
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+			addCrucibleToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 6));
+			addCrucibleToRelevantCategories(registry,
+					new ItemStack(Item.getItemFromBlock(ExAstrisBlocks.BLOCK_WOOD_CRUCIBLE), 1, 7));
+		}
+
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelWood), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.barrelStone), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.sieve), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.crucibleWood), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.endCake), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.infestingLeaves), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.grinder), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.watermill), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.axle_stone), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getItemFromBlock(ModBlocks.autoSifter), 1, 0));
+		hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 6));
+		hideFromJEI(registry, new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 7));
 
 		if (Loader.isModLoaded("redstonearsenal")) {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.HAMMER_FLUX, 1, 0),

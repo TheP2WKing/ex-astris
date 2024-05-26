@@ -10,10 +10,15 @@ top.exastris.transforming=Transforming to
 top.exastris.refill=Refill with
 top.exastris.bites=Bites left
 top.exastris.nomesh=No Mesh
+top.exastris.disabled=Disabled by Redstone
+
+top.exastris.energy=Energy Consumption:
+top.exastris.speed=Speed Modifier: 
+top.exastris.luck=Fortune Modifier:
 
 // just enough items 
 jei.exastris.transformation.category=Block Transformation
-jei.exastris.fluid_doll_transform.category=Doll Mob Spawning
+jei.exastris.fluid_doll_transform.category=Fluid+Doll Mob Spawning
 
 jei.exastris.transformation.desc1=Block must be placed In-World
 jei.exastris.transformation.desc2=Time:
@@ -79,6 +84,8 @@ tile.exastris:quadruple_hard_stone.name=Quadruple Hard Stone
 
 tile.exastris:frosty_dirt.name=Frosty Dirt
 
+tile.exastris:automatic_sieve.name=Automatic Sieve
+
 tile.exastris:end_cake.name=End Cake
 
 // items
@@ -117,6 +124,9 @@ item.exastris:vis_crystal_balance.name=Balanced Vis Crystal
 item.exastris:seeds_podzol.name=Podzol Seeds
 item.exastris:seeds_fern.name=Fern Seeds
 item.exastris:seeds_chorus.name=Chorus Flower Seed
+
+item.exastris:upgrade_speed.name=Speed Upgrade
+item.exastris:upgrade_fortune.name=Fortune Upgrade
 
 // thaumcraft
 tc.research_category.EXASTRIS=Ex Astris

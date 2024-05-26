@@ -23,20 +23,20 @@ public class ExAstrisThaumcraftItems {
 			ThaumcraftMaterials.TOOLMAT_THAUMIUM, new ItemStack(ItemsTC.ingots, 1, 0), 4096, 0, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 	public static final Item CROOK_THAUMIUM = new ExAstrisItemCrookBase("crook_thaumium",
-			ThaumcraftMaterials.TOOLMAT_THAUMIUM, new ItemStack(ItemsTC.ingots, 1, 0), 2048, -2.5f, 0,
+			ThaumcraftMaterials.TOOLMAT_THAUMIUM, new ItemStack(ItemsTC.ingots, 1, 0), 1024, -2.5f, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 
 	public static final Item HAMMER_VOID = new ItemVoidHammer("hammer_void",
-			ThaumcraftMaterials.TOOLMAT_VOID, new ItemStack(ItemsTC.ingots, 1, 1), 4096, 0, 0,
+			ThaumcraftMaterials.TOOLMAT_VOID, new ItemStack(ItemsTC.ingots, 1, 1), 2048, 0, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 	public static final Item CROOK_VOID = new ItemVoidCrook("crook_void",
-			ThaumcraftMaterials.TOOLMAT_VOID, new ItemStack(ItemsTC.ingots, 1, 1), 2048, -3f, 0,
+			ThaumcraftMaterials.TOOLMAT_VOID, new ItemStack(ItemsTC.ingots, 1, 1), 512, -3f, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 
 	public static final Item HAMMER_ELEMENTAL = new ItemElementalHammer("hammer_elemental",
-			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 9000, 0, 0,
+			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 6000, 0, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.AQUA, false);
 	public static final Item CROOK_ELEMENTAL = new ItemElementalCrook("crook_elemental",
-			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 9000, -3, 0,
+			ThaumcraftMaterials.TOOLMAT_ELEMENTAL, new ItemStack(ItemsTC.ingots, 1, 0), 3000, -3, 0,
 			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.AQUA, false);
 }

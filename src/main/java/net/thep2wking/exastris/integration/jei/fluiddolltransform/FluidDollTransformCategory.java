@@ -20,7 +20,7 @@ import net.thep2wking.exastris.ExAstris;
 @SuppressWarnings("unused")
 public class FluidDollTransformCategory implements IRecipeCategory<FluidDollTransformWrapper> {
 	public static final String UID = ExAstris.MODID + ".fluid_doll_transform";
-	public static final String MOD = ExAstris.NAME;
+	public static final String MOD = "Ex Nihilo Creatio";
 
 	public static final ResourceLocation BACKGROUND = new ResourceLocation(ExNihiloCreatio.MODID, "textures/gui/jei_fluid_block_transform.png");
 
@@ -30,7 +30,7 @@ public class FluidDollTransformCategory implements IRecipeCategory<FluidDollTran
 
 	public FluidDollTransformCategory(IGuiHelper guiHelper) {
 		background = guiHelper.drawableBuilder(BACKGROUND, 0, 0, 166, 63).build();
-		icon = guiHelper.createDrawableIngredient(new ItemStack(Item.getByNameOrId("exnihilocreatio:item_material"), 1, 5));
+		icon = guiHelper.createDrawableIngredient(new ItemStack(Item.getByNameOrId("exnihilocreatio:block_barrel0"), 1, 0));
 	}
 
 	@Override

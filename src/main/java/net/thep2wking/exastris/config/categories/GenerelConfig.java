@@ -10,4 +10,8 @@ public class GenerelConfig {
 	@Config.Name("Block Transformation Time")
 	@Config.Comment("Set the time every block in world transformation should take in seconds")
 	public int BLOCK_TRANSFORMATION_TIME = 100;
+
+	@Config.Name("Diet Sieve Bounding Boxes")
+	@Config.Comment("Whether Ex Astris Sives should use the smaller bounding boxes for sieves")
+	public boolean DIET_SIEVE_BOUNDING_BOXES = true;
 }

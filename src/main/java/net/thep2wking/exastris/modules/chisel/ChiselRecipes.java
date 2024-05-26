@@ -23,15 +23,15 @@ public class ChiselRecipes {
 
 	public static void registerSivetingRecipes() {
 		if (ExAstrisConfig.MODULE_CHISEL.SIEVE_RECIPES.MARBLE_PEBBLES_FROM_STONE) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.05f, "stone", 4);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.1f, "stone", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.50f, "stone", 4);
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.25f, "stone", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 2), 0.1f, "stone", 4);
 		}
 
 		if (ExAstrisConfig.MODULE_CHISEL.SIEVE_RECIPES.LIMESTONE_PEBBLES_FROM_STONE) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.05f, "stone", 4);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.1f, "stone", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.50f, "stone", 4);
 			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.25f, "stone", 4);
+			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ExAstrisItems.PEBBLES, 3), 0.1f, "stone", 4);
 		}
 	}
 

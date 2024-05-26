@@ -1,15 +1,15 @@
 [
-{
-  "modid": "exastris",
-  "name": "Ex Astris",
-  "description": "Adding more mod support to Ex Nihilo...again! Unofficial attempt to port Ex Astris features and maybe more to Minecraft 1.12.2 and trying to fix some bugs in Ex Nihilo Creatio.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/TheP2WKing/ex-astris",
-  "authorList": ["TheP2WKing"],
-  "credits": "insaneau and LoveHoly for creating/ maintaining Ex Astris 1.7.10.",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+    {
+        "modid": "exastris",
+        "name": "Ex Astris",
+        "description": "Adding more mod support to Ex Nihilo...again! Unofficial attempt to get Ex Astris features and more to 'modern' Minecraft (and trying to fix some stuff in Ex Nihilo).",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/TheP2WKing/ex-astris",
+        "authorList": ["TheP2WKing"],
+        "credits": "insaneau and LoveHoly for creating/ maintaining Ex Astris 1.7.10.",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
 ]

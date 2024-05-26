@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.categories.ChiselConfig;
+import net.thep2wking.exastris.config.categories.ExCompressumConfig;
 import net.thep2wking.exastris.config.categories.GenerelConfig;
 import net.thep2wking.exastris.config.categories.JEIConfig;
 import net.thep2wking.exastris.config.categories.RedstoneArsenalConfig;
@@ -28,7 +29,7 @@ public class ExAstrisConfig {
     public static final VanillaConfig MODULE_VANILLA= new VanillaConfig();
 
     @Config.Name("chisel")
-    @Config.Comment("Configure Ex Astris Module")
+    @Config.Comment("Configure Chisel Module")
     public static final ChiselConfig MODULE_CHISEL = new ChiselConfig();
 
     @Config.Name("redstonearsenal")
@@ -38,6 +39,10 @@ public class ExAstrisConfig {
     @Config.Name("thaumcraft")
     @Config.Comment("Configure Thaumcraft Module")
     public static final ThaumcraftConfig MODULE_THAUMCRAFT = new ThaumcraftConfig();
+
+    @Config.Name("excopressum")
+    @Config.Comment("Configure Ex Compressum Module")
+    public static final ExCompressumConfig MODULE_EX_COMPRESSUM = new ExCompressumConfig();
 
     @Mod.EventBusSubscriber
     public static class ConfigHolder {
