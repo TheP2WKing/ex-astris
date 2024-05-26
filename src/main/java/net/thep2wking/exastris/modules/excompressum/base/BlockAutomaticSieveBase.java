@@ -157,7 +157,7 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
         TileEntity tileEntity = world.getTileEntity(pos);
         if (tileEntity != null) {
             IItemHandler itemHandler = ((TileAutomaticSieveBase) tileEntity).getItemHandler();
-            for (int i = 0; i < itemHandler.getSlots(); i++) {
+            for (int i = 0; i < 21; i++) {
                 ItemStack itemStack = itemHandler.getStackInSlot(i);
                 if (!itemStack.isEmpty()) {
                     EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
@@ -185,6 +185,11 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     public boolean hasComparatorInputOverride(IBlockState state) {
         return true;
     }
+
+    @Override
+	public boolean hasTileEntity(IBlockState state) {
+		return true;
+	}
 
     @Override
     public int getComparatorInputOverride(IBlockState blockState, World world, BlockPos pos) {

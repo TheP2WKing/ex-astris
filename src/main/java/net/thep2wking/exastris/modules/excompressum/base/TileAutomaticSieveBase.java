@@ -247,6 +247,13 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
         isDisabledByRedstone = tagCompound.getBoolean("IsDisabledByRedstone");
     }
 
+    
+	public void readRestorableFromNBT(NBTTagCompound tagCompound) {
+        meshSlots.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("MeshStack")));
+        upgradeSlotSpeed.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("UpgradeSpeedStack")));
+        upgradeSlotFortune.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("UpgradeFortuneStack")));
+	}
+
     @Override
     protected void writeToNBTSynced(NBTTagCompound tagCompound, boolean isSync) {
         tagCompound.setTag("CurrentStack", currentStack.writeToNBT(new NBTTagCompound()));
@@ -263,6 +270,15 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
         }
         tagCompound.setBoolean("IsDisabledByRedstone", isDisabledByRedstone());
     }
+
+    public void writeRestorableToNBT(NBTTagCompound tagCompound) {
+        ItemStack meshStack = meshSlots.getStackInSlot(0);
+        tagCompound.setTag("MeshStack", meshStack.writeToNBT(new NBTTagCompound()));
+        ItemStack upgradeSpeedStack = upgradeSlotSpeed.getStackInSlot(0);
+        tagCompound.setTag("UpgradeSpeedStack", upgradeSpeedStack.writeToNBT(new NBTTagCompound()));
+        ItemStack upgradeFortuneStack = upgradeSlotFortune.getStackInSlot(0);
+        tagCompound.setTag("UpgradeFortuneStack", upgradeFortuneStack.writeToNBT(new NBTTagCompound()));
+	}
 
     public abstract int getMaxEnergyStored();
 

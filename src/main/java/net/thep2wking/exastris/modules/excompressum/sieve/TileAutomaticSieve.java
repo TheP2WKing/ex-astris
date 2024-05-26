@@ -45,6 +45,23 @@ public class TileAutomaticSieve extends TileAutomaticSieveBase implements IEnerg
     }
 
     @Override
+    public void readRestorableFromNBT(NBTTagCompound tagCompound) {
+        super.readRestorableFromNBT(tagCompound);
+        if (tagCompound.hasKey("EnergyStorage")) {
+            CapabilityEnergy.ENERGY.readNBT(energyStorage, null, tagCompound.getTag("EnergyStorage"));
+        }
+    }
+
+    @Override
+    public void writeRestorableToNBT(NBTTagCompound tagCompound) {
+        super.writeRestorableToNBT(tagCompound);
+        NBTBase energyStorageNBT = CapabilityEnergy.ENERGY.writeNBT(energyStorage, null);
+        if (energyStorageNBT != null) {
+            tagCompound.setTag("EnergyStorage", energyStorageNBT);
+        }
+    }
+
+    @Override
     public int getEnergyStored(@Nullable EnumFacing from) {
         return energyStorage.getEnergyStored();
     }
