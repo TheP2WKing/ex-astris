@@ -32,6 +32,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.integration.top.ITOPInfoProvider;
 import net.thep2wking.exastris.modules.excompressum.base.BlockAutomaticSieveBase;
 import net.thep2wking.exastris.modules.excompressum.base.TileAutomaticSieveBase;
@@ -126,7 +127,9 @@ public class BlockAutomaticSieve extends BlockAutomaticSieveBase implements ITOP
                 if (tagCompound.hasKey("EnergyStored")) {
                     tileEntity.getEnergyStorage().setEnergyStored(tagCompound.getInteger("EnergyStored"));
                 }
-                ((TileAutomaticSieve) tileEntity).readRestorableFromNBT(tagCompound);
+                if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS) {
+                    ((TileAutomaticSieve) tileEntity).readRestorableFromNBT(tagCompound);
+                }
             }
         }
     }
@@ -135,7 +138,7 @@ public class BlockAutomaticSieve extends BlockAutomaticSieveBase implements ITOP
     public void getDrops(NonNullList<ItemStack> result, IBlockAccess world, BlockPos pos, IBlockState metadata,
             int fortune) {
         TileEntity tileEntity = world.getTileEntity(pos);
-        if (tileEntity instanceof TileAutomaticSieve) {
+        if (tileEntity instanceof TileAutomaticSieve && ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS) {
             ItemStack stack = new ItemStack(Item.getItemFromBlock(this));
             NBTTagCompound tagCompound = new NBTTagCompound();
             ((TileAutomaticSieve) tileEntity).writeRestorableToNBT(tagCompound);

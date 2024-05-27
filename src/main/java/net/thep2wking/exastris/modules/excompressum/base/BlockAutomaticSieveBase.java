@@ -30,6 +30,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.util.handler.EnumToolType;
 import net.thep2wking.exastris.util.handler.GuiHandler;
@@ -81,21 +82,28 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
         ExAstris.PROXY.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return BOUNDING_BOX;
+        return ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES ? BOUNDING_BOX : super.getBoundingBox(state, source, pos);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void addCollisionBoxToList(IBlockState state, World world, BlockPos pos, AxisAlignedBB entityBox,
             List<AxisAlignedBB> collidingBoxes, @Nullable Entity entity, boolean isActualState) {
-        entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
-        for (AxisAlignedBB box : COLLISION_BOXES) {
-            if (entityBox.intersects(box))
-                collidingBoxes.add(box.offset(pos));
+        if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES) {
+            entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
+            for (AxisAlignedBB box : COLLISION_BOXES) {
+                if (entityBox.intersects(box))
+                    collidingBoxes.add(box.offset(pos));
+            }
+        } else {
+            super.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     @Nullable
     public RayTraceResult collisionRayTrace(IBlockState state, World world, BlockPos pos, Vec3d start, Vec3d end) {
@@ -105,19 +113,23 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
         RayTraceResult result;
         start = start.subtract(pos.getX(), pos.getY(), pos.getZ());
         end = end.subtract(pos.getX(), pos.getY(), pos.getZ());
-        for (AxisAlignedBB box : COLLISION_BOXES) {
-            result = box.calculateIntercept(start, end);
-            if (result == null)
-                continue;
-            distanceSq = result.hitVec.squareDistanceTo(start);
-            if (distanceSq < distanceSqShortest) {
-                distanceSqShortest = distanceSq;
-                resultClosest = result;
+        if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES) {
+            for (AxisAlignedBB box : COLLISION_BOXES) {
+                result = box.calculateIntercept(start, end);
+                if (result == null)
+                    continue;
+                distanceSq = result.hitVec.squareDistanceTo(start);
+                if (distanceSq < distanceSqShortest) {
+                    distanceSqShortest = distanceSq;
+                    resultClosest = result;
+                }
             }
+            return resultClosest == null ? null
+                    : new RayTraceResult(RayTraceResult.Type.BLOCK,
+                            resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit, pos);
+            } else {
+                return super.collisionRayTrace(state, world, pos, start, end);
         }
-        return resultClosest == null ? null
-                : new RayTraceResult(RayTraceResult.Type.BLOCK,
-                        resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit, pos);
     }
 
     @Override
@@ -157,7 +169,7 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
         TileEntity tileEntity = world.getTileEntity(pos);
         if (tileEntity != null) {
             IItemHandler itemHandler = ((TileAutomaticSieveBase) tileEntity).getItemHandler();
-            for (int i = 0; i < 21; i++) {
+            for (int i = 0; i < (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS ? 21 : itemHandler.getSlots()); i++) {
                 ItemStack itemStack = itemHandler.getStackInSlot(i);
                 if (!itemStack.isEmpty()) {
                     EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);

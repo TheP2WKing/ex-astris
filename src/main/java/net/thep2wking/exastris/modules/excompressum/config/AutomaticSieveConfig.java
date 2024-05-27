@@ -17,6 +17,14 @@ public class AutomaticSieveConfig {
 	@Config.Comment("Whether fortune upgrades are enabled")
 	public boolean FORTUNE_UPGRADE = true;
 
+	@Config.Name("Save Contents")
+	@Config.Comment("Whether the contents of the automatic sieve should be saved when broken (only upgrades, meshes and energy will be saved)")
+	public boolean SAVE_CONTENTS = true;
+
+	@Config.Name("Diet Bounding Boxes")
+	@Config.Comment("Whether the automatic sieve should use the smaller more fitting bounding box")
+	public boolean DIET_BOUNDING_BOXES = true;
+
 	@Config.Name("Energy Storage")
 	@Config.Comment("Set the max energy storage for the automatic sieve")
 	@RangeInt(min = 0, max = 1000000)
