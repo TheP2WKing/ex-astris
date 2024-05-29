@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.modules.excompressum.sieve;
+package net.thep2wking.exastris.modules.excompressum.content.sieve;
 
 import net.blay09.mods.excompressum.container.SlotOutput;
 import net.minecraft.entity.player.EntityPlayer;

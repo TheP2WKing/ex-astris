@@ -9,9 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
-import net.thep2wking.exastris.modules.excompressum.sieve.ContainerAutomaticSieve;
-import net.thep2wking.exastris.modules.excompressum.sieve.GuiAutomaticSieve;
-import net.thep2wking.exastris.modules.excompressum.sieve.TileAutomaticSieve;
+import net.thep2wking.exastris.modules.excompressum.content.sieve.ContainerAutomaticSieve;
+import net.thep2wking.exastris.modules.excompressum.content.sieve.GuiAutomaticSieve;
+import net.thep2wking.exastris.modules.excompressum.content.sieve.TileAutomaticSieve;
 
 public class GuiHandler implements IGuiHandler {
     public static final int EX_ASTRIS_AUTOMATIC_SIEVE_GUI = 0;

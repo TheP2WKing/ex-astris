@@ -13,5 +13,5 @@ public class GenerelConfig {
 
 	@Config.Name("Diet Sieve Bounding Boxes")
 	@Config.Comment("Whether Ex Astris Sives should use the smaller bounding boxes for sieves")
-	public boolean DIET_SIEVE_BOUNDING_BOXES = true;
+	public boolean DIET_SIEVE_BOUNDING_BOXES = false;
 }

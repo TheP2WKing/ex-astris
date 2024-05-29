@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.modules.excompressum.sieve;
+package net.thep2wking.exastris.modules.excompressum.content.sieve;
 
 import net.blay09.mods.excompressum.api.sievemesh.SieveMeshRegistryEntry;
 import net.blay09.mods.excompressum.client.render.RenderUtils;
@@ -45,7 +45,7 @@ public class RenderAutomaticSieve extends TileEntitySpecialRenderer<TileAutomati
 				int brightness = tileEntity.getWorld().getCombinedLight(tileEntity.getPos().up(), 0);
 				tt = 0.0625F;
 				float meshXZ2 = 1.0F - tt;
-				float meshY = 0.6925F; // 86
+				float meshY = 0.6925F;
 				RenderUtils.renderQuadUp(renderer, tt, meshY, tt, meshXZ2, meshY, meshXZ2, -1, brightness, sprite);
 				tessellator.draw();
 			}
@@ -59,7 +59,7 @@ public class RenderAutomaticSieve extends TileEntitySpecialRenderer<TileAutomati
 				mc.renderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
 				GlStateManager.pushMatrix();
 				GlStateManager.translate(0.0625F, 0.6975F, 0.0625F);
-				tt = 0.29F; // 43
+				tt = 0.29F;
 				GlStateManager.scale(0.88F, tt - progress * tt, 0.88F);
 				RenderUtils.renderBlockWithTranslate(mc, state, tileEntity.getWorld(), tileEntity.getPos(), renderer);
 				tessellator.draw();

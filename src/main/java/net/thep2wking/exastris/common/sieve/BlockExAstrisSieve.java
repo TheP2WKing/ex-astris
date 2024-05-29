@@ -108,7 +108,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         ExAstrisBlocks.BLOCKS.add(this);
 
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
-            ExAstris.LOGGER.info(BlockExAstrisSieve.class.getName() + " is an intended overwrite, overwriting the default Ex Nihilo Sieve");
+            ExAstris.LOGGER.info(BlockExAstrisSieve.class.getName()
+                    + " is an intended overwrite, overwriting the default Ex Nihilo Sieve");
         }
 
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.OAK.meta, EnumExAstrisSieve.OAK);
@@ -118,30 +119,41 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.ACACIA.meta, EnumExAstrisSieve.ACACIA);
         EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.DARK_OAK.meta, EnumExAstrisSieve.DARK_OAK);
 
-        if(Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
             EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.GREATWOOD.meta, EnumExAstrisSieve.GREATWOOD);
             EXASTRIS_SIEVE_TYPES.put(EnumExAstrisSieve.SILVERWOOD.meta, EnumExAstrisSieve.SILVERWOOD);
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return BOUNDING_BOX;
+        return ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES ? BOUNDING_BOX
+                : super.getBoundingBox(state, source, pos);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void addCollisionBoxToList(IBlockState state, World world, BlockPos pos, AxisAlignedBB entityBox,
             List<AxisAlignedBB> collidingBoxes, @Nullable Entity entity, boolean isActualState) {
-        entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
-        for (AxisAlignedBB box : COLLISION_BOXES) {
-            if (entityBox.intersects(box))
-                collidingBoxes.add(box.offset(pos));
+        if (ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES) {
+            entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
+            for (AxisAlignedBB box : COLLISION_BOXES) {
+                if (entityBox.intersects(box))
+                    collidingBoxes.add(box.offset(pos));
+            }
+        } else {
+            super.addCollisionBoxToList(state, world, pos, entityBox, collidingBoxes, entity, isActualState);
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     @Nullable
     public RayTraceResult collisionRayTrace(IBlockState state, World world, BlockPos pos, Vec3d start, Vec3d end) {
+        if (!ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES) {
+            return super.collisionRayTrace(state, world, pos, start, end);
+        }
         double distanceSq;
         double distanceSqShortest = Double.POSITIVE_INFINITY;
         RayTraceResult resultClosest = null;
@@ -152,7 +164,6 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
             result = box.calculateIntercept(start, end);
             if (result == null)
                 continue;
-
             distanceSq = result.hitVec.squareDistanceTo(start);
             if (distanceSq < distanceSqShortest) {
                 distanceSqShortest = distanceSq;
@@ -161,7 +172,8 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
         }
         return resultClosest == null ? null
                 : new RayTraceResult(RayTraceResult.Type.BLOCK,
-                        resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit, pos);
+                        resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit,
+                        pos);
     }
 
     @Override
@@ -236,7 +248,7 @@ public class BlockExAstrisSieve extends BlockSieve implements IHasModel {
                 && te.setMesh(ItemStack.EMPTY, true)) {
             // Removing a mesh.
             player.inventory.addItemStackToInventory(te.getMeshStack());
-            //Util.dropItemInWorld(te, player, te.getMeshStack(), 0.02f);
+            // Util.dropItemInWorld(te, player, te.getMeshStack(), 0.02f);
             te.setMesh(ItemStack.EMPTY, false);
             return true;
         }

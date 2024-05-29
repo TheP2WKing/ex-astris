@@ -16,6 +16,7 @@ public class ItemUpgradeSpeed extends ExAstrisItemBase {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("Upgrade for Automatic Sieve");
+		tooltip.add("Automatic Sieve (64)");
+		tooltip.add("Automatic Hammerer (64)");
 	}
 }

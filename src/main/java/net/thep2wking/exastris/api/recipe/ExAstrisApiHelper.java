@@ -12,35 +12,59 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisItems;
 
 public class ExAstrisApiHelper {
-	public static void addShapedRecipe(String recipeName, @Nonnull ItemStack output, Object... inputs) {
-		GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, recipeName), null, output, inputs);
+	public static void addShapedRecipe(String name, ItemStack output, Object... inputs) {
+		GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, name), null, output, inputs);
 	}
 
-	public static void addShapelessRecipe(String recipeName, @Nonnull ItemStack output, Ingredient... inputs) {
-		GameRegistry.addShapelessRecipe(new ResourceLocation(ExAstris.MODID, recipeName), null, output);
+	public static void addShapelessRecipe(String name, ItemStack output, ItemStack... inputs) {
+		Ingredient[] ingredients = new Ingredient[inputs.length];
+		for (int i = 0; i < inputs.length; i++) {
+			ingredients[i] = Ingredient.fromStacks(inputs[i]);
+		}
+		GameRegistry.addShapelessRecipe(new ResourceLocation(ExAstris.MODID, name), null, output, ingredients);
 	}
 
-	public static void removeRecipe(String recipeName) {
-		GameRegistry.addShapedRecipe(new ResourceLocation(recipeName), null,
+	public static void addShapelessRecipe(String name, ItemStack output, Object... inputs) {
+		ShapelessOreRecipe oreRecipe = new ShapelessOreRecipe(new ResourceLocation(ExAstris.MODID, name), output, inputs);
+		oreRecipe.setRegistryName(new ResourceLocation(ExAstris.MODID, name));
+		ForgeRegistries.RECIPES.register(oreRecipe);
+	}
+
+	public static void removeRecipe(String name) {
+		GameRegistry.addShapedRecipe(new ResourceLocation(name), null,
 				new ItemStack(Item.getByNameOrId("null")), "A", 'A', "null");
 	}
 
-	public static void addSmeltingRecipe(@Nonnull ItemStack output, @Nonnull ItemStack input, float xp) {
+	public static void addSmeltingRecipe(ItemStack output, ItemStack input, float xp) {
 		GameRegistry.addSmelting(output, input, xp);
 	}
 
-	public static void addOreDictSmeltingRecipe(@Nonnull ItemStack output, @Nonnull String inputOreDict, float xp) {
+	public static void addOreDictSmeltingRecipe(ItemStack output, String inputOreDict, float xp) {
 		for (@Nonnull
 		ItemStack inputs : OreDictionary.getOres(inputOreDict)) {
 			GameRegistry.addSmelting(inputs, output, xp);
 		}
+	}
+
+	public static void addOreDict(String name, Item input, int meta) {
+		OreDictionary.registerOre(name, new ItemStack(input, 1, meta));
+	}
+
+	public static void addOreDict(String name, Block input, int meta) {
+		OreDictionary.registerOre(name, new ItemStack(input, 1, meta));
+	}
+
+	public static void addOreDict(String name, ItemStack input) {
+		OreDictionary.registerOre(name, input);
 	}
 
 	public static void add9xCompressRecipe(String recipeName, @Nonnull ItemStack output, @Nonnull ItemStack input) {
@@ -73,14 +97,6 @@ public class ExAstrisApiHelper {
 			@Nonnull ItemStack input) {
 		GameRegistry.addShapelessRecipe(new ResourceLocation(ExAstris.MODID, recipeName), null,
 				new ItemStack(output, 4, meta), Ingredient.fromStacks(input));
-	}
-
-	public static void addOreDict(String name, Item input, int meta) {
-		OreDictionary.registerOre(name, new ItemStack(input, 1, meta));
-	}
-
-	public static void addOreDict(String name, Block input, int meta) {
-		OreDictionary.registerOre(name, new ItemStack(input, 1, meta));
 	}
 
 	public static void addPebbleToBlockRecipe(String materialName, int pebbleMeta, @Nonnull ItemStack output) {

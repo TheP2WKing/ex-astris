@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.modules.excompressum.sieve;
+package net.thep2wking.exastris.modules.excompressum.content.sieve;
 
 import java.util.List;
 

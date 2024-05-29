@@ -31,7 +31,7 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
 import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
-import net.thep2wking.exastris.modules.excompressum.sieve.GuiAutomaticSieve;
+import net.thep2wking.exastris.modules.excompressum.content.sieve.GuiAutomaticSieve;
 import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.util.ExAstrisConstants;
 

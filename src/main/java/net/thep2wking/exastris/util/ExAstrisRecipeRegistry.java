@@ -2,6 +2,7 @@ package net.thep2wking.exastris.util;
 
 import net.minecraftforge.fml.common.Loader;
 import net.thep2wking.exastris.modules.chisel.ChiselRecipes;
+import net.thep2wking.exastris.modules.excompressum.ExCompressumRecipes;
 import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalRecipes;
 import net.thep2wking.exastris.modules.thaumcraft.ResearchCategoryExAstris;
 import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftRecipes;
@@ -53,5 +54,12 @@ public class ExAstrisRecipeRegistry {
             ResearchCategoryExAstris.register();
         }
         ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_THAUMCRAFT);
+    }
+
+    public static void registerExCompressumRecipes() {
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExCompressumRecipes.registerCraftingRecipes();
+        }
+        ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_EX_COMPRESSUM);
     }
 }

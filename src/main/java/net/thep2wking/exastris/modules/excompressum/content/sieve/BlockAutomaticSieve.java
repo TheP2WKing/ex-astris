@@ -1,4 +1,4 @@
-package net.thep2wking.exastris.modules.excompressum.sieve;
+package net.thep2wking.exastris.modules.excompressum.content.sieve;
 
 import java.util.List;
 import java.util.Map;
@@ -127,7 +127,7 @@ public class BlockAutomaticSieve extends BlockAutomaticSieveBase implements ITOP
                 if (tagCompound.hasKey("EnergyStored")) {
                     tileEntity.getEnergyStorage().setEnergyStored(tagCompound.getInteger("EnergyStored"));
                 }
-                if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS) {
+                if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_INVENTORY_CONTENTS) {
                     ((TileAutomaticSieve) tileEntity).readRestorableFromNBT(tagCompound);
                 }
             }
@@ -138,7 +138,7 @@ public class BlockAutomaticSieve extends BlockAutomaticSieveBase implements ITOP
     public void getDrops(NonNullList<ItemStack> result, IBlockAccess world, BlockPos pos, IBlockState metadata,
             int fortune) {
         TileEntity tileEntity = world.getTileEntity(pos);
-        if (tileEntity instanceof TileAutomaticSieve && ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS) {
+        if (tileEntity instanceof TileAutomaticSieve && ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_INVENTORY_CONTENTS) {
             ItemStack stack = new ItemStack(Item.getItemFromBlock(this));
             NBTTagCompound tagCompound = new NBTTagCompound();
             ((TileAutomaticSieve) tileEntity).writeRestorableToNBT(tagCompound);

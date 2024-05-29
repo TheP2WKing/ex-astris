@@ -123,7 +123,9 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerFluid(ExAstrisFluids.FROSTWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.SLIME);
 
-        GameRegistry.registerWorldGenerator(new WorldGenExAstris(), 0);
+        if(Loader.isModLoaded("thauicaugmentation")) {
+            GameRegistry.registerWorldGenerator(new WorldGenExAstris(), 0);
+        }
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             ExAstris.LOGGER.info("Registered world generator");
         }

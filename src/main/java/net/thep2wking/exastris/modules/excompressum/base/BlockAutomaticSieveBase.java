@@ -2,6 +2,7 @@ package net.thep2wking.exastris.modules.excompressum.base;
 
 import java.util.List;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
@@ -16,7 +17,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -85,14 +85,15 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     @SuppressWarnings("deprecation")
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES ? BOUNDING_BOX : super.getBoundingBox(state, source, pos);
+        return ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES ? BOUNDING_BOX
+                : super.getBoundingBox(state, source, pos);
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public void addCollisionBoxToList(IBlockState state, World world, BlockPos pos, AxisAlignedBB entityBox,
             List<AxisAlignedBB> collidingBoxes, @Nullable Entity entity, boolean isActualState) {
-        if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES) {
+        if (ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES) {
             entityBox = entityBox.offset(-pos.getX(), -pos.getY(), -pos.getZ());
             for (AxisAlignedBB box : COLLISION_BOXES) {
                 if (entityBox.intersects(box))
@@ -107,29 +108,29 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     @Override
     @Nullable
     public RayTraceResult collisionRayTrace(IBlockState state, World world, BlockPos pos, Vec3d start, Vec3d end) {
+        if (!ExAstrisConfig.GENEREL.DIET_SIEVE_BOUNDING_BOXES) {
+            return super.collisionRayTrace(state, world, pos, start, end);
+        }
         double distanceSq;
         double distanceSqShortest = Double.POSITIVE_INFINITY;
         RayTraceResult resultClosest = null;
         RayTraceResult result;
         start = start.subtract(pos.getX(), pos.getY(), pos.getZ());
         end = end.subtract(pos.getX(), pos.getY(), pos.getZ());
-        if(ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.DIET_BOUNDING_BOXES) {
-            for (AxisAlignedBB box : COLLISION_BOXES) {
-                result = box.calculateIntercept(start, end);
-                if (result == null)
-                    continue;
-                distanceSq = result.hitVec.squareDistanceTo(start);
-                if (distanceSq < distanceSqShortest) {
-                    distanceSqShortest = distanceSq;
-                    resultClosest = result;
-                }
+        for (AxisAlignedBB box : COLLISION_BOXES) {
+            result = box.calculateIntercept(start, end);
+            if (result == null)
+                continue;
+            distanceSq = result.hitVec.squareDistanceTo(start);
+            if (distanceSq < distanceSqShortest) {
+                distanceSqShortest = distanceSq;
+                resultClosest = result;
             }
-            return resultClosest == null ? null
-                    : new RayTraceResult(RayTraceResult.Type.BLOCK,
-                            resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit, pos);
-            } else {
-                return super.collisionRayTrace(state, world, pos, start, end);
         }
+        return resultClosest == null ? null
+                : new RayTraceResult(RayTraceResult.Type.BLOCK,
+                        resultClosest.hitVec.addVector(pos.getX(), pos.getY(), pos.getZ()), resultClosest.sideHit,
+                        pos);
     }
 
     @Override
@@ -138,8 +139,8 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
+    public boolean isFullBlock(IBlockState state) {
+        return false;
     }
 
     @Override
@@ -153,11 +154,18 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     }
 
     @Override
+    public boolean shouldSideBeRendered(IBlockState blockState, @Nonnull IBlockAccess blockAccess,
+            @Nonnull BlockPos pos, EnumFacing side) {
+        return false;
+    }
+
+    @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
             EnumFacing side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             if (!player.isSneaking()) {
-                player.openGui(ExAstris.INSTANCE, GuiHandler.EX_ASTRIS_AUTOMATIC_SIEVE_GUI, world, pos.getX(), pos.getY(),
+                player.openGui(ExAstris.INSTANCE, GuiHandler.EX_ASTRIS_AUTOMATIC_SIEVE_GUI, world, pos.getX(),
+                        pos.getY(),
                         pos.getZ());
             }
         }
@@ -169,7 +177,8 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
         TileEntity tileEntity = world.getTileEntity(pos);
         if (tileEntity != null) {
             IItemHandler itemHandler = ((TileAutomaticSieveBase) tileEntity).getItemHandler();
-            for (int i = 0; i < (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_CONTENTS ? 21 : itemHandler.getSlots()); i++) {
+            for (int i = 0; i < (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SAVE_INVENTORY_CONTENTS ? 21
+                    : itemHandler.getSlots()); i++) {
                 ItemStack itemStack = itemHandler.getStackInSlot(i);
                 if (!itemStack.isEmpty()) {
                     EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
@@ -199,9 +208,9 @@ public abstract class BlockAutomaticSieveBase extends BlockContainer implements 
     }
 
     @Override
-	public boolean hasTileEntity(IBlockState state) {
-		return true;
-	}
+    public boolean hasTileEntity(IBlockState state) {
+        return true;
+    }
 
     @Override
     public int getComparatorInputOverride(IBlockState blockState, World world, BlockPos pos) {
