@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 import net.blay09.mods.excompressum.api.sievemesh.SieveMeshRegistryEntry;
 import net.blay09.mods.excompressum.handler.VanillaPacketHandler;
 import net.blay09.mods.excompressum.registry.ExRegistro;
+import net.blay09.mods.excompressum.registry.heavysieve.HeavySieveRegistry;
 import net.blay09.mods.excompressum.registry.sievemesh.SieveMeshRegistry;
 import net.blay09.mods.excompressum.tile.TileEntityBase;
 import net.blay09.mods.excompressum.utils.DefaultItemHandler;
@@ -203,11 +204,11 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
     }
 
     public boolean isSiftable(ItemStack itemStack) {
-        return ExRegistro.isSiftable(itemStack);
+        return ExRegistro.isSiftable(itemStack) || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES ? HeavySieveRegistry.isSiftable(itemStack) : false);
     }
 
     public boolean isSiftableWithMesh(ItemStack itemStack, SieveMeshRegistryEntry sieveMesh) {
-        return ExRegistro.isSiftableWithMesh(itemStack, sieveMesh);
+        return ExRegistro.isSiftableWithMesh(itemStack, sieveMesh) || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES ? HeavySieveRegistry.isSiftableWithMesh(itemStack, sieveMesh) : false);
     }
 
     public boolean isMesh(ItemStack itemStack) {
@@ -226,7 +227,11 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
 
     public Collection<ItemStack> rollSieveRewards(ItemStack itemStack, SieveMeshRegistryEntry sieveMesh, float luck,
             Random rand) {
-        return ExRegistro.rollSieveRewards(itemStack, sieveMesh, luck, rand);
+                if(ExRegistro.isSiftable(itemStack)) {
+                    return ExRegistro.rollSieveRewards(itemStack, sieveMesh, luck, rand) ;
+                } else {
+                    return HeavySieveRegistry.rollSieveRewards(itemStack, sieveMesh, luck, rand);
+                }
     }
 
     @Override

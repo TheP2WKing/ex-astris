@@ -17,6 +17,10 @@ public class AutomaticSieveConfig {
 	@Config.Comment("Whether fortune upgrades are enabled")
 	public boolean FORTUNE_UPGRADE = true;
 
+	@Config.Name("Heavy Sieve Recipes")
+	@Config.Comment("Whether heavy sieve recipes can also be used in the automatic sieve")
+	public boolean HEAVY_SIEVE_RECIPES = false;
+
 	@Config.Name("Save Inventory Contents")
 	@Config.Comment("Whether the contents of the automatic sieve should be saved when broken (only upgrades, meshes and energy will be saved)")
 	public boolean SAVE_INVENTORY_CONTENTS = true;
@@ -44,7 +48,7 @@ public class AutomaticSieveConfig {
 	@Config.Name("Speed Upgrade Energy Multiplier")
 	@Config.Comment("Set the speed upgrade energy multiplier for the automatic sieve (the energy usage will be multiplied by this value when a speed upgrade is installed)")
 	@RangeDouble(min = 0, max = 1)
-	public double SPEED_UPGRADE_ENERGY_MULTIPLIER = 0.15;
+	public double SPEED_UPGRADE_ENERGY_MULTIPLIER = 0.1;
 
 	@Config.Name("Fortune Upgrade Modifier")
 	@RangeDouble(min = 0, max = 1)
@@ -54,5 +58,5 @@ public class AutomaticSieveConfig {
 	@Config.Name("Fortune Upgrade Energy Multiplier")
 	@Config.Comment("Set the fortune upgrade energy multiplier for the automatic sieve (the energy usage will be multiplied by this value when a fortune upgrade is installed)")
 	@RangeDouble(min = 0, max = 1)
-	public double FORTUNE_UPGRADE_ENERGY_MULTIPLIER = 0.25;
+	public double FORTUNE_UPGRADE_ENERGY_MULTIPLIER = 0.2;
 }
