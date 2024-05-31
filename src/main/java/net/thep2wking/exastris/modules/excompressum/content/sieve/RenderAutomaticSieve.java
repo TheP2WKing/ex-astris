@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.item.ItemStack;
+import net.thep2wking.exastris.config.ExAstrisConfig;
 
 public class RenderAutomaticSieve extends TileEntitySpecialRenderer<TileAutomaticSieve> {
 	public RenderAutomaticSieve() {
@@ -53,7 +54,7 @@ public class RenderAutomaticSieve extends TileEntitySpecialRenderer<TileAutomati
 		ItemStack currentStack = tileEntity.getCurrentStack();
 		if (!currentStack.isEmpty()) {
 			IBlockState state = StupidUtils.getStateFromItemStack(currentStack);
-			if (state != null) {
+			if (state != null && ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.RENDER_SIEVE_CONTENTS) {
 				float progress = tileEntity.getProgress();
 				renderer.begin(7, DefaultVertexFormats.BLOCK);
 				mc.renderEngine.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);

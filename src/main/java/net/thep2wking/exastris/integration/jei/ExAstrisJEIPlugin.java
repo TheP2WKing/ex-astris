@@ -15,6 +15,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+import net.blay09.mods.excompressum.compat.jei.HeavySieveRecipeCategory;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -163,6 +164,13 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.AUTOMATIC_SIEVE) {
 			addSieveToRelevantCategories(registry, new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, 1, 0));
 			addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, SieveRecipeCategory.UID);
+		}
+
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
+				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES) {
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, 1, 0),
+					HeavySieveRecipeCategory.UID);
+			addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, HeavySieveRecipeCategory.UID);
 		}
 
 		addCrucibleToRelevantCategories(registry,

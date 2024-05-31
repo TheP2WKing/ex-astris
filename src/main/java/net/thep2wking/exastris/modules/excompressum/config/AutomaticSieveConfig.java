@@ -59,4 +59,8 @@ public class AutomaticSieveConfig {
 	@Config.Comment("Set the fortune upgrade energy multiplier for the automatic sieve (the energy usage will be multiplied by this value when a fortune upgrade is installed)")
 	@RangeDouble(min = 0, max = 1)
 	public double FORTUNE_UPGRADE_ENERGY_MULTIPLIER = 0.2;
+
+	@Config.Name("Render Sieve Contents")
+	@Config.Comment("Whether the contents of the automatic sieve should be rendered")
+	public boolean RENDER_SIEVE_CONTENTS = true;
 }
