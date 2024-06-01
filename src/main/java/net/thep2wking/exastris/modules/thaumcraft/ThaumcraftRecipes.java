@@ -235,9 +235,11 @@ public class ThaumcraftRecipes {
 			ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "sapling_silverwood"),
 					new InfusionRecipe("EXASTRIS_SILVERWOOD_SAPLING", new ItemStack(BlocksTC.saplingSilverwood, 1, 0),
 							0,
-							new AspectList().add(Aspect.PLANT, 128).add(Aspect.EXCHANGE, 64).add(Aspect.MAGIC, 64),
-							new ItemStack(BlocksTC.crystalEarth), new ItemStack(ItemsTC.salisMundus),
-							new ItemStack(BlocksTC.crystalWater), "blockDiamond", new ItemStack(BlocksTC.crystalEarth),
+							new AspectList().add(Aspect.PLANT, 128).add(Aspect.EXCHANGE, 64).add(Aspect.MAGIC, 64)
+									.add(Aspect.CRYSTAL, 64),
+							new ItemStack(BlocksTC.saplingGreatwood, 1, 0), new ItemStack(BlocksTC.shimmerleaf),
+							"blockDiamond", new ItemStack(BlocksTC.shimmerleaf), new ItemStack(ItemsTC.salisMundus),
+							new ItemStack(BlocksTC.shimmerleaf), "blockDiamond", new ItemStack(BlocksTC.shimmerleaf),
 							new ItemStack(ItemsTC.salisMundus)));
 		}
 

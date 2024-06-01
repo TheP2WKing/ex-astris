@@ -15,7 +15,7 @@ public class ResearchCategoryExAstris {
 		EXASTRIS_RESEARCH_CATEGORY = ResearchCategories.registerCategory("EXASTRIS", "FIRSTSTEPS",
 				new AspectList().add(Aspect.PLANT, 10).add(Aspect.AIR, 10).add(Aspect.ORDER, 10).add(Aspect.WATER, 5)
 						.add(Aspect.ENTROPY, 5),
-				new ResourceLocation(ExAstris.MODID, "textures/items/hammer_thaumium.png"),
+				new ResourceLocation(ExAstris.MODID, "textures/gui/thaumonomicon_page_icon.png"),
 				new ResourceLocation(ExAstris.MODID, "textures/gui/thaumonomicon_background.jpg"),
 				new ResourceLocation(ExAstris.MODID, "textures/gui/thaumonomicon_background_overlay.png"));
 
