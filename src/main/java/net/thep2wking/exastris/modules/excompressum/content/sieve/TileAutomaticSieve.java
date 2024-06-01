@@ -15,7 +15,6 @@ import net.thep2wking.exastris.modules.excompressum.base.TileAutomaticSieveBase;
 
 @Optional.Interface(modid = "redstoneflux", iface = "cofh.redstoneflux.api.IEnergyReceiver")
 public class TileAutomaticSieve extends TileAutomaticSieveBase implements IEnergyReceiver {
-
     private final EnergyStorageModifiable energyStorage = new EnergyStorageModifiable(
             ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.ENERGY_STORAGE) {
         @Override

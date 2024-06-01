@@ -256,7 +256,7 @@ public class VanillaRecipes {
 		if (ExAstrisConfig.MODULE_VANILLA.HAMMER_RECIPES.ICE_SHARDS_FROM_ICE) {
 			ExAstrisApiHelper.addHammeringRecipe(new ItemStack(ExAstrisItems.SHARD_ICE, 2, 0), 1f, "blockIce", 0);
 			ExAstrisApiHelper.addHammeringRecipe(new ItemStack(ExAstrisItems.SHARD_ICE, 1, 0), 0.75f, "blockIce", 0);
-			ExAstrisApiHelper.addHammeringRecipe(new ItemStack(ExAstrisItems.SHARD_ICE, 1, 0), 5f, "blockIce", 0);
+			ExAstrisApiHelper.addHammeringRecipe(new ItemStack(ExAstrisItems.SHARD_ICE, 1, 0), 0.5f, "blockIce", 0);
 		}
 	}
 

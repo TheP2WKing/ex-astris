@@ -9,6 +9,7 @@ import net.thep2wking.exastris.util.handler.RarityHandler;
 
 public class ExAstrisExCompressumItems {
 	public static final Item AUTOMATIC_SIEVE = new ExAstrisItemBlockBase(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, RarityHandler.WHITE, false);
+	public static final Item AUTOMATIC_HAMMERER = new ExAstrisItemBlockBase(ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER, RarityHandler.WHITE, false);
 
 	public static final Item UPGRADE_SPEED = new ItemUpgradeSpeed("upgrade_speed", ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
 	public static final Item UPGRADE_FORTUNE = new ItemUpgradeFortune("upgrade_fortune", ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);

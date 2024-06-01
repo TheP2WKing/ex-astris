@@ -85,6 +85,7 @@ tile.exastris:quadruple_hard_stone.name=Quadruple Hard Stone
 tile.exastris:frosty_dirt.name=Frosty Dirt
 
 tile.exastris:automatic_sieve.name=Automatic Sieve
+tile.exastris:automatic_hammerer.name=Automatic Hammerer
 
 tile.exastris:end_cake.name=End Cake
 

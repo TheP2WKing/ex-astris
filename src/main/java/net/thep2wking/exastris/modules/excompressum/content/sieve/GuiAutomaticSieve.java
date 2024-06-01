@@ -16,7 +16,7 @@ import net.thep2wking.exastris.modules.excompressum.base.TileAutomaticSieveBase;
 
 public class GuiAutomaticSieve extends GuiContainer {
     private static final ResourceLocation texture = new ResourceLocation(ExAstris.MODID,
-            "textures/gui/automatic_sieve.png");
+            "textures/gui/automatic_machine.png");
     private TileAutomaticSieveBase tileEntity;
 
     public GuiAutomaticSieve(InventoryPlayer inventoryPlayer, TileAutomaticSieveBase tileEntity) {

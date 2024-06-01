@@ -21,8 +21,12 @@ public class RenderAutomaticSieve extends TileEntitySpecialRenderer<TileAutomati
 	public RenderAutomaticSieve() {
 	}
 
-	public void render(TileAutomaticSieve tileEntity, double x, double y, double z, float partialTicks,
-			int destroyStage, float alpha) {
+	@Override
+	public void render(TileAutomaticSieve tileEntity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+		if (!tileEntity.hasWorld()) {
+            return;
+        }
+
 		Minecraft mc = Minecraft.getMinecraft();
 		Tessellator tessellator = Tessellator.getInstance();
 		BufferBuilder renderer = tessellator.getBuffer();

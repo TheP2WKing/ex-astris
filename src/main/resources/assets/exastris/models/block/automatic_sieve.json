@@ -3,8 +3,8 @@
     "textures": {
         "particle": "exastris:blocks/automatic_sieve_part2",
         "automatic_sieve_part1": "exastris:blocks/automatic_sieve_part1",
-        "automatic_sieve_part3": "exastris:blocks/automatic_sieve_part3",
-        "automatic_sieve_part2": "exastris:blocks/automatic_sieve_part2"
+        "automatic_sieve_part2": "exastris:blocks/automatic_sieve_part2",
+        "automatic_sieve_part3": "exastris:blocks/automatic_sieve_part3"
     },
     "elements": [
         {

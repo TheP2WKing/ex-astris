@@ -44,6 +44,9 @@ public class ExAstrisRegistry {
         if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
             ExAstrisUtils.registerBlock(event, ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE);
         }
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExAstrisUtils.registerBlock(event, ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER);
+        }
 
         ExAstrisUtils.registerBlock(event, ExAstrisBlocks.BLOCK_END_CAKE);
 
@@ -75,6 +78,9 @@ public class ExAstrisRegistry {
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
             ExAstrisUtils.registerItemBlock(event, ExAstrisExCompressumItems.AUTOMATIC_SIEVE);
+        }
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExAstrisUtils.registerItemBlock(event, ExAstrisExCompressumItems.AUTOMATIC_HAMMERER);
         }
 
         ExAstrisUtils.registerItemBlock(event, ExAstrisItems.END_CAKE);
@@ -123,7 +129,7 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerFluid(ExAstrisFluids.FROSTWATER);
         ExAstrisUtils.registerFluid(ExAstrisFluids.SLIME);
 
-        if(Loader.isModLoaded("thauicaugmentation")) {
+        if (Loader.isModLoaded("thauicaugmentation")) {
             GameRegistry.registerWorldGenerator(new WorldGenExAstris(), 0);
         }
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {

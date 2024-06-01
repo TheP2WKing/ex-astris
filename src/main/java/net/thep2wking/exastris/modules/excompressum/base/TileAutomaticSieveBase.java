@@ -204,11 +204,17 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
     }
 
     public boolean isSiftable(ItemStack itemStack) {
-        return ExRegistro.isSiftable(itemStack) || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES ? HeavySieveRegistry.isSiftable(itemStack) : false);
+        return ExRegistro.isSiftable(itemStack)
+                || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.EX_COMPRESSUM_HEAVY_SIEVE_RECIPES
+                        ? HeavySieveRegistry.isSiftable(itemStack)
+                        : false);
     }
 
     public boolean isSiftableWithMesh(ItemStack itemStack, SieveMeshRegistryEntry sieveMesh) {
-        return ExRegistro.isSiftableWithMesh(itemStack, sieveMesh) || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES ? HeavySieveRegistry.isSiftableWithMesh(itemStack, sieveMesh) : false);
+        return ExRegistro.isSiftableWithMesh(itemStack, sieveMesh)
+                || (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.EX_COMPRESSUM_HEAVY_SIEVE_RECIPES
+                        ? HeavySieveRegistry.isSiftableWithMesh(itemStack, sieveMesh)
+                        : false);
     }
 
     public boolean isMesh(ItemStack itemStack) {
@@ -227,11 +233,11 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
 
     public Collection<ItemStack> rollSieveRewards(ItemStack itemStack, SieveMeshRegistryEntry sieveMesh, float luck,
             Random rand) {
-                if(ExRegistro.isSiftable(itemStack)) {
-                    return ExRegistro.rollSieveRewards(itemStack, sieveMesh, luck, rand) ;
-                } else {
-                    return HeavySieveRegistry.rollSieveRewards(itemStack, sieveMesh, luck, rand);
-                }
+        if (ExRegistro.isSiftable(itemStack)) {
+            return ExRegistro.rollSieveRewards(itemStack, sieveMesh, luck, rand);
+        } else {
+            return HeavySieveRegistry.rollSieveRewards(itemStack, sieveMesh, luck, rand);
+        }
     }
 
     @Override
@@ -252,12 +258,11 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
         isDisabledByRedstone = tagCompound.getBoolean("IsDisabledByRedstone");
     }
 
-    
-	public void readRestorableFromNBT(NBTTagCompound tagCompound) {
+    public void readRestorableFromNBT(NBTTagCompound tagCompound) {
         meshSlots.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("MeshStack")));
         upgradeSlotSpeed.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("UpgradeSpeedStack")));
         upgradeSlotFortune.setStackInSlot(0, new ItemStack(tagCompound.getCompoundTag("UpgradeFortuneStack")));
-	}
+    }
 
     @Override
     protected void writeToNBTSynced(NBTTagCompound tagCompound, boolean isSync) {
@@ -283,7 +288,7 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
         tagCompound.setTag("UpgradeSpeedStack", upgradeSpeedStack.writeToNBT(new NBTTagCompound()));
         ItemStack upgradeFortuneStack = upgradeSlotFortune.getStackInSlot(0);
         tagCompound.setTag("UpgradeFortuneStack", upgradeFortuneStack.writeToNBT(new NBTTagCompound()));
-	}
+    }
 
     public abstract int getMaxEnergyStored();
 
@@ -336,13 +341,14 @@ public abstract class TileAutomaticSieveBase extends TileEntityBase implements I
         return energyMultiplier;
     }
 
-    public float getSpeedMultiplier() {
+	public float getSpeedMultiplier() {
+		final float MESH_BOOST = 0.5f;
         final float EFFICIENCY_BOOST = 0.25f;
         float boost = 1f;
         ItemStack meshStack = meshSlots.getStackInSlot(0);
         if (!meshStack.isEmpty()) {
-            boost += EFFICIENCY_BOOST * ExRegistro.getMeshEfficiency(meshStack)
-                    + (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SPEED_UPGRADE ? getUpgradeSpeed() : 0);
+			boost += MESH_BOOST;
+            boost += EFFICIENCY_BOOST * ExRegistro.getMeshEfficiency(meshStack) + (ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.SPEED_UPGRADE ? getUpgradeSpeed() : 0);
         }
         return boost;
     }

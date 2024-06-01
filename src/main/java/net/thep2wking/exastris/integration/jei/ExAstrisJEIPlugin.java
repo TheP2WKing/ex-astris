@@ -15,6 +15,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+import net.blay09.mods.excompressum.compat.jei.CompressedHammerRecipeCategory;
 import net.blay09.mods.excompressum.compat.jei.HeavySieveRecipeCategory;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.item.Item;
@@ -32,6 +33,7 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
 import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
+import net.thep2wking.exastris.modules.excompressum.content.hammerer.GuiAutomaticHammerer;
 import net.thep2wking.exastris.modules.excompressum.content.sieve.GuiAutomaticSieve;
 import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
 import net.thep2wking.exastris.util.ExAstrisConstants;
@@ -59,6 +61,10 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 
 	public static void addCrucibleToRelevantCategories(IModRegistry registry, ItemStack stack) {
 		registry.addRecipeCatalyst(stack, "exnihilocreatio:crucible_wood");
+	}
+
+	public static void addHammerToRelevantCategories(IModRegistry registry, ItemStack stack) {
+		registry.addRecipeCatalyst(stack, HammerRecipeCategory.UID);
 	}
 
 	public static void hideFromJEI(IModRegistry registry, ItemStack stack) {
@@ -167,10 +173,10 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 		}
 
 		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
-				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.HEAVY_SIEVE_RECIPES) {
+				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.EX_COMPRESSUM_HEAVY_SIEVE_RECIPES) {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, 1, 0),
 					HeavySieveRecipeCategory.UID);
-			addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, HeavySieveRecipeCategory.UID);
+			// addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, HeavySieveRecipeCategory.UID);
 		}
 
 		addCrucibleToRelevantCategories(registry,
@@ -211,6 +217,20 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 					HammerRecipeCategory.UID);
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisRedstoneArsenalItems.CROOK_FLUX, 1, 0),
 					CrookRecipeCategory.UID);
+		}
+
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
+				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_HAMMERER.AUTOMATIC_HAMMERER) {
+			addHammerToRelevantCategories(registry, new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER, 1, 0));
+			addRecipeClickArea(registry, GuiAutomaticHammerer.class, 31, 25, 18, 18, HammerRecipeCategory.UID);
+		}
+
+		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
+				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_HAMMERER.EX_COMPRESSUM_COMPRESSED_HAMMER_RECIPES) {
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER, 1, 0),
+					CompressedHammerRecipeCategory.UID);
+			// addRecipeClickArea(registry, GuiAutomaticHammerer.class, 31, 25, 18, 18,
+			// 		CompressedHammerRecipeCategory.UID);
 		}
 	}
 }

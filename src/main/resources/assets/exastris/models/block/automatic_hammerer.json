@@ -1,0 +1,86 @@
+{
+    "parent": "minecraft:block/block",
+    "textures": {
+        "particle": "exastris:blocks/automatic_hammerer_part1",
+        "automatic_hammerer_part1": "exastris:blocks/automatic_hammerer_part1",
+        "automatic_hammerer_part2": "exastris:blocks/automatic_hammerer_part2",
+        "automatic_hammerer_part3": "exastris:blocks/automatic_hammerer_part3"
+    },
+    "elements": [
+        {
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 3, 16 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 3 ] },
+                "east": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 3 ] },
+                "south": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 3 ] },
+                "west": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 3 ] },
+                "up": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#automatic_hammerer_part2", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "from": [ 0, 3, 0 ], 
+            "to": [ 1, 13, 1 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "east": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "south": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "west": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] }
+            }
+        },
+        {
+            "from": [ 15, 3, 0 ], 
+            "to": [ 16, 13, 1 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "east": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "south": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "west": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] }
+            }
+        },
+        {
+            "from": [ 0, 3, 15 ], 
+            "to": [ 1, 13, 16 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "east": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "south": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "west": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] }
+            }
+        },
+        {
+            "from": [ 15, 3, 15 ], 
+            "to": [ 16, 13, 16 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "east": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "south": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] },
+                "west": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 3, 1, 13 ] }
+            }
+        },
+        {
+            "from": [ 0, 13, 0 ], 
+            "to": [ 16, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 3 ] },
+                "east": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 3 ] },
+                "south": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 3 ] },
+                "west": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 3 ] },
+                "up": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#automatic_hammerer_part1", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "from": [ 6.5, 10, 6.5 ], 
+            "to": [ 9.5, 13, 9.5 ], 
+            "faces": {
+                "north": { "texture": "#automatic_hammerer_part3", "uv": [ 0, 0, 3, 3 ] },
+                "east": { "texture": "#automatic_hammerer_part3", "uv": [ 3, 0, 6, 3 ] },
+                "south": { "texture": "#automatic_hammerer_part3", "uv": [ 6, 0, 9, 3 ] },
+                "west": { "texture": "#automatic_hammerer_part3", "uv": [ 9, 0, 12, 3 ] },
+                "down": { "texture": "#automatic_hammerer_part3", "uv": [ 12, 0, 15, 3 ] }
+            }
+        }
+    ]
+}

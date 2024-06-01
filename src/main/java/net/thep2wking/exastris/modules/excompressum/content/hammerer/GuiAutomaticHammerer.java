@@ -1,0 +1,74 @@
+package net.thep2wking.exastris.modules.excompressum.content.hammerer;
+
+import java.util.List;
+
+import org.lwjgl.opengl.GL11;
+
+import com.google.common.collect.Lists;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ResourceLocation;
+import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.modules.excompressum.base.TileAutomaticHammererBase;
+
+public class GuiAutomaticHammerer extends GuiContainer {
+	private static final ResourceLocation texture = new ResourceLocation(ExAstris.MODID,
+			"textures/gui/automatic_machine.png");
+	private TileAutomaticHammererBase tileEntity;
+
+	public GuiAutomaticHammerer(InventoryPlayer inventoryPlayer, TileAutomaticHammererBase tileEntity) {
+		super(new ContainerAutomaticHammerer(inventoryPlayer, tileEntity));
+		this.tileEntity = tileEntity;
+		xSize = 176;
+		ySize = 166;
+	}
+
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+		drawDefaultBackground();
+		super.drawScreen(mouseX, mouseY, partialTicks);
+		renderHoveredToolTip(mouseX, mouseY);
+	}
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+		GL11.glColor4f(1f, 1f, 1f, 1f);
+		mc.getTextureManager().bindTexture(getBackgroundTexture());
+		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+		if (tileEntity.isProcessing()) {
+			drawTexturedModalRect(guiLeft + 32, guiTop + 27, 176, 0, (int) (tileEntity.getProgress() * 15f), 14); // 36
+		}
+		if (tileEntity.isDisabledByRedstone()) {
+			drawTexturedModalRect(guiLeft + 34, guiTop + 43, 176, 14, 15, 16);
+		}
+		renderEnergyBar();
+	}
+
+	private static final List<String> tmpLines = Lists.newArrayList();
+
+	@Override
+	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		renderPowerTooltip(mouseX, mouseY);
+	}
+
+	protected ResourceLocation getBackgroundTexture() {
+		return texture;
+	}
+
+	protected void renderEnergyBar() {
+		float energyPercentage = tileEntity.getEnergyPercentage();
+		drawTexturedModalRect(guiLeft + 152, guiTop + 8 + (70 - (int) (energyPercentage * 70)), 176 + 15, 0, 16,
+				(int) (energyPercentage * 70));
+	}
+
+	protected void renderPowerTooltip(int mouseX, int mouseY) {
+		if (mouseX >= guiLeft + 152 && mouseX <= guiLeft + 167 && mouseY >= guiTop + 8 && mouseY <= guiTop + 77) {
+			tmpLines.clear();
+			tmpLines.add(tileEntity.getEnergyStored(null) + " FE");
+			tmpLines.add(I18n.format("tooltip.excompressum:consumingEnergy", tileEntity.getEffectiveEnergy()));
+			drawHoveringText(tmpLines, mouseX - guiLeft, mouseY - guiTop);
+		}
+	}
+}

@@ -12,7 +12,6 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.thep2wking.exastris.modules.excompressum.base.TileAutomaticSieveBase;
 
 public class ContainerAutomaticSieve extends Container {
-
     private final TileAutomaticSieveBase tileEntity;
 
     private float lastProgress;

@@ -59,6 +59,7 @@ public class ExAstrisRecipeRegistry {
     public static void registerExCompressumRecipes() {
         if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
             ExCompressumRecipes.registerCraftingRecipes();
+            ExCompressumRecipes.registerOreDict();
         }
         ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_EX_COMPRESSUM);
     }
