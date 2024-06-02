@@ -1,6 +1,7 @@
 package net.thep2wking.exastris;
 
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.thep2wking.exastris.config.ExAstrisConfig;
+import net.thep2wking.exastris.util.ExAstrisConstants;
 import net.thep2wking.exastris.util.ExAstrisRecipeRegistry;
 import net.thep2wking.exastris.util.ExAstrisRegistry;
 import net.thep2wking.exastris.util.handler.GuiHandler;
@@ -45,10 +47,11 @@ public class ExAstris {
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             LOGGER.info("Starting FML Pre-Initialization");
         }
-
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            NetworkRegistry.INSTANCE.registerGuiHandler(ExAstris.INSTANCE, new GuiHandler());
+        }
         PROXY.preInit(event);
         ExAstrisRegistry.preInitRegistries(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(ExAstris.INSTANCE, new GuiHandler());
     }
 
     @Mod.EventHandler

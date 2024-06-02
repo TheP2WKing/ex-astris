@@ -16,6 +16,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 
@@ -37,6 +39,7 @@ public class ExAstrisUtils {
         FluidRegistry.addBucketForFluid(fluid);
     }
 
+    @SideOnly(Side.CLIENT)
     public static void addRenderForFluid(String fluidName, Block block) {
         Item fluidItem = Item.getItemFromBlock(block);
         final ModelResourceLocation modelLocation = new ModelResourceLocation(ExAstris.PREFIX + fluidName,

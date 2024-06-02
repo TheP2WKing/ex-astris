@@ -1,10 +1,6 @@
 package net.thep2wking.exastris.util.handler;
 
-import javax.annotation.Nullable;
-
-import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,16 +16,14 @@ public class GuiHandler implements IGuiHandler {
     public static final int EX_ASTRIS_AUTOMATIC_SIEVE_GUI = 0;
     public static final int EX_ASTRIS_AUTOMATIC_HAMMERER_GUI = 1;
 
-    @Nullable
     @Override
-    public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
         if (ID == EX_ASTRIS_AUTOMATIC_SIEVE_GUI) {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity instanceof TileAutomaticSieve) {
                 return new ContainerAutomaticSieve(player.inventory, (TileAutomaticSieve) tileEntity);
             }
         } else if (ID == EX_ASTRIS_AUTOMATIC_HAMMERER_GUI) {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity instanceof TileAutomaticHammerer) {
                 return new ContainerAutomaticHammerer(player.inventory, (TileAutomaticHammerer) tileEntity);
             }
@@ -37,16 +31,14 @@ public class GuiHandler implements IGuiHandler {
         return null;
     }
 
-    @Nullable
     @Override
-    public GuiContainer getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
         if (ID == EX_ASTRIS_AUTOMATIC_SIEVE_GUI) {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity instanceof TileAutomaticSieve) {
                 return new GuiAutomaticSieve(player.inventory, (TileAutomaticSieve) tileEntity);
             }
         } else if (ID == EX_ASTRIS_AUTOMATIC_HAMMERER_GUI) {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity instanceof TileAutomaticHammerer) {
                 return new GuiAutomaticHammerer(player.inventory, (TileAutomaticHammerer) tileEntity);
             }
