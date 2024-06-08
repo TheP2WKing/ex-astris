@@ -28,7 +28,7 @@ public class AutomaticSieveConfig {
 	@Config.Name("Energy Storage")
 	@Config.Comment("Set the max energy storage for the automatic sieve")
 	@RangeInt(min = 0, max = 1000000)
-    public int ENERGY_STORAGE = 64000;
+    public int ENERGY_STORAGE = 32000;
 
 	@Config.Name("Energy Usage per Tick")
 	@RangeInt(min = 0, max = 1000000)
