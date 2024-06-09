@@ -46,4 +46,8 @@ public class ExAstrisBlockBase extends Block implements IHasModel {
     public void registerModels() {
         ExAstris.PROXY.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
+
+    public String getName() {
+		return this.name;
+	}
 }

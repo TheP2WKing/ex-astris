@@ -8,6 +8,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.thep2wking.exastris.api.ExAstrisItemBase;
+import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumItems;
 
 public class ItemUpgradeFortune extends ExAstrisItemBase {
 	public ItemUpgradeFortune(String name, CreativeTabs tab, EnumRarity rarity, boolean hasEffect) {
@@ -16,7 +17,7 @@ public class ItemUpgradeFortune extends ExAstrisItemBase {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add("Automatic Sieve (64)");
-		tooltip.add("Automatic Hammerer (64)");
+		tooltip.add(ExAstrisExCompressumItems.AUTOMATIC_SIEVE.getItemStackDisplayName(stack) + " (64)");
+		tooltip.add(ExAstrisExCompressumItems.AUTOMATIC_HAMMERER.getItemStackDisplayName(stack) + " (64)");
 	}
 }

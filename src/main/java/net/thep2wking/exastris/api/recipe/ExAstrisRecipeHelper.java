@@ -20,7 +20,7 @@ import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisItems;
 
-public class ExAstrisApiHelper {
+public class ExAstrisRecipeHelper {
 	public static void addShapedRecipe(String name, ItemStack output, Object... inputs) {
 		GameRegistry.addShapedRecipe(new ResourceLocation(ExAstris.MODID, name), null, output, inputs);
 	}

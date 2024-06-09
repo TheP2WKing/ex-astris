@@ -18,8 +18,8 @@ public class CrucibleRecipes {
     @Config.Name("Vishroom from Mushroom")
     public boolean VISHROOM_FROM_MUSHROOM = true;
 
-    @Config.Name("Balance Vis Crystal from Base Vis Crystal")
-    public boolean BALANCE_VIS_CRYSTAL_FROM_BASE_VIS_CRYSTAL = true;
+    @Config.Name("Balanced Vis Crystal from Elemental Vis Crystal")
+    public boolean BALANCED_VIS_CRYSTAL_FROM_ELEMENTAL_VIS_CRYSTAL = true;
 
     @Config.Name("Quartz Doubling")
     public boolean QUARTZ_DOUBLING = true;

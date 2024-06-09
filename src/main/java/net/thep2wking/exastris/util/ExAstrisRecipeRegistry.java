@@ -1,8 +1,10 @@
 package net.thep2wking.exastris.util;
 
 import net.minecraftforge.fml.common.Loader;
+import net.thep2wking.exastris.modules.bloodmagic.BloodMagicRecipes;
 import net.thep2wking.exastris.modules.chisel.ChiselRecipes;
 import net.thep2wking.exastris.modules.excompressum.ExCompressumRecipes;
+import net.thep2wking.exastris.modules.oreberries.OreberriesRecipes;
 import net.thep2wking.exastris.modules.redstonearsenal.RedstoneArsenalRecipes;
 import net.thep2wking.exastris.modules.thaumcraft.ResearchCategoryExAstris;
 import net.thep2wking.exastris.modules.thaumcraft.ThaumcraftRecipes;
@@ -45,7 +47,6 @@ public class ExAstrisRecipeRegistry {
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
             ThaumcraftRecipes.registerArcaneCraftingRecipes();
             ThaumcraftRecipes.registerBarrelRecipes();
-            ThaumcraftRecipes.registerCraftingRecipes();
             ThaumcraftRecipes.registerCrucibleRecipes();
             ThaumcraftRecipes.registerHammeringRecipes();
             ThaumcraftRecipes.registerHeatSources();
@@ -62,5 +63,21 @@ public class ExAstrisRecipeRegistry {
             ExCompressumRecipes.registerOreDict();
         }
         ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_EX_COMPRESSUM);
+    }
+
+    public static void registerBloodMagicRecipes() {
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_BLOOD_MAGIC)) {
+            BloodMagicRecipes.registerCraftingRecipes();
+            BloodMagicRecipes.registerBindingRecipes();
+        }
+        ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_BLOOD_MAGIC);
+    }
+
+    public static void registerOreberriesRecipes() {
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_OREBERRIES)) {
+            OreberriesRecipes.registerSivetingRecipes();
+            OreberriesRecipes.registerBarrelRecipes();
+        }
+        ExAstrisUtils.recipesLoadedMessage(ExAstrisConstants.MODID_OREBERRIES);
     }
 }

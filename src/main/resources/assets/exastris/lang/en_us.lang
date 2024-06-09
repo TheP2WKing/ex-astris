@@ -93,6 +93,11 @@ tile.exastris:end_cake.name=End Cake
 item.exastris:hammer_flux.name=Flux-Infused SledgeHammer
 item.exastris:crook_flux.name=Flux-Infused Crook
 
+item.exastris:hammer_bound.name=Bound Hammer
+tooltip.exastris.hammer_bound.desc=Crushing blocks and eventually your soul
+item.exastris:crook_bound.name=Bound Crook
+tooltip.exastris.crook_bound.desc=Silkworm madness
+
 item.exastris:hammer_thaumium.name=Thaumium Hammer
 item.exastris:crook_thaumium.name=Thaumium Crook
 
@@ -116,11 +121,14 @@ item.exastris:doll_pech_forager.tip=Drop in a barrel of peacewater to spawn Pech
 item.exastris:doll_crimson_cleric.name=Crimson Doll
 item.exastris:doll_crimson_cleric.tip=Drop in a barrel of witchwater to spawn Crimson Cleric
 
-item.exastris:eldritch_altar_spawner.name=Altar-in-a-Box
 
 item.exastris:shard_ice.name=Ice Shard
-item.exastris:vis_crystal_base.name=Base Vis Crystal
+
 item.exastris:vis_crystal_balance.name=Balanced Vis Crystal
+item.exastris:knowledge_fragment.name=Knowledge Fragment
+item.exastris:eldritch_altar_spawner.name=Altar-in-a-Box
+
+item.exastris:uncharged_nether_star.name=Uncharged Nether Star
 
 item.exastris:seeds_podzol.name=Podzol Seeds
 item.exastris:seeds_fern.name=Fern Seeds
@@ -167,11 +175,14 @@ research.exastris_elemental_tools.stage.1=Elemental tools are a stable of Thaumc
 research.exastris_essentia_filter.title=Essentia Filter from the Sky
 research.exastris_essentia_filter.stage.1=Use it before you can obtain Silverwood.
 
-research.exastris_vis_crystal_balance.title=Thaumcraft 4?
-research.exastris_vis_crystal_balance.stage.1=This seems strange. Where does this magic item come from? It's so powerful that it can lower Vis costs, but at what cost?
+research.exastris_vis_crystal_balanced.title=Thaumcraft 4?
+research.exastris_vis_crystal_balanced.stage.1=This seems strange. Where does this magic item come from? It's so powerful that it can lower Vis costs, but at what cost?
+
+research.exastris_knowledge_fragment.title=Forgotten Magic
+research.exastris_knowledge_fragment.stage.1=When it's impossible to mine amber ore and get preserved curiosity from it, there has to be another way to get it. This fragment seems to be familiar to you, but you can't remember where you saw it. Maybe you can use it to get some knowledge from it.
 
 research.exastris_runic_matrix.title=Runic Matrix from the Sky
-research.exastris_runic_matrix.stage.1=Not enough Vis. But there are more ways.
+research.exastris_runic_matrix.stage.1=Not enough Vis. But there are more ways. Sligthly more expensive ways.
 
 research.exastris_cinderpearl.title=Cinderpearl from the Sky
 research.exastris_cinderpearl.stage.1=Cinderpearls can be used in various ways.

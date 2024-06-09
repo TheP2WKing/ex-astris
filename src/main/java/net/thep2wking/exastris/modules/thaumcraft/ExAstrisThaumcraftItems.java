@@ -5,11 +5,14 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.thep2wking.exastris.api.ExAstrisItemBase;
 import net.thep2wking.exastris.api.ExAstrisItemCrookBase;
 import net.thep2wking.exastris.api.ExAstrisItemHammerBase;
 import net.thep2wking.exastris.init.ExAstrisTabs;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemEldritchAltarSpawner;
 import net.thep2wking.exastris.modules.thaumcraft.content.ItemElementalCrook;
 import net.thep2wking.exastris.modules.thaumcraft.content.ItemElementalHammer;
+import net.thep2wking.exastris.modules.thaumcraft.content.ItemKnowledgeFragment;
 import net.thep2wking.exastris.modules.thaumcraft.content.ItemVoidCrook;
 import net.thep2wking.exastris.modules.thaumcraft.content.ItemVoidHammer;
 import net.thep2wking.exastris.util.handler.RarityHandler;
@@ -18,6 +21,15 @@ import thaumcraft.api.items.ItemsTC;
 
 public class ExAstrisThaumcraftItems {
 	public static final List<Item> ITEMS_THAUMCRAFT = new ArrayList<Item>();
+
+	public static final Item VIS_CRYSTAL_BALANCE = new ExAstrisItemBase("vis_crystal_balance",
+			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
+
+	public static final Item KNOWLEDGE_FRAGMENT = new ItemKnowledgeFragment("knowledge_fragment",
+			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
+
+	public static final Item ELDRITCH_ALTAR_SPAWNER = new ItemEldritchAltarSpawner("eldritch_altar_spawner",
+			ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
 
 	public static final Item HAMMER_THAUMIUM = new ExAstrisItemHammerBase("hammer_thaumium",
 			ThaumcraftMaterials.TOOLMAT_THAUMIUM, new ItemStack(ItemsTC.ingots, 1, 0), 4096, 0, 0,

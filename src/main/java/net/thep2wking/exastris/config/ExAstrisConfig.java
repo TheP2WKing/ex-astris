@@ -6,10 +6,12 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.thep2wking.exastris.ExAstris;
+import net.thep2wking.exastris.config.categories.BloodMagicConfig;
 import net.thep2wking.exastris.config.categories.ChiselConfig;
 import net.thep2wking.exastris.config.categories.ExCompressumConfig;
 import net.thep2wking.exastris.config.categories.GenerelConfig;
 import net.thep2wking.exastris.config.categories.JEIConfig;
+import net.thep2wking.exastris.config.categories.OreberriesConfig;
 import net.thep2wking.exastris.config.categories.RedstoneArsenalConfig;
 import net.thep2wking.exastris.config.categories.ThaumcraftConfig;
 import net.thep2wking.exastris.config.categories.VanillaConfig;
@@ -43,6 +45,14 @@ public class ExAstrisConfig {
     @Config.Name("excopressum")
     @Config.Comment("Configure Ex Compressum Module")
     public static final ExCompressumConfig MODULE_EX_COMPRESSUM = new ExCompressumConfig();
+
+    @Config.Name("bloodmagic")
+    @Config.Comment("Configure Blood Magic Module")
+    public static final BloodMagicConfig MODULE_BLOOD_MAGIC = new BloodMagicConfig();
+
+    @Config.Name("oreberries")
+    @Config.Comment("Configure OReberries Module")
+    public static final OreberriesConfig MODULE_OREBERRIES = new OreberriesConfig();
 
     @Mod.EventBusSubscriber
     public static class ConfigHolder {

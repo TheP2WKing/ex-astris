@@ -8,11 +8,14 @@ import net.thep2wking.exastris.ExAstris;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import team.chisel.api.carving.CarvingUtils;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.crafting.ShapelessArcaneRecipe;
+import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.items.resources.ItemCrystalEssence;
 
 public class ExAstrisModHelper {
 	public static void addCarvingRecipe(String category, @Nonnull ItemStack variation, int index) {
@@ -51,8 +54,15 @@ public class ExAstrisModHelper {
 				new CrucibleRecipe(researchRequired, output, input, aspects));
 	}
 
-	public static void addInfusionRecipe(String recipeName, String researchRequired, ItemStack output, AspectList aspects, Object... inputs) {
+	public static void addInfusionRecipe(String recipeName, String researchRequired, ItemStack output,
+			AspectList aspects, Object... inputs) {
 		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + recipeName),
 				new InfusionRecipe(researchRequired, output, 0, aspects, inputs));
+	}
+
+	public static ItemStack addVisCrystal(Aspect aspect) {
+		ItemStack crystal = new ItemStack(ItemsTC.crystalEssence);
+		((ItemCrystalEssence) crystal.getItem()).setAspects(crystal, new AspectList().add(aspect, 1));
+		return crystal;
 	}
 }

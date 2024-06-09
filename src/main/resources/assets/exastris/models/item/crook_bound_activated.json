@@ -1,0 +1,6 @@
+{
+	"parent": "exastris:item/hammer_bound",
+	"textures": {
+		"layer0": "exastris:items/crook_bound_activated"
+	}
+}

@@ -14,6 +14,7 @@ import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
 import net.thep2wking.exastris.init.ExAstrisFluids;
 import net.thep2wking.exastris.init.ExAstrisItems;
+import net.thep2wking.exastris.modules.bloodmagic.ExAstrisBloodMagicItems;
 import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
 import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumItems;
 import net.thep2wking.exastris.modules.redstonearsenal.ExAstrisRedstoneArsenalItems;
@@ -90,6 +91,11 @@ public class ExAstrisRegistry {
             ExAstrisUtils.registerItem(event, ExAstrisRedstoneArsenalItems.CROOK_FLUX);
         }
 
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_BLOOD_MAGIC)) {
+            ExAstrisUtils.registerItem(event, ExAstrisBloodMagicItems.HAMMER_BOUND);
+            ExAstrisUtils.registerItem(event, ExAstrisBloodMagicItems.CROOK_BOUND);
+        }
+
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.HAMMER_THAUMIUM);
             ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.CROOK_THAUMIUM);
@@ -102,23 +108,27 @@ public class ExAstrisRegistry {
         ExAstrisUtils.registerItem(event, ExAstrisItems.PEBBLES);
         ExAstrisUtils.registerItem(event, ExAstrisItems.DOLLS);
 
-        if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-            ExAstrisUtils.registerItemBlock(event, ExAstrisItems.ELDRITCH_ALTAR_SPAWNER);
-        }
-
         ExAstrisUtils.registerItem(event, ExAstrisItems.SHARD_ICE);
 
         if (Loader.isModLoaded(ExAstrisConstants.MODID_THAUMCRAFT)) {
-            ExAstrisUtils.registerItem(event, ExAstrisItems.VIS_CRYSTAL_BASE);
-            ExAstrisUtils.registerItem(event, ExAstrisItems.VIS_CRYSTAL_BALANCE);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.KNOWLEDGE_FRAGMENT);
+            ExAstrisUtils.registerItem(event, ExAstrisThaumcraftItems.ELDRITCH_ALTAR_SPAWNER);
         }
 
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_PODZOL);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_FERN);
         ExAstrisUtils.registerItem(event, ExAstrisItems.SEEDS_CHORUS);
 
-        ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_SPEED);
-        ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_FORTUNE);
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)) {
+            ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_SPEED);
+            ExAstrisUtils.registerItem(event, ExAstrisExCompressumItems.UPGRADE_FORTUNE);
+        }
+
+        if (Loader.isModLoaded(ExAstrisConstants.MODID_BLOOD_MAGIC)) {
+            ExAstrisUtils.registerItem(event, ExAstrisBloodMagicItems.UNCHARGED_NETHER_STAR);
+        }
+
         if (ExAstrisConfig.GENEREL.ENABLE_LOGGING) {
             ExAstris.LOGGER.info("Registered items");
         }

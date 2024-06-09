@@ -27,7 +27,7 @@ public class ExAstris {
     public static final String MC_VERSION = "1.12.2";
     public static final String NAME = "Ex Astris";
     public static final String VERSION = MC_VERSION + "-" + "1.0.0";
-    public static final String DEPENDENCIES = "required-after:forge@[14.23.5.2847,);required-after:exnihilocreatio;after:chisel;after:redstonearsenal;after:thaumcraft;after:thaumicaugmentation;after:excompressum;after:enderio;after:thermalexpansion;after:bloodmagic";
+    public static final String DEPENDENCIES = "required-after:forge@[14.23.5.2847,);required-after:exnihilocreatio;after:chisel;after:redstonearsenal;after:thaumcraft;after:thaumicaugmentation;after:excompressum;after:enderio;after:thermalexpansion;after:bloodmagic;after:oreberries";
     public static final String CLIENT_PROXY_CLASS = "net.thep2wking.exastris.util.proxy.ClientProxy";
     public static final String SERVER_PROXY_CLASS = "net.thep2wking.exastris.util.proxy.ServerProxy";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
@@ -65,6 +65,8 @@ public class ExAstris {
         ExAstrisRecipeRegistry.registerRedstoneArsenalRecipes();
         ExAstrisRecipeRegistry.registerThaumcraftRecipes();
         ExAstrisRecipeRegistry.registerExCompressumRecipes();
+        ExAstrisRecipeRegistry.registerBloodMagicRecipes();
+        ExAstrisRecipeRegistry.registerOreberriesRecipes();
     }
 
     @Mod.EventHandler

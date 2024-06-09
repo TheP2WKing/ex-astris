@@ -58,4 +58,8 @@ public class ExAstrisItemBase extends Item implements IHasModel {
     public boolean hasEffect(ItemStack stack) {
         return this.hasEffect || stack.isItemEnchanted();
     }
+
+    public String getName() {
+		return this.name;
+	}
 }

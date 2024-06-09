@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.thep2wking.exastris.ExAstris;
-import net.thep2wking.exastris.api.recipe.ExAstrisApiHelper;
+import net.thep2wking.exastris.api.recipe.ExAstrisRecipeHelper;
 import net.thep2wking.exastris.api.recipe.ExAstrisModHelper;
 import net.thep2wking.exastris.config.ExAstrisConfig;
 import net.thep2wking.exastris.init.ExAstrisBlocks;
@@ -30,13 +30,6 @@ import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 public class ThaumcraftRecipes {
-	public static void registerCraftingRecipes() {
-		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.BALANCE_VIS_CRYSTAL_FROM_BASE_VIS_CRYSTAL) {
-			ExAstrisApiHelper.addSmeltingRecipe(new ItemStack(ItemsTC.crystalEssence, 1, 0),
-					new ItemStack(ExAstrisItems.VIS_CRYSTAL_BASE, 1, 0), 0.1f);
-		}
-	}
-
 	public static void registerArcaneCraftingRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER.THAUMIUM_HAMMER) {
 			ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "hammer_thaumium"),
@@ -113,7 +106,7 @@ public class ThaumcraftRecipes {
 							new AspectList(),
 							new ItemStack(BlocksTC.infusionMatrix, 1, 0), "ABA", "BCB", "ABA",
 							'A', new ItemStack(Item.getItemFromBlock(BlocksTC.stoneArcaneBrick)), 'B',
-							new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE), 'C', "nitor"));
+							new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE), 'C', "nitor"));
 		}
 
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.MISC.ALCHEMICAL_BRASS_BARRELS) {
@@ -160,16 +153,41 @@ public class ThaumcraftRecipes {
 
 	public static void registerCrucibleRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.QUARTZ_DOUBLING) {
-			ExAstrisModHelper.addCrucibleRecipe("quartz", "EXASTRIS_QUARTZ", new AspectList().add(Aspect.CRYSTAL, 5),
+			ExAstrisModHelper.addCrucibleRecipe("quartz_double", "EXASTRIS_QUARTZ", new AspectList().add(Aspect.CRYSTAL, 5),
 					new ItemStack(Items.QUARTZ, 2, 0), new ItemStack(Items.QUARTZ, 1, 0));
 		}
 
-		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.BALANCE_VIS_CRYSTAL_FROM_BASE_VIS_CRYSTAL) {
-			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balance", "EXASTRIS_VIS_CRYSTAL_BALANCE",
+		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.BALANCED_VIS_CRYSTAL_FROM_ELEMENTAL_VIS_CRYSTAL) {
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_aer", "EXASTRIS_VIS_CRYSTAL_BALANCED",
+					new AspectList().add(Aspect.EARTH, 1).add(Aspect.FIRE, 1).add(Aspect.WATER, 1).add(Aspect.ORDER, 1)
+							.add(Aspect.ENTROPY, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.AIR));
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_terra", "EXASTRIS_VIS_CRYSTAL_BALANCED",
+					new AspectList().add(Aspect.AIR, 1).add(Aspect.FIRE, 1).add(Aspect.WATER, 1).add(Aspect.ORDER, 1)
+							.add(Aspect.ENTROPY, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.EARTH));
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_ignis", "EXASTRIS_VIS_CRYSTAL_BALANCED",
+					new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.WATER, 1).add(Aspect.ORDER, 1)
+							.add(Aspect.ENTROPY, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.FIRE));
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_aqua", "EXASTRIS_VIS_CRYSTAL_BALANCED",
+					new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.FIRE, 1).add(Aspect.ORDER, 1)
+							.add(Aspect.ENTROPY, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.WATER));
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_ordo", "EXASTRIS_VIS_CRYSTAL_BALANCED",
 					new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.FIRE, 1).add(Aspect.WATER, 1)
-							.add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
-					new ItemStack(ExAstrisItems.VIS_CRYSTAL_BALANCE, 1, 0),
-					new ItemStack(ExAstrisItems.VIS_CRYSTAL_BASE));
+							.add(Aspect.ENTROPY, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.ORDER));
+			ExAstrisModHelper.addCrucibleRecipe("vis_crystal_balanced_perditio", "EXASTRIS_VIS_CRYSTAL_BALANCED",
+					new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.FIRE, 1).add(Aspect.WATER, 1)
+							.add(Aspect.ORDER, 1),
+					new ItemStack(ExAstrisThaumcraftItems.VIS_CRYSTAL_BALANCE, 1, 0),
+					ExAstrisModHelper.addVisCrystal(Aspect.ENTROPY));
 		}
 
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.CRUCIBLE_RECIPES.VISHROOM_FROM_MUSHROOM) {
@@ -217,7 +235,7 @@ public class ThaumcraftRecipes {
 	public static void registerInfusionRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.INFUSION_RECIPES.GREATWOOD_SAPLING) {
 			ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "sapling_greatwood"),
-					new InfusionRecipe("EXASTRIS_GREATWOOD_SAPLING", new ItemStack(BlocksTC.saplingGreatwood, 1, 0), 0,
+					new InfusionRecipe("EXASTRIS_GREATWOOD_SAPLING", new ItemStack(BlocksTC.saplingGreatwood, 1, 0), 7,
 							new AspectList().add(Aspect.AIR, 64).add(Aspect.EARTH, 64).add(Aspect.FIRE, 64)
 									.add(Aspect.WATER, 64).add(Aspect.ORDER, 64).add(Aspect.ENTROPY, 64)
 									.add(Aspect.PLANT, 128),
@@ -234,7 +252,7 @@ public class ThaumcraftRecipes {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.INFUSION_RECIPES.SILVERWOOD_SAPLING) {
 			ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "sapling_silverwood"),
 					new InfusionRecipe("EXASTRIS_SILVERWOOD_SAPLING", new ItemStack(BlocksTC.saplingSilverwood, 1, 0),
-							0,
+							7,
 							new AspectList().add(Aspect.PLANT, 128).add(Aspect.EXCHANGE, 64).add(Aspect.MAGIC, 64)
 									.add(Aspect.CRYSTAL, 64),
 							new ItemStack(BlocksTC.saplingGreatwood, 1, 0), new ItemStack(BlocksTC.shimmerleaf),
@@ -245,8 +263,8 @@ public class ThaumcraftRecipes {
 
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.INFUSION_RECIPES.ELDRITCH_PORTAL_SPAWNER) {
 			ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "eldritch_altar_spawner"),
-					new InfusionRecipe("EXASTRIS_ELDRITCH_ALTAR", new ItemStack(ExAstrisItems.ELDRITCH_ALTAR_SPAWNER),
-							0,
+					new InfusionRecipe("EXASTRIS_ELDRITCH_ALTAR", new ItemStack(ExAstrisThaumcraftItems.ELDRITCH_ALTAR_SPAWNER),
+							8,
 							new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.AVERSION, 64).add(Aspect.MAGIC, 64)
 									.add(Aspect.VOID, 64),
 							new ItemStack(ItemsTC.mirroredGlass), new ItemStack(BlocksTC.stoneEldritchTile),
@@ -277,157 +295,162 @@ public class ThaumcraftRecipes {
 							ConfigItems.AIR_CRYSTAL, new ItemStack(ItemsTC.nuggets, 1, 10),
 							new ItemStack(BlocksTC.plankGreatwood)));
 		}
+		if (ExAstrisConfig.MODULE_THAUMCRAFT.INFUSION_RECIPES.KNOWLEDGE_FRAGMENT) {
+			ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ExAstris.PREFIX + "knowledge_fragment"),
+					new InfusionRecipe("EXASTRIS_KNOWLEDGE_FRAGMENT", new ItemStack(ExAstrisThaumcraftItems.KNOWLEDGE_FRAGMENT), 5, new AspectList().add(Aspect.MIND, 25).add(Aspect.TRAP, 15).add(Aspect.ALCHEMY, 10),
+							new ItemStack(ItemsTC.scribingTools), "gemAmber", "paper", "gemAmber", "dyeBlack"));
+		}
 	}
 
 	public static void registerHammeringRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.AER_CRYSTALS_FROM_SANDSTONE) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.AIR), 1f, "sandstone", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.AIR), 1f, "sandstone", 0);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.TERRA_CRYSTALS_FROM_GRASS) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.EARTH), 1f, "grass", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.EARTH), 1f, "grass", 0);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.IGNIS_CRYSTALS_FROM_NETHERBRICK) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.FIRE), 1f, "netherBrick", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.FIRE), 1f, "netherBrick", 0);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.AQUA_CRYSTALS_FROM_ICE) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.WATER), 1f, "blockIce", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.WATER), 1f, "blockIce", 0);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.ORDO_CRYSTALS_FROM_STONE) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.ORDER), 1f, "stone", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.ORDER), 1f, "stone", 0);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HAMMER_RECIPES.PERDITIO_CRYSTALS_FROM_TNT) {
-			ExAstrisApiHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY), 1f, "tnt", 0);
+			ExAstrisRecipeHelper.addHammeringRecipe(ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY), 1f, "tnt", 0);
 		}
 	}
 
 	public static void registerSivetingRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.SIEVE_RECIPES.PRIMORDIAL_PEARL_FROM_ANCIENT_STONE) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ItemsTC.primordialPearl, 0), 0.001f,
+			ExAstrisRecipeHelper.addSivetingRecipe(new ItemInfo(ItemsTC.primordialPearl, 0), 0.001f,
 					new ItemInfo(BlocksTC.stoneAncient, 0), 4);
 		}
 
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.SIEVE_RECIPES.AMBER_FROM_SAND) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ItemsTC.amber, 0), 0.02f, "sand", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ItemsTC.amber, 0), 0.04f, "sand", 4);
+			ExAstrisRecipeHelper.addSivetingRecipe(new ItemInfo(ItemsTC.amber, 0), 0.02f, "sand", 3);
+			ExAstrisRecipeHelper.addSivetingRecipe(new ItemInfo(ItemsTC.amber, 0), 0.04f, "sand", 4);
 		}
 
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.SIEVE_RECIPES.QUICKSILVER_DROP_FROM_SAND) {
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ItemsTC.nuggets, 5), 0.02f, "sand", 3);
-			ExAstrisApiHelper.addSivetingRecipe(new ItemInfo(ItemsTC.nuggets, 5), 0.04f, "sand", 4);
+			ExAstrisRecipeHelper.addSivetingRecipe(new ItemInfo(ItemsTC.nuggets, 5), 0.02f, "sand", 3);
+			ExAstrisRecipeHelper.addSivetingRecipe(new ItemInfo(ItemsTC.nuggets, 5), 0.04f, "sand", 4);
 		}
 	}
 
 	public static void registerHeatSources() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.CINDERPEARL) {
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(BlocksTC.cinderpearl),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(BlocksTC.cinderpearl),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.CINDERPEARL_HEAT_VALUE);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.ARCANE_LAMP) {
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(BlocksTC.lampArcane),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(BlocksTC.lampArcane),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.ARCANE_LAMP_HEAT_VALUE);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.AMBER_BLOCK) {
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(BlocksTC.amberBlock),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(BlocksTC.amberBlock),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.AMBER_BLOCK_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(BlocksTC.amberBrick),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(BlocksTC.amberBrick),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.AMBER_BLOCK_HEAT_VALUE);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE) {
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_white")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_white")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_orange")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_orange")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_magenta")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_magenta")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_lightblue")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_lightblue")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_yellow")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_yellow")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_lime")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_lime")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_pink")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_pink")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_gray")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_gray")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_silver")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_silver")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_cyan")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_cyan")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_purple")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_purple")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_blue")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_blue")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_brown")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_brown")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_green")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_green")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_red")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_red")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_black")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:candle_black")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.TALLOW_CANDLE_HEAT_VALUE);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR) {
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_white")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_white")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_orange")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_orange")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_magenta")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_magenta")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_lightblue")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_lightblue")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_yellow")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_yellow")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_lime")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_lime")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_pink")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_pink")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_gray")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_gray")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_silver")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_silver")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_cyan")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_cyan")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_purple")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_purple")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_blue")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_blue")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_brown")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_brown")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_green")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_green")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_red")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_red")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
-			ExAstrisApiHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_black")),
+			ExAstrisRecipeHelper.addHeatSource(new BlockInfo(Block.getBlockFromName("thaumcraft:nitor_black")),
 					ExAstrisConfig.MODULE_THAUMCRAFT.HEAT_SOURCES.NITOR_HEAT_VALUE);
 		}
 	}
 
 	public static void registerBarrelRecipes() {
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.CINDERPEARL_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.cinderpearl, 0),
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.cinderpearl, 0),
 					0.25f, "ffb650");
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.SHIMMERLEAF_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.shimmerleaf, 0),
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.shimmerleaf, 0),
 					0.25f, "a0c0ba");
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.VISHROOM_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.vishroom, 0), 0.25f,
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.vishroom, 0), 0.25f,
 					"cc7bcf");
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.ZOMBIE_BRAIN_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(ItemsTC.brain, 0), 0.15f,
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(ItemsTC.brain, 0), 0.15f,
 					"ecc9aa");
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.TRIPLE_MEAT_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(ItemsTC.tripleMeatTreat, 0),
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(ItemsTC.tripleMeatTreat, 0),
 					0.25f, "ffb650");
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.MEAT_NUGGET_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), "nuggetMeat", 0.05f);
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), "nuggetMeat", 0.05f);
 		}
 		if (ExAstrisConfig.MODULE_THAUMCRAFT.BARREL_RECIPES.FLESH_BLOCK_COMPOSTING) {
-			ExAstrisApiHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.fleshBlock, 0),
+			ExAstrisRecipeHelper.addCompostingRecipe(new BlockInfo(Blocks.DIRT), new ItemInfo(BlocksTC.fleshBlock, 0),
 					0.25f, "ba6f40");
 		}
 	}

@@ -32,6 +32,7 @@ import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTrans
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformCompat;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformRecipes;
 import net.thep2wking.exastris.integration.jei.fluiddolltransform.FluidDollTransformWrapper;
+import net.thep2wking.exastris.modules.bloodmagic.ExAstrisBloodMagicItems;
 import net.thep2wking.exastris.modules.excompressum.ExAstrisExCompressumBlocks;
 import net.thep2wking.exastris.modules.excompressum.content.hammerer.GuiAutomaticHammerer;
 import net.thep2wking.exastris.modules.excompressum.content.sieve.GuiAutomaticSieve;
@@ -176,7 +177,6 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_SIEVE.EX_COMPRESSUM_HEAVY_SIEVE_RECIPES) {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_SIEVE, 1, 0),
 					HeavySieveRecipeCategory.UID);
-			// addRecipeClickArea(registry, GuiAutomaticSieve.class, 31, 25, 18, 18, HeavySieveRecipeCategory.UID);
 		}
 
 		addCrucibleToRelevantCategories(registry,
@@ -219,6 +219,13 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 					CrookRecipeCategory.UID);
 		}
 
+		if (Loader.isModLoaded("bloodmagic")) {
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisBloodMagicItems.HAMMER_BOUND, 1, 0),
+					HammerRecipeCategory.UID);
+			registry.addRecipeCatalyst(new ItemStack(ExAstrisBloodMagicItems.CROOK_BOUND, 1, 0),
+					CrookRecipeCategory.UID);
+		}
+
 		if (Loader.isModLoaded(ExAstrisConstants.MODID_EX_COMPRESSUM)
 				&& ExAstrisConfig.MODULE_EX_COMPRESSUM.AUTOMATIC_HAMMERER.AUTOMATIC_HAMMERER) {
 			addHammerToRelevantCategories(registry, new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER, 1, 0));
@@ -230,7 +237,7 @@ public class ExAstrisJEIPlugin implements IModPlugin {
 			registry.addRecipeCatalyst(new ItemStack(ExAstrisExCompressumBlocks.AUTOMATIC_HAMMERER, 1, 0),
 					CompressedHammerRecipeCategory.UID);
 			// addRecipeClickArea(registry, GuiAutomaticHammerer.class, 31, 25, 18, 18,
-			// 		CompressedHammerRecipeCategory.UID);
+			// CompressedHammerRecipeCategory.UID);
 		}
 	}
 }

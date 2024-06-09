@@ -16,7 +16,6 @@ import net.thep2wking.exastris.common.crucible.ItemBlockExAstrisWoodCrucuble;
 import net.thep2wking.exastris.common.doll.ItemExAstrisDoll;
 import net.thep2wking.exastris.common.pebble.ItemExAstrisPebble;
 import net.thep2wking.exastris.common.sieve.ItemBlockExAstrisSieve;
-import net.thep2wking.exastris.modules.thaumcraft.content.ItemEldritchAltarSpawner;
 import net.thep2wking.exastris.modules.vanilla.content.ItemChorusSeed;
 import net.thep2wking.exastris.modules.vanilla.content.ItemPodzolSeed;
 import net.thep2wking.exastris.util.handler.RarityHandler;
@@ -66,16 +65,8 @@ public class ExAstrisItems {
         public static final Item DOLLS = new ItemExAstrisDoll("doll", ExAstrisTabs.EXASTRIS_TAB,
                         RarityHandler.WHITE, false);
 
-        public static final Item ELDRITCH_ALTAR_SPAWNER = new ItemEldritchAltarSpawner("eldritch_altar_spawner",
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
-
         public static final Item SHARD_ICE = new ExAstrisItemBase("shard_ice",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
-
-        public static final Item VIS_CRYSTAL_BASE = new ExAstrisItemBase("vis_crystal_base",
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);
-        public static final Item VIS_CRYSTAL_BALANCE = new ExAstrisItemBase("vis_crystal_balance",
-                        ExAstrisTabs.EXASTRIS_TAB, RarityHandler.YELLOW, false);
 
         public static final Item SEEDS_PODZOL = new ItemPodzolSeed("seeds_podzol",
                         ExAstrisTabs.EXASTRIS_TAB, RarityHandler.WHITE, false);

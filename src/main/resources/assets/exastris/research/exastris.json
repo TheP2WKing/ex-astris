@@ -76,7 +76,7 @@
                 {
                     "text": "research.exastris_quartz.stage.1",
                     "recipes": [
-                        "exastris:quartz"
+                        "exastris:quartz_double"
                     ],
                     "warp": 0
                 }
@@ -142,7 +142,7 @@
                 "REVERSE"
             ],
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "METALLURGY"
             ],
             "location": [
                 -2,
@@ -174,10 +174,10 @@
             ],
             "category": "EXASTRIS",
             "meta": [
-                "SPIKY", "HIDDEN"
+                "SPIKY"
             ],
             "parents": [
-                "EXASTRIS_SKY_TOOLS"
+                "EXASTRIS_SKY_TOOLS", "INFUSION"
             ],
             "location": [
                 -2,
@@ -208,7 +208,7 @@
             ],
             "category": "EXASTRIS",
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "INFUSION"
             ],
             "location": [
                 0,
@@ -251,7 +251,7 @@
                 {
                     "text": "research.exastris_silverwood_sapling.stage.1",
                     "required_knowledge": [
-                        "THEORY;EXASTRIS;1", "THEORY;INFUSION;1"
+                        "OBSERVATION;EXASTRIS;1", "THEORY;INFUSION;1"
                     ]
                 },
                 {
@@ -362,8 +362,8 @@
             ]
         },
         {
-            "key": "EXASTRIS_VIS_CRYSTAL_BALANCE",
-            "name": "research.exastris_vis_crystal_balance.title",
+            "key": "EXASTRIS_VIS_CRYSTAL_BALANCED",
+            "name": "research.exastris_vis_crystal_balanced.title",
             "icons": [
                 "exastris:vis_crystal_balance"
             ],
@@ -372,20 +372,25 @@
                 "EXASTRIS_THAUMCRAFT"
             ],
             "location": [
-                -3,
-                0
+                -2,
+                -1
             ],
             "stages": [
                 {
-                    "text": "research.exastris_vis_crystal_balance.stage.1",
+                    "text": "research.exastris_vis_crystal_balanced.stage.1",
                     "required_knowledge": [
                         "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
                     ]
                 },
                 {
-                    "text": "research.exastris_vis_crystal_balance.stage.1",
+                    "text": "research.exastris_vis_crystal_balanced.stage.1",
                     "recipes": [
-                        "exastris:vis_crystal_balance"
+                        "exastris:vis_crystal_balanced_aer",
+                        "exastris:vis_crystal_balanced_terra",
+                        "exastris:vis_crystal_balanced_ignis",
+                        "exastris:vis_crystal_balanced_aqua",
+                        "exastris:vis_crystal_balanced_ordo",
+                        "exastris:vis_crystal_balanced_perditio"
                     ],
                     "warp": 0
                 }
@@ -398,14 +403,11 @@
                 "thaumcraft:infusion_matrix"
             ],
             "category": "EXASTRIS",
-            "meta": [
-                "HIDDEN"
-            ],
             "parents": [
-                "EXASTRIS_VIS_CRYSTAL_BALANCE"
+                "EXASTRIS_VIS_CRYSTAL_BALANCED"
             ],
             "location": [
-                -3,
+                -4,
                 -2
             ],
             "stages": [
@@ -425,6 +427,39 @@
             ]
         },
         {
+            "key": "EXASTRIS_KNOWLEDGE_FRAGMENT",
+            "name": "research.exastris_knowledge_fragment.title",
+            "icons": [
+                "exastris:knowledge_fragment"
+            ],
+            "category": "EXASTRIS",
+            "meta": [
+                "ROUND", "SPIKY"
+            ],
+            "parents": [
+                "EXASTRIS_THAUMCRAFT", "UNLOCKINFUSION"
+            ],
+            "location": [
+                -5,
+                2
+            ],
+            "stages": [
+                {
+                    "text": "research.exastris_knowledge_fragment.stage.1",
+                    "required_knowledge": [
+                        "THEORY;BASICS;1", "OBSERVATION;INFUSION;2", "OBSERVATION;EXASTRIS;2"
+                    ]
+                },
+                {
+                    "text": "research.exastris_knowledge_fragment.stage.1",
+                    "recipes": [
+                        "exastris:knowledge_fragment"
+                    ],
+                    "warp": 0
+                }
+            ]
+        },
+        {
             "key": "EXASTRIS_CINDERPEARL",
             "name": "research.exastris_cinderpearl.title",
             "icons": [
@@ -432,7 +467,7 @@
             ],
             "category": "EXASTRIS",
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "BASEALCHEMY"
             ],
             "location": [
                 2,
@@ -462,7 +497,7 @@
             ],
             "category": "EXASTRIS",
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "BASEALCHEMY"
             ],
             "location": [
                 4,
@@ -492,7 +527,7 @@
             ],
             "category": "EXASTRIS",
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "BASEALCHEMY"
             ],
             "location": [
                 6,
@@ -568,7 +603,7 @@
                 {
                     "text": "research.exastris_ancient_stone.stage.1",
                     "required_knowledge": [
-                        "OBSERVATION;ELDRITCH;1", "OBSERVATION;ALCHEMY;1", "THEORY;EXASTRIS;1"
+                        "OBSERVATION;ELDRITCH;1", "OBSERVATION;ALCHEMY;1", "OBSERVATION;EXASTRIS;1"
                     ]
                 },
                 {
@@ -644,7 +679,7 @@
             ],
             "category": "EXASTRIS",
             "parents": [
-                "EXASTRIS_THAUMCRAFT"
+                "EXASTRIS_THAUMCRAFT", "METALLURGY"
             ],
             "location": [
                 0,
@@ -654,7 +689,7 @@
                 {
                     "text": "research.exastris_metal_blocks.stage.1",
                     "required_knowledge": [
-                        "OBSERVATION;BASICS;1", "OBSERVATION;EXASTRIS;3"
+                        "OBSERVATION;BASICS;1", "OBSERVATION;EXASTRIS;2"
                     ]
                 },
                 {
@@ -717,7 +752,7 @@
                 {
                     "text": "research.exastris_doll_crimson_cleric.stage.1",
                     "required_knowledge": [
-                        "THEORY;ELDRITCH;1", "THEORY;EXASTRIS;1"
+                        "THEORY;ELDRITCH;1", "OBSERVATION;EXASTRIS;1"
                     ]
                 },
                 {

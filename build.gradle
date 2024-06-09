@@ -11,7 +11,6 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-
 version = "${minecraft_version}-${version}"
 group = "${group}"
 archivesBaseName = "${modid}"
@@ -80,7 +79,7 @@ dependencies {
     // thermal
     deobfCompile("curse.maven:thermal-expansion-69163:2926431")
     deobfCompile("curse.maven:thermal-foundation-222880:2926428")
-    // deobfCompile("curse.maven:thermal-dynamics-227443:2920505")
+    deobfCompile("curse.maven:thermal-dynamics-227443:2920505")
     // deobfCompile("curse.maven:cofh-core-69162:2920433")
     deobfCompile("curse.maven:cofh-world-271384:2920434")
     // deobfCompile("curse.maven:redstone-flux-270789:2920436")
@@ -88,7 +87,16 @@ dependencies {
 
     // enderio
     // deobfCompile("curse.maven:endercore-231868:4671384")
-    // deobfCompile("curse.maven:ender-io-64578:4674244")
+    // deobfCompile("curse.maven:ender-io-base-297193:4674231")
+    // deobfCompile("curse.maven:ender-io-machines-297196:4674232")
+    // deobfCompile("curse.maven:ender-io-conduits-297197:4674233")
+
+    // bloodmagic
+    deobfCompile("curse.maven:guide-api-228832:2645992")
+    deobfCompile("curse.maven:blood-magic-224791:2822288")
+
+    // oreberries
+    deobfCompile("curse.maven:oreberries-275408:2578045")
 }
 
 processResources {
